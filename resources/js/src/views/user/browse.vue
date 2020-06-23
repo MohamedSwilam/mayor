@@ -22,7 +22,7 @@
                     </div>
                     <br>
                     <div class="text-left vx-col w-full">
-                        <i class="fas fa-envelope"></i> {{ $t('Email') || 'Email' }}
+                        <i class="fas fa-envelope"></i> Email
                         <p class="text-grey txt-hover" @click="copyToClipboard(user.email)">{{ user.email }}</p>
                     </div>
                     <br>
@@ -31,7 +31,7 @@
 
                         <div class="flex justify-between">
                             <span v-if="can('delete-user')" class="flex items-center">
-                                <vx-tooltip color="danger" :text="$t('Delete') || 'Delete'">
+                                <vx-tooltip color="danger" :text="'Delete'">
                                     <vs-button :id="`btn-delete-${user.id}`" class="vs-con-loading__container" @click="is_requesting?$store.dispatch('viewWaitMessage', $vs):confirmDeleteUser(user)" color="danger" type="filled" icon-pack="feather" icon="icon-trash"></vs-button>
                                 </vx-tooltip>
                             </span>

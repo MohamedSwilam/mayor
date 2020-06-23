@@ -54,7 +54,7 @@ Vue.filter('date', function(value, fullDate = false) {
     const year = value.slice(11,15);
 
     if(!fullDate) return date + ' ' + month;
-    else return date + ' ' + month + ' ' + year;
+    else return date + ' ' + month + ', ' + year;
 });
 
 Vue.filter('month', function(val, showYear = true) {
