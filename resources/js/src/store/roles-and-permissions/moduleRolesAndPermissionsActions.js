@@ -4,6 +4,7 @@ import permission from "../../http/requests/permission/index"
 
 export default {
     getRoles({ commit, dispatch }, payload) {
+
         return new Promise((resolve, reject) => {
             role.getAll(payload)
                 .then(response => {

@@ -24,7 +24,7 @@
                             </vs-td>
 
                             <vs-td :data="role.created_at">
-                                {{ role.created_at}}
+                                {{ role.created_at | date(true)}} - {{ role.created_at | time}}
                             </vs-td>
 
                             <vs-td>
@@ -75,7 +75,6 @@ export default {
                     this.roles = response.data.data.data;
                 })
                 .catch(error => {
-                    console.log(error);
                     this.$vs.loading.close(this.$refs.roles.$refs.content);
                     this.$vs.notify({
                         title: 'Error',
