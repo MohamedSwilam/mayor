@@ -1,6 +1,7 @@
 <?php
 
 use App\User;
+use App\Account;
 use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
@@ -14,24 +15,37 @@ class UsersTableSeeder extends Seeder
     {
         $users = [
             [
-                'name'              => 'Mohamed Swilam',
-                'email'             => 'mohamed_swilam@hotmail.com',
-                'password'          => bcrypt('password'),
-                'email_verified_at' => now(),
-                'remember_token'    => Str::random(10),
+                'first_name'        => 'Mohamed',
+                'last_name'         => 'Swilam',
+                'is_male'           => 1
             ],
             [
-                'name'              => 'Hossam Mohamed',
+                'first_name'        => 'Hossam',
+                'last_name'         => 'Mohamed',
+                'is_male'           => 1
+            ]
+        ];
+
+        $accounts = [
+            [
+                'email'             => 'mohamed_swilam@hotmail.com',
+                'password'          => bcrypt('password'),
+                'user_id'           => 1
+            ],
+            [
                 'email'             => 'hossam_mohamed@hotmail.com',
                 'password'          => bcrypt('password'),
-                'email_verified_at' => now(),
-                'remember_token'    => Str::random(10),
+                'user_id'           => 2
             ]
         ];
 
         foreach ($users as $user){
             $temp = User::create($user);
             $temp->assignRole('Super Admin');
+        }
+
+        foreach ($accounts as $account){
+            Account::create($account);
         }
     }
 }

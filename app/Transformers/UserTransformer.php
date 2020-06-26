@@ -33,7 +33,6 @@ class UserTransformer extends TransformerAbstract
     public function transform(User $user)
     {
         $data = $user->toArray();
-        $data['image'] = $data['image']? config('paths.user-image.get').$data['image']:null;
 
         return $data;
     }

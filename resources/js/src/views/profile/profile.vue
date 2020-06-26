@@ -2,31 +2,36 @@
     <div>
         <div class="vx-col w-full mb-base">
             <vx-card ref="view" title="Personal Information" collapseAction>
-                <vs-row v-if="employee">
-                    <vs-row class="mb-5">
+                <vs-row v-if="user">
+                    <vs-row class="mb-2">
                         <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
-                            <vs-avatar class="mx-auto mb-2 block" size="120px" :src="employee.image" />
+                            <b>{{user.first_name}} {{user.last_name}}</b>
                         </vs-col>
                     </vs-row>
                     <vs-row class="mb-2">
                         <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
-                            {{employee.name}}
+                            {{user.is_male?'Male':'Female'}}
                         </vs-col>
                     </vs-row>
                     <vs-row class="mb-2">
                         <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
-                            {{employee.roles[0].name}}
+                            {{user.roles[0].name}}
                         </vs-col>
                     </vs-row>
                     <vs-row class="mb-2">
                         <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
-                            {{employee.email}}
+                            {{user.accounts[0].email}}
+                        </vs-col>
+                    </vs-row>
+                    <vs-row class="mb-2">
+                        <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
+                            <b>Created At:</b> &nbsp; {{ user.created_at | date(true)}} - {{ user.created_at | time}}
                         </vs-col>
                     </vs-row>
 
-                    <vs-row class="mt-5 mb-5">
+                    <vs-row class="mb-2">
                         <vs-col vs-type="flex" vs-align="center" vs-justify="center">
-                            <vs-button :to="`/dashboard/employee/${employee.id}/edit`" color="warning" type="filled" icon-pack="feather" icon="icon-edit">Edit Information</vs-button>
+                            <vs-button size="small" :to="`/dashboard/user/${user.id}/edit`" color="warning" type="filled" icon-pack="feather" icon="icon-edit">Edit Information</vs-button>
                         </vs-col>
                     </vs-row>
                 </vs-row>
@@ -40,19 +45,19 @@
     export default {
         name: "profile",
         mounted() {
-            this.getEmployeeData();
+            this.getUserData();
         },
         data: () => {
             return {
-                employee: null,
+                user: null,
             }
         },
         methods: {
-            getEmployeeData() {
+            getUserData() {
                 this.$vs.loading({container: this.$refs.view.$refs.content, scale: 0.5});
-                this.$store.dispatch('employee/view', this.$store.getters['auth/userData'].id)
+                this.$store.dispatch('user/view', this.$store.getters['auth/userData'].id)
                     .then(response => {
-                        this.employee = response.data.data.data;
+                        this.user = response.data.data.data;
                         this.$vs.loading.close(this.$refs.view.$refs.content);
                     })
                     .catch(error => {

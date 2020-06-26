@@ -3,14 +3,14 @@
         <div class="vx-col w-full mb-base" v-if="can('view-user')||$store.getters['auth/userData'].id===$route.params.id">
             <vx-card ref="view" title="Personal Information" collapseAction>
                 <vs-row v-if="user">
-                    <vs-row class="mb-5">
+                    <vs-row class="mb-2">
                         <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
-                            <vs-avatar class="mx-auto mb-2 block" size="120px" :src="user.image" />
+                            <b>{{user.first_name}} {{user.last_name}}</b>
                         </vs-col>
                     </vs-row>
                     <vs-row class="mb-2">
                         <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
-                            {{user.name}}
+                            {{user.is_male?'Male':'Female'}}
                         </vs-col>
                     </vs-row>
                     <vs-row class="mb-2">
@@ -20,7 +20,17 @@
                     </vs-row>
                     <vs-row class="mb-2">
                         <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
-                            {{user.email}}
+                            {{user.accounts[0].email}}
+                        </vs-col>
+                    </vs-row>
+                    <vs-row class="mb-2">
+                        <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
+                            <b>Created At:</b> &nbsp; {{ user.created_at | date(true)}} - {{ user.created_at | time}}
+                        </vs-col>
+                    </vs-row>
+                    <vs-row class="mb-2">
+                        <vs-col vs-type="flex" vs-align="center" vs-justify="center">
+                            <vs-button size="small" :to="`/dashboard/user/${user.id}/edit`" color="warning" type="filled" icon-pack="feather" icon="icon-edit">Edit Information</vs-button>
                         </vs-col>
                     </vs-row>
                 </vs-row>

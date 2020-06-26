@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
 use App\Http\Requests\UserRequest;
 use App\IndexResponse;
+use App\Account;
 use App\Responses\Facades\ResponseFacade;
 use App\Transformers\UserTransformer;
 use App\User;
@@ -26,7 +28,7 @@ class UserController extends Controller
 
         return ResponseFacade::indexRespond(
             fractal(
-                (new IndexResponse(User::with(['roles'])))->execute()
+                (new IndexResponse(User::with(['accounts', 'roles'])))->execute()
                 , new UserTransformer()
             )
         );
@@ -42,17 +44,13 @@ class UserController extends Controller
     public function store(UserRequest $request)
     {
         $this->authorize('store', User::class);
-
         $data = $request->except('role');
 
-        if (\request()->hasFile('image')){
-            $data['image'] = download_file(\request()->file('image'), config('paths.user-image.create'));
-        }
+        $user = User::create($data);
 
-        $data['email_verified_at'] = now();
         $data['password'] = bcrypt($request->password);
 
-        $user = User::create($data);
+        Account::create($data);
 
         $user->assignRole($request->role);
 
@@ -77,8 +75,8 @@ class UserController extends Controller
         return ResponseFacade::showRespond(
             fractal(
                 User::where('id', $id)
-                    ->with('roles', 'permissions', 'roles.permissions')
-                ->first(),
+                    ->with('accounts', 'roles', 'permissions', 'roles.permissions')
+                    ->first(),
                 new UserTransformer()
             )
         );
@@ -99,16 +97,13 @@ class UserController extends Controller
         $user = User::find($id);
         $data = $request->except('role');
 
-        if (\request()->hasFile('image')){
-            Storage::disk('public')->delete(config('paths.user-image.delete').$user->image);
-            $data['image'] = download_file(\request()->file('image'), config('paths.user-image.create'));
-        }
+        $user->update($data);
 
         if ($request->password){
             $data['password'] = bcrypt($data['password']);
+            $account = Account::where('user_id', $id)->first();
+            $account->update($data);
         }
-
-        $user->update($data);
 
         if ($request->role){
             $user->syncRoles($request->role);
@@ -116,7 +111,7 @@ class UserController extends Controller
 
         return ResponseFacade::updateRespond(
             fractal(
-                User::where('id', $user->id)->with(['roles', 'roles.permissions', 'permissions'])->first(),
+                User::where('id', $user->id)->with(['accounts', 'roles', 'roles.permissions', 'permissions'])->first(),
                 new UserTransformer()
             )
         );
@@ -132,10 +127,6 @@ class UserController extends Controller
     public function destroy($id)
     {
         $this->authorize('destroy', User::class);
-
-        $user = User::find($id);
-
-        Storage::disk('public')->delete(config('paths.user-image.delete').$user->image);
 
         User::find($id)->delete();
 

@@ -42,10 +42,10 @@ export default {
           return this.$store.getters.auth.userData;
       },
       user_displayName() {
-          return this.$store.getters['auth/userData']?this.$store.getters['auth/userData'].name:'';
+          return this.$store.getters['auth/userData']?`${this.$store.getters['auth/userData'].first_name} ${this.$store.getters['auth/userData'].last_name}`:'';
       },
       user_email() {
-          return this.$store.getters['auth/userData'].email;
+          return this.$store.getters['auth/userData'].accounts[0].email;
       },
       activeUserImg() {
           return this.$store.getters['auth/userData'].image?`/storage/user/profile-picture/${this.$store.getters['auth/userData'].image}`:this.$store.getters.defaultPhoto;
