@@ -36,8 +36,55 @@ mix.js('resources/js/app.js', 'public/js')
     .copyDirectory('node_modules/material-icons/iconfont', 'public/css/material-icons') // Material Icon fonts
     .copyDirectory('node_modules/material-icons/iconfont/material-icons.css', 'public/css/material-icons/material-icons.css') // Material Icon fonts css
     .copy('node_modules/prismjs/themes/prism-tomorrow.css', 'public/css/prism-tomorrow.css') // Prism Tomorrow theme css
-    .copyDirectory('resources/assets/images', 'public/images'); // Copy all images from resources to public folder
+    .copyDirectory('resources/assets/images', 'public/images') // Copy all images from resources to public folder
 
+
+    .copy('resources/assets/css/website/bootstrap.css', 'public/css/website/bootstrap.css') // website bootstrap css
+    .copy('resources/assets/css/website/bootstrap-select.css', 'public/css/website/bootstrap-select.css') // website bootstrap css
+    .copy('resources/assets/css/website/bootstrap-datetimepicker.min.css', 'public/css/website/bootstrap-datetimepicker.min.css') // website bootstrap css
+    .copy('resources/assets/css/website/responsive.css', 'public/css/website/responsive.css') // website responsive css
+    .copy('resources/assets/css/website/style.css', 'public/css/website/style.css') // website style css
+    .copy('resources/assets/css/website/_button.css', 'public/css/website/_button.css') // website style css
+    .copy('resources/assets/css/website/_feature.css', 'public/css/website/_feature.css') // website style css
+    .copy('resources/assets/css/website/_footer.css', 'public/css/website/_footer.css') // website style css
+    .copy('resources/assets/css/website/_team.css', 'public/css/website/_team.css') // website style css
+    .copy('resources/assets/css/website/_testimonials.css', 'public/css/website/_testimonials.css') // website style css
+    .copy('resources/assets/css/website/breadcrumb.css', 'public/css/website/breadcrumb.css') // website style css
+    .copy('resources/assets/css/website/animate.css', 'public/css/website/animate.css') // website style css
+    .copy('resources/assets/css/website/animated.css', 'public/css/website/animated.css') // website style css
+    .copy('resources/assets/css/website/font-awesome.min.css', 'public/css/website/font-awesome.min.css') // website style css
+    .copy('resources/assets/css/website/jquery-ui.css', 'public/css/website/jquery-ui.css') // website style css
+    .copy('resources/assets/css/website/nice-select.css', 'public/css/website/nice-select.css') // website style css
+    .copy('resources/assets/css/website/owl.carousel.css', 'public/css/website/owl.carousel.css') // website style css
+    .copy('resources/assets/css/website/owl-carousel.min.css', 'public/css/website/owl-carousel.min.css') // website style css
+    .copy('resources/assets/css/website/simpleLightbox.css', 'public/css/website/simpleLightbox.css') // website style css
+
+
+
+
+    .copy('resources/assets/js/website/bootstrap.min.js', 'public/js/website/bootstrap.min.js') // website jquery js
+    .copy('resources/assets/js/website/bootstrap-datetimepicker.min.js', 'public/js/website/bootstrap-datetimepicker.min.js') // website jquery js
+    .copy('resources/assets/js/website/bootstrap-select.js', 'public/js/website/bootstrap-select.js') // website jquery js
+    .copy('resources/assets/js/website/contact.js', 'public/js/website/contact.js') // website jquery js
+    .copy('resources/assets/js/website/custom.js', 'public/js/website/custom.js') // website jquery js
+    .copy('resources/assets/js/website/gmaps.min.js', 'public/js/website/gmaps.min.js') // website jquery js
+    .copy('resources/assets/js/website/imagesloaded.pkgd.min.js', 'public/js/website/imagesloaded.pkgd.min.js') // website jquery js
+    .copy('resources/assets/js/website/jquery.ajaxchimp.min.js', 'public/js/website/jquery.ajaxchimp.min.js') // website jquery js
+    .copy('resources/assets/js/website/jquery.form.js', 'public/js/website/jquery.form.js') // website jquery js
+    .copy('resources/assets/js/website/jquery.nice-select.js', 'public/js/website/jquery.nice-select.js') // website jquery js
+    .copy('resources/assets/js/website/jquery.nice-select.min.js', 'public/js/website/jquery.nice-select.min.js') // website jquery js
+    .copy('resources/assets/js/website/jquery.validate.min.js', 'public/js/website/jquery.validate.min.js') // website jquery js
+    .copy('resources/assets/js/website/jquery-3.2.1.min.js', 'public/js/website/jquery-3.2.1.min.js') // website jquery js
+    .copy('resources/assets/js/website/jquery-ui.js', 'public/js/website/jquery-ui.js') // website jquery js
+    .copy('resources/assets/js/website/owl.carousel.min.js', 'public/js/website/owl.carousel.min.js') // website jquery js
+    .copy('resources/assets/js/website/mail-script.js', 'public/js/website/mail-script.js') // website jquery js
+    .copy('resources/assets/js/website/popper.js', 'public/js/website/popper.js') // website jquery js
+    .copy('resources/assets/js/website/stellar.js', 'public/js/website/stellar.js') // website jquery js
+    .copy('resources/assets/js/website/theme.js', 'public/js/website/theme.js') // website main js
+    .copy('resources/assets/js/website/stellar.js', 'public/js/website/stellar.js') // website main js
+    .copy('resources/assets/js/website/wow.min.js', 'public/js/website/wow.min.js') // website main js
+    .copy('resources/assets/js/website/isotope-min.js', 'public/js/website/isotope-min.js') // website main js
+    .copy('resources/assets/js/website/simpleLightbox.min.js', 'public/js/website/simpleLightbox.min.js'); // website main js
 
 // Change below options according to your requirement
 // if (mix.inProduction()) {
@@ -63,4 +110,8 @@ mix.webpackConfig({
         chunkFilename: 'js/chunks/[name].js',
     }
 });
+
+mix.options({ processCssUrls: false });
+
+mix.version();
 

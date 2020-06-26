@@ -1,67 +1,26 @@
-
-<!-- navbar area start -->
-<nav class="navbar navbar-area navbar-expand-lg nav-style-01">
-    <div class="container nav-container">
-        <div class="responsive-mobile-menu">
-            <div class="mobile-logo">
-                <a style="font-weight: bold;color: black;font-size: 25px;" href="{{route('home')}}">
-                    Mayor
-                </a>
+<!--================Header Menu Area =================-->
+<header class="header_area">
+    <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container box_1620">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <a class="navbar-brand logo_h" href="{{route('home')}}"><img style="max-width: 160px;" src="/images/website/mayor.jpg" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav menu_nav ml-auto">
+                        <li class="nav-item {{Request::is('/')?'active':''}}"><a class="nav-link" href="{{route('home')}}">Home</a></li>
+                        <li class="nav-item {{Request::is('about')?'active':''}}"><a class="nav-link" href="{{route('about')}}">About</a></li>
+                        <li class="nav-item {{Request::is('properties')||Request::is('properties/*')?'active':''}}"><a class="nav-link" href="{{route('properties')}}">Properties</a></li>
+                        <li class="nav-item {{Request::is('contact-us')?'active':''}}"><a class="nav-link" href="{{route('contact')}}">Contact</a></li>
+                    </ul>
+                </div>
             </div>
-            <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#tp_main_menu"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggle-icon">
-                        <span class="line"></span>
-                        <span class="line"></span>
-                        <span class="line"></span>
-                    </span>
-            </button>
-            <div class="nav-right-content">
-                <ul class="pl-0">
-                    <li class="top-bar-btn-booking">
-                        <a class="btn btn-yellow" href="{{route('home')}}">Create Your Package <i class="fa fa-paper-plane"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="collapse navbar-collapse" id="tp_main_menu">
-            <div class="logo-wrapper desktop-logo">
-                <a style="font-weight: bold;color: white;font-size: 22px;" href="{{route('home')}}" class="main-logo">
-                    Mayor
-                </a>
-                <a style="font-weight: bold;color: black;font-size: 22px;" href="{{route('home')}}" class="sticky-logo">
-                    Mayor
-                </a>
-            </div>
-            <ul class="navbar-nav">
-                <li>
-                    <a href="{{route('home')}}">Home</a>
-                </li>
-                <li>
-                    <a href="{{route('about')}}">About Us</a>
-                </li>
-                <li>
-                    <a href="{{route('package_list')}}">Packages</a>
-                </li>
-                <li>
-                    <a href="{{route('blog')}}">Blog</a>
-                </li>
-                <li>
-                    <a href="{{route('contact_us')}}">Contact Us</a>
-                </li>
-                <li id="insurance-button">
-                    <a href="#insurance">Insurance</a>
-                </li>
-            </ul>
-        </div>
-        <div class="nav-right-content">
-            <ul>
-                <li>
-                    <a class="btn btn-yellow" href="{{route('create_package')}}">Build Your Package <i class="fa fa-paper-plane"></i></a>
-                </li>
-            </ul>
-        </div>
+        </nav>
     </div>
-</nav>
-<!-- navbar area end -->
+</header>
+<!--================Header Menu Area =================-->
