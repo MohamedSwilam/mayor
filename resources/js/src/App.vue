@@ -16,7 +16,6 @@
 
 <script>
 import themeConfig from '@/../themeConfig.js'
-
 export default {
   data () {
     return {

@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+/*font Variables*/
+/*Color Variables*/
+/*=================== fonts ====================*/
+/* Main Button Area css ============================================================================================ */
+.main_btn {
+    display: inline-block;
+    background: #f7c956;
+    padding: 0px 50px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 48px;
+    border-radius: 0px;
+    outline: none !important;
+    box-shadow: none !important;
+    text-align: center;
+    border: 1px solid #f7c956;
+    cursor: pointer;
+    transition: all 300ms linear 0s;
+}
+.main_btn:hover {
+    background: transparent;
+    color: #f7c956;
+}
+.main_btn2 {
+    display: inline-block;
+    background: #f7c956;
+    padding: 0px 32px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 38px;
+    border-radius: 0px;
+    outline: none !important;
+    box-shadow: none !important;
+    text-align: center;
+    border: 1px solid #f7c956;
+    cursor: pointer;
+    transition: all 300ms linear 0s;
+}
+.main_btn2:hover {
+    background: transparent;
+    color: #f7c956;
+}
+.submit_btn {
+    width: auto;
+    display: inline-block;
+    background: #f7c956;
+    padding: 0px 50px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 50px;
+    border-radius: 0px;
+    outline: none !important;
+    box-shadow: none !important;
+    text-align: center;
+    border: 1px solid #f7c956;
+    cursor: pointer;
+    transition: all 300ms linear 0s;
+}
+.submit_btn:hover {
+    background: transparent;
+    color: #f7c956;
+}
+.white_bg_btn {
+    display: inline-block;
+    background: #f9f9ff;
+    padding: 0px 35px;
+    color: #222;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 34px;
+    border-radius: 0px;
+    outline: none !important;
+    box-shadow: none !important;
+    text-align: center;
+    border: 1px solid #eee;
+    cursor: pointer;
+    transition: all 300ms linear 0s;
+}
+.white_bg_btn:hover {
+    background: #f7c956;
+    color: #fff;
+    border-color: #f7c956;
+}
+/* End Main Button Area css ============================================================================================ */
+

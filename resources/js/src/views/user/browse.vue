@@ -5,6 +5,7 @@
                 <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="9">
                     <b class="text-left vx-col w-full">{{users.length}} results found in {{resultTime}}ms</b>
                 </vs-col>
+
                 <vs-col v-if="can('create-user')" vs-type="flex" vs-justify="center" vs-align="center" vs-w="3">
                     <vs-button to="/dashboard/user/create" vs-w="3" color="primary" type="filled" icon-pack="feather" icon="icon-user-plus">&nbsp;&nbsp;Add User</vs-button>
                 </vs-col>
