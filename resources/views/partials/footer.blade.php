@@ -53,7 +53,7 @@
         </div>
         <div class="row footer-bottom d-flex justify-content-between align-items-center">
             <p class="col-lg-12 footer-text text-center"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This site is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a target="_blank" href="https://www.linkedin.com/in/mohamedswilam/">Mohamed Swilam</a> and <a target="_blank" href="#">Hossam Mohamed</a>
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This site is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a target="_blank" href="https://www.linkedin.com/in/mohamedswilam/">Mohamed Swilam</a> and <a target="_blank" href="https://www.linkedin.com/in/hossammohamedsayed/">Hossam Mohamed</a>
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
         </div>
     </div>

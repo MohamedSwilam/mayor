@@ -69,7 +69,7 @@
         methods: {
             getUsersData(InitialTime){
                 this.$vs.loading({container: this.$refs.browse, scale: 0.5});
-                this.$store.dispatch('user/getData', '')
+                this.$store.dispatch('user/getData','')
                     .then(response => {
                         this.$vs.loading.close(this.$refs.browse);
                         this.resultTime = Date.now() - InitialTime;
