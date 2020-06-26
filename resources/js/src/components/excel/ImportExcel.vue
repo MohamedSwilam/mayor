@@ -67,7 +67,7 @@ export default {
       const files = e.dataTransfer.files
       if (files.length !== 1) {
         this.$vs.notify({
-          title: 'Login Attempt',
+          title: 'Account Attempt',
           text: 'Only support uploading one file!',
           iconPack: 'feather',
           icon: 'icon-alert-circle',
@@ -78,7 +78,7 @@ export default {
       const rawFile = files[0] // only use files[0]
       if (!this.isExcel(rawFile)) {
         this.$vs.notify({
-          title: 'Login Attempt',
+          title: 'Account Attempt',
           text: 'Only supports upload .xlsx, .xls, .csv suffix files',
           iconPack: 'feather',
           icon: 'icon-alert-circle',

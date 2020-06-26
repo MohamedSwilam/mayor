@@ -9,5 +9,10 @@ return [
         'name' => 'Admin',
         'guard_name' => 'api',
         'is_core' => 1,
+    ],
+    [
+        'name' => 'Client',
+        'guard_name' => 'api',
+        'is_core' => 1,
     ]
 ];

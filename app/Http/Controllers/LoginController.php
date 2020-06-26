@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
+use App\Account;
 use App\Responses\Facades\ResponseFacade;
 use App\User;
 use Illuminate\Http\JsonResponse;
@@ -23,17 +24,22 @@ class LoginController extends Controller
     {
         $login_credentials = $request->validated();
 
-        if (!Auth::guard('web')->attempt($login_credentials)){
-            return response()->json(['error' => 'Incorrect email or password'], Response::HTTP_UNAUTHORIZED);
-//            return $this->respond('Incorrect email or password', [], Response::HTTP_UNAUTHORIZED);
+        $data = Account::where('email', $login_credentials['email'])
+            ->first();
+
+        if (!empty($data)) {
+            if (password_verify($login_credentials['password'], $data->password)) {
+                $user = User::where('id', $data->user_id)->with(['accounts', 'roles','roles.permissions', 'permissions'])->first();
+
+                return ResponseFacade::respond("login credentials correct", [
+                    'user' => $user,
+                    'access_token' => $user->createToken('token'),
+                    'token_type' => 'Bearer',
+                ], 200);
+            }
         }
 
-        $user = User::where('email', $login_credentials['email'])->with(['roles','roles.permissions', 'permissions'])->first();
+        return response()->json(['error' => 'Incorrect email or password'], Response::HTTP_UNAUTHORIZED);
 
-        return ResponseFacade::respond("login credentials correct", [
-            'user' => $user,
-            'access_token' => $user->createToken('token'),
-            'token_type' => 'Bearer',
-        ], 200);
     }
 }

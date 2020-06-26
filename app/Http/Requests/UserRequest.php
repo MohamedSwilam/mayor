@@ -26,19 +26,19 @@ class UserRequest extends FormRequest
         $segments = request()->segments();
         if (sizeof($segments) == 2){
             return [
-                'email' => 'required|email|unique:users,email',
+                'email' => 'required|email|unique:accounts,email',
                 'password' => 'required|min:8',
-                'name' => 'required',
-                'image' => 'max:2048|mimes:jpeg,png',
+                'first_name' => 'required',
+                'last_name' => 'required',
                 'role' => 'required|exists:roles,name',
             ];
         }
         else if (sizeof($segments) == 3){
             return [
-                'email' => 'email|unique:users,email,'.$segments[2],
+                'email' => 'email|unique:accounts,email,'.$segments[2],
                 'password' => 'min:8',
-                'name' => '',
-                'image' => 'max:2048|mimes:jpeg,png',
+                'first_name' => '',
+                'last_name' => '',
                 'role' => 'exists:roles,name',
             ];
         }

@@ -1,52 +1,73 @@
 <template>
     <div v-if="can('browse-user')">
-        <div class="centerx">
-            <vs-row>
-                <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="9">
-                    <b class="text-left vx-col w-full">{{users.length}} results found in {{resultTime}}ms</b>
-                </vs-col>
-
-                <vs-col v-if="can('create-user')" vs-type="flex" vs-justify="center" vs-align="center" vs-w="3">
-                    <vs-button to="/dashboard/user/create" vs-w="3" color="primary" type="filled" icon-pack="feather" icon="icon-user-plus">&nbsp;&nbsp;Add User</vs-button>
-                </vs-col>
-            </vs-row>
-        </div>
-
         <!-- USER PROFILE CARD 2 - MINIMAL -->
-        <div class="vx-row" ref="browse">
-            <div class="vx-col w-full sm:w-1/2 md:w-1/3 mb-base" v-for="user in users">
-                <vx-card class="p-2">
-                    <vs-avatar class="mx-auto mb-6 block" size="80px" :src="user.image" />
-                    <div class="text-center">
-                        <h4>{{ user.name }}</h4>
-                        <p class="text-grey">{{ user.roles[0].name }}</p>
-                    </div>
-                    <br>
-                    <div class="text-left vx-col w-full">
-                        <i class="fas fa-envelope"></i> Email
-                        <p class="text-grey txt-hover" @click="copyToClipboard(user.email)">{{ user.email }}</p>
-                    </div>
-                    <br>
-                    <template slot="footer">
-                        <vs-divider />
+        <vx-card ref="browse" title="Users List" collapse-action refreshContentAction @refresh="getUsersData">
 
-                        <div class="flex justify-between">
-                            <span v-if="can('delete-user')" class="flex items-center">
-                                <vx-tooltip color="danger" :text="'Delete'">
-                                    <vs-button :id="`btn-delete-${user.id}`" class="vs-con-loading__container" @click="is_requesting?$store.dispatch('viewWaitMessage', $vs):confirmDeleteUser(user)" color="danger" type="filled" icon-pack="feather" icon="icon-trash"></vs-button>
-                                </vx-tooltip>
-                            </span>
-                            <span v-if="can('edit-user')||$store.getters['auth/userData'].id===$route.params.id" class="flex items-center">
-                                <vs-button :to="`/dashboard/user/${user.id}/edit`" color="warning" type="filled" icon-pack="feather" icon="icon-edit"></vs-button>
-                            </span>
-                            <span v-if="can('view-user')||$store.getters['auth/userData'].id===$route.params.id" class="flex items-center">
-                                <vs-button :to="`/dashboard/user/${user.id}`" type="gradient" icon-pack="feather" icon="icon-eye">View</vs-button>
-                            </span>
-                        </div>
-                    </template>
-                </vx-card>
-            </div>
-        </div>
+            <vs-table search :data="users" class="mb-5">
+                <template slot="header">
+                    <vs-button v-if="can('create-user')" size="small" to="/dashboard/user/create" icon-pack="feather" icon="icon-user-plus" type="filled">Add User</vs-button>
+                </template>
+                <template slot="thead">
+                    <vs-th sort-key="id">ID</vs-th>
+                    <vs-th sort-key="first_name">Name</vs-th>
+                    <vs-th>Email</vs-th>
+                    <vs-th>Role</vs-th>
+                    <vs-th sort-key="is_male">Gender</vs-th>
+                    <vs-th sort-key="created_at">Created At</vs-th>
+                    <vs-th>Action</vs-th>
+                </template>
+                <template slot-scope="{data}">
+                    <vs-tr :key="index" v-for="(user, index) in users">
+                        <vs-td :data="user.id">
+                            {{ user.id }}
+                        </vs-td>
+
+                        <vs-td :data="user.first_name">
+                            {{ user.first_name }} {{ user.last_name }}
+                        </vs-td>
+
+                        <vs-td>
+                            {{ user.accounts[0].email }}
+                        </vs-td>
+
+                        <vs-td>
+                            {{user.roles[0].name}}
+                        </vs-td>
+
+                        <vs-td>
+                            {{user.is_male?'Male':'Female'}}
+                        </vs-td>
+
+                        <vs-td :data="user.created_at">
+                            {{ user.created_at | date(true)}} - {{ user.created_at | time}}
+                        </vs-td>
+
+                        <vs-td>
+                            <vs-row>
+                                <div class="flex mb-4">
+                                    <div class="w-1/3" v-if="can('view-user')">
+                                        <vx-tooltip color="primary" :text="'View User'">
+                                            <vs-button :to="`/dashboard/user/${user.id}`" radius color="primary" type="border" icon-pack="feather" icon="icon-eye"></vs-button>
+                                        </vx-tooltip>
+                                    </div>
+                                    <div class="w-1/3 ml-5" v-if="can('edit-user')">
+                                        <vx-tooltip color="warning" :text="'Edit User'">
+                                            <vs-button :to="`/dashboard/user/${user.id}/edit`" radius color="warning" type="border" icon-pack="feather" icon="icon-edit"></vs-button>
+                                        </vx-tooltip>
+                                    </div>
+                                    <div class="w-1/3 ml-5" v-if="can('delete-user')">
+                                        <vx-tooltip color="danger" :text="'Delete User'">
+                                            <vs-button :id="`btn-delete-${user.id}`" class="vs-con-loading__container" radius color="danger" type="border" icon-pack="feather" icon="icon-trash" @click="is_requesting?$store.dispatch('viewWaitMessage', $vs):confirmDeleteUser(user)"></vs-button>
+                                        </vx-tooltip>
+                                    </div>
+                                </div>
+                            </vs-row>
+                        </vs-td>
+                    </vs-tr>
+                </template>
+            </vs-table>
+            <b class="text-left vx-col w-full">{{users.length}} results found in {{resultTime}}ms</b>
+        </vx-card>
     </div>
 </template>
 
@@ -68,16 +89,16 @@
         },
         methods: {
             getUsersData(InitialTime){
-                this.$vs.loading({container: this.$refs.browse, scale: 0.5});
+                this.$vs.loading({container: this.$refs.browse.$refs.content, scale: 0.5});
                 this.$store.dispatch('user/getData', '')
                     .then(response => {
-                        this.$vs.loading.close(this.$refs.browse);
+                        this.$vs.loading.close(this.$refs.browse.$refs.content);
                         this.resultTime = Date.now() - InitialTime;
                         this.users = response.data.data.data;
                     })
                     .catch(error => {
                         console.log(error);
-                        this.$vs.loading.close(this.$refs.browse);
+                        this.$vs.loading.close(this.$refs.browse.$refs.content);
                         this.$vs.notify({
                             title: 'Error',
                             text: error.response.data.error,

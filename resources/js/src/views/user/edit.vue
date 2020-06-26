@@ -13,21 +13,15 @@
 
                 <div class="vx-row">
                     <div class="vx-col sm:w-1/2 w-full mb-6">
-                        <div class="image-preview" style="display: inline-flex;">
-                            <img v-if="uploadedImage" alt="user photo" class="preview" :src="uploadedImage">
-                        </div>
-                        <div style="display: inline-flex;position: relative;top: -15px;">
-                            <input id="img-upload" type="file" @change="previewImage" accept="image/*">
-                            <vs-button size="small" icon-pack="feather" icon="icon-upload" type="gradient" onclick="document.getElementById('img-upload').click()">Upload User Photo</vs-button>
-                        </div>
+                        <vs-input name="first_name" v-validate="'required|min:3'" :danger="errors.has('first_name')" val-icon-danger="clear" :danger-text="errors.first('first_name')" class="w-full" icon-pack="feather" icon="icon-user" label-placeholder="First Name" v-model="form.first_name" />
+                    </div>
+                    <div class="vx-col sm:w-1/2 w-full mb-6">
+                        <vs-input name="last_name" v-validate="'required|min:3'" :danger="errors.has('last_name')" val-icon-danger="clear" :danger-text="errors.first('last_name')" class="w-full" icon-pack="feather" icon="icon-user" label-placeholder="Last Name" v-model="form.last_name" />
                     </div>
                 </div>
 
                 <div class="vx-row">
-                    <div class="vx-col sm:w-1/2 w-full mb-6">
-                        <vs-input name="name" v-validate="'required|min:3'" :danger="errors.has('name')" val-icon-danger="clear" :danger-text="errors.first('name')" class="w-full" icon-pack="feather" icon="icon-user" label-placeholder="User Name" v-model="form.name" />
-                    </div>
-                    <div class="vx-col sm:w-1/2 w-full mb-6">
+                    <div class="vx-col w-full mb-6">
                         <vs-input name="email" v-validate="'required|email'" :danger="errors.has('email')" val-icon-danger="clear" :danger-text="errors.first('email')" class="w-full" icon-pack="feather" icon="icon-mail" label-placeholder="Email" v-model="form.email" />
                     </div>
                 </div>
@@ -66,14 +60,13 @@
             return {
                 roles: [],
                 form: {
+                    first_name: '',
+                    last_name: '',
                     email: '',
                     password: '',
                     confirm_password: '',
-                    name: '',
-                    image: null,
                     role: '',
                 },
-                uploadedImage: null,
                 is_requesting: false
             }
         },
@@ -106,8 +99,7 @@
                         this.$vs.loading.close(this.$refs.edit.$refs.content);
                         this.form = response.data.data.data;
                         this.form.role = response.data.data.data.roles[0].name;
-                        this.uploadedImage = this.form.image?this.form.image:'/images/avatar-s-11.png';
-                        this.form.image = null;
+                        this.form.email = response.data.data.data.accounts[0].email;
                     })
                     .catch(error => {
                         console.log(error);
@@ -130,16 +122,7 @@
                 let form_data = new FormData();
 
                 for (let key in this.form ) {
-                    if ((key === 'image') && this.form.hasOwnProperty(key)){
-                        if (this.form[key]) {
-                            for (let i=0; i<this.form[key].length; i++){
-                                form_data.append(key, this.form[key][i]);
-                            }
-                        }
-                    } else if(key === 'phones'){
-                        form_data.append(key, JSON.stringify(this.form[key]));
-                    }
-                    else if(key === 'password'){
+                    if(key === 'password'){
                         if (this.form[key]!=='') {
                             form_data.append(key, this.form[key]);
                         }
@@ -176,25 +159,6 @@
                     });
             },
 
-            previewImage: function(event) {
-                // Reference to the DOM input element
-                var input = event.target;
-                // Ensure that you have a file before attempting to read it
-                if (input.files && input.files[0]) {
-                    // create a new FileReader to read this image and convert to base64 format
-                    var reader = new FileReader();
-                    // Define a callback function to run, when FileReader finishes its job
-                    reader.onload = (e) => {
-                        // Note: arrow function used here, so that "this.imageData" refers to the imageData of Vue component
-                        // Read image as base64 and set to imageData
-                        this.uploadedImage = e.target.result;
-                        this.form.image = input.files;
-                    };
-                    // Start the reader job - read file as a data url (base64 format)
-                    reader.readAsDataURL(input.files[0]);
-                }
-            },
-
             removeTelephone (item) {
                 this.form.phones.splice(this.form.phones.indexOf(item), 1)
             },
@@ -213,23 +177,4 @@
 </script>
 
 <style>
-    .image-preview {
-        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-        padding-right: 20px;
-        top: 6px;
-        position: relative;
-    }
-
-    #img-upload {
-        display: none;
-    }
-
-    img.preview {
-        width: 55px;
-        height: 55px;
-        border-radius: 50%;
-        background-color: white;
-        border: 1px solid #DDD;
-        padding: 5px;
-    }
 </style>
