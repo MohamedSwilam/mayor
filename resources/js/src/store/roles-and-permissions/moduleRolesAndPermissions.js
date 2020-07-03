@@ -4,8 +4,6 @@ import mutations from './moduleRolesAndPermissionsMutations'
 import actions from './moduleRolesAndPermissionsActions'
 import getters from './moduleRolesAndPermissionsGetters'
 
-
-
 export default {
     namespaced: true,
     state: state,
