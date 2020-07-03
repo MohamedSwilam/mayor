@@ -9,7 +9,7 @@
                       <input id="img-upload" type="file" @change="previewImage" accept="image/*">
                   </vs-col>
                   <vs-col vs-w="12" class="mb-10" vs-type="flex" vs-align="center" vs-justify="center">
-                      <vs-button size="small" icon-pack="feather" icon="icon-upload" onclick="document.getElementById('img-upload').click()">Upload Photo</vs-button>
+                      <vs-button size="small" icon-pack="feather" icon="icon-upload" type="gradient" onclick="document.getElementById('img-upload').click()">Upload Photo</vs-button>
                   </vs-col>
                   <vs-col vs-lg="6" vs-sm="12" vs-xs="12" class="px-2 mb-5">
                       <vs-input

@@ -11,20 +11,7 @@
                     <vs-col vs-w="12" class="mb-10" vs-type="flex" vs-align="center" vs-justify="center">
                         <vs-button size="small" icon-pack="feather" icon="icon-upload" onclick="document.getElementById('img-upload').click()">Upload Photo</vs-button>
                     </vs-col>
-                    <vs-col vs-lg="6" vs-sm="12" vs-xs="12" class="px-2 mb-5">
-                        <vs-input
-                            v-validate="'required'"
-                            class="w-full"
-                            :danger="errors.has('name')"
-                            :danger-text="errors.first('name')"
-                            val-icon-danger="clear"
-                            icon-pack="feather"
-                            icon="icon-user"
-                            label-placeholder="Name"
-                            v-model="form.name"
-                            name='name' />
-                    </vs-col>
-                    <vs-col vs-lg="6" vs-sm="12" vs-xs="12" class="px-2 mb-5">
+                    <vs-col vs-lg="12" vs-sm="12" vs-xs="12" class="px-2 mb-5">
                         <vs-input
                             v-validate="'required'"
                             class="w-full"
@@ -32,13 +19,16 @@
                             :danger-text="errors.first('title')"
                             val-icon-danger="clear"
                             icon-pack="feather"
-                            icon="icon-briefcase"
+                            icon="icon-home"
                             label-placeholder="Title"
                             v-model="form.title"
                             name='title' />
                     </vs-col>
-                    <vs-col vs-w="12" class="px-2 mb-5">
-                        <vs-textarea v-validate="'required'" counter="350" :danger="errors.has('title')" :danger-text="errors.first('title')" val-icon-danger="clear" label="Feedback" :counter-danger.sync="counterDanger" v-model="form.feedback" name="feedback" />
+                    <vs-col vs-w="6" class="px-2 mb-5">
+                        <vs-textarea v-validate="'required'" counter="35" :danger="errors.has('information')" :danger-text="errors.first('information')" val-icon-danger="clear" label="Information" :counter-danger.sync="counterDanger" v-model="form.information" name="information" />
+                    </vs-col>
+                    <vs-col vs-w="6" class="px-2 mb-5">
+                        <vs-textarea v-validate="'required'" counter="350" :danger="errors.has('description')" :danger-text="errors.first('description')" val-icon-danger="clear" label="Description" :counter-danger.sync="counterDanger" v-model="form.description" name="description" />
                     </vs-col>
                 </vs-row>
                 <vs-divider></vs-divider>
@@ -58,7 +48,7 @@
                 form: {
                     name: '',
                     title: '',
-                    feedback: '',
+                    information: '',
                     image: null
                 },
 
