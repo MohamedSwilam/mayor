@@ -50,6 +50,10 @@ Vue.use(VueHammer)
 import 'prismjs'
 import 'prismjs/themes/prism-tomorrow.css'
 
+// Clipboard
+import VueClipboard from 'vue-clipboard2'
+Vue.use(VueClipboard);
+
 // VeeValidate
 import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate);

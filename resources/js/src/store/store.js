@@ -21,6 +21,9 @@ Vue.use(Vuex)
 
 import moduleAuth from './auth/moduleAuth';
 import moduleUser from './user/moduleUser';
+import moduleProperty from './property/moduleProperty';
+import moduleFeedback from './feedback/moduleFeedback';
+import moduleMessage from './message/moduleMessage';
 import moduleRolesAndPermissions from './roles-and-permissions/moduleRolesAndPermissions';
 
 const vuexLocal = new VuexPersistence({
@@ -35,6 +38,9 @@ export default new Vuex.Store({
     modules: {
         auth: moduleAuth,
         user: moduleUser,
+        feedback: moduleFeedback,
+        property: moduleProperty,
+        message: moduleMessage,
         rolesAndPermissions: moduleRolesAndPermissions,
     },
     plugins: [vuexLocal.plugin],

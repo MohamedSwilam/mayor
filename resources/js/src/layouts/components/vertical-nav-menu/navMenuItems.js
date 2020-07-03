@@ -20,19 +20,37 @@ export default [
         name: "User",
         slug: "user",
         icon: "UserIcon",
-        i18n: "User",
         permission: 'browse-user'
+    },
+    {
+        url: "/dashboard/property",
+        name: "Property",
+        slug: "property",
+        icon: "HomeIcon",
+        // permission: 'browse-property'
+    },
+    {
+        url: "/dashboard/feedback",
+        name: "Feedback",
+        slug: "feedback",
+        icon: "SmileIcon",
+        // permission: 'browse-feedback'
+    },
+    {
+        url: "/dashboard/message",
+        name: "Messages",
+        slug: "message",
+        icon: "MessageSquareIcon",
+        // permission: 'browse-message'
     },
     {
         name: "Settings",
         icon: "SettingsIcon",
-        i18n: "Settings",
         submenu: [
             {
                 url: '/dashboard/settings/role',
                 name: "Roles & Permissions",
                 slug: "role",
-                i18n: "Roles",
                 permission: "browse-role"
             }
         ]

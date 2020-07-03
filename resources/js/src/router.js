@@ -46,6 +46,9 @@ const router = new Router({
                         pageTitle_i18n: 'Home'
                     }
                 },
+                // =============================================================================
+                // User Routes
+                // =============================================================================
                 {
                     path: '/dashboard/user',
                     name: 'user',
@@ -109,6 +112,120 @@ const router = new Router({
                         permission: 'edit-user'
                     }
                 },
+                // =============================================================================
+                // Property Routes
+                // =============================================================================
+                {
+                    path: '/dashboard/property',
+                    name: 'property',
+                    component: () => import('./views/property/browse.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'Property', active: true },
+                        ],
+                        pageTitle: 'Property',
+                        // permission: 'browse-property'
+                    }
+                },
+                {
+                    path: '/dashboard/property/create',
+                    name: 'add-property',
+                    component: () => import('./views/property/create.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'Property', url: '/dashboard/property' },
+                            { title: 'Add Property', active: true },
+                        ],
+                        pageTitle: 'Add Property',
+                        // permission: 'create-property'
+                    }
+                },
+                {
+                    path: '/dashboard/property/:id/edit',
+                    name: 'edit-property',
+                    component: () => import('./views/property/edit.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'Property', url: '/dashboard/property' },
+                            { title: 'Edit Property', active: true },
+                        ],
+                        pageTitle: 'Edit Property',
+                        // permission: 'edit-property'
+                    }
+                },
+                // =============================================================================
+                // Feedback Routes
+                // =============================================================================
+                {
+                    path: '/dashboard/feedback',
+                    name: 'feedback',
+                    component: () => import('./views/feedback/browse.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'Feedback', active: true },
+                        ],
+                        pageTitle: 'Feedback',
+                        // permission: 'browse-feedback'
+                    }
+                },
+                {
+                    path: '/dashboard/feedback/create',
+                    name: 'add-feedback',
+                    component: () => import('./views/feedback/create.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'Feedback', url: '/dashboard/feedback' },
+                            { title: 'Add Feedback', active: true },
+                        ],
+                        pageTitle: 'Add Feedback',
+                        // permission: 'create-feedback'
+                    }
+                },
+                {
+                    path: '/dashboard/feedback/:id/edit',
+                    name: 'edit-feedback',
+                    component: () => import('./views/feedback/edit.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'Feedback', url: '/dashboard/feedback' },
+                            { title: 'Edit Feedback', active: true },
+                        ],
+                        pageTitle: 'Edit Feedback',
+                        // permission: 'edit-feedback'
+                    }
+                },
+                // =============================================================================
+                // Messages Routes
+                // =============================================================================
+                {
+                    path: '/dashboard/message',
+                    name: 'message',
+                    component: () => import('./views/message/browse.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'Message', active: true },
+                        ],
+                        pageTitle: 'Message',
+                        // permission: 'browse-message'
+                    }
+                },
+                // =============================================================================
+                // Settings Routes
+                // =============================================================================
                 {
                     path: '/dashboard/settings/role',
                     name: 'role',
