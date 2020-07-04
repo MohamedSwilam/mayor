@@ -71,6 +71,39 @@ export default {
 
     view(id) {
         // return axios.get(`property/${id}`)
+        return new Promise(function(resolve, reject) {
+            resolve({
+                data: {
+                    data: {
+                        data: {
+                            id: 1,
+                            title: 'Property 1',
+                            information: 'Property 1 Information',
+                            description: 'This is a detailed description for property 1',
+                            main_home_image: '/images/avatar-s-11.jpg',
+                            main_details_image: '/images/avatar-s-11.jpg',
+                            price: 500,
+                            dinner_price: 100,
+                            lunch_price: 100,
+                            no_of_rooms: 8,
+                            no_of_baths: 4,
+                            no_of_floors: 3,
+                            sqm: 450,
+                            location: 'https://goo.gl/maps/E6ahUxW8UqM8hnkD7',
+                            address: 'Heliopolis',
+                            address_desc: 'Heliopolis',
+                            images: [
+                                '/images/avatar-s-11.jpg',
+                                '/images/avatar-s-11.jpg',
+                                '/images/avatar-s-11.jpg',
+                                '/images/avatar-s-11.jpg'
+                            ],
+                            created_at: '2020-06-26 20:59:20'
+                        }
+                    }
+                }
+            })
+        });
     },
 
     create(data) {

@@ -159,6 +159,21 @@ const router = new Router({
                         // permission: 'edit-property'
                     }
                 },
+                {
+                    path: '/dashboard/property/:id',
+                    name: 'view-property',
+                    component: () => import('./views/property/view.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'Property', url: '/dashboard/property' },
+                            { title: 'Property Details', active: true },
+                        ],
+                        pageTitle: 'Property Details',
+                        // permission: 'edit-property'
+                    }
+                },
                 // =============================================================================
                 // Feedback Routes
                 // =============================================================================

@@ -1,15 +1,41 @@
 <template>
     <div>
-        <!--      v-if="can('create-feedback')"-->
+        <!--      v-if="can('create-property')"-->
         <div class="vx-col w-full mb-base">
             <vx-card ref="create" title='Add New Property'>
                 <vs-row>
-                    <vs-col vs-w="12" class="mb-3" vs-type="flex" vs-align="center" vs-justify="center">
-                        <img alt="uploaded photo" class="preview" :src="uploadedImage?uploadedImage:'/images/avatar-s-11.jpg'">
-                        <input id="img-upload" type="file" @change="previewImage" accept="image/*">
+                    <vs-col vs-lg="6" vs-sm="12" vs-xs="12" class="mb-3" vs-type="flex" vs-align="center" vs-justify="center">
+                        <img alt="uploaded photo" class="preview" :src="uploadedHomeImage?uploadedHomeImage:'/images/avatar-s-11.jpg'">
+                        <input id="main-home-img" class="img-upload" type="file" @change="previewHomeImage" accept="image/*">
                     </vs-col>
-                    <vs-col vs-w="12" class="mb-10" vs-type="flex" vs-align="center" vs-justify="center">
-                        <vs-button size="small" icon-pack="feather" icon="icon-upload" onclick="document.getElementById('img-upload').click()">Upload Photo</vs-button>
+                    <vs-col vs-lg="6" vs-sm="12" vs-xs="12" class="mb-3" vs-type="flex" vs-align="center" vs-justify="center">
+                        <img alt="uploaded photo" class="preview" :src="uploadedDetailImage?uploadedDetailImage:'/images/avatar-s-11.jpg'">
+                        <input id="main-detail-img" class="img-upload" type="file" @change="previewDetailImage" accept="image/*">
+                    </vs-col>
+                    <vs-col vs-lg="6" vs-sm="12" vs-xs="12" class="mb-10" vs-type="flex" vs-align="center" vs-justify="center">
+                        <vs-button size="small" icon-pack="feather" icon="icon-upload" onclick="document.getElementById('main-home-img').click()">Upload Main Home Photo</vs-button>
+                    </vs-col>
+                    <vs-col vs-lg="6" vs-sm="12" vs-xs="12" class="mb-10" vs-type="flex" vs-align="center" vs-justify="center">
+                        <vs-button size="small" icon-pack="feather" icon="icon-upload" onclick="document.getElementById('main-detail-img').click()">Upload Main Detail Photo</vs-button>
+                    </vs-col>
+                    <vs-divider></vs-divider>
+                    <vs-col vs-w="12" style="text-align: center;">
+                        <vs-row>
+                            <vs-col vs-w="12" vs-type="flex" vs-align="center" vs-justify="center" class="mb-5">
+                                <vs-button size="small" icon-pack="feather" icon="icon-upload" onclick="document.getElementById('property-images').click()">Upload Property Images</vs-button>
+                                <input id="property-images" type="file" class="form-control img-upload" @change="uploadPropertyImages" multiple>
+                            </vs-col>
+                            <vs-col vs-w="12">
+                                <template v-if="form.images.length>0">
+                                    <img v-for="image in form.images" alt="uploaded photo" class="preview px-2 m-1" style="display: inline-flex;" :src="image">
+                                </template>
+                                <template v-else>
+                                    <h5><b>No Images Uploaded!</b></h5>
+                                </template>
+                            </vs-col>
+                        </vs-row>
+
+                        <br>
                     </vs-col>
                     <vs-col vs-lg="12" vs-sm="12" vs-xs="12" class="px-2 mb-5">
                         <vs-input
@@ -24,11 +50,78 @@
                             v-model="form.title"
                             name='title' />
                     </vs-col>
-                    <vs-col vs-w="6" class="px-2 mb-5">
+                    <vs-col vs-lg="6" vs-sm="12" vs-xs="12" class="px-2 mb-5">
                         <vs-textarea v-validate="'required'" counter="35" :danger="errors.has('information')" :danger-text="errors.first('information')" val-icon-danger="clear" label="Information" :counter-danger.sync="counterDanger" v-model="form.information" name="information" />
                     </vs-col>
-                    <vs-col vs-w="6" class="px-2 mb-5">
+                    <vs-col vs-lg="6" vs-sm="12" vs-xs="12" class="px-2 mb-5">
                         <vs-textarea v-validate="'required'" counter="350" :danger="errors.has('description')" :danger-text="errors.first('description')" val-icon-danger="clear" label="Description" :counter-danger.sync="counterDanger" v-model="form.description" name="description" />
+                    </vs-col>
+                    <vs-col vs-lg="6" vs-sm="12" vs-xs="12" class="px-2 mb-5">
+                        <vs-input
+                            v-validate="'required'"
+                            class="w-full"
+                            :danger="errors.has('location')"
+                            :danger-text="errors.first('location')"
+                            val-icon-danger="clear"
+                            icon-pack="feather"
+                            icon="icon-map-pin"
+                            label-placeholder="Location link"
+                            v-model="form.location"
+                            name='title' />
+                    </vs-col>
+                    <vs-col vs-lg="6" vs-sm="12" vs-xs="12" class="px-2 mb-5">
+                        <vs-input
+                            v-validate="'required'"
+                            class="w-full"
+                            :danger="errors.has('address')"
+                            :danger-text="errors.first('address')"
+                            val-icon-danger="clear"
+                            icon-pack="feather"
+                            icon="icon-map"
+                            label-placeholder="Address Title"
+                            v-model="form.address"
+                            name='title' />
+                    </vs-col>
+                    <vs-col vs-lg="12" vs-sm="12" vs-xs="12" class="px-2 mb-5">
+                        <vs-textarea v-validate="'required'" counter="350" :danger="errors.has('address_desc')" :danger-text="errors.first('address_desc')" val-icon-danger="clear" label="Address Description" :counter-danger.sync="counterDanger" v-model="form.address_desc" name="description" />
+                    </vs-col>
+                    <vs-divider></vs-divider>
+                    <vs-col vs-lg="6" vs-sm="6" vs-xs="6" class="px-2 mb-5">
+                        <b>Has Pool? </b>
+                        <vs-switch style="display: inline-flex;vertical-align: middle;margin-left: 10px;" icon-pack="feather" vs-icon-on="icon-check-circle" vs-icon-off="icon-slash" v-model="form.has_pool">
+                            <span slot="on">YES</span>
+                            <span slot="off">NO</span>
+                        </vs-switch>
+                    </vs-col>
+                    <vs-col vs-lg="6" vs-sm="6" vs-xs="6" class="px-2 mb-5">
+                        <b>Has Garden? </b>
+                        <vs-switch style="display: inline-flex;vertical-align: middle;margin-left: 10px;" icon-pack="feather" vs-icon-on="icon-check-circle" vs-icon-off="icon-slash" v-model="form.has_garden">
+                            <span slot="on">YES</span>
+                            <span slot="off">NO</span>
+                        </vs-switch>
+                    </vs-col>
+                    <vs-divider></vs-divider>
+                    <vs-col vs-lg="3" vs-sm="6" vs-xs="12" class="px-2" vs-type="flex" vs-align="center" vs-justify="center">
+                        <vs-input-number style="width: fit-content;" v-model="form.sqm" label="Square Per Meter:"/>
+                    </vs-col>
+                    <vs-col vs-lg="3" vs-sm="6" vs-xs="12" class="px-2" vs-type="flex" vs-align="center" vs-justify="center">
+                        <vs-input-number style="width: fit-content;" v-model="form.no_of_rooms" label="Rooms:"/>
+                    </vs-col>
+                    <vs-col vs-lg="3" vs-sm="6" vs-xs="12" class="px-2" vs-type="flex" vs-align="center" vs-justify="center">
+                        <vs-input-number v-model="form.no_of_baths" label="Bathrooms:"/>
+                    </vs-col>
+                    <vs-col vs-lg="3" vs-sm="6" vs-xs="12" class="px-2" vs-type="flex" vs-align="center" vs-justify="center">
+                        <vs-input-number v-model="form.no_of_floors" label="Floors:"/>
+                    </vs-col>
+                    <vs-divider></vs-divider>
+                    <vs-col vs-lg="4" vs-sm="6" vs-xs="12" class="px-2" vs-type="flex" vs-align="center" vs-justify="center">
+                        <vs-input-number style="width: fit-content;" v-model="form.price" label="Property Price:"/>
+                    </vs-col>
+                    <vs-col vs-lg="4" vs-sm="6" vs-xs="12" class="px-2" vs-type="flex" vs-align="center" vs-justify="center">
+                        <vs-input-number v-model="form.dinner_price" label="Dinner Price:"/>
+                    </vs-col>
+                    <vs-col vs-lg="4" vs-sm="6" vs-xs="12" class="px-2" vs-type="flex" vs-align="center" vs-justify="center">
+                        <vs-input-number v-model="form.lunch_price" label="Lunch Price:"/>
                     </vs-col>
                 </vs-row>
                 <vs-divider></vs-divider>
@@ -46,13 +139,28 @@
         data() {
             return {
                 form: {
-                    name: '',
                     title: '',
                     information: '',
-                    image: null
+                    description: '',
+                    sqm: 0,
+                    main_home_image: null,
+                    main_detail_image: null,
+                    images: [],
+                    has_pool: false,
+                    has_garden: false,
+                    no_of_rooms: 1,
+                    no_of_baths: 1,
+                    no_of_floors: 1,
+                    price: 0,
+                    dinner_price: 0,
+                    lunch_price: 0,
+                    address_desc: '',
+                    address: '',
+                    location: ''
                 },
 
-                uploadedImage: null,
+                uploadedHomeImage: null,
+                uploadedDetailImage: null,
 
                 is_requesting: false,
                 counterDanger: false
@@ -60,12 +168,20 @@
         },
         computed: {
             validateForm() {
-                return !this.errors.any() && this.form.name !== "" && this.form.title !== "" && this.form.feedback !== "" && this.form.image !== null;
+                return !this.errors.any()
+                    && this.form.title !== ""
+                    && this.form.information !== ""
+                    && this.form.main_home_image !== null
+                    && this.form.main_detail_image !== null
+                    && this.form.images.length>0
+                    && this.form.address_desc === ""
+                    && this.form.address === ""
+                    && this.form.location === ""
             }
         },
         methods: {
 
-            previewImage (event) {
+            previewHomeImage (event) {
                 // Reference to the DOM input element
                 var input = event.target;
                 // Ensure that you have a file before attempting to read it
@@ -76,12 +192,71 @@
                     reader.onload = (e) => {
                         // Note: arrow function used here, so that "this.imageData" refers to the imageData of Vue component
                         // Read image as base64 and set to imageData
-                        this.uploadedImage = e.target.result;
-                        this.form.image = input.files;
+                        this.uploadedHomeImage = e.target.result;
+                        this.form.main_home_image = input.files;
                     };
                     // Start the reader job - read file as a data url (base64 format)
                     reader.readAsDataURL(input.files[0]);
                 }
+            },
+
+            previewDetailImage (event) {
+                // Reference to the DOM input element
+                var input = event.target;
+                // Ensure that you have a file before attempting to read it
+                if (input.files && input.files[0]) {
+                    // create a new FileReader to read this image and convert to base64 format
+                    var reader = new FileReader();
+                    // Define a callback function to run, when FileReader finishes its job
+                    reader.onload = (e) => {
+                        // Note: arrow function used here, so that "this.imageData" refers to the imageData of Vue component
+                        // Read image as base64 and set to imageData
+                        this.uploadedDetailImage = e.target.result;
+                        this.form.main_detail_image = input.files;
+                    };
+                    // Start the reader job - read file as a data url (base64 format)
+                    reader.readAsDataURL(input.files[0]);
+                }
+            },
+
+            uploadPropertyImages(event)
+            {
+                // let selectedFiles = e.target.files;
+                // if (!selectedFiles.length) {
+                //     return false;
+                // }
+                // var reader = new FileReader();
+                // for (let i = 0; i < selectedFiles.length; i++) {
+                //     // this.form.images.push(selectedFiles[i]);
+                //     this.form.images.push(reader.readAsDataURL(selectedFiles[i]));
+                // }
+
+// Reference to the DOM input element
+                var input = event.target;
+                let selectedFiles = event.target.files;
+                // Ensure that you have a file before attempting to read it
+                if (input.files && input.files[0]) {
+                    // create a new FileReader to read this image and convert to base64 format
+
+                    // Define a callback function to run, when FileReader finishes its job
+                    for (let i = 0; i < selectedFiles.length; i++) {
+                        let reader = new FileReader();
+                        reader.onload = (e) => {
+                            // Note: arrow function used here, so that "this.imageData" refers to the imageData of Vue component
+                            // Read image as base64 and set to imageData
+                            // this.uploadedDetailImage = e.target.result;
+                            // this.form.main_detail_image = input.files;
+                            this.form.images.push(e.target.result);
+                        };
+                        // Start the reader job - read file as a data url (base64 format)
+
+                        // this.form.images.push(selectedFiles[i]);
+                        console.log(i, reader);
+                        reader.readAsDataURL(selectedFiles[i]);
+                    }
+                }
+
+                console.log(this.form.images);
             },
 
             //Create Resource
@@ -105,7 +280,7 @@
                         form_data.append(key, this.form[key]);
                     }
                 }
-                this.$store.dispatch('feedback/create', this.form)
+                this.$store.dispatch('property/create', this.form)
                     .then(response => {
                         this.is_requesting=false;
                         this.$vs.loading.close(`#${clicked_button_id} > .con-vs-loading`);
@@ -117,7 +292,7 @@
                             color: 'success'
                         });
                         if (clicked_button_id === 'btn-create-1') {
-                            this.$router.push('/dashboard/feedback/');
+                            this.$router.push('/dashboard/property/');
                         } else {
                             this.reset_form();
                         }
@@ -141,8 +316,19 @@
                 this.form = {
                     name: '',
                     title: '',
-                    feedback: '',
-                    image: null
+                    information: '',
+                    image: null,
+                    images: [],
+                    has_pool: false,
+                    has_garden: false,
+                    no_of_rooms: 1,
+                    no_of_baths: 1,
+                    no_of_floors: 1,
+                    price: 0,
+                    dinner_price: 0,
+                    lunch_price: 0,
+                    address_desc: '',
+                    address: ''
                 }
             },
         },
@@ -162,16 +348,25 @@
         position: relative;
     }
 
-    #img-upload {
+    .img-upload {
         display: none;
+    }
+
+    .image-container {
+        width: 100px;
+        height: 100px;
+        background-color: white;
+        border: 1px solid #DDD;
+        border-radius: 5px;
+        padding: 5px;
     }
 
     img.preview {
         width: 100px;
         height: 100px;
-        border-radius: 50%;
         background-color: white;
         border: 1px solid #DDD;
+        border-radius: 5px;
         padding: 5px;
     }
 </style>
