@@ -15,8 +15,8 @@ class CreateReservationsTable extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('property_id')->unique();
-            $table->unsignedBigInteger('client_id')->unique();
+            $table->unsignedBigInteger('property_id');
+            $table->unsignedBigInteger('client_id');
             $table->date("checkin");
             $table->date("checkout");
             $table->boolean("is_canceled");
