@@ -18,7 +18,7 @@ class CreateClientsTable extends Migration
             $table->unsignedBigInteger('user_id')->unique();
             $table->string("image");
             $table->string("ssn");
-            $table->integer("mobile");
+            $table->string("mobile");
             $table->text("address");
             $table->string("nationality");
 
