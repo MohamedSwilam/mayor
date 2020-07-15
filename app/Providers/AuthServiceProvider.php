@@ -2,9 +2,17 @@
 
 namespace App\Providers;
 
+use App\Client;
+use App\Feedback;
+use App\Policies\ClientPolicy;
+use App\Policies\FeedbackPolicy;
 use App\Policies\PermissionPolicy;
+use App\Policies\PropertyPolicy;
+use App\Policies\ReservationPolicy;
 use App\Policies\RolePolicy;
 use App\Policies\UserPolicy;
+use App\Property;
+use App\Reservation;
 use App\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
@@ -24,6 +32,10 @@ class AuthServiceProvider extends ServiceProvider
         User::class => UserPolicy::class,
         Role::class => RolePolicy::class,
         Permission::class => PermissionPolicy::class,
+        Reservation::class => ReservationPolicy::class,
+        Property::class => PropertyPolicy::class,
+        Feedback::class => FeedbackPolicy::class,
+        Client::class => ClientPolicy::class,
     ];
 
     /**
