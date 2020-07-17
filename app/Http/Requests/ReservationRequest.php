@@ -28,7 +28,9 @@ class ReservationRequest extends FormRequest
             return [
                 'checkin' => 'required|date',
                 'checkout' => 'required|date',
-                'password' => 'min:8'
+                'password' => 'min:8',
+                'client_id' => 'exists:clients,id',
+                'property_id' => 'exists:properties,id'
 
             ];
         }
@@ -41,5 +43,19 @@ class ReservationRequest extends FormRequest
             ];
         }
     }
+    /**
+     * Custom message for validation
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'client_id.exists' => 'client not found!',
+//            'name.required' => 'Name is required!',
+//            'password.required' => 'Password is required!'
+        ];
+    }
+
 
 }

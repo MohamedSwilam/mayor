@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/{any}', 'ApplicationController')->where('any', '.*');
 
 Route::view('/', 'pages.home')->name('home');
 Route::view('/about', 'pages.about')->name('about');

@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->resource('users', 'UserController');
 
 Route::post('login', 'LoginController@login');
+Route::post('register', 'RegisterController@register');
 
 Route::group(['prefix' => 'user', 'middleware' => 'auth:api'], function () {
     Route::post('{id}', 'UserController@update');

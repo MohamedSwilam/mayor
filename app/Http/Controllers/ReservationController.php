@@ -29,8 +29,15 @@ class ReservationController extends Controller
     public function store(ReservationRequest $request)
     {
         $this->authorize('store', Reservation::class);
-        $data = $request->validated();
-        Reservation::create($data);
+//        $data = $request->validated();
+//        die($request)
+        $reservation=Reservation::create($request->toArray());
+        return ResponseFacade::createRespond(
+            fractal(
+                Reservation::where('id', $reservation->id)->with(['clients','properties'])->first(),
+                new ReservationTransformer()
+            )
+        );
 
 
     }

@@ -49,6 +49,7 @@ class UserController extends Controller
         $user = User::create($data);
 
         $data['password'] = bcrypt($request->password);
+        $data['user_id'] = $user->id;
 
         Account::create($data);
 
