@@ -6,4 +6,11 @@ return [
         'get' => '/storage/user/',
         'delete' => '/user/',
     ],
+
+    'client-image' => [
+        'create' => 'storage/client',
+        'get' => '/storage/client/',
+        'delete' => '/client/',
+    ],
+
 ];

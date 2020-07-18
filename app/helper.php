@@ -2,10 +2,14 @@
 
 if (!function_exists('download_file'))
 {
-    function download_file($file, $path)
+    function download_file($name, $path)
     {
-        $new_name = md5(time() . $file->getClientOriginalName()) . '.' . $file->getClientOriginalExtension();
-        $file->move($path, $new_name);
-        return $new_name;
+        if (request()->hasFile($name)){
+            $file = request()->file($name);
+            $new_name = md5(time() . $file->getClientOriginalName()) . '.' . $file->getClientOriginalExtension();
+            request()->file($name)->move($path, $new_name);
+            return $new_name;
+        }
+        return null;
     }
 }

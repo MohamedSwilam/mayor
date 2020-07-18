@@ -5,7 +5,7 @@ namespace App\Policies;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class UserPolicy
+class FeedbackPolicy
 {
     use HandlesAuthorization;
 
@@ -16,31 +16,31 @@ class UserPolicy
      */
     public function __construct()
     {
-        //
+
     }
 
     public function store()
     {
-        return request()->user()->hasPermissionTo('create-user');
+        return request()->user()->hasPermissionTo('create-feedback');
     }
 
     public function index()
     {
-        return request()->user()->hasPermissionTo('browse-user');
+        return request()->user()->hasPermissionTo('browse-feedback');
     }
 
     public function show()
     {
-        return request()->user()->hasPermissionTo('view-user');
+        return request()->user()->hasPermissionTo('view-feedback');
     }
 
     public function update()
     {
-        return request()->user()->hasPermissionTo('edit-user');
+        return request()->user()->hasPermissionTo('edit-feedback');
     }
 
     public function destroy()
     {
-        return request()->user()->hasPermissionTo('delete-user');
+        return request()->user()->hasPermissionTo('delete-feedback');
     }
 }
