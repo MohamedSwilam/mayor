@@ -15,7 +15,7 @@ class ClientTransformer extends TransformerAbstract
     protected $defaultIncludes = [
         //
     ];
-    
+
     /**
      * List of resources possible to include
      *
@@ -24,7 +24,7 @@ class ClientTransformer extends TransformerAbstract
     protected $availableIncludes = [
         //
     ];
-    
+
     /**
      * A Fractal transformer.
      *
@@ -33,7 +33,5 @@ class ClientTransformer extends TransformerAbstract
     public function transform(Client $client)
     {
         return $client->toArray();
-
-
     }
 }

@@ -207,43 +207,6 @@
     </section>
     <!--================End Testimonials Area =================-->
 
-    <!--================Cities Area =================-->
-    <section class="cities_area p_120">
-        <div class="container">
-            <div class="main_title">
-                <h2>Demandable Cities</h2>
-                <p>We all live in an age that belongs to the young at heart. Life that is becoming extremely fast, day to day,</p>
-            </div>
-            <div class="row cities_inner">
-                <div class="col-lg-3 col-md-6">
-                    <div class="cities_item">
-                        <img class="img-fluid" src="/images/website/cities/cities-1.jpg" alt="">
-                        <a class="main_btn2" href="#">Book Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="cities_item">
-                        <img class="img-fluid" src="/images/website/cities/cities-2.jpg" alt="">
-                        <a class="main_btn2" href="#">Book Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="cities_item">
-                        <img class="img-fluid" src="/images/website/cities/cities-3.jpg" alt="">
-                        <a class="main_btn2" href="#">Book Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="cities_item">
-                        <img class="img-fluid" src="/images/website/cities/cities-4.jpg" alt="">
-                        <a class="main_btn2" href="#">Book Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--================End Cities Area =================-->
-
     <!--================Feature Area =================-->
     <section class="feature_area p_120">
         <div class="container">
@@ -293,33 +256,5 @@
     </section>
     <!--================End Feature Area =================-->
 
-
-    <!--================Clients Logo Area =================-->
-    <section class="clients_logo_area p_120">
-        <div class="container">
-            <div class="main_title">
-                <h2>Reliable Customers</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
-            </div>
-            <div class="clients_slider owl-carousel">
-                <div class="item">
-                    <img src="/images/website/clients-logo/c-logo-1.png" alt="">
-                </div>
-                <div class="item">
-                    <img src="/images/website/clients-logo/c-logo-2.png" alt="">
-                </div>
-                <div class="item">
-                    <img src="/images/website/clients-logo/c-logo-3.png" alt="">
-                </div>
-                <div class="item">
-                    <img src="/images/website/clients-logo/c-logo-4.png" alt="">
-                </div>
-                <div class="item">
-                    <img src="/images/website/clients-logo/c-logo-5.png" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--================End Clients Logo Area =================-->
 
 @endsection
