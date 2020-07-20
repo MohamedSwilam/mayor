@@ -31,7 +31,7 @@ class RegisterRequest extends FormRequest
                 'first_name' => 'required',
                 'last_name' => 'required',
                 'is_male'=> 'required|boolean',
-                'image' => 'required|max:2048|mimes:jpeg,png',
+                'image' => 'required|max:2048',
                 'ssn' => 'required|string',
                 'mobile' => 'required',
                 'address' => 'required|string',
