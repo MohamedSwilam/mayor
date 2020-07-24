@@ -14,10 +14,7 @@ class Client extends model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
-    public function feedbacks()
-    {
-        return $this->hasMany(Feedback::class);
-    }
+
     public function resrvations()
     {
         return $this->hasMany(Reservation::class);

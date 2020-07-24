@@ -12,4 +12,11 @@ if (!function_exists('download_file'))
         }
         return null;
     }
+
+    function downloadImage($image, $path)
+    {
+        $file_name = md5(time() . $image->getClientOriginalName()) . '.' . $image->getClientOriginalExtension();
+        $image->move($path, $file_name);
+        return $file_name;
+    }
 }

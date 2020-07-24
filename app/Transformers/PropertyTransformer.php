@@ -15,7 +15,7 @@ class PropertyTransformer extends TransformerAbstract
     protected $defaultIncludes = [
         //
     ];
-    
+
     /**
      * List of resources possible to include
      *
@@ -33,7 +33,10 @@ class PropertyTransformer extends TransformerAbstract
      */
     public function transform(Property $property)
     {
-        return $property->toArray();
+        $data = $property->toArray();
+        $data['main_home_image'] = $data['main_home_image']? config('paths.property.get').$data['main_home_image']:null;
+        $data['main_details_image'] = $data['main_details_image']? config('paths.property.get').$data['main_details_image']:null;
 
+        return $data;
     }
 }

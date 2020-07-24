@@ -15,13 +15,11 @@ class CreateFeedbackTable extends Migration
     {
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('property_id');
-            $table->unsignedBigInteger('client_id');
-            $table->text("text");
+            $table->text("image");
+            $table->text("name");
+            $table->text("title");
+            $table->text("feedback");
             $table->timestamps();
-            $table->foreign('property_id')->references('id')->on('properties');
-            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
-
         });
     }
 

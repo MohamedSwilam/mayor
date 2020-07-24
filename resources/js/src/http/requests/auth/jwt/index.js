@@ -47,8 +47,19 @@ export default {
   login(email, pwd) {
     return axios.post("login", {email: email, password: pwd})
   },
-  registerUser(name, email, pwd) {
-    return axios.post("/api/auth/register", {displayName: name, email: email, password: pwd})
+  // displayName: this.displayName,
+  // email: this.email,
+  // password: this.password,
+  // first_name:this.first_name,
+  // last_name:this.last_name,
+  // is_male:this.is_male,
+  // ssn:this.ssn,
+  // image:this.image,
+  // phone:this.phone,
+  // address:this.address,
+  registerUser(data) {
+
+    return axios.post("register", data)
   },
   refreshToken() {
     return axios.post("/api/auth/refresh-token", {accessToken: localStorage.getItem("accessToKen")})

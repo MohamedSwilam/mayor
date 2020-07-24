@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\User;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UserRequest extends FormRequest
@@ -35,7 +36,7 @@ class UserRequest extends FormRequest
         }
         else if (sizeof($segments) == 3){
             return [
-                'email' => 'email|unique:accounts,email,'.$segments[2],
+                'email' => 'email|unique:accounts,email,'.User::where('id', $segments[2])->with(['accounts'])->get()[0]['accounts'][0]['id'],
                 'password' => 'min:8',
                 'first_name' => '',
                 'last_name' => '',

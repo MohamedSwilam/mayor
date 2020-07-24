@@ -336,6 +336,11 @@ const router = new Router({
                     component: () => import('./views/pages/Login.vue')
                 },
                 {
+                    path: '/dashboard/register',
+                    name: 'pageRegister',
+                    component: () => import('./views/pages/Register.vue')
+                },
+                {
                     path: '/dashboard/error-403',
                     name: 'pageError403',
                     component: () => import('./views/pages/NotAuthorized.vue')

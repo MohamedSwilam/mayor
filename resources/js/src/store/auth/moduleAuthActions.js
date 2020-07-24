@@ -39,24 +39,12 @@ export default {
 
     registerUserJWT({ commit }, payload) {
 
-      const { displayName, email, password, confirmPassword } = payload.userDetails;
 
       return new Promise((resolve,reject) => {
-
-        // Check confirm password
-        if(password !== confirmPassword) {
-          reject({message: "Password doesn't match. Please try again."})
-        }
-
-        jwt.registerUser(displayName, email, password)
+        jwt.registerUser(payload)
           .then(response => {
             // Redirect User
-            router.push(router.currentRoute.query.to || '/');
-
-            // Update data in localStorage
-            localStorage.setItem("accessToken", response.data.accessToken);
-            commit('UPDATE_USER_INFO', response.data.userData, {root: true});
-
+            router.push('/dashboard/login');
             resolve(response)
           })
           .catch(error => { reject(error) })

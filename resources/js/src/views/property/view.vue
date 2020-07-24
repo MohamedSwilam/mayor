@@ -12,32 +12,32 @@
                     <b>Description: </b>&nbsp; {{property.description}}
                 </vs-col>
                 <vs-col vs-w="12" class="mb-2">
-                    <b>Square Per Meter: </b>&nbsp; <a :href="property.location" target="_blank">{{property.sqm}}</a>
+                    <b>Square Per Meter: </b>&nbsp; {{property.sqm}}
                 </vs-col>
                 <vs-col vs-w="12" class="mb-2">
                     <b>Address: </b>&nbsp; {{property.address}}
                 </vs-col>
                 <vs-col vs-w="12" class="mb-2">
-                    <b>Location Link: </b>&nbsp; <a :href="property.location" target="_blank">{{property.location}}</a>
+                    <b>Location Link: </b>&nbsp; <a :href="property.location" target="_blank"><u>{{property.location}}</u></a>
                 </vs-col>
                 <vs-col vs-w="12" class="mb-2"><b>Location Description: </b>&nbsp; {{property.address_desc}}</vs-col>
                 <vs-col vs-w="12" class="mb-2">
-                    <b>Number of rooms: </b>&nbsp; <a :href="property.location" target="_blank">{{property.no_of_rooms}}</a>
+                    <b>Number of rooms: </b>&nbsp; {{property.no_of_rooms}}
                 </vs-col>
                 <vs-col vs-w="12" class="mb-2">
-                    <b>Number of bathrooms: </b>&nbsp; <a :href="property.location" target="_blank">{{property.no_of_baths}}</a>
+                    <b>Number of bathrooms: </b>&nbsp;{{property.no_of_baths}}
                 </vs-col>
                 <vs-col vs-w="12" class="mb-2">
-                    <b>Number of floors: </b>&nbsp; <a :href="property.location" target="_blank">{{property.no_of_floors}}</a>
+                    <b>Number of floors: </b>&nbsp; {{property.no_of_floors}}
                 </vs-col>
                 <vs-col vs-w="12" class="mb-2">
-                    <b>Price: </b>&nbsp; <a :href="property.location" target="_blank">{{property.price}} EGP</a>
+                    <b>Price: </b>&nbsp;{{property.price}} EGP
                 </vs-col>
                 <vs-col vs-w="12" class="mb-2">
-                    <b>Dinner Price: </b>&nbsp; <a :href="property.location" target="_blank">{{property.dinner_price}} EGP</a>
+                    <b>Dinner Price: </b>&nbsp; {{property.dinner_price}} EGP
                 </vs-col>
                 <vs-col vs-w="12" class="mb-2">
-                    <b>Launch Price: </b>&nbsp; <a :href="property.location" target="_blank">{{property.lunch_price}} EGP</a>
+                    <b>Launch Price: </b>&nbsp; {{property.lunch_price}} EGP
                 </vs-col>
                 <vs-col vs-w="12" class="mb-5">
                     <b>Main Home Image: </b> <br>
@@ -49,7 +49,7 @@
                 </vs-col>
                 <vs-col vs-w="12" class="mb-5">
                     <b>Images: </b> <br>
-                    <div class="img-container" v-for="image in property.images"><img alt="uploaded photo" class="preview" :src="image"></div>
+                    <div class="img-container" v-for="image in property.images"><img alt="uploaded photo" class="preview" :src="`/storage/property/${image.source}`"></div>
                 </vs-col>
             </vs-row>
             <vs-divider></vs-divider>
@@ -77,7 +77,7 @@
             getPropertyData()
             {
                 this.$vs.loading({container: this.$refs.property.$refs.content, scale: 0.5});
-                this.$store.dispatch('property/view', '')
+                this.$store.dispatch('property/view', this.$route.params.id)
                     .then(response => {
                         this.$vs.loading.close(this.$refs.property.$refs.content);
                         this.property = response.data.data.data;

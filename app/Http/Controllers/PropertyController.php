@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PropertyRequest;
+use App\Image;
 use App\IndexResponse;
 use App\Reservation;
 use App\Responses\Facades\ResponseFacade;
@@ -18,7 +19,7 @@ class PropertyController extends Controller
         $this->authorize('index', Property::class);
         return ResponseFacade::indexRespond(
             fractal(
-                (new IndexResponse(Property::with(['feedbacks'])))->execute()
+                (new IndexResponse(Property::with([])))->execute()
                 , new PropertyTransformer()
             )
         );
@@ -27,11 +28,28 @@ class PropertyController extends Controller
 
     public function store(PropertyRequest $request)
     {
+//        die('sasaa');
         $this->authorize('store', Property::class);
         $data = $request->validated();
-        Property::create($data);
+        $data['main_home_image'] = download_file('main_home_image', config('paths.property.create'));
+        $data['main_details_image'] = download_file('main_details_image', config('paths.property.create'));
 
+        $property = Property::create($data);
+//        die($data['images']);
+        foreach ($data['images'] as $image){
+            $data = array();
+            $data['source'] = downloadImage($image, config('paths.property.create'));
+            $data['description'] = 'No Description';
+            $data['property_id'] = $property->id;
+            Image::create($data);
+        }
 
+        return ResponseFacade::createRespond(
+            fractal(
+                Property::where('id', $property->id)->with(['images'])->first(),
+                new PropertyTransformer()
+            )
+        );
     }
 
 
@@ -40,29 +58,48 @@ class PropertyController extends Controller
         $this->authorize('show', Property::class);
         return ResponseFacade::showRespond(
             fractal(
-                Property::where('id', $id)->with(['feedbacks'])->first(),
+                Property::where('id', $id)->with([ 'images'])->first(),
                 new PropertyTransformer()
             )
         );
     }
-
 
     public function update(PropertyRequest $request, $id)
     {
         $this->authorize('update', Property::class);
 
-        $resevation = Property::find($id);
+        $property = Property::find($id);
         $data = $request->validated();
-        $resevation->update($data);
+        if (isset($data['main_home_image'])) {
+            $data['main_home_image'] = download_file('main_home_image', config('paths.property.create'));
+        }
 
-        return ResponseFacade::createRespond(
+        if (isset($data['main_details_image'])) {
+            $data['main_details_image'] = download_file('main_details_image', config('paths.property.create'));
+        }
+
+        $property->update($data);
+
+        if (isset($data['images'])) {
+            if (count($data['images']) > 0) {
+                Image::where('property_id', $property->id)->delete();
+                foreach ($data['images'] as $image){
+                    $data = array();
+                    $data['source'] = downloadImage($image, config('paths.property.create'));
+                    $data['description'] = 'No Description';
+                    $data['property_id'] = $property->id;
+                    Image::create($data);
+                }
+            }
+        }
+
+        return ResponseFacade::updateRespond(
             fractal(
-                Property::where('id', $resevation->id)->with(['feedbacks'])->first(),
+                Property::where('id', $property->id)->with([])->first(),
                 new PropertyTransformer()
             )
         );
     }
-
 
     public function destroy($id)
     {

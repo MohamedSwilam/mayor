@@ -13,4 +13,16 @@ return [
         'delete' => '/client/',
     ],
 
+    'property' => [
+        'create' => 'storage/property',
+        'get' => '/storage/property/',
+        'delete' => '/property/',
+    ],
+
+    'feedback' => [
+        'create' => 'storage/feedback',
+        'get' => '/storage/feedback/',
+        'delete' => '/feedback/',
+    ]
+
 ];

@@ -15,7 +15,7 @@ class FeedbackTransfromer extends TransformerAbstract
     protected $defaultIncludes = [
         //
     ];
-    
+
     /**
      * List of resources possible to include
      *
@@ -24,7 +24,7 @@ class FeedbackTransfromer extends TransformerAbstract
     protected $availableIncludes = [
         //
     ];
-    
+
     /**
      * A Fractal transformer.
      *
@@ -32,7 +32,8 @@ class FeedbackTransfromer extends TransformerAbstract
      */
     public function transform(Feedback $feedback)
     {
-        return $feedback->toArray();
-
+        $data = $feedback->toArray();
+        $data['image'] = $data['image']? config('paths.feedback.get').$data['image']:null;
+        return $data;
     }
 }

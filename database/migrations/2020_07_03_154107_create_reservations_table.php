@@ -23,8 +23,8 @@ class CreateReservationsTable extends Migration
             $table->string("password");
 
             $table->timestamps();
-            $table->foreign('property_id')->references('id')->on('properties');
-            $table->foreign('client_id')->references('id')->on('clients');
+            $table->foreign('property_id')->references('id')->on('properties')->onDelete('cascade');
+            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
 
         });
     }

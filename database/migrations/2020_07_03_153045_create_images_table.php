@@ -17,9 +17,9 @@ class CreateImagesTable extends Migration
             $table->id();
             $table->text("source");
             $table->text("description");
-            $table->unsignedBigInteger('property_id')->unique();
+            $table->unsignedBigInteger('property_id');
             $table->timestamps();
-            $table->foreign('property_id')->references('id')->on('properties');
+            $table->foreign('property_id')->references('id')->on('properties')->onDelete('cascade');
 
         });
     }

@@ -10,6 +10,7 @@ const userDefaults = {
     city                : null,
     country             : null,
     phone               : null,
+    ssn                 : null,
     gender              : null,
     image               : require("@assets/images/portrait/small/avatar-s-11.jpg"),
     created_at          : null,

@@ -109,7 +109,7 @@
                     .then(response => {
                         this.is_requesting = false;
                         this.$vs.loading.close(`#btn-delete-${params[0].id} > .con-vs-loading`);
-                        this.roles = this.roles.filter(type => {return type.id !== params[0].id});
+                        this.properties = this.properties.filter(property => {return property.id !== params[0].id});
                         this.$vs.notify({
                             title: 'Success',
                             text: response.data.message,
