@@ -153,31 +153,31 @@ return [
             'display_name' => 'Delete Client',
         ],
     ],
-    'Client' =>[
+    'Feedback' =>[
         [
-            'name' => 'create-client',
+            'name' => 'create-feedback',
             'guard_name' => 'api',
-            'display_name' => 'Create Client',
+            'display_name' => 'Create Feedback',
         ],
         [
-            'name' => 'browse-client',
+            'name' => 'browse-feedback',
             'guard_name' => 'api',
-            'display_name' => 'Browse Client',
+            'display_name' => 'Browse Feedback',
         ],
         [
-            'name' => 'view-client',
+            'name' => 'view-feedback',
             'guard_name' => 'api',
-            'display_name' => 'View Client',
+            'display_name' => 'View Feedback',
         ],
         [
-            'name' => 'edit-client',
+            'name' => 'edit-feedback',
             'guard_name' => 'api',
-            'display_name' => 'Edit Client',
+            'display_name' => 'Edit Feedback',
         ],
         [
-            'name' => 'delete-client',
+            'name' => 'delete-feedback',
             'guard_name' => 'api',
-            'display_name' => 'Delete Client',
+            'display_name' => 'Delete Feedback',
         ],
     ],
 ];

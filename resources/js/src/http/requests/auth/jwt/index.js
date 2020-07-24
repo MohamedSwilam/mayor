@@ -57,10 +57,9 @@ export default {
   // image:this.image,
   // phone:this.phone,
   // address:this.address,
-  registerUser(first_name, last_name, pwd,email, is_male, ssn , image , mobile , address ,nationality) {
+  registerUser(data) {
 
-    return axios.post("register", {first_name: first_name,last_name :last_name, email: email, password: pwd, is_male: is_male ,
-                                    ssn : ssn , image : image , mobile : mobile , address : address ,nationality: nationality})
+    return axios.post("register", data)
   },
   refreshToken() {
     return axios.post("/api/auth/refresh-token", {accessToken: localStorage.getItem("accessToKen")})

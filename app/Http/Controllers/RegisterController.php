@@ -29,8 +29,7 @@ class RegisterController extends Controller
         Account::create($data);
 
         $user->assignRole("Client");
-        $data['image'] = download_file($data['image'], config('paths.client-image.create'));
-        die($data['image']);
+        $data['image'] = download_file('image', config('paths.client-image.create'));
         $client = Client::create($data);
 
         return ResponseFacade::createRespond(

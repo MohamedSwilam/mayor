@@ -27,11 +27,11 @@
                         </vs-td>
 
                         <vs-td>
-                            {{ user.accounts[0].email }}
+                            {{ user.accounts.length>0?user.accounts[0].email:'-' }}
                         </vs-td>
 
                         <vs-td>
-                            {{user.roles[0].name}}
+                            {{user.roles.length>0?user.roles[0].name:'-'}}
                         </vs-td>
 
                         <vs-td>

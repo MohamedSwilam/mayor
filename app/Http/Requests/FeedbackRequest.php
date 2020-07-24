@@ -27,13 +27,18 @@ class FeedbackRequest extends FormRequest
 
         if (sizeof($segments) == 2){
             return [
-                'text' => 'required|string'
+                'feedback' => 'required|string',
+                'image' => 'required|max:2048|mimes:jpeg,png',
+                'title' => 'required|string',
+                'name' => 'required|string',
             ];
         }
         else if (sizeof($segments) == 3){
             return [
-                'text' => 'required|string'
-
+                'feedback' => 'required|string',
+                'image' => 'max:2048|mimes:jpeg,png',
+                'title' => 'required|string',
+                'name' => 'required|string',
             ];
         }
 

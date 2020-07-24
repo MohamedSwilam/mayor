@@ -53,7 +53,7 @@
         },
         computed: {
             validateForm() {
-                return !this.errors.any() && this.form.name !== "" && this.form.email !== '' &&  this.form.password !== '' && this.form.confirm_password !== '';
+                return !this.errors.any() && this.form.name !== "" && this.form.email !== '';
             }
         },
         data: function () {
@@ -78,8 +78,8 @@
                 this.$store.dispatch('rolesAndPermissions/getRoles', '')
                     .then(response => {
                         this.roles = response.data.data.data;
-                        this.getUserData();
                         this.form.role = this.roles[0].name;
+                        this.getUserData();
                     })
                     .catch(error => {
                         console.log(error);
@@ -97,9 +97,10 @@
                 this.$store.dispatch('user/view', this.$route.params.id)
                     .then(response => {
                         this.$vs.loading.close(this.$refs.edit.$refs.content);
-                        this.form = response.data.data.data;
-                        this.form.role = response.data.data.data.roles[0].name;
+                        this.form.first_name = response.data.data.data.first_name;
+                        this.form.last_name = response.data.data.data.last_name;
                         this.form.email = response.data.data.data.accounts[0].email;
+                        this.form.role = response.data.data.data.roles[0].name;
                     })
                     .catch(error => {
                         console.log(error);

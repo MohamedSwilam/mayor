@@ -23,17 +23,13 @@ class ClientController extends Controller
         );
     }
 
-
     public function store(ClientRequest $request)
     {
-        die($request);
         $this->authorize('store', Client::class);
 
         $data = $request->validated();
         User::create($data);
         Client::create($data);
-
-
     }
 
 

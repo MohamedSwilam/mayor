@@ -48,7 +48,8 @@
                                 <!--                                    <router-link to="/pages/forgot-password">Forgot Password?</router-link>-->
                                 <!--                                </div>-->
                                 <div class="flex flex-wrap justify-between mt-5 mb-3">
-                                    <vs-button :disabled="!validateForm" @click="loginJWT">Login</vs-button>
+                                    <vs-button to="/dashboard/register" type="border">Register</vs-button>
+                                    <vs-button :disabled="!validateForm" class="float-right" @click="loginJWT">Login</vs-button>
                                 </div>
 
                             </div>

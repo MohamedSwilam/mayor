@@ -26,8 +26,8 @@
                                 <input id="property-images" type="file" class="form-control img-upload" @change="uploadPropertyImages" multiple>
                             </vs-col>
                             <vs-col vs-w="12">
-                                <template v-if="form.images.length>0">
-                                    <img v-for="image in form.images" alt="uploaded photo" class="preview px-2 m-1" style="display: inline-flex;" :src="image">
+                                <template v-if="selectedImages.length>0">
+                                    <img v-for="image in selectedImages" alt="uploaded photo" class="preview px-2 m-1" style="display: inline-flex;" :src="image">
                                 </template>
                                 <template v-else>
                                     <h5><b>No Images Uploaded!</b></h5>
@@ -126,8 +126,8 @@
                 </vs-row>
                 <vs-divider></vs-divider>
                 <vs-row vs-justify="center" vs-align="center">
-                    <vs-button id="btn-create-1" class="vs-con-loading__container" :disabled="!validateForm" @click="is_requesting?$store.dispatch('viewWaitMessage', $vs):create('btn-create-1')" icon-pack="feather" icon="icon-save">Save & View Details</vs-button>
-                    <vs-button id="btn-create-2" class="vs-con-loading__container ml-5" :disabled="!validateForm" @click="is_requesting?$store.dispatch('viewWaitMessage', $vs):create('btn-create-2')" icon-pack="feather" icon="icon-save">Save & Create Another</vs-button>
+                    <vs-button id="btn-create-1" class="vs-con-loading__container" @click="is_requesting?$store.dispatch('viewWaitMessage', $vs):create('btn-create-1')" icon-pack="feather" icon="icon-save">Save & View Details</vs-button>
+                    <vs-button id="btn-create-2" class="vs-con-loading__container ml-5" @click="is_requesting?$store.dispatch('viewWaitMessage', $vs):create('btn-create-2')" icon-pack="feather" icon="icon-save">Save & Create Another</vs-button>
                 </vs-row>
             </vx-card>
         </div>
@@ -144,7 +144,7 @@
                     description: '',
                     sqm: 0,
                     main_home_image: null,
-                    main_detail_image: null,
+                    main_details_image: null,
                     images: [],
                     has_pool: false,
                     has_garden: false,
@@ -161,6 +161,7 @@
 
                 uploadedHomeImage: null,
                 uploadedDetailImage: null,
+                selectedImages: [],
 
                 is_requesting: false,
                 counterDanger: false
@@ -168,15 +169,7 @@
         },
         computed: {
             validateForm() {
-                return !this.errors.any()
-                    && this.form.title !== ""
-                    && this.form.information !== ""
-                    && this.form.main_home_image !== null
-                    && this.form.main_detail_image !== null
-                    && this.form.images.length>0
-                    && this.form.address_desc === ""
-                    && this.form.address === ""
-                    && this.form.location === ""
+                return !this.errors.any() && this.form.title !== "" && this.form.information !== "" && this.form.main_home_image !== null && this.form.main_details_image !== null && this.form.images.length>0 && this.form.address_desc !== "" && this.form.address !== "" && this.form.location !== ""
             }
         },
         methods: {
@@ -212,7 +205,7 @@
                         // Note: arrow function used here, so that "this.imageData" refers to the imageData of Vue component
                         // Read image as base64 and set to imageData
                         this.uploadedDetailImage = e.target.result;
-                        this.form.main_detail_image = input.files;
+                        this.form.main_details_image = input.files;
                     };
                     // Start the reader job - read file as a data url (base64 format)
                     reader.readAsDataURL(input.files[0]);
@@ -231,7 +224,15 @@
                 //     this.form.images.push(reader.readAsDataURL(selectedFiles[i]));
                 // }
 
-// Reference to the DOM input element
+                // let selectedImages = e.target.files;
+                // if (!selectedImages.length) {
+                //     return false;
+                // }
+                // for (let i = 0; i < selectedImages.length; i++) {
+                //     this.formData.images.push(selectedImages[i]);
+                // }
+
+                // Reference to the DOM input element
                 var input = event.target;
                 let selectedFiles = event.target.files;
                 // Ensure that you have a file before attempting to read it
@@ -245,8 +246,9 @@
                             // Note: arrow function used here, so that "this.imageData" refers to the imageData of Vue component
                             // Read image as base64 and set to imageData
                             // this.uploadedDetailImage = e.target.result;
-                            // this.form.main_detail_image = input.files;
-                            this.form.images.push(e.target.result);
+                            // this.form.main_details_image = input.files;
+                            this.form.images.push(selectedFiles[i]);
+                            this.selectedImages.push(e.target.result);
                         };
                         // Start the reader job - read file as a data url (base64 format)
 
@@ -268,19 +270,27 @@
                 this.$vs.loading({container: `#${clicked_button_id}`, color: 'primary', scale: 0.45});
                 let form_data = new FormData();
 
+
+
                 for (let key in this.form ) {
-                    if ((key === 'image') && this.form.hasOwnProperty(key)){
+                    if ((key === 'main_home_image' || key === 'main_details_image') && this.form.hasOwnProperty(key)){
                         if (this.form[key]) {
                             for (let i=0; i<this.form[key].length; i++){
                                 form_data.append(key, this.form[key][i]);
                             }
                         }
+                    } else if (key === 'images') {
+                        for (let i=0; i<this.form[key].length; i++){
+                            form_data.append(key+'[]', this.form[key][i]);
+                        }
+                    } else if(key === 'has_pool' || key === 'has_garden') {
+                        form_data.append(key, this.form[key]?1:0);
                     }
                     else {
                         form_data.append(key, this.form[key]);
                     }
                 }
-                this.$store.dispatch('property/create', this.form)
+                this.$store.dispatch('property/create', form_data)
                     .then(response => {
                         this.is_requesting=false;
                         this.$vs.loading.close(`#${clicked_button_id} > .con-vs-loading`);
@@ -292,7 +302,7 @@
                             color: 'success'
                         });
                         if (clicked_button_id === 'btn-create-1') {
-                            this.$router.push('/dashboard/property/');
+                            this.$router.push(`/dashboard/property/${response.data.data.data.id}`);
                         } else {
                             this.reset_form();
                         }

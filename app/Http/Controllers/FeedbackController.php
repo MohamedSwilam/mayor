@@ -18,7 +18,7 @@ class FeedbackController extends Controller
         $this->authorize('index', Feedback::class);
         return ResponseFacade::indexRespond(
             fractal(
-                (new IndexResponse(Feedback::with(['clients','properties'])))->execute()
+                (new IndexResponse(Feedback::with([])))->execute()
                 , new FeedbackTransfromer()
             )
         );
@@ -29,8 +29,17 @@ class FeedbackController extends Controller
     {
         $this->authorize('store', Feedback::class);
         $data = $request->validated();
-        Property::create($data);
 
+        $data['image'] = download_file('image', config('paths.feedback.create'));
+
+        $feedback = Feedback::create($data);
+
+        return ResponseFacade::createRespond(
+            fractal(
+                Feedback::where('id', $feedback->id)->first(),
+                new FeedbackTransfromer()
+            )
+        );
 
     }
 
@@ -40,7 +49,7 @@ class FeedbackController extends Controller
         $this->authorize('show', Feedback::class);
         return ResponseFacade::showRespond(
             fractal(
-                Feedback::where('id', $id)->with(['clients','properties'])->first(),
+                Feedback::where('id', $id)->with([])->first(),
                 new FeedbackTransfromer()
             )
         );
@@ -53,11 +62,16 @@ class FeedbackController extends Controller
 
         $feedback = Feedback::find($id);
         $data = $request->validated();
+
+        if (isset($data['image'])) {
+            $data['image'] = download_file('image', config('paths.feedback.create'));
+        }
+
         $feedback->update($data);
 
         return ResponseFacade::createRespond(
             fractal(
-                Feedback::where('id', $feedback->id)->with(['clients','properties'])->first(),
+                Feedback::where('id', $feedback->id)->with([])->first(),
                 new FeedbackTransfromer()
             )
         );

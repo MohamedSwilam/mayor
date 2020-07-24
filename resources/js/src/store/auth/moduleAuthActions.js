@@ -41,16 +41,10 @@ export default {
 
 
       return new Promise((resolve,reject) => {
-        jwt.registerUser( payload.userDetails.first_name, payload.userDetails.last_name,payload.userDetails.password,payload.userDetails.email ,payload.userDetails.is_male
-            , payload.userDetails.ssn , payload.userDetails.image , payload.userDetails.phone , payload.userDetails.address, payload.userDetails.nationality)
+        jwt.registerUser(payload)
           .then(response => {
             // Redirect User
-            router.push(router.currentRoute.query.to || '/');
-
-            // Update data in localStorage
-            localStorage.setItem("accessToken", response.data.accessToken);
-            commit('UPDATE_USER_INFO', response.data.userData, {root: true});
-
+            router.push('/dashboard/login');
             resolve(response)
           })
           .catch(error => { reject(error) })

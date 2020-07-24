@@ -52,6 +52,9 @@
 
 <script>
     export default {
+        mounted() {
+            this.view();
+        },
         data() {
             return {
                 form: {
@@ -69,10 +72,31 @@
         },
         computed: {
             validateForm() {
-                return !this.errors.any() && this.form.name !== "" && this.form.title !== "" && this.form.feedback !== "" && this.form.image !== null;
+                return !this.errors.any() && this.form.name !== "" && this.form.title !== "" && this.form.feedback !== "";
             }
         },
         methods: {
+
+            view()
+            {
+                this.$vs.loading({container: this.$refs.edit.$refs.content, scale: 0.5});
+                this.$store.dispatch('feedback/view', this.$route.params.id)
+                    .then(response => {
+                        this.$vs.loading.close(this.$refs.edit.$refs.content);
+                        this.form = response.data.data.data;
+                        this.form.image = null;
+                    })
+                    .catch(error => {
+                        this.$vs.loading.close(this.$refs.edit.$refs.content);
+                        this.$vs.notify({
+                            title: 'Error',
+                            text: error.response.data.error,
+                            iconPack: 'feather',
+                            icon: 'icon-alert-circle',
+                            color: 'danger'
+                        });
+                    });
+            },
 
             previewImage (event) {
                 // Reference to the DOM input element
@@ -99,12 +123,12 @@
                 if (!this.validateForm) return;
 
                 this.is_requesting=true;
-                this.$vs.loading({container: `#${clicked_button_id}`, color: 'primary', scale: 0.45});
+                this.$vs.loading({container: `#btn-edit`, color: 'primary', scale: 0.45});
                 let form_data = new FormData();
 
-                for (let key in this.form ) {
+                for (let key in this.form) {
                     if ((key === 'image') && this.form.hasOwnProperty(key)){
-                        if (this.form[key]) {
+                        if (this.form[key] !== null) {
                             for (let i=0; i<this.form[key].length; i++){
                                 form_data.append(key, this.form[key][i]);
                             }
@@ -114,10 +138,10 @@
                         form_data.append(key, this.form[key]);
                     }
                 }
-                this.$store.dispatch('feedback/update', this.form)
+                this.$store.dispatch('feedback/update', {id: this.$route.params.id, data: form_data})
                     .then(response => {
                         this.is_requesting=false;
-                        this.$vs.loading.close(`#${clicked_button_id} > .con-vs-loading`);
+                        this.$vs.loading.close(`#btn-edit > .con-vs-loading`);
                         this.$vs.notify({
                             title: 'Success',
                             text: response.data.message,
@@ -130,7 +154,7 @@
                     .catch(error => {
                         console.log(error);
                         this.is_requesting=false;
-                        this.$vs.loading.close(`#btn-create > .con-vs-loading`);
+                        this.$vs.loading.close(`#btn-edit > .con-vs-loading`);
                         this.$vs.notify({
                             title: 'Error',
                             text: error.response.data.errors[Object.keys(error.response.data.errors)[0]][0],

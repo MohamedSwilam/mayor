@@ -15,8 +15,8 @@
                     <template slot="thead">
                         <vs-th>#</vs-th>
                         <vs-th>Image</vs-th>
-                        <vs-th sort-key="name">Name</vs-th>
-                        <vs-th sort-key="title">Title</vs-th>
+                        <vs-th>Name</vs-th>
+                        <vs-th>Title</vs-th>
                         <vs-th sort-key="created_at">Created At</vs-th>
                         <vs-th>Action</vs-th>
                     </template>
@@ -79,7 +79,8 @@ export default {
                 display: false,
                 data: {
                     name: '',
-                    feedback: ''
+                    feedback: '',
+
                 }
             },
             is_requesting: false
@@ -134,7 +135,7 @@ export default {
                 .then(response => {
                     this.is_requesting = false;
                     this.$vs.loading.close(`#btn-delete-${params[0].id} > .con-vs-loading`);
-                    this.roles = this.roles.filter(type => {return type.id !== params[0].id});
+                    this.feedback = this.feedback.filter(feedback => {return feedback.id !== params[0].id});
                     this.$vs.notify({
                         title: 'Success',
                         text: response.data.message,
@@ -162,10 +163,8 @@ export default {
 
 <style>
     .td-img {
-        max-width: 50px;
-        max-height: 50px;
-        border-radius: 50%;
+        max-width: 75px;
+        max-height: 75px;
     }
-
 
 </style>

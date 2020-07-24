@@ -115,7 +115,7 @@ export default {
                     form_data.append(key, this.form[key]);
                 }
             }
-            this.$store.dispatch('feedback/create', this.form)
+            this.$store.dispatch('feedback/create', form_data)
                 .then(response => {
                     this.is_requesting=false;
                     this.$vs.loading.close(`#${clicked_button_id} > .con-vs-loading`);
@@ -127,7 +127,7 @@ export default {
                         color: 'success'
                     });
                     if (clicked_button_id === 'btn-create-1') {
-                        this.$router.push('/dashboard/feedback/');
+                        this.$router.push(`/dashboard/feedback`);
                     } else {
                         this.reset_form();
                     }
