@@ -18,23 +18,21 @@ class CreatePropertiesTable extends Migration
             $table->string("title");
             $table->text("information");
             $table->text("description");
-            $table->text("location");
+            $table->string("location");
             $table->string("address");
             $table->text("address_desc");
-            $table->text("main_home_image");
-            $table->text("main_details_image");
-            $table->text("dinner_price");
-            $table->text("lunch_price");
-            $table->text("sqm");
+            $table->string("main_home_image");
+            $table->string("main_details_image");
+            $table->string("dinner_price");
+            $table->string("lunch_price");
+            $table->string("sqm");
             $table->double("price");
             $table->integer("no_of_rooms");
             $table->integer("no_of_baths");
             $table->integer("no_of_floors");
             $table->boolean("has_pool");
             $table->boolean("has_garden");
-
-
-
+            $table->boolean("view_in_home");
 
             $table->timestamps();
         });

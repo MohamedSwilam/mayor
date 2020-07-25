@@ -126,7 +126,7 @@ const router = new Router({
                             { title: 'Property', active: true },
                         ],
                         pageTitle: 'Property',
-                        // permission: 'browse-property'
+                        permission: 'browse-property'
                     }
                 },
                 {
@@ -141,7 +141,7 @@ const router = new Router({
                             { title: 'Add Property', active: true },
                         ],
                         pageTitle: 'Add Property',
-                        // permission: 'create-property'
+                        permission: 'create-property'
                     }
                 },
                 {
@@ -156,7 +156,7 @@ const router = new Router({
                             { title: 'Edit Property', active: true },
                         ],
                         pageTitle: 'Edit Property',
-                        // permission: 'edit-property'
+                        permission: 'edit-property'
                     }
                 },
                 {
@@ -171,7 +171,7 @@ const router = new Router({
                             { title: 'Property Details', active: true },
                         ],
                         pageTitle: 'Property Details',
-                        // permission: 'edit-property'
+                        permission: 'view-property'
                     }
                 },
                 // =============================================================================
@@ -188,7 +188,7 @@ const router = new Router({
                             { title: 'Feedback', active: true },
                         ],
                         pageTitle: 'Feedback',
-                        // permission: 'browse-feedback'
+                        permission: 'browse-feedback'
                     }
                 },
                 {
@@ -203,7 +203,7 @@ const router = new Router({
                             { title: 'Add Feedback', active: true },
                         ],
                         pageTitle: 'Add Feedback',
-                        // permission: 'create-feedback'
+                        permission: 'create-feedback'
                     }
                 },
                 {
@@ -218,7 +218,7 @@ const router = new Router({
                             { title: 'Edit Feedback', active: true },
                         ],
                         pageTitle: 'Edit Feedback',
-                        // permission: 'edit-feedback'
+                        permission: 'edit-feedback'
                     }
                 },
                 // =============================================================================
@@ -235,7 +235,7 @@ const router = new Router({
                             { title: 'Message', active: true },
                         ],
                         pageTitle: 'Message',
-                        // permission: 'browse-message'
+                        permission: 'browse-message'
                     }
                 },
                 // =============================================================================

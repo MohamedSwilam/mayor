@@ -11,8 +11,8 @@ use App\Property;
 class PagesController extends Controller
 {
     public function home(){
-//        $properties = Property::where(view_in_home,'1')->get();
-        $properties = Property::where('id',51)->get();
+        $properties = Property::where('view_in_home','1')->get();
+//        $properties = Property::where('id',51)->get();
         $feedback = Feedback::all();
 
         return view('pages.home', [
