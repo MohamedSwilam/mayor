@@ -4,6 +4,7 @@
 
 @section('content')
 
+
     <!--================Home Banner Area =================-->
     <section class="home_banner_area">
         <div class="banner_inner d-flex align-items-center">
@@ -69,72 +70,33 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
             </div>
             <div class="row properties_inner">
-                <div class="col-lg-4">
-                    <div class="properties_item">
-                        <div class="pp_img">
-                            <img class="img-fluid" src="/images/website/properties/pp-1.jpg" alt="">
-                        </div>
-                        <div class="pp_content">
-                            <a href="#"><h4>04 Bed Duplex</h4></a>
-                            <div class="tags">
-                                <a href="#">04 Beds</a>
-                                <a href="#">03 Baths</a>
-                                <a href="#">750 sqm</a>
-                                <a href="#"><i class="fa fa-check" aria-hidden="true"></i>Pool</a>
-                                <a href="#"><i class="fa fa-times" aria-hidden="true"></i>Bar</a>
-                                <a href="#"><i class="fa fa-times" aria-hidden="true"></i>Pool</a>
+
+                @foreach($properties as $property)
+                    <div class="col-lg-4">
+                        <div class="properties_item">
+                            <div class="pp_img" style="text-align: center;">
+                                <img class="img-fluid" style="max-height: 200px;" src="/storage/property/{{$property->main_home_image}}" alt="">
                             </div>
-                            <div class="pp_footer">
-                                <h5>Total: $3.5M</h5>
-                                <a class="main_btn" href="#">For Sale</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="properties_item">
-                        <div class="pp_img">
-                            <img class="img-fluid" src="/images/website/properties/pp-2.jpg" alt="">
-                        </div>
-                        <div class="pp_content">
-                            <a href="#"><h4>04 Bed Duplex</h4></a>
-                            <div class="tags">
-                                <a href="#">04 Beds</a>
-                                <a href="#">03 Baths</a>
-                                <a href="#">750 sqm</a>
-                                <a href="#"><i class="fa fa-check" aria-hidden="true"></i>Pool</a>
-                                <a href="#"><i class="fa fa-times" aria-hidden="true"></i>Bar</a>
-                                <a href="#"><i class="fa fa-times" aria-hidden="true"></i>Pool</a>
-                            </div>
-                            <div class="pp_footer">
-                                <h5>Total: $3.5M</h5>
-                                <a class="main_btn" href="#">For Sale</a>
+                            <div class="pp_content">
+                                <a href="#"><h4>{{$property->no_of_rooms}} Rooms</h4></a>
+                                <div class="tags">
+                                    <a>{{$property->no_of_floors}} Floor(s)</a>
+                                    <a>{{$property->no_of_rooms}} Room(s)</a>
+                                    <a>{{$property->no_of_baths}} Bathroom(s)</a>
+                                    <a>{{$property->sqm}} sqm</a>
+                                    <a><i class=" fa @if($property->has_pool == 1 )fa-check @else fa-times @endif" aria-hidden="true"></i>Pool</a>
+                                    <a><i class=" fa @if($property->has_garden == 1 )fa-check @else fa-times @endif" aria-hidden="true"></i>Graden</a>
+                                </div>
+                                <div class="pp_footer">
+                                    <h5>{{$property->price}} EGP</h5>
+                                    <a class="main_btn" >For Rent</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="properties_item">
-                        <div class="pp_img">
-                            <img class="img-fluid" src="/images/website/properties/pp-3.jpg" alt="">
-                        </div>
-                        <div class="pp_content">
-                            <a href="#"><h4>04 Bed Duplex</h4></a>
-                            <div class="tags">
-                                <a href="#">04 Beds</a>
-                                <a href="#">03 Baths</a>
-                                <a href="#">750 sqm</a>
-                                <a href="#"><i class="fa fa-check" aria-hidden="true"></i>Pool</a>
-                                <a href="#"><i class="fa fa-times" aria-hidden="true"></i>Bar</a>
-                                <a href="#"><i class="fa fa-times" aria-hidden="true"></i>Pool</a>
-                            </div>
-                            <div class="pp_footer">
-                                <h5>Total: $3.5M</h5>
-                                <a class="main_btn" href="#">For Sale</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
+
             </div>
         </div>
     </section>
