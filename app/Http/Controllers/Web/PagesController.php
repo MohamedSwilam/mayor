@@ -12,13 +12,27 @@ class PagesController extends Controller
 {
     public function home(){
         $properties = Property::where('view_in_home','1')->get();
-//        $properties = Property::where('id',51)->get();
         $feedback = Feedback::all();
 
         return view('pages.home', [
             'properties' => $properties,
             'feedback' => $feedback
         ]);
+    }
 
+    public function properties() {
+        $properties = Property::all();
+
+        return view('pages.properties', [
+            'properties' => $properties,
+        ]);
+    }
+
+    public function property($id) {
+        $property = Property::find($id);
+
+        return view('pages.property-details', [
+            'property' => $property,
+        ]);
     }
 }

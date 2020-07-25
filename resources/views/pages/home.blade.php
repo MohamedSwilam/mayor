@@ -72,13 +72,13 @@
             <div class="row properties_inner">
 
                 @foreach($properties as $property)
-                    <div class="col-lg-4">
+                    <div class="col-lg-4" style="margin-bottom: 20px;">
                         <div class="properties_item">
                             <div class="pp_img" style="text-align: center;">
                                 <img class="img-fluid" style="max-height: 200px;" src="/storage/property/{{$property->main_home_image}}" alt="">
                             </div>
                             <div class="pp_content">
-                                <a href="#"><h4>{{$property->no_of_rooms}} Rooms</h4></a>
+                                <a href="/properties/{{$property->id}}"><h4>{{$property->title}}</h4></a>
                                 <div class="tags">
                                     <a>{{$property->no_of_floors}} Floor(s)</a>
                                     <a>{{$property->no_of_rooms}} Room(s)</a>
@@ -89,7 +89,7 @@
                                 </div>
                                 <div class="pp_footer">
                                     <h5>{{$property->price}} EGP</h5>
-                                    <a class="main_btn" >For Rent</a>
+                                    <a href="/properties/{{$property->id}}"class="main_btn" >For Rent</a>
                                 </div>
                             </div>
                         </div>

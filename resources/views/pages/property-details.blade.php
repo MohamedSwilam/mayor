@@ -28,43 +28,32 @@
                 <div class="col-lg-8 posts-list">
                     <div class="single-post row">
                         <div class="col-lg-12">
-                            <div class="feature-img">
-                                <img class="img-fluid" src="/images/website/blog/feature-img1.jpg" alt="">
+                            <div class="feature-img" style="text-align: center;">
+                                <img style="max-height: 300px;" class="img-fluid" src="{{$property->main_details_image}}" alt="">
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12 blog_details">
-                            <h2>Astronomy Binoculars A Great Alternative</h2>
+                            <h2>{{$property->title}}</h2>
                             <p class="excert">
-                                MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.
+                                {{$property->description}}
                             </p>
                             <p>
-                                Boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed
-                            </p>
-                            <p>
-                                Boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed
+                                {{$property->information}}
                             </p>
                         </div>
                         <div class="col-lg-12 col-md-12 ">
                             <h3 class="title_color">Property Gallery</h3>
                             <div class="row gallery-item">
-                                <div class="col-md-4">
-                                    <a href="/images/website/elements/g1.jpg" target="_blank" class="img-gal"><div class="single-gallery-image" style="background: url(/images/website/elements/g1.jpg);"></div></a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a href="/images/website/elements/g2.jpg" target="_blank" class="img-gal"><div class="single-gallery-image" style="background: url(/images/website/elements/g2.jpg);"></div></a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a href="/images/website/elements/g3.jpg" target="_blank" class="img-gal"><div class="single-gallery-image" style="background: url(/images/website/elements/g3.jpg);"></div></a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a href="/images/website/elements/g6.jpg" target="_blank" class="img-gal"><div class="single-gallery-image" style="background: url(/images/website/elements/g6.jpg);"></div></a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a href="/images/website/elements/g7.jpg" target="_blank" class="img-gal"><div class="single-gallery-image" style="background: url(/images/website/elements/g7.jpg);"></div></a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a href="/images/website/elements/g8.jpg" target="_blank" class="img-gal"><div class="single-gallery-image" style="background: url(/images/website/elements/g8.jpg);"></div></a>
-                                </div>
+                                @foreach($property->images as $image)
+                                    <div class="col-md-4">
+                                        <a href="/storage/properties/{{$image->source}}" target="_blank" class="img-gal"><div class="single-gallery-image" style="background: url(/storage/properties/{{$image->source}});"></div></a>
+                                    </div>
+                                @endforeach
+                                @if(count($property->images) == 0)
+                                        <div class="col-md-12" style="text-align: center">
+                                            <b>No images uploaded for this property!</b>
+                                        </div>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -93,69 +82,76 @@
                 <div class="col-lg-4">
                     <div class="blog_right_sidebar">
                         <aside class="single_sidebar_widget post_category_widget">
-                            <h4 class="widget_title">Post Catgories</h4>
+                            <h4 class="widget_title">Property Features</h4>
                             <ul class="list cat-list">
                                 <li>
                                     <a class="d-flex justify-content-between">
-                                        <p>Technology</p>
-                                        <p>37</p>
+                                        <p>Area</p>
+                                        <p>{{$property->sqm}}</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a class="d-flex justify-content-between">
-                                        <p>Lifestyle</p>
-                                        <p>24</p>
+                                        <p>Floors</p>
+                                        <p>{{$property->no_of_floors}}</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a class="d-flex justify-content-between">
-                                        <p>Fashion</p>
-                                        <p>59</p>
+                                        <p>Rooms</p>
+                                        <p>{{$property->no_of_rooms}}</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a class="d-flex justify-content-between">
-                                        <p>Art</p>
-                                        <p>29</p>
+                                        <p>Bathrooms</p>
+                                        <p>{{$property->no_of_baths}}</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a class="d-flex justify-content-between">
-                                        <p>Food</p>
-                                        <p>15</p>
+                                        <p>Has Garden?</p>
+                                        <p>{{$property->has_garden==1?'Yes':'No'}}</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a class="d-flex justify-content-between">
-                                        <p>Architecture</p>
-                                        <p>09</p>
+                                        <p>Has Pool?</p>
+                                        <p>{{$property->has_pool==1?'Yes':'No'}}</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a class="d-flex justify-content-between">
-                                        <p>Adventure</p>
-                                        <p>44</p>
+                                        <p>Price</p>
+                                        <p>{{$property->price}} EGP</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="d-flex justify-content-between">
+                                        <p>Dinner Price</p>
+                                        <p>{{$property->dinner_price}} EGP</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="d-flex justify-content-between">
+                                        <p>Lunch Price</p>
+                                        <p>{{$property->lunch_price}} EGP</p>
                                     </a>
                                 </li>
                             </ul>
                             <div class="br"></div>
                         </aside>
                         <aside class="single-sidebar-widget tag_cloud_widget">
-                            <h4 class="widget_title">Property Features</h4>
-                            <ul class="list">
-                                <li><a>Technology</a></li>
-                                <li><a>Fashion</a></li>
-                                <li><a>Architecture</a></li>
-                                <li><a>Fashion</a></li>
-                                <li><a>Food</a></li>
-                                <li><a>Technology</a></li>
-                                <li><a>Lifestyle</a></li>
-                                <li><a>Art</a></li>
-                                <li><a>Adventure</a></li>
-                                <li><a>Food</a></li>
-                                <li><a>Lifestyle</a></li>
-                                <li><a>Adventure</a></li>
-                            </ul>
+                            <h4 class="widget_title">Location</h4>
+                            <p>
+                                {{$property->address}}
+                            </p>
+                            <p>
+                                {{$property->address_desc}}
+                            </p>
+                            <div style="text-align: center;">
+                                <a href="{{$property->location}}" target="_blank" class="primary-btn submit_btn">View On Map</a>
+                            </div>
                         </aside>
                     </div>
                 </div>
