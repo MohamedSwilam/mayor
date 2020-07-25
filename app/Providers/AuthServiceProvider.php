@@ -4,8 +4,10 @@ namespace App\Providers;
 
 use App\Client;
 use App\Feedback;
+use App\Message;
 use App\Policies\ClientPolicy;
 use App\Policies\FeedbackPolicy;
+use App\Policies\MessagePolicy;
 use App\Policies\PermissionPolicy;
 use App\Policies\PropertyPolicy;
 use App\Policies\ReservationPolicy;
@@ -36,6 +38,7 @@ class AuthServiceProvider extends ServiceProvider
         Property::class => PropertyPolicy::class,
         Feedback::class => FeedbackPolicy::class,
         Client::class => ClientPolicy::class,
+        Message::class => MessagePolicy::class,
     ];
 
     /**

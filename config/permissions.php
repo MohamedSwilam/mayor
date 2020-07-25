@@ -180,4 +180,31 @@ return [
             'display_name' => 'Delete Feedback',
         ],
     ],
+    'Message' =>[
+        [
+            'name' => 'create-message',
+            'guard_name' => 'api',
+            'display_name' => 'Create Message',
+        ],
+        [
+            'name' => 'browse-message',
+            'guard_name' => 'api',
+            'display_name' => 'Browse Message',
+        ],
+        [
+            'name' => 'view-message',
+            'guard_name' => 'api',
+            'display_name' => 'View Message',
+        ],
+        [
+            'name' => 'edit-message',
+            'guard_name' => 'api',
+            'display_name' => 'Edit Message',
+        ],
+        [
+            'name' => 'delete-message',
+            'guard_name' => 'api',
+            'display_name' => 'Delete Message',
+        ],
+    ],
 ];
