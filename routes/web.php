@@ -15,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', 'Web\PagesController@home')->name('home');
-Route::view('/about', 'pages.about')->name('about');
+Route::post('/create-message', 'Web\PagesController@contact_us');
+Route::get('/about', 'Web\PagesController@about')->name('about');
 Route::view('/contact-us', 'pages.contact')->name('contact');
 Route::view('/properties', 'pages.properties')->name('properties');
+Route::view('/thanks', 'pages.thanks')->name('thanks');
 Route::view('/properties/{id}', 'pages.property-details')->name('properties-details');
 
 Route::get('/dashboard', 'ApplicationController')->where('any', '.*');
