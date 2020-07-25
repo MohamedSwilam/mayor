@@ -19,19 +19,15 @@ $factory->define(Property::class, function (Faker $faker) {
         'address_desc'=>$faker->paragraph(2),
         'main_home_image'=>"default.png",
         'main_details_image'=>"https://source.unsplash.com/random",
-        'dinner_price'=>$faker->randomFloat(null,50,300),
-        'lunch_price'=>$faker->randomFloat(null,50,300),
-        'sqm'=>$faker->randomFloat(null,50,3000),
-        'price'=>$faker->randomFloat(null,50,15000),
+        'dinner_price'=>$faker->randomFloat(1,50,300),
+        'lunch_price'=>$faker->randomFloat(1,50,300),
+        'sqm'=>$faker->randomNumber(3),
+        'price'=>$faker->randomFloat(1,50,15000),
         'no_of_rooms'=>$faker->randomDigit,
         'no_of_baths'=>$faker->randomDigit,
         'no_of_floors'=>$faker->randomDigit,
         'has_pool'=>$faker->boolean,
         'has_garden'=>$faker->boolean,
         'view_in_home'=>$faker->boolean,
-
-
-
-
     ];
 });
