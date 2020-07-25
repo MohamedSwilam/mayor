@@ -17,7 +17,7 @@ $factory->define(Property::class, function (Faker $faker) {
         'location'=>"https://goo.gl/maps/D67dKEvPJYYwmyA16",
         'address'=>$faker->address,
         'address_desc'=>$faker->paragraph(2),
-        'main_home_image'=>"https://source.unsplash.com/random",
+        'main_home_image'=>"default.png",
         'main_details_image'=>"https://source.unsplash.com/random",
         'dinner_price'=>$faker->randomFloat(null,50,300),
         'lunch_price'=>$faker->randomFloat(null,50,300),
