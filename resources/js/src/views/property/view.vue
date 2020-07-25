@@ -39,6 +39,15 @@
                 <vs-col vs-w="12" class="mb-2">
                     <b>Launch Price: </b>&nbsp; {{property.lunch_price}} EGP
                 </vs-col>
+                <vs-col vs-w="12" class="mb-2">
+                    <b>Has Garden? </b> &nbsp; {{property.has_garden?'Yes':'No'}}
+                </vs-col>
+                <vs-col vs-w="12" class="mb-2">
+                    <b>Has Pool? </b> &nbsp; {{property.has_pool?'Yes':'No'}}
+                </vs-col>
+                <vs-col vs-w="12" class="mb-2">
+                    <b>Display in Home Page? </b> &nbsp; {{property.view_in_home?'Yes':'No'}}
+                </vs-col>
                 <vs-col vs-w="12" class="mb-5">
                     <b>Main Home Image: </b> <br>
                     <div class="img-container"><img alt="uploaded photo" class="preview" :src="property.main_home_image"></div>

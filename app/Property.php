@@ -10,7 +10,7 @@ class Property extends Model
         'title', 'information', 'description', 'location',
         'address', 'address_desc', 'main_home_image', 'main_details_image',
         'dinner_price', 'lunch_price', 'sqm', 'price', 'no_of_rooms',
-        'no_of_baths', 'no_of_floors', 'has_pool', 'has_garden',
+        'no_of_baths', 'no_of_floors', 'has_pool', 'has_garden', 'view_in_home'
     ];
 
     public function resrvations()

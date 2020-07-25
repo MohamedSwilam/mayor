@@ -45,6 +45,7 @@ class PropertyRequest extends FormRequest
                 'no_of_floors' => 'required|numeric',
                 'has_pool' => 'required|boolean',
                 'has_garden' => 'required|boolean',
+                'view_in_home' => 'required|boolean',
             ];
         }
         else if (sizeof($segments) == 3){
@@ -66,7 +67,7 @@ class PropertyRequest extends FormRequest
                 'no_of_floors' => 'required|numeric',
                 'has_pool' => 'required|boolean',
                 'has_garden' => 'required|boolean',
-
+                'view_in_home' => 'required|boolean',
             ];
         }
 

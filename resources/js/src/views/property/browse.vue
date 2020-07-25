@@ -10,6 +10,7 @@
                     <vs-th>#</vs-th>
                     <vs-th>Main Image</vs-th>
                     <vs-th sort-key="title">Title</vs-th>
+                    <vs-th sort-key="view_in_home">View In Home?</vs-th>
                     <vs-th sort-key="created_at">Created At</vs-th>
                     <vs-th>Action</vs-th>
                 </template>
@@ -25,6 +26,11 @@
 
                         <vs-td :data="record.title">
                             {{ record.title}}
+                        </vs-td>
+
+                        <vs-td :data="record.view_in_home">
+                            <vs-chip v-if="record.view_in_home" color="success">Yes</vs-chip>
+                            <vs-chip v-else color="danger">No</vs-chip>
                         </vs-td>
 
                         <vs-td :data="record.created_at">
