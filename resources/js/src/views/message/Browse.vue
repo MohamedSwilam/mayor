@@ -13,7 +13,7 @@
                 <span style="float: right;">Created at {{ display_message.data.created_at | date(true)}} - {{ display_message.data.created_at | time}}</span>
             </vs-popup>
             <vx-card ref="message" title="Messages List" collapse-action refreshContentAction @refresh="browse">
-                <vs-table max-items="5" pagination search :data="messages">
+                <vs-table search :data="messages">
                     <template slot="thead">
                         <vs-th>#</vs-th>
                         <vs-th sort-key="name">Name</vs-th>
@@ -133,7 +133,7 @@ export default {
                 .then(response => {
                     this.is_requesting = false;
                     this.$vs.loading.close(`#btn-delete-${params[0].id} > .con-vs-loading`);
-                    this.roles = this.roles.filter(type => {return type.id !== params[0].id});
+                    this.messages = this.messages.filter(type => {return type.id !== params[0].id});
                     this.$vs.notify({
                         title: 'Success',
                         text: response.data.message,

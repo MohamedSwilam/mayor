@@ -60,4 +60,11 @@ Route::group(['prefix' => 'client', 'middleware' => 'auth:api'], function () {
     Route::delete('{id}', 'ClientController@destroy');
     Route::resource('', 'ClientController');
 });
+
+Route::group(['prefix' => 'message', 'middleware' => 'auth:api'], function () {
+    Route::post('{id}', 'MessageController@update');
+    Route::get('{id}', 'MessageController@show');
+    Route::delete('{id}', 'MessageController@destroy');
+    Route::resource('', 'MessageController');
+});
 Route::middleware('auth:api')->get('permission', 'PermissionController@index');
