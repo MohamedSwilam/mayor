@@ -62,7 +62,7 @@
 
         <!-- Menu Items -->
         <component :is="scrollbarTag" ref="verticalNavMenuPs" class="scroll-area-v-nav-menu pt-2" :settings="settings" @ps-scroll-y="psSectionScroll" @scroll="psSectionScroll" :key="$vs.rtl">
-          <template v-for="(item, index) in menuItemsUpdated">
+          <template v-for="(item, index) in menuItemsUpdated" v-if="can(item.permission) || !item.permission">
 
             <!-- Group Header -->
             <span v-if="item.header && !verticalNavMenuItemsMin" class="navigation-header truncate" :key="`header-${index}`">

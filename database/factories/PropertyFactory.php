@@ -28,6 +28,7 @@ $factory->define(Property::class, function (Faker $faker) {
         'no_of_floors'=>$faker->randomDigit,
         'has_pool'=>$faker->boolean,
         'has_garden'=>$faker->boolean,
+        'view_in_home'=>$faker->boolean,
 
 
 

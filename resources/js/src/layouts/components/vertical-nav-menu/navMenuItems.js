@@ -27,21 +27,21 @@ export default [
         name: "Property",
         slug: "property",
         icon: "HomeIcon",
-        // permission: 'browse-property'
+        permission: 'browse-property'
     },
     {
         url: "/dashboard/feedback",
         name: "Feedback",
         slug: "feedback",
         icon: "SmileIcon",
-        // permission: 'browse-feedback'
+        permission: 'browse-feedback'
     },
     {
         url: "/dashboard/message",
         name: "Messages",
         slug: "message",
         icon: "MessageSquareIcon",
-        // permission: 'browse-message'
+        permission: 'browse-message'
     },
     {
         name: "Settings",

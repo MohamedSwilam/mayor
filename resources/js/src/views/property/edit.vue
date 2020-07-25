@@ -86,16 +86,23 @@
                         <vs-textarea v-validate="'required'" counter="350" :danger="errors.has('address_desc')" :danger-text="errors.first('address_desc')" val-icon-danger="clear" label="Address Description" :counter-danger.sync="counterDanger" v-model="form.address_desc" name="description" />
                     </vs-col>
                     <vs-divider></vs-divider>
-                    <vs-col vs-lg="6" vs-sm="6" vs-xs="6" class="px-2 mb-5">
+                    <vs-col vs-lg="4" vs-sm="4" vs-xs="4" class="px-2 mb-5">
                         <b>Has Pool? </b>
                         <vs-switch style="display: inline-flex;vertical-align: middle;margin-left: 10px;" icon-pack="feather" vs-icon-on="icon-check-circle" vs-icon-off="icon-slash" v-model="form.has_pool">
                             <span slot="on">YES</span>
                             <span slot="off">NO</span>
                         </vs-switch>
                     </vs-col>
-                    <vs-col vs-lg="6" vs-sm="6" vs-xs="6" class="px-2 mb-5">
+                    <vs-col vs-lg="4" vs-sm="4" vs-xs="4" class="px-2 mb-5">
                         <b>Has Garden? </b>
                         <vs-switch style="display: inline-flex;vertical-align: middle;margin-left: 10px;" icon-pack="feather" vs-icon-on="icon-check-circle" vs-icon-off="icon-slash" v-model="form.has_garden">
+                            <span slot="on">YES</span>
+                            <span slot="off">NO</span>
+                        </vs-switch>
+                    </vs-col>
+                    <vs-col vs-lg="4" vs-sm="4" vs-xs="4" class="px-2 mb-5">
+                        <b>View in home? </b>
+                        <vs-switch style="display: inline-flex;vertical-align: middle;margin-left: 10px;" icon-pack="feather" vs-icon-on="icon-check-circle" vs-icon-off="icon-slash" v-model="form.view_in_home">
                             <span slot="on">YES</span>
                             <span slot="off">NO</span>
                         </vs-switch>
@@ -149,6 +156,7 @@
                     images: [],
                     has_pool: false,
                     has_garden: false,
+                    view_in_home: false,
                     sqm: 500,
                     no_of_rooms: 1,
                     no_of_baths: 1,
@@ -285,7 +293,7 @@
                         for (let i=0; i<this.form[key].length; i++) {
                             form_data.append(key+'[]', this.form[key][i]);
                         }
-                    } else if(key === 'has_pool' || key === 'has_garden') {
+                    } else if(key === 'has_pool' || key === 'has_garden' || key === 'view_in_home') {
                         form_data.append(key, this.form[key]?1:0);
                     }
                     else {
