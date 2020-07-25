@@ -19,7 +19,7 @@ class FeedbackSeeder extends Seeder
         Feedback::truncate();
 
 
-        factory(Feedback::class, 50)->create();
+        factory(Feedback::class, 10)->create();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         Model::reguard();

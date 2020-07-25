@@ -15,6 +15,6 @@ $factory->define(Feedback::class, function (Faker $faker) {
         'name' => $faker->name,
         'title' => $faker->jobTitle,
         'feedback' => $faker->paragraph(2),
-        'image' => "https://source.unsplash.com/random"
+        'image' => "default.jpg"
     ];
 });

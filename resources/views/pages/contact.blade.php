@@ -31,6 +31,8 @@
                  data-mlat="40.701083"
                  data-mlon="-74.1522848">
             </div>
+
+{{--            ++++++++++++++++++++++ start form ++++++++++++++++++++++++++++--}}
             <div class="row">
                 <div class="col-lg-3">
                     <div class="contact_info">
@@ -52,7 +54,8 @@
                     </div>
                 </div>
                 <div class="col-lg-9">
-                    <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                    <form class="row contact_form" action="{{url('create-message')}}" method="post" id="contactForm" novalidate="novalidate">
+                        {{ csrf_field() }}
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
@@ -61,7 +64,7 @@
                                 <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter Subject">
+                                <input type="text" class="form-control" id="subject" name="phone" placeholder="Enter phone">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -70,9 +73,19 @@
                             </div>
                         </div>
                         <div class="col-md-12 text-right">
-                            <button type="submit" value="submit" class="btn submit_btn">Send Message</button>
+                            <input type="submit" value="submit" class="btn submit_btn">Send Message</input>
                         </div>
                     </form>
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                    @endif
                 </div>
             </div>
         </div>
@@ -84,7 +97,6 @@
     <!-- contact js -->
     <script src="{{ asset(mix('js/website/jquery.form.js'))}}"></script>
     <script src="{{ asset(mix('js/website/jquery.validate.min.js'))}}"></script>
-    <script src="{{ asset(mix('js/website/contact.js'))}}"></script>
     <!--gmaps Js-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
     <script src="{{ asset(mix('js/website/gmaps.min.js'))}}"></script>

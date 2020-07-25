@@ -10,8 +10,8 @@
             <div class="container">
                 <div class="banner_content">
                     <div class="page_link">
-                        <a href="index.html">Home</a>
-                        <a href="gallery.html">Gallery</a>
+                        <a href="home.blade.php">Home</a>
+                        <a href="about.blade.php">About</a>
                     </div>
                     <h2>About Us</h2>
                 </div>
@@ -124,54 +124,17 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="testi_slider owl-carousel">
-                        <div class="item">
-                            <div class="testi_item">
-                                <img src="/images/website/testimonials/testi-1.png" alt="">
-                                <p>It won’t be a bigger problem to find one video game lover in your neighbor. Since the introduction of Virtual Game, it has been achieving great heights so far as its</p>
-                                <h4>Cordelia Barton</h4>
-                                <h6>CEO at Google</h6>
+                        @foreach($feedback as $feedback)
+                            <div class="item">
+                                <div class="testi_item">
+                                    {{--                                "--}}
+                                    <img  style="max-width: 150px; max-height: 150px; border-radius: 50%;" src="/storage/feedback/{{$feedback->image}}" alt="">
+                                    <p style="height: 120px;">{{$feedback->feedback}}</p>
+                                    <h4>{{$feedback->name}}</h4>
+                                    <h6>{{$feedback->title}}</h6>
+                                </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="testi_item">
-                                <img src="/images/website/testimonials/testi-2.png" alt="">
-                                <p>It won’t be a bigger problem to find one video game lover in your neighbor. Since the introduction of Virtual Game, it has been achieving great heights so far as its</p>
-                                <h4>Cordelia Barton</h4>
-                                <h6>CEO at Google</h6>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testi_item">
-                                <img src="/images/website/testimonials/testi-1.png" alt="">
-                                <p>It won’t be a bigger problem to find one video game lover in your neighbor. Since the introduction of Virtual Game, it has been achieving great heights so far as its</p>
-                                <h4>Cordelia Barton</h4>
-                                <h6>CEO at Google</h6>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testi_item">
-                                <img src="/images/website/testimonials/testi-2.png" alt="">
-                                <p>It won’t be a bigger problem to find one video game lover in your neighbor. Since the introduction of Virtual Game, it has been achieving great heights so far as its</p>
-                                <h4>Cordelia Barton</h4>
-                                <h6>CEO at Google</h6>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testi_item">
-                                <img src="/images/website/testimonials/testi-1.png" alt="">
-                                <p>It won’t be a bigger problem to find one video game lover in your neighbor. Since the introduction of Virtual Game, it has been achieving great heights so far as its</p>
-                                <h4>Cordelia Barton</h4>
-                                <h6>CEO at Google</h6>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testi_item">
-                                <img src="/images/website/testimonials/testi-2.png" alt="">
-                                <p>It won’t be a bigger problem to find one video game lover in your neighbor. Since the introduction of Virtual Game, it has been achieving great heights so far as its</p>
-                                <h4>Cordelia Barton</h4>
-                                <h6>CEO at Google</h6>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
