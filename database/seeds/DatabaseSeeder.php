@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class);
         $this->call(ClientSeeder::class);
         $this->call(PropertySeeder::class);
+        $this->call(ReservationStatusesSeeder::class);
         $this->call(ReservationSeeder::class);
         $this->call(FeedbackSeeder::class);
         $this->call(MessageSeeder::class);

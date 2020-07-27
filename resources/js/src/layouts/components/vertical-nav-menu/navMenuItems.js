@@ -30,6 +30,13 @@ export default [
         permission: 'browse-property'
     },
     {
+        url: "/dashboard/reservation",
+        name: "Reservation",
+        slug: "reservation",
+        icon: "CalendarIcon",
+        permission: 'browse-reservation'
+    },
+    {
         url: "/dashboard/feedback",
         name: "Feedback",
         slug: "feedback",

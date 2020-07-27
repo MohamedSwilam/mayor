@@ -25,6 +25,7 @@ import moduleProperty from './property/moduleProperty';
 import moduleFeedback from './feedback/moduleFeedback';
 import moduleMessage from './message/moduleMessage';
 import moduleRolesAndPermissions from './roles-and-permissions/moduleRolesAndPermissions';
+import moduleReservation from "./reservation/moduleReservation";
 
 const vuexLocal = new VuexPersistence({
     storage: window.localStorage
@@ -41,6 +42,7 @@ export default new Vuex.Store({
         feedback: moduleFeedback,
         property: moduleProperty,
         message: moduleMessage,
+        reservation: moduleReservation,
         rolesAndPermissions: moduleRolesAndPermissions,
     },
     plugins: [vuexLocal.plugin],

@@ -175,6 +175,53 @@ const router = new Router({
                     }
                 },
                 // =============================================================================
+                // Reservation Routes
+                // =============================================================================
+                {
+                    path: '/dashboard/reservation',
+                    name: 'reservation',
+                    component: () => import('./views/reservation/browse.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'Reservations', active: true },
+                        ],
+                        pageTitle: 'Reservations',
+                        permission: 'browse-reservation'
+                    }
+                },
+                {
+                    path: '/dashboard/reservation/:id/edit',
+                    name: 'edit-reservation',
+                    component: () => import('./views/reservation/edit.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'Reservation', url: '/dashboard/reservation' },
+                            { title: 'Edit Reservation', active: true },
+                        ],
+                        pageTitle: 'Edit Reservation',
+                        permission: 'edit-reservation'
+                    }
+                },
+                {
+                    path: '/dashboard/reservation/:id',
+                    name: 'view-reservation',
+                    component: () => import('./views/reservation/view.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'Reservations', url: '/dashboard/reservation' },
+                            { title: 'Reservation Details', active: true },
+                        ],
+                        pageTitle: 'View Reservation',
+                        permission: 'view-reservation'
+                    }
+                },
+                // =============================================================================
                 // Feedback Routes
                 // =============================================================================
                 {
