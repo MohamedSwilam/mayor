@@ -15,9 +15,15 @@ class Reservation extends Model
     {
         return $this->belongsTo(Client::class, 'client_id');
     }
+
     public function properties()
     {
         return $this->belongsTo(Property::class, 'property_id');
+    }
+
+    public function reservation_status()
+    {
+        return $this->belongsTo(ReservationStatuses::class, 'status_id');
     }
 
 }

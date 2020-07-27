@@ -17,15 +17,13 @@ class CreateReservationsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('property_id');
             $table->unsignedBigInteger('client_id');
-            $table->date("checkin");
-            $table->date("checkout");
-            $table->boolean("is_canceled");
-            $table->string("password");
-
+            $table->timestamp("check_in");
+            $table->timestamp("check_out");
+            $table->unsignedBigInteger("status_id");
             $table->timestamps();
             $table->foreign('property_id')->references('id')->on('properties')->onDelete('cascade');
             $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
-
+            $table->foreign('status_id')->references('id')->on('reservation_statuses')->onDelete('cascade');
         });
     }
 

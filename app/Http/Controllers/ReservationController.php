@@ -19,7 +19,7 @@ class ReservationController extends Controller
         $this->authorize('index', Reservation::class);
         return ResponseFacade::indexRespond(
             fractal(
-                (new IndexResponse(Reservation::with(['clients','properties'])))->execute()
+                (new IndexResponse(Reservation::with(['clients', 'clients.user', 'properties', 'reservation_status'])))->execute()
                 , new ReservationTransformer()
             )
         );
@@ -29,17 +29,13 @@ class ReservationController extends Controller
     public function store(ReservationRequest $request)
     {
         $this->authorize('store', Reservation::class);
-//        $data = $request->validated();
-//        die($request)
         $reservation=Reservation::create($request->toArray());
         return ResponseFacade::createRespond(
             fractal(
-                Reservation::where('id', $reservation->id)->with(['clients','properties'])->first(),
+                Reservation::where('id', $reservation->id)->with(['clients', 'clients.user', 'properties', 'reservation_status'])->first(),
                 new ReservationTransformer()
             )
         );
-
-
     }
 
 
@@ -48,7 +44,7 @@ class ReservationController extends Controller
         $this->authorize('show', Reservation::class);
         return ResponseFacade::showRespond(
             fractal(
-                Reservation::where('id', $id)->with(['clients','properties'])->first(),
+                Reservation::where('id', $id)->with(['clients', 'clients.user', 'properties', 'reservation_status'])->first(),
                 new ReservationTransformer()
             )
         );
@@ -65,7 +61,7 @@ class ReservationController extends Controller
 
         return ResponseFacade::createRespond(
             fractal(
-                Reservation::where('id', $resevation->id)->with(['clients','properties'])->first(),
+                Reservation::where('id', $resevation->id)->with(['clients', 'clients.user', 'properties', 'reservation_status'])->first(),
                 new ReservationTransformer()
             )
         );
