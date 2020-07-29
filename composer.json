@@ -17,8 +17,7 @@
         "laravel/passport": "^9.2",
         "laravel/tinker": "^2.0",
         "spatie/laravel-fractal": "^5.7",
-        "spatie/laravel-permission": "^3.13",
-      "ext-http": "*"
+        "spatie/laravel-permission": "^3.13"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

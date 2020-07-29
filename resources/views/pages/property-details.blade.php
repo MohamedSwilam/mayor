@@ -45,38 +45,28 @@
                             <h3 class="title_color">Property Gallery</h3>
                             <div class="row gallery-item">
                                 @foreach($property->images as $image)
-                                    <div class="col-md-4">
-                                        <a href="/storage/properties/{{$image->source}}" target="_blank" class="img-gal"><div class="single-gallery-image" style="background: url(/storage/properties/{{$image->source}});"></div></a>
-                                    </div>
                                 @endforeach
                                 @if(count($property->images) == 0)
+                                        <div class="col-md-4">
+                                            <a href="/storage/properties/{{$image->source}}" target="_blank" class="img-gal"><div class="single-gallery-image" style="background: url(/storage/properties/{{$image->source}});"></div></a>
+                                        </div>
                                         <div class="col-md-12" style="text-align: center">
                                             <b>No images uploaded for this property!</b>
                                         </div>
-                                @endif
+                                    @endif
                             </div>
                         </div>
                     </div>
+{{--                    <script>--}}
+{{--                        console.log(localStorage);--}}
+{{--                        if (JSON.parse(localStorage.vuex)) {--}}
 
-                    <div class="comment-form">
+{{--                        }--}}
+{{--                    </script>--}}
+                    <div class="reserve-form">
                         <h4>Property Reservation</h4>
-                        <form>
-                            <div class="form-group form-inline">
-                                <div class="form-group col-lg-6 col-md-6 name">
-                                    <input type="text" class="form-control" id="name" placeholder="Enter Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Name'">
-                                </div>
-                                <div class="form-group col-lg-6 col-md-6 email">
-                                    <input type="email" class="form-control" id="email" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="subject" placeholder="Subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Subject'">
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control mb-10" rows="5" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
-                            </div>
-                            <a href="#" class="primary-btn submit_btn">Reserve</a>
-                        </form>
+
+                        <a href="#" class="primary-btn submit_btn">Reserve Now</a>
                     </div>
                 </div>
                 <div class="col-lg-4">
