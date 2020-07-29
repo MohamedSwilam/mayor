@@ -17,7 +17,7 @@ class CreateReservationsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('property_id');
             $table->unsignedBigInteger('client_id');
-            $table->timestamp("check_in");
+            $table->timestamp("check_in")->default();
             $table->timestamp("check_out");
             $table->unsignedBigInteger("status_id");
             $table->timestamps();
