@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreateReservationsTable extends Migration
@@ -17,8 +18,8 @@ class CreateReservationsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('property_id');
             $table->unsignedBigInteger('client_id');
-            $table->timestamp("check_in")->default();
-            $table->timestamp("check_out");
+            $table->timestamp("check_in")->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp("check_out")->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->unsignedBigInteger("status_id");
             $table->timestamps();
             $table->foreign('property_id')->references('id')->on('properties')->onDelete('cascade');
