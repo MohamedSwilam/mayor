@@ -44,16 +44,17 @@
                         <div class="col-lg-12 col-md-12 ">
                             <h3 class="title_color">Property Gallery</h3>
                             <div class="row gallery-item">
-                                @foreach($property->images as $image)
+                                @foreach($property->images as $image )
+                                    <div class="col-md-4">
+                                        <a href="/storage/properties/{{$image->source}}" target="_blank" class="img-gal"><div class="single-gallery-image" style="background: url(/storage/properties/{{$image ?? ''->source}});"></div></a>
+                                    </div>
                                 @endforeach
+
                                 @if(count($property->images) == 0)
-                                        <div class="col-md-4">
-                                            <a href="/storage/properties/{{$image->source}}" target="_blank" class="img-gal"><div class="single-gallery-image" style="background: url(/storage/properties/{{$image->source}});"></div></a>
-                                        </div>
-                                        <div class="col-md-12" style="text-align: center">
-                                            <b>No images uploaded for this property!</b>
-                                        </div>
-                                    @endif
+                                    <div class="col-md-12" style="text-align: center">
+                                        <b>No images uploaded for this property!</b>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -66,7 +67,7 @@
                     <div class="reserve-form">
                         <h4>Property Reservation</h4>
 
-                        <a href="#" class="primary-btn submit_btn">Reserve Now</a>
+                        <a href="\dashboard" class="primary-btn submit_btn">Reserve Now</a>
                     </div>
                 </div>
                 <div class="col-lg-4">

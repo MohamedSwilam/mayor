@@ -33,7 +33,12 @@ Route::group(['prefix' => 'role', 'middleware' => 'auth:api'], function () {
     Route::resource('', 'RoleController');
 });
 
+Route::middleware('auth:api')->get('my-reservations', 'ReservationController@browse_my_reservations');
+Route::middleware('auth:api')->get('edit-my-reservation/{id}', 'ReservationController@edit_my_reservations');
+Route::middleware('auth:api')->get('delete-my-reservation/{id}  ', 'ReservationController@delete_my_reservation');
+
 Route::group(['prefix' => 'reservation', 'middleware' => 'auth:api'], function () {
+
     Route::post('{id}', 'ReservationController@update');
     Route::get('{id}', 'ReservationController@show');
     Route::delete('{id}', 'ReservationController@destroy');

@@ -8,7 +8,7 @@ class Reservation extends Model
 {
 
     protected $fillable = [
-        'property_id', 'client_id', 'checkin','checkout','is_canceled','password',
+        'property_id', 'client_id', 'check_in','check_out','is_canceled','password','status_id'
     ];
 
     public function clients()

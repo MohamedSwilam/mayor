@@ -192,9 +192,38 @@ const router = new Router({
                     }
                 },
                 {
-                    path: '/dashboard/reservation/:id/edit',
+                    path: '/dashboard/my-reservations',
+                    name: 'my-reservations',
+                    component: () => import('./views/reservation/browseMyReservations.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'My Reservations', active: true },
+                        ],
+                        pageTitle: 'My Reservations',
+                        permission: 'browse-my-reservations'
+                    }
+                },
+                {
+                    path: '/dashboard/reservation/:id/edit-my-reservation',
                     name: 'edit-reservation',
                     component: () => import('./views/reservation/edit.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'Reservation', url: '/dashboard/my-reservation' },
+                            { title: 'Edit Reservation', active: true },
+                        ],
+                        pageTitle: 'Edit Reservation',
+                        permission: 'edit-reservation'
+                    }
+                },
+                {
+                    path: '/dashboard/reservation/:id/edit',
+                    name: 'edit-my-reservation',
+                    component: () => import('./views/reservation/editMyReservation.vue'),
                     beforeEnter: guard,
                     meta: {
                         breadcrumb: [
@@ -202,8 +231,8 @@ const router = new Router({
                             { title: 'Reservation', url: '/dashboard/reservation' },
                             { title: 'Edit Reservation', active: true },
                         ],
-                        pageTitle: 'Edit Reservation',
-                        permission: 'edit-reservation'
+                        pageTitle: 'Edit My Reservation',
+                        permission: 'edit-my-reservation'
                     }
                 },
                 {

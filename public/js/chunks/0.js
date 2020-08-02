@@ -6851,6 +6851,12 @@ __webpack_require__.r(__webpack_exports__);
   icon: "CalendarIcon",
   permission: 'browse-reservation'
 }, {
+  url: "/dashboard/my-reservations",
+  name: "Reservation",
+  slug: "reservation",
+  icon: "CalendarIcon",
+  permission: 'browse-my-reservations'
+}, {
   url: "/dashboard/feedback",
   name: "Feedback",
   slug: "feedback",
