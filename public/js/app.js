@@ -72099,21 +72099,31 @@ __webpack_require__.r(__webpack_exports__);
   view: function view(id) {
     return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("reservation/".concat(id));
   },
+  viewMyResevation: function viewMyResevation(id) {
+    return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("view-my-reservation/".concat(id));
+  },
   create: function create(data) {
     return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].post("reservation", data);
   },
   update: function update(id, data) {
     return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].post("reservation/".concat(id), data);
   },
+  getDates: function getDates(id) {
+    return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("reservation/get_reservation_dates/".concat(id));
+  },
   updateMyReservation: function updateMyReservation(id, data) {
-    return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].post("edit-emy-reservation/".concat(id), data);
+    return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].post("edit-my-reservation/".concat(id), data);
   },
   delete: function _delete(id) {
     return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].delete("reservation/".concat(id));
   },
   deleteMyReservation: function deleteMyReservation(id) {
     //filters=?paginate=5&sortAsc=id&page=2
-    return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("delete-emy-reservation/".concat(id));
+    return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("delete-my-reservation/".concat(id));
+  },
+  getAllStatus: function getAllStatus() {
+    //filters=?paginate=5&sortAsc=id&page=2
+    return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("reservation/getallsatatus");
   }
 });
 
@@ -72537,7 +72547,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       name: 'home',
       beforeEnter: guard,
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 28).then(__webpack_require__.bind(null, /*! ./views/Home.vue */ "./resources/js/src/views/Home.vue"));
+        return __webpack_require__.e(/*! import() */ 31).then(__webpack_require__.bind(null, /*! ./views/Home.vue */ "./resources/js/src/views/Home.vue"));
       },
       meta: {
         breadcrumb: [{
@@ -72556,7 +72566,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/user',
       name: 'user',
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(2), __webpack_require__.e(15)]).then(__webpack_require__.bind(null, /*! ./views/user/browse.vue */ "./resources/js/src/views/user/browse.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(2), __webpack_require__.e(18)]).then(__webpack_require__.bind(null, /*! ./views/user/browse.vue */ "./resources/js/src/views/user/browse.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72577,7 +72587,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/user/create',
       name: 'add-user',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 23).then(__webpack_require__.bind(null, /*! ./views/user/create.vue */ "./resources/js/src/views/user/create.vue"));
+        return __webpack_require__.e(/*! import() */ 26).then(__webpack_require__.bind(null, /*! ./views/user/create.vue */ "./resources/js/src/views/user/create.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72602,7 +72612,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/user/:id',
       name: 'view-user',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 16).then(__webpack_require__.bind(null, /*! ./views/user/view.vue */ "./resources/js/src/views/user/view.vue"));
+        return __webpack_require__.e(/*! import() */ 19).then(__webpack_require__.bind(null, /*! ./views/user/view.vue */ "./resources/js/src/views/user/view.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72627,7 +72637,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/user/:id/edit',
       name: 'edit-user',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 24).then(__webpack_require__.bind(null, /*! ./views/user/edit.vue */ "./resources/js/src/views/user/edit.vue"));
+        return __webpack_require__.e(/*! import() */ 27).then(__webpack_require__.bind(null, /*! ./views/user/edit.vue */ "./resources/js/src/views/user/edit.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72757,7 +72767,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/my-reservations',
       name: 'my-reservations',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 29).then(__webpack_require__.bind(null, /*! ./views/reservation/browseMyReservations.vue */ "./resources/js/src/views/reservation/browseMyReservations.vue"));
+        return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ./views/reservation/browseMyReservations.vue */ "./resources/js/src/views/reservation/browseMyReservations.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72772,10 +72782,31 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         permission: 'browse-my-reservations'
       }
     }, {
-      path: '/dashboard/reservation/:id/edit-my-reservation',
+      path: '/dashboard/reservation/:id/create',
+      name: 'add-reservation',
+      component: function component() {
+        return Promise.all(/*! import() */[__webpack_require__.e(22), __webpack_require__.e(14)]).then(__webpack_require__.bind(null, /*! ./views/reservation/create.vue */ "./resources/js/src/views/reservation/create.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard'
+        }, {
+          title: 'reservation',
+          url: '/dashboard/reservation'
+        }, {
+          title: 'create Reservation',
+          active: true
+        }],
+        pageTitle: 'Add Reservation',
+        permission: 'create-reservation'
+      }
+    }, {
+      path: '/dashboard/reservation/:id/edit',
       name: 'edit-reservation',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 19).then(__webpack_require__.bind(null, /*! ./views/reservation/edit.vue */ "./resources/js/src/views/reservation/edit.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(22), __webpack_require__.e(34)]).then(__webpack_require__.bind(null, /*! ./views/reservation/edit.vue */ "./resources/js/src/views/reservation/edit.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72784,7 +72815,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
           url: '/dashboard'
         }, {
           title: 'Reservation',
-          url: '/dashboard/my-reservation'
+          url: '/dashboard/reservation'
         }, {
           title: 'Edit Reservation',
           active: true
@@ -72793,10 +72824,10 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         permission: 'edit-reservation'
       }
     }, {
-      path: '/dashboard/reservation/:id/edit',
+      path: '/dashboard/my-reservation/:id/edit',
       name: 'edit-my-reservation',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 30).then(__webpack_require__.bind(null, /*! ./views/reservation/editMyReservation.vue */ "./resources/js/src/views/reservation/editMyReservation.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(22), __webpack_require__.e(33)]).then(__webpack_require__.bind(null, /*! ./views/reservation/editMyReservation.vue */ "./resources/js/src/views/reservation/editMyReservation.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72814,10 +72845,10 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         permission: 'edit-my-reservation'
       }
     }, {
-      path: '/dashboard/reservation/:id',
+      path: '/dashboard/my-reservation/:id',
       name: 'view-reservation',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 20).then(__webpack_require__.bind(null, /*! ./views/reservation/view.vue */ "./resources/js/src/views/reservation/view.vue"));
+        return __webpack_require__.e(/*! import() */ 23).then(__webpack_require__.bind(null, /*! ./views/reservation/viewMyReservation.vue */ "./resources/js/src/views/reservation/viewMyReservation.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72831,7 +72862,28 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
           title: 'Reservation Details',
           active: true
         }],
-        pageTitle: 'View Reservation',
+        pageTitle: 'View My Reservation',
+        permission: 'view-my-reservation'
+      }
+    }, {
+      path: '/dashboard/reservation/:id',
+      name: 'view-reservation',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ 15).then(__webpack_require__.bind(null, /*! ./views/reservation/view.vue */ "./resources/js/src/views/reservation/view.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard'
+        }, {
+          title: 'Reservations',
+          url: '/dashboard/reservation'
+        }, {
+          title: 'Reservation Details',
+          active: true
+        }],
+        pageTitle: 'View  Reservation',
         permission: 'view-reservation'
       }
     }, // =============================================================================
@@ -72904,7 +72956,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/message',
       name: 'message',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 18).then(__webpack_require__.bind(null, /*! ./views/message/browse.vue */ "./resources/js/src/views/message/browse.vue"));
+        return __webpack_require__.e(/*! import() */ 21).then(__webpack_require__.bind(null, /*! ./views/message/browse.vue */ "./resources/js/src/views/message/browse.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72925,7 +72977,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/settings/role',
       name: 'role',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 21).then(__webpack_require__.bind(null, /*! ./views/settings/Role/Roles.vue */ "./resources/js/src/views/settings/Role/Roles.vue"));
+        return __webpack_require__.e(/*! import() */ 24).then(__webpack_require__.bind(null, /*! ./views/settings/Role/Roles.vue */ "./resources/js/src/views/settings/Role/Roles.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72945,7 +72997,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/settings/role/create',
       name: 'create-role',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ./views/settings/Role/Create.vue */ "./resources/js/src/views/settings/Role/Create.vue"));
+        return __webpack_require__.e(/*! import() */ 16).then(__webpack_require__.bind(null, /*! ./views/settings/Role/Create.vue */ "./resources/js/src/views/settings/Role/Create.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72968,7 +73020,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/settings/role/:id',
       name: 'view-role',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 22).then(__webpack_require__.bind(null, /*! ./views/settings/Role/View.vue */ "./resources/js/src/views/settings/Role/View.vue"));
+        return __webpack_require__.e(/*! import() */ 25).then(__webpack_require__.bind(null, /*! ./views/settings/Role/View.vue */ "./resources/js/src/views/settings/Role/View.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72991,7 +73043,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/settings/role/edit/:id',
       name: 'edit-role',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 14).then(__webpack_require__.bind(null, /*! ./views/settings/Role/Edit.vue */ "./resources/js/src/views/settings/Role/Edit.vue"));
+        return __webpack_require__.e(/*! import() */ 17).then(__webpack_require__.bind(null, /*! ./views/settings/Role/Edit.vue */ "./resources/js/src/views/settings/Role/Edit.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -73034,7 +73086,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   {
     path: '',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 27).then(__webpack_require__.bind(null, /*! @/layouts/full-page/FullPage.vue */ "./resources/js/src/layouts/full-page/FullPage.vue"));
+      return __webpack_require__.e(/*! import() */ 30).then(__webpack_require__.bind(null, /*! @/layouts/full-page/FullPage.vue */ "./resources/js/src/layouts/full-page/FullPage.vue"));
     },
     children: [// =============================================================================
     // PAGES
@@ -73043,7 +73095,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/login',
       name: 'pageLogin',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 17).then(__webpack_require__.bind(null, /*! ./views/pages/Login.vue */ "./resources/js/src/views/pages/Login.vue"));
+        return __webpack_require__.e(/*! import() */ 20).then(__webpack_require__.bind(null, /*! ./views/pages/Login.vue */ "./resources/js/src/views/pages/Login.vue"));
       }
     }, {
       path: '/dashboard/register',
@@ -73055,13 +73107,13 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/error-403',
       name: 'pageError403',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 26).then(__webpack_require__.bind(null, /*! ./views/pages/NotAuthorized.vue */ "./resources/js/src/views/pages/NotAuthorized.vue"));
+        return __webpack_require__.e(/*! import() */ 29).then(__webpack_require__.bind(null, /*! ./views/pages/NotAuthorized.vue */ "./resources/js/src/views/pages/NotAuthorized.vue"));
       }
     }, {
       path: '/dashboard/error-404',
       name: 'pageError404',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 25).then(__webpack_require__.bind(null, /*! ./views/pages/Error404.vue */ "./resources/js/src/views/pages/Error404.vue"));
+        return __webpack_require__.e(/*! import() */ 28).then(__webpack_require__.bind(null, /*! ./views/pages/Error404.vue */ "./resources/js/src/views/pages/Error404.vue"));
       }
     }]
   }, // Redirect to 404 page, if no match found
@@ -74075,9 +74127,25 @@ __webpack_require__.r(__webpack_exports__);
       });
     });
   },
-  view: function view(_ref3, id) {
+  viewMyReservation: function viewMyReservation(_ref3, id) {
     var commit = _ref3.commit,
         dispatch = _ref3.dispatch;
+    return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
+      _http_requests_reservation_index__WEBPACK_IMPORTED_MODULE_1__["default"].viewMyResevation(id).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  view: function view(_ref4, id) {
+    var commit = _ref4.commit,
+        dispatch = _ref4.dispatch;
     return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
       _http_requests_reservation_index__WEBPACK_IMPORTED_MODULE_1__["default"].view(id).then(function (response) {
         resolve(response);
@@ -74091,27 +74159,11 @@ __webpack_require__.r(__webpack_exports__);
       });
     });
   },
-  create: function create(_ref4, payload) {
-    var commit = _ref4.commit,
-        dispatch = _ref4.dispatch;
-    return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
-      _http_requests_reservation_index__WEBPACK_IMPORTED_MODULE_1__["default"].create(payload).then(function (response) {
-        resolve(response);
-      }).catch(function (error) {
-        dispatch('handleError', {
-          reject: reject,
-          error: error
-        }, {
-          root: true
-        });
-      });
-    });
-  },
-  update: function update(_ref5, payload) {
+  getDates: function getDates(_ref5, id) {
     var commit = _ref5.commit,
         dispatch = _ref5.dispatch;
     return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
-      _http_requests_reservation_index__WEBPACK_IMPORTED_MODULE_1__["default"].update(payload.id, payload.data).then(function (response) {
+      _http_requests_reservation_index__WEBPACK_IMPORTED_MODULE_1__["default"].getDates(id).then(function (response) {
         resolve(response);
       }).catch(function (error) {
         dispatch('handleError', {
@@ -74123,10 +74175,28 @@ __webpack_require__.r(__webpack_exports__);
       });
     });
   },
-  updateMyReservation: function updateMyReservation(_ref6, payload) {
+  create: function create(_ref6, payload) {
     var commit = _ref6.commit,
         dispatch = _ref6.dispatch;
     return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
+      _http_requests_reservation_index__WEBPACK_IMPORTED_MODULE_1__["default"].create(payload).then(function (response) {
+        console.log("D1");
+        resolve(response);
+      }).catch(function (error) {
+        console.log(error.data);
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  update: function update(_ref7, payload) {
+    var commit = _ref7.commit,
+        dispatch = _ref7.dispatch;
+    return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
       _http_requests_reservation_index__WEBPACK_IMPORTED_MODULE_1__["default"].update(payload.id, payload.data).then(function (response) {
         resolve(response);
       }).catch(function (error) {
@@ -74139,9 +74209,25 @@ __webpack_require__.r(__webpack_exports__);
       });
     });
   },
-  delete: function _delete(_ref7, id) {
-    var commit = _ref7.commit,
-        dispatch = _ref7.dispatch;
+  updateMyReservation: function updateMyReservation(_ref8, payload) {
+    var commit = _ref8.commit,
+        dispatch = _ref8.dispatch;
+    return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
+      _http_requests_reservation_index__WEBPACK_IMPORTED_MODULE_1__["default"].updateMyReservation(payload.id, payload.data).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  delete: function _delete(_ref9, id) {
+    var commit = _ref9.commit,
+        dispatch = _ref9.dispatch;
     return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
       _http_requests_reservation_index__WEBPACK_IMPORTED_MODULE_1__["default"].delete(id).then(function (response) {
         resolve(response);
@@ -74155,11 +74241,27 @@ __webpack_require__.r(__webpack_exports__);
       });
     });
   },
-  deleteMyReservation: function deleteMyReservation(_ref8, id) {
-    var commit = _ref8.commit,
-        dispatch = _ref8.dispatch;
+  deleteMyReservation: function deleteMyReservation(_ref10, id) {
+    var commit = _ref10.commit,
+        dispatch = _ref10.dispatch;
     return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
-      _http_requests_reservation_index__WEBPACK_IMPORTED_MODULE_1__["default"].delete(id).then(function (response) {
+      _http_requests_reservation_index__WEBPACK_IMPORTED_MODULE_1__["default"].deleteMyReservation(id).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  getAllStatus: function getAllStatus(_ref11, payload) {
+    var commit = _ref11.commit,
+        dispatch = _ref11.dispatch;
+    return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
+      _http_requests_reservation_index__WEBPACK_IMPORTED_MODULE_1__["default"].getAllStatus(payload).then(function (response) {
         resolve(response);
       }).catch(function (error) {
         dispatch('handleError', {

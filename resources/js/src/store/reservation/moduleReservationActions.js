@@ -24,10 +24,31 @@ export default {
                 })
         })
     },
-
+    viewMyReservation({ commit, dispatch }, id) {
+        return new Promise((resolve, reject) => {
+            reservation.viewMyResevation(id)
+                .then(response => {
+                    resolve(response)
+                })
+                .catch(error => {
+                    dispatch('handleError', {reject: reject, error: error}, {root: true});
+                })
+        })
+    },
     view({ commit, dispatch }, id) {
         return new Promise((resolve, reject) => {
             reservation.view(id)
+                .then(response => {
+                    resolve(response)
+                })
+                .catch(error => {
+                    dispatch('handleError', {reject: reject, error: error}, {root: true});
+                })
+        })
+    },
+    getDates({ commit, dispatch }, id) {
+        return new Promise((resolve, reject) => {
+            reservation.getDates(id)
                 .then(response => {
                     resolve(response)
                 })
@@ -41,9 +62,12 @@ export default {
         return new Promise((resolve, reject) => {
             reservation.create(payload)
                 .then(response => {
+                    console.log("D1");
+
                     resolve(response)
                 })
                 .catch(error => {
+                    console.log(error.data);
                     dispatch('handleError', {reject: reject, error: error}, {root: true});
                 })
         })
@@ -62,7 +86,7 @@ export default {
     },
     updateMyReservation({ commit, dispatch }, payload) {
         return new Promise((resolve, reject) => {
-            reservation.update(payload.id, payload.data)
+            reservation.updateMyReservation(payload.id, payload.data)
                 .then(response => {
                     resolve(response)
                 })
@@ -85,7 +109,19 @@ export default {
     },
     deleteMyReservation({ commit, dispatch }, id) {
         return new Promise((resolve, reject) => {
-            reservation.delete(id)
+            reservation.deleteMyReservation(id)
+                .then(response => {
+                    resolve(response)
+                })
+                .catch(error => {
+                    dispatch('handleError', {reject: reject, error: error}, {root: true});
+                })
+        })
+    },
+
+    getAllStatus({ commit, dispatch }, payload) {
+        return new Promise((resolve, reject) => {
+            reservation.getAllStatus(payload)
                 .then(response => {
                     resolve(response)
                 })

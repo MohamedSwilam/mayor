@@ -38,8 +38,8 @@ export default [
     },
     {
         url: "/dashboard/my-reservations",
-        name: "Reservation",
-        slug: "reservation",
+        name: "My Reservation",
+        slug: "My reservation",
         icon: "CalendarIcon",
         permission: 'browse-my-reservations'
     },

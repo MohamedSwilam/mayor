@@ -67,7 +67,7 @@
                     <div class="reserve-form">
                         <h4>Property Reservation</h4>
 
-                        <a href="\dashboard" class="primary-btn submit_btn">Reserve Now</a>
+                        <a href="\dashboard\reservation\{{$property->id}}\create" class="primary-btn submit_btn">Reserve Now</a>
                     </div>
                 </div>
                 <div class="col-lg-4">

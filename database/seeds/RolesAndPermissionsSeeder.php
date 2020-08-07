@@ -44,11 +44,13 @@ class RolesAndPermissionsSeeder extends Seeder
 
         $role = Role::where('name', 'Super Admin')->first();
         $role->givePermissionTo(Permission::all());
-
+        $role->revokePermissionTo(Permission::where('group','Reservation')->where('name','browse-my-reservations')->get());
         $role = Role::where('name', 'Client')->first();
         $role->givePermissionTo(Permission::where('group','Reservation')->where('name','browse-my-reservations')->get());
         $role->givePermissionTo(Permission::where('group','Reservation')->where('name','edit-my-reservation')->get());
         $role->givePermissionTo(Permission::where('group','Reservation')->where('name','delete-my-reservation')->get());
+        $role->givePermissionTo(Permission::where('group','Reservation')->where('name','create-reservation')->get());
+        $role->givePermissionTo(Permission::where('group','Reservation')->where('name','view-my-reservation')->get());
 //        $role->givePermissionTo(Permission::where('group','Reservation')->where('name','edit-reservation')->get());
     }
 }

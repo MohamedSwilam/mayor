@@ -74,4 +74,8 @@ class CrudResponse
     {
         return $this->respond($message, $data, $status_code);
     }
+    public function reservationRespond($data = [], $message = "Sorry this duration is reserved by another client ", $status_code = 200)
+    {
+        return $this->respond($message, $data, $status_code);
+    }
 }

@@ -12,6 +12,9 @@ export default {
     view(id) {
         return axios.get(`reservation/${id}`)
     },
+    viewMyResevation(id) {
+        return axios.get(`view-my-reservation/${id}`)
+    },
 
     create(data) {
         return axios.post(`reservation`, data)
@@ -20,8 +23,11 @@ export default {
     update(id, data) {
         return axios.post(`reservation/${id}`, data)
     },
+    getDates(id) {
+        return axios.get(`reservation/get_reservation_dates/${id}`)
+    },
     updateMyReservation(id, data) {
-        return axios.post(`edit-emy-reservation/${id}`, data)
+        return axios.post(`edit-my-reservation/${id}`, data)
     },
 
     delete(id) {
@@ -29,6 +35,10 @@ export default {
     },
     deleteMyReservation(id) {
         //filters=?paginate=5&sortAsc=id&page=2
-        return axios.get(`delete-emy-reservation/${id}`);
+        return axios.get(`delete-my-reservation/${id}`);
+    },
+    getAllStatus() {
+        //filters=?paginate=5&sortAsc=id&page=2
+        return axios.get(`reservation/getallsatatus`);
     },
 }

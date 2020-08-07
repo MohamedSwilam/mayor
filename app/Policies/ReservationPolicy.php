@@ -41,7 +41,11 @@ class ReservationPolicy
     {
         return request()->user()->hasPermissionTo('delete-my-reservation');
     }
+    public function show_my_reservation()
+    {
+        return request()->user()->hasPermissionTo('view-my-reservation');
 
+    }
     public function show()
     {
         return request()->user()->hasPermissionTo('view-reservation');

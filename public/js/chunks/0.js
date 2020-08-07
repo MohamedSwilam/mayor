@@ -1008,7 +1008,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -1089,7 +1088,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_SearchBar_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/SearchBar.vue */ "./resources/js/src/layouts/components/navbar/components/SearchBar.vue");
 /* harmony import */ var _components_NotificationDropDown_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/NotificationDropDown.vue */ "./resources/js/src/layouts/components/navbar/components/NotificationDropDown.vue");
 /* harmony import */ var _components_ProfileDropDown_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/ProfileDropDown.vue */ "./resources/js/src/layouts/components/navbar/components/ProfileDropDown.vue");
-//
 //
 //
 //
@@ -4040,8 +4038,6 @@ var render = function() {
             _vm._v(" "),
             _c("search-bar", { staticClass: "mr-4" }),
             _vm._v(" "),
-            _c("notification-drop-down"),
-            _vm._v(" "),
             _c("profile-drop-down")
           ],
           1
@@ -4100,8 +4096,6 @@ var render = function() {
             _c("vs-spacer"),
             _vm._v(" "),
             _c("search-bar", { staticClass: "mr-4" }),
-            _vm._v(" "),
-            _c("notification-drop-down"),
             _vm._v(" "),
             _c("profile-drop-down")
           ],
@@ -6852,8 +6846,8 @@ __webpack_require__.r(__webpack_exports__);
   permission: 'browse-reservation'
 }, {
   url: "/dashboard/my-reservations",
-  name: "Reservation",
-  slug: "reservation",
+  name: "My Reservation",
+  slug: "My reservation",
   icon: "CalendarIcon",
   permission: 'browse-my-reservations'
 }, {

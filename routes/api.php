@@ -34,15 +34,17 @@ Route::group(['prefix' => 'role', 'middleware' => 'auth:api'], function () {
 });
 
 Route::middleware('auth:api')->get('my-reservations', 'ReservationController@browse_my_reservations');
-Route::middleware('auth:api')->get('edit-my-reservation/{id}', 'ReservationController@edit_my_reservations');
+Route::middleware('auth:api')->post('edit-my-reservation/{id}', 'ReservationController@edit_my_reservations');
 Route::middleware('auth:api')->get('delete-my-reservation/{id}  ', 'ReservationController@delete_my_reservation');
-
+    Route::middleware('auth:api')->get('view-my-reservation/{id}', 'ReservationController@show_my_reservation');
 Route::group(['prefix' => 'reservation', 'middleware' => 'auth:api'], function () {
-
+    Route::get('/getallsatatus', 'ReservationController@getAllStatus');
     Route::post('{id}', 'ReservationController@update');
     Route::get('{id}', 'ReservationController@show');
+    Route::get('get_reservation_dates/{id}', 'ReservationController@get_reservation_dates');
     Route::delete('{id}', 'ReservationController@destroy');
     Route::resource('', 'ReservationController');
+
 });
 
 Route::group(['prefix' => 'property', 'middleware' => 'auth:api'], function () {
@@ -72,4 +74,5 @@ Route::group(['prefix' => 'message', 'middleware' => 'auth:api'], function () {
     Route::delete('{id}', 'MessageController@destroy');
     Route::resource('', 'MessageController');
 });
+
 Route::middleware('auth:api')->get('permission', 'PermissionController@index');

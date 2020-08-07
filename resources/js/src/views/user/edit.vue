@@ -6,7 +6,7 @@
                 <div class="vx-row">
                     <div class="vx-col w-full mb-6">
                         <vs-select label="User Role" autocomplete label-placeholder="User Role" icon-pack="feather" icon="icon-chevron-down"  color="primary" class="w-full" v-model="form.role">
-                            <vs-select-item :key="index" :value="item.name" :text="item.name" v-for="(item, index) in roles" />
+                            <vs-select-item v-if="item.name !== 'Client'" :key="index" :value="item.name" :text="item.name" v-for="(item, index) in roles" />
                         </vs-select>
                     </div>
                 </div>

@@ -47,10 +47,10 @@
                             <vs-row>
                                 <div class="flex mb-4">
                                     <vx-tooltip class="mr-5" color="primary" text="View Details">
-                                        <vs-button :to="`/dashboard/reservation/${record.id}`" radius color="primary" type="border" icon-pack="feather" icon="icon-eye"></vs-button>
+                                        <vs-button :to="`/dashboard/my-reservation/${record.id}`" radius color="primary" type="border" icon-pack="feather" icon="icon-eye"></vs-button>
                                     </vx-tooltip>
                                     <vx-tooltip class="mr-5" color="warning" text="Edit Record">
-                                        <vs-button :to="`/dashboard/reservation/${record.id}/edit-my-reservation`" radius color="warning" type="border" icon-pack="feather" icon="icon-edit"></vs-button>
+                                        <vs-button :to="`/dashboard/my-reservation/${record.id}/edit`" radius color="warning" type="border" icon-pack="feather" icon="icon-edit"></vs-button>
                                     </vx-tooltip>
                                     <vx-tooltip color="danger" text="Delete Record">
                                         <vs-button :id="`btn-delete-${record.id}`" class="vs-con-loading__container" radius color="danger" type="border" icon-pack="feather" icon="icon-trash" @click="is_requesting?$store.dispatch('viewWaitMessage', $vs):confirmDelete(record)"></vs-button>

@@ -65,6 +65,7 @@ class PropertyRequest extends FormRequest
                 'price' => 'required|numeric',
                 'no_of_rooms' => 'required|numeric',
                 'no_of_floors' => 'required|numeric',
+                'no_of_baths' => 'required|numeric',
                 'has_pool' => 'required|boolean',
                 'has_garden' => 'required|boolean',
                 'view_in_home' => 'required|boolean',

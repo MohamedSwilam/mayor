@@ -89,6 +89,10 @@ return [
             'name' => 'view-reservation',
             'guard_name' => 'api',
             'display_name' => 'View Reservation',
+        ],[
+            'name' => 'view-my-reservation',
+            'guard_name' => 'api',
+            'display_name' => 'View Reservation',
         ],
         [
             'name' => 'edit-reservation',
