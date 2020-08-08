@@ -5172,7 +5172,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "@font-face {\n  font-family: \"feather\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/feather.eot?t=1525787366991 */ "./resources/assets/fonts/feather.eot?t=1525787366991")) + "); /* IE9 */\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/feather.eot?t=1525787366991 */ "./resources/assets/fonts/feather.eot?t=1525787366991")) + "#iefix) format('embedded-opentype'), \r\n  url(" + escape(__webpack_require__(/*! ../fonts/feather.woff?t=1525787366991 */ "./resources/assets/fonts/feather.woff?t=1525787366991")) + ") format('woff'), \r\n  url(" + escape(__webpack_require__(/*! ../fonts/feather.ttf?t=1525787366991 */ "./resources/assets/fonts/feather.ttf?t=1525787366991")) + ") format('truetype'), \r\n  url(" + escape(__webpack_require__(/*! ../fonts/feather.svg?t=1525787366991 */ "./resources/assets/fonts/feather.svg?t=1525787366991")) + "#feather) format('svg'); /* iOS 4.1- */\n}\n\n.feather {\n  /* use !important to prevent issues with browser extensions that change fonts */\n  font-family: 'feather' !important;\n  speak: none;\n  font-style: normal;\n  font-weight: normal;\n  font-variant: normal;\n  text-transform: none;\n  line-height: 1;\n  /* Better Font Rendering =========== */\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.icon-alert-octagon:before { content: \"\\E81B\";\n}\n\n.icon-alert-circle:before { content: \"\\E81C\";\n}\n\n.icon-activity:before { content: \"\\E81D\";\n}\n\n.icon-alert-triangle:before { content: \"\\E81E\";\n}\n\n.icon-align-center:before { content: \"\\E81F\";\n}\n\n.icon-airplay:before { content: \"\\E820\";\n}\n\n.icon-align-justify:before { content: \"\\E821\";\n}\n\n.icon-align-left:before { content: \"\\E822\";\n}\n\n.icon-align-right:before { content: \"\\E823\";\n}\n\n.icon-arrow-down-left:before { content: \"\\E824\";\n}\n\n.icon-arrow-down-right:before { content: \"\\E825\";\n}\n\n.icon-anchor:before { content: \"\\E826\";\n}\n\n.icon-aperture:before { content: \"\\E827\";\n}\n\n.icon-arrow-left:before { content: \"\\E828\";\n}\n\n.icon-arrow-right:before { content: \"\\E829\";\n}\n\n.icon-arrow-down:before { content: \"\\E82A\";\n}\n\n.icon-arrow-up-left:before { content: \"\\E82B\";\n}\n\n.icon-arrow-up-right:before { content: \"\\E82C\";\n}\n\n.icon-arrow-up:before { content: \"\\E82D\";\n}\n\n.icon-award:before { content: \"\\E82E\";\n}\n\n.icon-bar-chart:before { content: \"\\E82F\";\n}\n\n.icon-at-sign:before { content: \"\\E830\";\n}\n\n.icon-bar-chart-2:before { content: \"\\E831\";\n}\n\n.icon-battery-charging:before { content: \"\\E832\";\n}\n\n.icon-bell-off:before { content: \"\\E833\";\n}\n\n.icon-battery:before { content: \"\\E834\";\n}\n\n.icon-bluetooth:before { content: \"\\E835\";\n}\n\n.icon-bell:before { content: \"\\E836\";\n}\n\n.icon-book:before { content: \"\\E837\";\n}\n\n.icon-briefcase:before { content: \"\\E838\";\n}\n\n.icon-camera-off:before { content: \"\\E839\";\n}\n\n.icon-calendar:before { content: \"\\E83A\";\n}\n\n.icon-bookmark:before { content: \"\\E83B\";\n}\n\n.icon-box:before { content: \"\\E83C\";\n}\n\n.icon-camera:before { content: \"\\E83D\";\n}\n\n.icon-check-circle:before { content: \"\\E83E\";\n}\n\n.icon-check:before { content: \"\\E83F\";\n}\n\n.icon-check-square:before { content: \"\\E840\";\n}\n\n.icon-cast:before { content: \"\\E841\";\n}\n\n.icon-chevron-down:before { content: \"\\E842\";\n}\n\n.icon-chevron-left:before { content: \"\\E843\";\n}\n\n.icon-chevron-right:before { content: \"\\E844\";\n}\n\n.icon-chevron-up:before { content: \"\\E845\";\n}\n\n.icon-chevrons-down:before { content: \"\\E846\";\n}\n\n.icon-chevrons-right:before { content: \"\\E847\";\n}\n\n.icon-chevrons-up:before { content: \"\\E848\";\n}\n\n.icon-chevrons-left:before { content: \"\\E849\";\n}\n\n.icon-circle:before { content: \"\\E84A\";\n}\n\n.icon-clipboard:before { content: \"\\E84B\";\n}\n\n.icon-chrome:before { content: \"\\E84C\";\n}\n\n.icon-clock:before { content: \"\\E84D\";\n}\n\n.icon-cloud-lightning:before { content: \"\\E84E\";\n}\n\n.icon-cloud-drizzle:before { content: \"\\E84F\";\n}\n\n.icon-cloud-rain:before { content: \"\\E850\";\n}\n\n.icon-cloud-off:before { content: \"\\E851\";\n}\n\n.icon-codepen:before { content: \"\\E852\";\n}\n\n.icon-cloud-snow:before { content: \"\\E853\";\n}\n\n.icon-compass:before { content: \"\\E854\";\n}\n\n.icon-copy:before { content: \"\\E855\";\n}\n\n.icon-corner-down-right:before { content: \"\\E856\";\n}\n\n.icon-corner-down-left:before { content: \"\\E857\";\n}\n\n.icon-corner-left-down:before { content: \"\\E858\";\n}\n\n.icon-corner-left-up:before { content: \"\\E859\";\n}\n\n.icon-corner-up-left:before { content: \"\\E85A\";\n}\n\n.icon-corner-up-right:before { content: \"\\E85B\";\n}\n\n.icon-corner-right-down:before { content: \"\\E85C\";\n}\n\n.icon-corner-right-up:before { content: \"\\E85D\";\n}\n\n.icon-cpu:before { content: \"\\E85E\";\n}\n\n.icon-credit-card:before { content: \"\\E85F\";\n}\n\n.icon-crosshair:before { content: \"\\E860\";\n}\n\n.icon-disc:before { content: \"\\E861\";\n}\n\n.icon-delete:before { content: \"\\E862\";\n}\n\n.icon-download-cloud:before { content: \"\\E863\";\n}\n\n.icon-download:before { content: \"\\E864\";\n}\n\n.icon-droplet:before { content: \"\\E865\";\n}\n\n.icon-edit-2:before { content: \"\\E866\";\n}\n\n.icon-edit:before { content: \"\\E867\";\n}\n\n.icon-edit-1:before { content: \"\\E868\";\n}\n\n.icon-external-link:before { content: \"\\E869\";\n}\n\n.icon-eye:before { content: \"\\E86A\";\n}\n\n.icon-feather:before { content: \"\\E86B\";\n}\n\n.icon-facebook:before { content: \"\\E86C\";\n}\n\n.icon-file-minus:before { content: \"\\E86D\";\n}\n\n.icon-eye-off:before { content: \"\\E86E\";\n}\n\n.icon-fast-forward:before { content: \"\\E86F\";\n}\n\n.icon-file-text:before { content: \"\\E870\";\n}\n\n.icon-film:before { content: \"\\E871\";\n}\n\n.icon-file:before { content: \"\\E872\";\n}\n\n.icon-file-plus:before { content: \"\\E873\";\n}\n\n.icon-folder:before { content: \"\\E874\";\n}\n\n.icon-filter:before { content: \"\\E875\";\n}\n\n.icon-flag:before { content: \"\\E876\";\n}\n\n.icon-globe:before { content: \"\\E877\";\n}\n\n.icon-grid:before { content: \"\\E878\";\n}\n\n.icon-heart:before { content: \"\\E879\";\n}\n\n.icon-home:before { content: \"\\E87A\";\n}\n\n.icon-github:before { content: \"\\E87B\";\n}\n\n.icon-image:before { content: \"\\E87C\";\n}\n\n.icon-inbox:before { content: \"\\E87D\";\n}\n\n.icon-layers:before { content: \"\\E87E\";\n}\n\n.icon-info:before { content: \"\\E87F\";\n}\n\n.icon-instagram:before { content: \"\\E880\";\n}\n\n.icon-layout:before { content: \"\\E881\";\n}\n\n.icon-link-2:before { content: \"\\E882\";\n}\n\n.icon-life-buoy:before { content: \"\\E883\";\n}\n\n.icon-link:before { content: \"\\E884\";\n}\n\n.icon-log-in:before { content: \"\\E885\";\n}\n\n.icon-list:before { content: \"\\E886\";\n}\n\n.icon-lock:before { content: \"\\E887\";\n}\n\n.icon-log-out:before { content: \"\\E888\";\n}\n\n.icon-loader:before { content: \"\\E889\";\n}\n\n.icon-mail:before { content: \"\\E88A\";\n}\n\n.icon-maximize-2:before { content: \"\\E88B\";\n}\n\n.icon-map:before { content: \"\\E88C\";\n}\n\n.icon-map-pin:before { content: \"\\E88E\";\n}\n\n.icon-menu:before { content: \"\\E88F\";\n}\n\n.icon-message-circle:before { content: \"\\E890\";\n}\n\n.icon-message-square:before { content: \"\\E891\";\n}\n\n.icon-minimize-2:before { content: \"\\E892\";\n}\n\n.icon-mic-off:before { content: \"\\E893\";\n}\n\n.icon-minus-circle:before { content: \"\\E894\";\n}\n\n.icon-mic:before { content: \"\\E895\";\n}\n\n.icon-minus-square:before { content: \"\\E896\";\n}\n\n.icon-minus:before { content: \"\\E897\";\n}\n\n.icon-moon:before { content: \"\\E898\";\n}\n\n.icon-monitor:before { content: \"\\E899\";\n}\n\n.icon-more-vertical:before { content: \"\\E89A\";\n}\n\n.icon-more-horizontal:before { content: \"\\E89B\";\n}\n\n.icon-move:before { content: \"\\E89C\";\n}\n\n.icon-music:before { content: \"\\E89D\";\n}\n\n.icon-navigation-2:before { content: \"\\E89E\";\n}\n\n.icon-navigation:before { content: \"\\E89F\";\n}\n\n.icon-octagon:before { content: \"\\E8A0\";\n}\n\n.icon-package:before { content: \"\\E8A1\";\n}\n\n.icon-pause-circle:before { content: \"\\E8A2\";\n}\n\n.icon-pause:before { content: \"\\E8A3\";\n}\n\n.icon-percent:before { content: \"\\E8A4\";\n}\n\n.icon-phone-call:before { content: \"\\E8A5\";\n}\n\n.icon-phone-forwarded:before { content: \"\\E8A6\";\n}\n\n.icon-phone-missed:before { content: \"\\E8A7\";\n}\n\n.icon-phone-off:before { content: \"\\E8A8\";\n}\n\n.icon-phone-incoming:before { content: \"\\E8A9\";\n}\n\n.icon-phone:before { content: \"\\E8AA\";\n}\n\n.icon-phone-outgoing:before { content: \"\\E8AB\";\n}\n\n.icon-pie-chart:before { content: \"\\E8AC\";\n}\n\n.icon-play-circle:before { content: \"\\E8AD\";\n}\n\n.icon-play:before { content: \"\\E8AE\";\n}\n\n.icon-plus-square:before { content: \"\\E8AF\";\n}\n\n.icon-plus-circle:before { content: \"\\E8B0\";\n}\n\n.icon-plus:before { content: \"\\E8B1\";\n}\n\n.icon-pocket:before { content: \"\\E8B2\";\n}\n\n.icon-printer:before { content: \"\\E8B3\";\n}\n\n.icon-power:before { content: \"\\E8B4\";\n}\n\n.icon-radio:before { content: \"\\E8B5\";\n}\n\n.icon-repeat:before { content: \"\\E8B6\";\n}\n\n.icon-refresh-ccw:before { content: \"\\E8B7\";\n}\n\n.icon-rewind:before { content: \"\\E8B8\";\n}\n\n.icon-rotate-ccw:before { content: \"\\E8B9\";\n}\n\n.icon-refresh-cw:before { content: \"\\E8BA\";\n}\n\n.icon-rotate-cw:before { content: \"\\E8BB\";\n}\n\n.icon-save:before { content: \"\\E8BC\";\n}\n\n.icon-search:before { content: \"\\E8BD\";\n}\n\n.icon-server:before { content: \"\\E8BE\";\n}\n\n.icon-scissors:before { content: \"\\E8BF\";\n}\n\n.icon-share-2:before { content: \"\\E8C0\";\n}\n\n.icon-share:before { content: \"\\E8C1\";\n}\n\n.icon-shield:before { content: \"\\E8C2\";\n}\n\n.icon-settings:before { content: \"\\E8C3\";\n}\n\n.icon-skip-back:before { content: \"\\E8C4\";\n}\n\n.icon-shuffle:before { content: \"\\E8C5\";\n}\n\n.icon-sidebar:before { content: \"\\E8C6\";\n}\n\n.icon-skip-forward:before { content: \"\\E8C7\";\n}\n\n.icon-slack:before { content: \"\\E8C8\";\n}\n\n.icon-slash:before { content: \"\\E8C9\";\n}\n\n.icon-smartphone:before { content: \"\\E8CA\";\n}\n\n.icon-square:before { content: \"\\E8CB\";\n}\n\n.icon-speaker:before { content: \"\\E8CC\";\n}\n\n.icon-star:before { content: \"\\E8CD\";\n}\n\n.icon-stop-circle:before { content: \"\\E8CE\";\n}\n\n.icon-sun:before { content: \"\\E8CF\";\n}\n\n.icon-sunrise:before { content: \"\\E8D0\";\n}\n\n.icon-tablet:before { content: \"\\E8D1\";\n}\n\n.icon-tag:before { content: \"\\E8D2\";\n}\n\n.icon-sunset:before { content: \"\\E8D3\";\n}\n\n.icon-target:before { content: \"\\E8D4\";\n}\n\n.icon-thermometer:before { content: \"\\E8D5\";\n}\n\n.icon-thumbs-up:before { content: \"\\E8D6\";\n}\n\n.icon-thumbs-down:before { content: \"\\E8D7\";\n}\n\n.icon-toggle-left:before { content: \"\\E8D8\";\n}\n\n.icon-toggle-right:before { content: \"\\E8D9\";\n}\n\n.icon-trash-2:before { content: \"\\E8DA\";\n}\n\n.icon-trash:before { content: \"\\E8DB\";\n}\n\n.icon-trending-up:before { content: \"\\E8DC\";\n}\n\n.icon-trending-down:before { content: \"\\E8DD\";\n}\n\n.icon-triangle:before { content: \"\\E8DE\";\n}\n\n.icon-type:before { content: \"\\E8DF\";\n}\n\n.icon-twitter:before { content: \"\\E8E0\";\n}\n\n.icon-upload:before { content: \"\\E8E1\";\n}\n\n.icon-umbrella:before { content: \"\\E8E2\";\n}\n\n.icon-upload-cloud:before { content: \"\\E8E3\";\n}\n\n.icon-unlock:before { content: \"\\E8E4\";\n}\n\n.icon-user-check:before { content: \"\\E8E5\";\n}\n\n.icon-user-minus:before { content: \"\\E8E6\";\n}\n\n.icon-user-plus:before { content: \"\\E8E7\";\n}\n\n.icon-user-x:before { content: \"\\E8E8\";\n}\n\n.icon-user:before { content: \"\\E8E9\";\n}\n\n.icon-users:before { content: \"\\E8EA\";\n}\n\n.icon-video-off:before { content: \"\\E8EB\";\n}\n\n.icon-video:before { content: \"\\E8EC\";\n}\n\n.icon-voicemail:before { content: \"\\E8ED\";\n}\n\n.icon-volume-x:before { content: \"\\E8EE\";\n}\n\n.icon-volume-2:before { content: \"\\E8EF\";\n}\n\n.icon-volume-1:before { content: \"\\E8F0\";\n}\n\n.icon-volume:before { content: \"\\E8F1\";\n}\n\n.icon-watch:before { content: \"\\E8F2\";\n}\n\n.icon-wifi:before { content: \"\\E8F3\";\n}\n\n.icon-x-square:before { content: \"\\E8F4\";\n}\n\n.icon-wind:before { content: \"\\E8F5\";\n}\n\n.icon-x:before { content: \"\\E8F6\";\n}\n\n.icon-x-circle:before { content: \"\\E8F7\";\n}\n\n.icon-zap:before { content: \"\\E8F8\";\n}\n\n.icon-zoom-in:before { content: \"\\E8F9\";\n}\n\n.icon-zoom-out:before { content: \"\\E8FA\";\n}\n\n.icon-command:before { content: \"\\E8FB\";\n}\n\n.icon-cloud:before { content: \"\\E8FC\";\n}\n\n.icon-hash:before { content: \"\\E8FD\";\n}\n\n.icon-headphones:before { content: \"\\E8FE\";\n}\n\n.icon-underline:before { content: \"\\E8FF\";\n}\n\n.icon-italic:before { content: \"\\E900\";\n}\n\n.icon-bold:before { content: \"\\E901\";\n}\n\n.icon-crop:before { content: \"\\E902\";\n}\n\n.icon-help-circle:before { content: \"\\E903\";\n}\n\n.icon-paperclip:before { content: \"\\E904\";\n}\n\n.icon-shopping-cart:before { content: \"\\E905\";\n}\n\n.icon-tv:before { content: \"\\E906\";\n}\n\n.icon-wifi-off:before { content: \"\\E907\";\n}\n\n.icon-minimize:before { content: \"\\E88D\";\n}\n\n.icon-maximize:before { content: \"\\E908\";\n}\n\n.icon-gitlab:before { content: \"\\E909\";\n}\n\n.icon-sliders:before { content: \"\\E90A\";\n}\n\n.icon-star-on:before { content: \"\\E90B\";\n}\n\n.icon-heart-on:before { content: \"\\E90C\";\n}\n\n.icon-archive:before { content: \"\\E90D\";\n}\n\n.icon-arrow-down-circle:before { content: \"\\E90E\";\n}\n\n.icon-arrow-up-circle:before { content: \"\\E90F\";\n}\n\n.icon-arrow-left-circle:before { content: \"\\E910\";\n}\n\n.icon-arrow-right-circle:before { content: \"\\E911\";\n}\n\n.icon-bar-chart-line-:before { content: \"\\E912\";\n}\n\n.icon-bar-chart-line:before { content: \"\\E913\";\n}\n\n.icon-book-open:before { content: \"\\E914\";\n}\n\n.icon-code:before { content: \"\\E915\";\n}\n\n.icon-database:before { content: \"\\E916\";\n}\n\n.icon-dollar-sign:before { content: \"\\E917\";\n}\n\n.icon-folder-plus:before { content: \"\\E918\";\n}\n\n.icon-gift:before { content: \"\\E919\";\n}\n\n.icon-folder-minus:before { content: \"\\E91A\";\n}\n\n.icon-git-commit:before { content: \"\\E91B\";\n}\n\n.icon-git-branch:before { content: \"\\E91C\";\n}\n\n.icon-git-pull-request:before { content: \"\\E91D\";\n}\n\n.icon-git-merge:before { content: \"\\E91E\";\n}\n\n.icon-linkedin:before { content: \"\\E91F\";\n}\n\n.icon-hard-drive:before { content: \"\\E920\";\n}\n\n.icon-more-vertical-:before { content: \"\\E921\";\n}\n\n.icon-more-horizontal-:before { content: \"\\E922\";\n}\n\n.icon-rss:before { content: \"\\E923\";\n}\n\n.icon-send:before { content: \"\\E924\";\n}\n\n.icon-shield-off:before { content: \"\\E925\";\n}\n\n.icon-shopping-bag:before { content: \"\\E926\";\n}\n\n.icon-terminal:before { content: \"\\E927\";\n}\n\n.icon-truck:before { content: \"\\E928\";\n}\n\n.icon-zap-off:before { content: \"\\E929\";\n}\n\n.icon-youtube:before { content: \"\\E92A\";\n}\r\n", ""]);
+exports.push([module.i, "@font-face {\n  font-family: \"feather\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/feather.eot?t=1525787366991 */ "./resources/assets/fonts/feather.eot?t=1525787366991")) + "); /* IE9 */\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/feather.eot?t=1525787366991 */ "./resources/assets/fonts/feather.eot?t=1525787366991")) + "#iefix) format('embedded-opentype'), \n  url(" + escape(__webpack_require__(/*! ../fonts/feather.woff?t=1525787366991 */ "./resources/assets/fonts/feather.woff?t=1525787366991")) + ") format('woff'), \n  url(" + escape(__webpack_require__(/*! ../fonts/feather.ttf?t=1525787366991 */ "./resources/assets/fonts/feather.ttf?t=1525787366991")) + ") format('truetype'), \n  url(" + escape(__webpack_require__(/*! ../fonts/feather.svg?t=1525787366991 */ "./resources/assets/fonts/feather.svg?t=1525787366991")) + "#feather) format('svg'); /* iOS 4.1- */\n}\n\n.feather {\n  /* use !important to prevent issues with browser extensions that change fonts */\n  font-family: 'feather' !important;\n  speak: none;\n  font-style: normal;\n  font-weight: normal;\n  font-variant: normal;\n  text-transform: none;\n  line-height: 1;\n  /* Better Font Rendering =========== */\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.icon-alert-octagon:before { content: \"\\E81B\";\n}\n\n.icon-alert-circle:before { content: \"\\E81C\";\n}\n\n.icon-activity:before { content: \"\\E81D\";\n}\n\n.icon-alert-triangle:before { content: \"\\E81E\";\n}\n\n.icon-align-center:before { content: \"\\E81F\";\n}\n\n.icon-airplay:before { content: \"\\E820\";\n}\n\n.icon-align-justify:before { content: \"\\E821\";\n}\n\n.icon-align-left:before { content: \"\\E822\";\n}\n\n.icon-align-right:before { content: \"\\E823\";\n}\n\n.icon-arrow-down-left:before { content: \"\\E824\";\n}\n\n.icon-arrow-down-right:before { content: \"\\E825\";\n}\n\n.icon-anchor:before { content: \"\\E826\";\n}\n\n.icon-aperture:before { content: \"\\E827\";\n}\n\n.icon-arrow-left:before { content: \"\\E828\";\n}\n\n.icon-arrow-right:before { content: \"\\E829\";\n}\n\n.icon-arrow-down:before { content: \"\\E82A\";\n}\n\n.icon-arrow-up-left:before { content: \"\\E82B\";\n}\n\n.icon-arrow-up-right:before { content: \"\\E82C\";\n}\n\n.icon-arrow-up:before { content: \"\\E82D\";\n}\n\n.icon-award:before { content: \"\\E82E\";\n}\n\n.icon-bar-chart:before { content: \"\\E82F\";\n}\n\n.icon-at-sign:before { content: \"\\E830\";\n}\n\n.icon-bar-chart-2:before { content: \"\\E831\";\n}\n\n.icon-battery-charging:before { content: \"\\E832\";\n}\n\n.icon-bell-off:before { content: \"\\E833\";\n}\n\n.icon-battery:before { content: \"\\E834\";\n}\n\n.icon-bluetooth:before { content: \"\\E835\";\n}\n\n.icon-bell:before { content: \"\\E836\";\n}\n\n.icon-book:before { content: \"\\E837\";\n}\n\n.icon-briefcase:before { content: \"\\E838\";\n}\n\n.icon-camera-off:before { content: \"\\E839\";\n}\n\n.icon-calendar:before { content: \"\\E83A\";\n}\n\n.icon-bookmark:before { content: \"\\E83B\";\n}\n\n.icon-box:before { content: \"\\E83C\";\n}\n\n.icon-camera:before { content: \"\\E83D\";\n}\n\n.icon-check-circle:before { content: \"\\E83E\";\n}\n\n.icon-check:before { content: \"\\E83F\";\n}\n\n.icon-check-square:before { content: \"\\E840\";\n}\n\n.icon-cast:before { content: \"\\E841\";\n}\n\n.icon-chevron-down:before { content: \"\\E842\";\n}\n\n.icon-chevron-left:before { content: \"\\E843\";\n}\n\n.icon-chevron-right:before { content: \"\\E844\";\n}\n\n.icon-chevron-up:before { content: \"\\E845\";\n}\n\n.icon-chevrons-down:before { content: \"\\E846\";\n}\n\n.icon-chevrons-right:before { content: \"\\E847\";\n}\n\n.icon-chevrons-up:before { content: \"\\E848\";\n}\n\n.icon-chevrons-left:before { content: \"\\E849\";\n}\n\n.icon-circle:before { content: \"\\E84A\";\n}\n\n.icon-clipboard:before { content: \"\\E84B\";\n}\n\n.icon-chrome:before { content: \"\\E84C\";\n}\n\n.icon-clock:before { content: \"\\E84D\";\n}\n\n.icon-cloud-lightning:before { content: \"\\E84E\";\n}\n\n.icon-cloud-drizzle:before { content: \"\\E84F\";\n}\n\n.icon-cloud-rain:before { content: \"\\E850\";\n}\n\n.icon-cloud-off:before { content: \"\\E851\";\n}\n\n.icon-codepen:before { content: \"\\E852\";\n}\n\n.icon-cloud-snow:before { content: \"\\E853\";\n}\n\n.icon-compass:before { content: \"\\E854\";\n}\n\n.icon-copy:before { content: \"\\E855\";\n}\n\n.icon-corner-down-right:before { content: \"\\E856\";\n}\n\n.icon-corner-down-left:before { content: \"\\E857\";\n}\n\n.icon-corner-left-down:before { content: \"\\E858\";\n}\n\n.icon-corner-left-up:before { content: \"\\E859\";\n}\n\n.icon-corner-up-left:before { content: \"\\E85A\";\n}\n\n.icon-corner-up-right:before { content: \"\\E85B\";\n}\n\n.icon-corner-right-down:before { content: \"\\E85C\";\n}\n\n.icon-corner-right-up:before { content: \"\\E85D\";\n}\n\n.icon-cpu:before { content: \"\\E85E\";\n}\n\n.icon-credit-card:before { content: \"\\E85F\";\n}\n\n.icon-crosshair:before { content: \"\\E860\";\n}\n\n.icon-disc:before { content: \"\\E861\";\n}\n\n.icon-delete:before { content: \"\\E862\";\n}\n\n.icon-download-cloud:before { content: \"\\E863\";\n}\n\n.icon-download:before { content: \"\\E864\";\n}\n\n.icon-droplet:before { content: \"\\E865\";\n}\n\n.icon-edit-2:before { content: \"\\E866\";\n}\n\n.icon-edit:before { content: \"\\E867\";\n}\n\n.icon-edit-1:before { content: \"\\E868\";\n}\n\n.icon-external-link:before { content: \"\\E869\";\n}\n\n.icon-eye:before { content: \"\\E86A\";\n}\n\n.icon-feather:before { content: \"\\E86B\";\n}\n\n.icon-facebook:before { content: \"\\E86C\";\n}\n\n.icon-file-minus:before { content: \"\\E86D\";\n}\n\n.icon-eye-off:before { content: \"\\E86E\";\n}\n\n.icon-fast-forward:before { content: \"\\E86F\";\n}\n\n.icon-file-text:before { content: \"\\E870\";\n}\n\n.icon-film:before { content: \"\\E871\";\n}\n\n.icon-file:before { content: \"\\E872\";\n}\n\n.icon-file-plus:before { content: \"\\E873\";\n}\n\n.icon-folder:before { content: \"\\E874\";\n}\n\n.icon-filter:before { content: \"\\E875\";\n}\n\n.icon-flag:before { content: \"\\E876\";\n}\n\n.icon-globe:before { content: \"\\E877\";\n}\n\n.icon-grid:before { content: \"\\E878\";\n}\n\n.icon-heart:before { content: \"\\E879\";\n}\n\n.icon-home:before { content: \"\\E87A\";\n}\n\n.icon-github:before { content: \"\\E87B\";\n}\n\n.icon-image:before { content: \"\\E87C\";\n}\n\n.icon-inbox:before { content: \"\\E87D\";\n}\n\n.icon-layers:before { content: \"\\E87E\";\n}\n\n.icon-info:before { content: \"\\E87F\";\n}\n\n.icon-instagram:before { content: \"\\E880\";\n}\n\n.icon-layout:before { content: \"\\E881\";\n}\n\n.icon-link-2:before { content: \"\\E882\";\n}\n\n.icon-life-buoy:before { content: \"\\E883\";\n}\n\n.icon-link:before { content: \"\\E884\";\n}\n\n.icon-log-in:before { content: \"\\E885\";\n}\n\n.icon-list:before { content: \"\\E886\";\n}\n\n.icon-lock:before { content: \"\\E887\";\n}\n\n.icon-log-out:before { content: \"\\E888\";\n}\n\n.icon-loader:before { content: \"\\E889\";\n}\n\n.icon-mail:before { content: \"\\E88A\";\n}\n\n.icon-maximize-2:before { content: \"\\E88B\";\n}\n\n.icon-map:before { content: \"\\E88C\";\n}\n\n.icon-map-pin:before { content: \"\\E88E\";\n}\n\n.icon-menu:before { content: \"\\E88F\";\n}\n\n.icon-message-circle:before { content: \"\\E890\";\n}\n\n.icon-message-square:before { content: \"\\E891\";\n}\n\n.icon-minimize-2:before { content: \"\\E892\";\n}\n\n.icon-mic-off:before { content: \"\\E893\";\n}\n\n.icon-minus-circle:before { content: \"\\E894\";\n}\n\n.icon-mic:before { content: \"\\E895\";\n}\n\n.icon-minus-square:before { content: \"\\E896\";\n}\n\n.icon-minus:before { content: \"\\E897\";\n}\n\n.icon-moon:before { content: \"\\E898\";\n}\n\n.icon-monitor:before { content: \"\\E899\";\n}\n\n.icon-more-vertical:before { content: \"\\E89A\";\n}\n\n.icon-more-horizontal:before { content: \"\\E89B\";\n}\n\n.icon-move:before { content: \"\\E89C\";\n}\n\n.icon-music:before { content: \"\\E89D\";\n}\n\n.icon-navigation-2:before { content: \"\\E89E\";\n}\n\n.icon-navigation:before { content: \"\\E89F\";\n}\n\n.icon-octagon:before { content: \"\\E8A0\";\n}\n\n.icon-package:before { content: \"\\E8A1\";\n}\n\n.icon-pause-circle:before { content: \"\\E8A2\";\n}\n\n.icon-pause:before { content: \"\\E8A3\";\n}\n\n.icon-percent:before { content: \"\\E8A4\";\n}\n\n.icon-phone-call:before { content: \"\\E8A5\";\n}\n\n.icon-phone-forwarded:before { content: \"\\E8A6\";\n}\n\n.icon-phone-missed:before { content: \"\\E8A7\";\n}\n\n.icon-phone-off:before { content: \"\\E8A8\";\n}\n\n.icon-phone-incoming:before { content: \"\\E8A9\";\n}\n\n.icon-phone:before { content: \"\\E8AA\";\n}\n\n.icon-phone-outgoing:before { content: \"\\E8AB\";\n}\n\n.icon-pie-chart:before { content: \"\\E8AC\";\n}\n\n.icon-play-circle:before { content: \"\\E8AD\";\n}\n\n.icon-play:before { content: \"\\E8AE\";\n}\n\n.icon-plus-square:before { content: \"\\E8AF\";\n}\n\n.icon-plus-circle:before { content: \"\\E8B0\";\n}\n\n.icon-plus:before { content: \"\\E8B1\";\n}\n\n.icon-pocket:before { content: \"\\E8B2\";\n}\n\n.icon-printer:before { content: \"\\E8B3\";\n}\n\n.icon-power:before { content: \"\\E8B4\";\n}\n\n.icon-radio:before { content: \"\\E8B5\";\n}\n\n.icon-repeat:before { content: \"\\E8B6\";\n}\n\n.icon-refresh-ccw:before { content: \"\\E8B7\";\n}\n\n.icon-rewind:before { content: \"\\E8B8\";\n}\n\n.icon-rotate-ccw:before { content: \"\\E8B9\";\n}\n\n.icon-refresh-cw:before { content: \"\\E8BA\";\n}\n\n.icon-rotate-cw:before { content: \"\\E8BB\";\n}\n\n.icon-save:before { content: \"\\E8BC\";\n}\n\n.icon-search:before { content: \"\\E8BD\";\n}\n\n.icon-server:before { content: \"\\E8BE\";\n}\n\n.icon-scissors:before { content: \"\\E8BF\";\n}\n\n.icon-share-2:before { content: \"\\E8C0\";\n}\n\n.icon-share:before { content: \"\\E8C1\";\n}\n\n.icon-shield:before { content: \"\\E8C2\";\n}\n\n.icon-settings:before { content: \"\\E8C3\";\n}\n\n.icon-skip-back:before { content: \"\\E8C4\";\n}\n\n.icon-shuffle:before { content: \"\\E8C5\";\n}\n\n.icon-sidebar:before { content: \"\\E8C6\";\n}\n\n.icon-skip-forward:before { content: \"\\E8C7\";\n}\n\n.icon-slack:before { content: \"\\E8C8\";\n}\n\n.icon-slash:before { content: \"\\E8C9\";\n}\n\n.icon-smartphone:before { content: \"\\E8CA\";\n}\n\n.icon-square:before { content: \"\\E8CB\";\n}\n\n.icon-speaker:before { content: \"\\E8CC\";\n}\n\n.icon-star:before { content: \"\\E8CD\";\n}\n\n.icon-stop-circle:before { content: \"\\E8CE\";\n}\n\n.icon-sun:before { content: \"\\E8CF\";\n}\n\n.icon-sunrise:before { content: \"\\E8D0\";\n}\n\n.icon-tablet:before { content: \"\\E8D1\";\n}\n\n.icon-tag:before { content: \"\\E8D2\";\n}\n\n.icon-sunset:before { content: \"\\E8D3\";\n}\n\n.icon-target:before { content: \"\\E8D4\";\n}\n\n.icon-thermometer:before { content: \"\\E8D5\";\n}\n\n.icon-thumbs-up:before { content: \"\\E8D6\";\n}\n\n.icon-thumbs-down:before { content: \"\\E8D7\";\n}\n\n.icon-toggle-left:before { content: \"\\E8D8\";\n}\n\n.icon-toggle-right:before { content: \"\\E8D9\";\n}\n\n.icon-trash-2:before { content: \"\\E8DA\";\n}\n\n.icon-trash:before { content: \"\\E8DB\";\n}\n\n.icon-trending-up:before { content: \"\\E8DC\";\n}\n\n.icon-trending-down:before { content: \"\\E8DD\";\n}\n\n.icon-triangle:before { content: \"\\E8DE\";\n}\n\n.icon-type:before { content: \"\\E8DF\";\n}\n\n.icon-twitter:before { content: \"\\E8E0\";\n}\n\n.icon-upload:before { content: \"\\E8E1\";\n}\n\n.icon-umbrella:before { content: \"\\E8E2\";\n}\n\n.icon-upload-cloud:before { content: \"\\E8E3\";\n}\n\n.icon-unlock:before { content: \"\\E8E4\";\n}\n\n.icon-user-check:before { content: \"\\E8E5\";\n}\n\n.icon-user-minus:before { content: \"\\E8E6\";\n}\n\n.icon-user-plus:before { content: \"\\E8E7\";\n}\n\n.icon-user-x:before { content: \"\\E8E8\";\n}\n\n.icon-user:before { content: \"\\E8E9\";\n}\n\n.icon-users:before { content: \"\\E8EA\";\n}\n\n.icon-video-off:before { content: \"\\E8EB\";\n}\n\n.icon-video:before { content: \"\\E8EC\";\n}\n\n.icon-voicemail:before { content: \"\\E8ED\";\n}\n\n.icon-volume-x:before { content: \"\\E8EE\";\n}\n\n.icon-volume-2:before { content: \"\\E8EF\";\n}\n\n.icon-volume-1:before { content: \"\\E8F0\";\n}\n\n.icon-volume:before { content: \"\\E8F1\";\n}\n\n.icon-watch:before { content: \"\\E8F2\";\n}\n\n.icon-wifi:before { content: \"\\E8F3\";\n}\n\n.icon-x-square:before { content: \"\\E8F4\";\n}\n\n.icon-wind:before { content: \"\\E8F5\";\n}\n\n.icon-x:before { content: \"\\E8F6\";\n}\n\n.icon-x-circle:before { content: \"\\E8F7\";\n}\n\n.icon-zap:before { content: \"\\E8F8\";\n}\n\n.icon-zoom-in:before { content: \"\\E8F9\";\n}\n\n.icon-zoom-out:before { content: \"\\E8FA\";\n}\n\n.icon-command:before { content: \"\\E8FB\";\n}\n\n.icon-cloud:before { content: \"\\E8FC\";\n}\n\n.icon-hash:before { content: \"\\E8FD\";\n}\n\n.icon-headphones:before { content: \"\\E8FE\";\n}\n\n.icon-underline:before { content: \"\\E8FF\";\n}\n\n.icon-italic:before { content: \"\\E900\";\n}\n\n.icon-bold:before { content: \"\\E901\";\n}\n\n.icon-crop:before { content: \"\\E902\";\n}\n\n.icon-help-circle:before { content: \"\\E903\";\n}\n\n.icon-paperclip:before { content: \"\\E904\";\n}\n\n.icon-shopping-cart:before { content: \"\\E905\";\n}\n\n.icon-tv:before { content: \"\\E906\";\n}\n\n.icon-wifi-off:before { content: \"\\E907\";\n}\n\n.icon-minimize:before { content: \"\\E88D\";\n}\n\n.icon-maximize:before { content: \"\\E908\";\n}\n\n.icon-gitlab:before { content: \"\\E909\";\n}\n\n.icon-sliders:before { content: \"\\E90A\";\n}\n\n.icon-star-on:before { content: \"\\E90B\";\n}\n\n.icon-heart-on:before { content: \"\\E90C\";\n}\n\n.icon-archive:before { content: \"\\E90D\";\n}\n\n.icon-arrow-down-circle:before { content: \"\\E90E\";\n}\n\n.icon-arrow-up-circle:before { content: \"\\E90F\";\n}\n\n.icon-arrow-left-circle:before { content: \"\\E910\";\n}\n\n.icon-arrow-right-circle:before { content: \"\\E911\";\n}\n\n.icon-bar-chart-line-:before { content: \"\\E912\";\n}\n\n.icon-bar-chart-line:before { content: \"\\E913\";\n}\n\n.icon-book-open:before { content: \"\\E914\";\n}\n\n.icon-code:before { content: \"\\E915\";\n}\n\n.icon-database:before { content: \"\\E916\";\n}\n\n.icon-dollar-sign:before { content: \"\\E917\";\n}\n\n.icon-folder-plus:before { content: \"\\E918\";\n}\n\n.icon-gift:before { content: \"\\E919\";\n}\n\n.icon-folder-minus:before { content: \"\\E91A\";\n}\n\n.icon-git-commit:before { content: \"\\E91B\";\n}\n\n.icon-git-branch:before { content: \"\\E91C\";\n}\n\n.icon-git-pull-request:before { content: \"\\E91D\";\n}\n\n.icon-git-merge:before { content: \"\\E91E\";\n}\n\n.icon-linkedin:before { content: \"\\E91F\";\n}\n\n.icon-hard-drive:before { content: \"\\E920\";\n}\n\n.icon-more-vertical-:before { content: \"\\E921\";\n}\n\n.icon-more-horizontal-:before { content: \"\\E922\";\n}\n\n.icon-rss:before { content: \"\\E923\";\n}\n\n.icon-send:before { content: \"\\E924\";\n}\n\n.icon-shield-off:before { content: \"\\E925\";\n}\n\n.icon-shopping-bag:before { content: \"\\E926\";\n}\n\n.icon-terminal:before { content: \"\\E927\";\n}\n\n.icon-truck:before { content: \"\\E928\";\n}\n\n.icon-zap-off:before { content: \"\\E929\";\n}\n\n.icon-youtube:before { content: \"\\E92A\";\n}\n", ""]);
 
 // exports
 
@@ -70880,7 +70880,7 @@ module.exports = "/fonts/feather.eot?931c9e74d0b20947054bfe6a5b74a838";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/fonts/feather.svg?0e5daf6bac4f17e400266545070b108e";
+module.exports = "/fonts/feather.svg?90f969db293a9077b0555139e6c9b20e";
 
 /***/ }),
 
@@ -72537,7 +72537,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     // =============================================================================
     path: '',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(0)]).then(__webpack_require__.bind(null, /*! ./layouts/main/Main.vue */ "./resources/js/src/layouts/main/Main.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(2), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ./layouts/main/Main.vue */ "./resources/js/src/layouts/main/Main.vue"));
     },
     children: [// =============================================================================
     // Theme Routes
@@ -72547,7 +72547,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       name: 'home',
       beforeEnter: guard,
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 31).then(__webpack_require__.bind(null, /*! ./views/Home.vue */ "./resources/js/src/views/Home.vue"));
+        return __webpack_require__.e(/*! import() */ 33).then(__webpack_require__.bind(null, /*! ./views/Home.vue */ "./resources/js/src/views/Home.vue"));
       },
       meta: {
         breadcrumb: [{
@@ -72566,7 +72566,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/user',
       name: 'user',
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(2), __webpack_require__.e(18)]).then(__webpack_require__.bind(null, /*! ./views/user/browse.vue */ "./resources/js/src/views/user/browse.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(3), __webpack_require__.e(22)]).then(__webpack_require__.bind(null, /*! ./views/user/browse.vue */ "./resources/js/src/views/user/browse.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72587,7 +72587,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/user/create',
       name: 'add-user',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 26).then(__webpack_require__.bind(null, /*! ./views/user/create.vue */ "./resources/js/src/views/user/create.vue"));
+        return __webpack_require__.e(/*! import() */ 28).then(__webpack_require__.bind(null, /*! ./views/user/create.vue */ "./resources/js/src/views/user/create.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72612,7 +72612,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/user/:id',
       name: 'view-user',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 19).then(__webpack_require__.bind(null, /*! ./views/user/view.vue */ "./resources/js/src/views/user/view.vue"));
+        return __webpack_require__.e(/*! import() */ 23).then(__webpack_require__.bind(null, /*! ./views/user/view.vue */ "./resources/js/src/views/user/view.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72637,7 +72637,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/user/:id/edit',
       name: 'edit-user',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 27).then(__webpack_require__.bind(null, /*! ./views/user/edit.vue */ "./resources/js/src/views/user/edit.vue"));
+        return __webpack_require__.e(/*! import() */ 29).then(__webpack_require__.bind(null, /*! ./views/user/edit.vue */ "./resources/js/src/views/user/edit.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72665,7 +72665,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/property',
       name: 'property',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 8).then(__webpack_require__.bind(null, /*! ./views/property/browse.vue */ "./resources/js/src/views/property/browse.vue"));
+        return __webpack_require__.e(/*! import() */ 9).then(__webpack_require__.bind(null, /*! ./views/property/browse.vue */ "./resources/js/src/views/property/browse.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72683,7 +72683,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/property/create',
       name: 'add-property',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 9).then(__webpack_require__.bind(null, /*! ./views/property/create.vue */ "./resources/js/src/views/property/create.vue"));
+        return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ./views/property/create.vue */ "./resources/js/src/views/property/create.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72704,7 +72704,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/property/:id/edit',
       name: 'edit-property',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ./views/property/edit.vue */ "./resources/js/src/views/property/edit.vue"));
+        return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ./views/property/edit.vue */ "./resources/js/src/views/property/edit.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72725,7 +72725,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/property/:id',
       name: 'view-property',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ./views/property/view.vue */ "./resources/js/src/views/property/view.vue"));
+        return __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ./views/property/view.vue */ "./resources/js/src/views/property/view.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72749,7 +72749,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/reservation',
       name: 'reservation',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ./views/reservation/browse.vue */ "./resources/js/src/views/reservation/browse.vue"));
+        return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ./views/reservation/browse.vue */ "./resources/js/src/views/reservation/browse.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72767,7 +72767,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/my-reservations',
       name: 'my-reservations',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ./views/reservation/browseMyReservations.vue */ "./resources/js/src/views/reservation/browseMyReservations.vue"));
+        return __webpack_require__.e(/*! import() */ 14).then(__webpack_require__.bind(null, /*! ./views/reservation/browseMyReservations.vue */ "./resources/js/src/views/reservation/browseMyReservations.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72785,7 +72785,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/reservation/:id/create',
       name: 'add-reservation',
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(22), __webpack_require__.e(14)]).then(__webpack_require__.bind(null, /*! ./views/reservation/create.vue */ "./resources/js/src/views/reservation/create.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(15)]).then(__webpack_require__.bind(null, /*! ./views/reservation/create.vue */ "./resources/js/src/views/reservation/create.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72806,7 +72806,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/reservation/:id/edit',
       name: 'edit-reservation',
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(22), __webpack_require__.e(34)]).then(__webpack_require__.bind(null, /*! ./views/reservation/edit.vue */ "./resources/js/src/views/reservation/edit.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(16)]).then(__webpack_require__.bind(null, /*! ./views/reservation/edit.vue */ "./resources/js/src/views/reservation/edit.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72827,7 +72827,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/my-reservation/:id/edit',
       name: 'edit-my-reservation',
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(22), __webpack_require__.e(33)]).then(__webpack_require__.bind(null, /*! ./views/reservation/editMyReservation.vue */ "./resources/js/src/views/reservation/editMyReservation.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(17)]).then(__webpack_require__.bind(null, /*! ./views/reservation/editMyReservation.vue */ "./resources/js/src/views/reservation/editMyReservation.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72848,7 +72848,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/my-reservation/:id',
       name: 'view-reservation',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 23).then(__webpack_require__.bind(null, /*! ./views/reservation/viewMyReservation.vue */ "./resources/js/src/views/reservation/viewMyReservation.vue"));
+        return __webpack_require__.e(/*! import() */ 19).then(__webpack_require__.bind(null, /*! ./views/reservation/viewMyReservation.vue */ "./resources/js/src/views/reservation/viewMyReservation.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72869,7 +72869,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/reservation/:id',
       name: 'view-reservation',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 15).then(__webpack_require__.bind(null, /*! ./views/reservation/view.vue */ "./resources/js/src/views/reservation/view.vue"));
+        return __webpack_require__.e(/*! import() */ 18).then(__webpack_require__.bind(null, /*! ./views/reservation/view.vue */ "./resources/js/src/views/reservation/view.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72893,7 +72893,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/feedback',
       name: 'feedback',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ./views/feedback/browse.vue */ "./resources/js/src/views/feedback/browse.vue"));
+        return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ./views/feedback/browse.vue */ "./resources/js/src/views/feedback/browse.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72911,7 +72911,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/feedback/create',
       name: 'add-feedback',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ./views/feedback/create.vue */ "./resources/js/src/views/feedback/create.vue"));
+        return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! ./views/feedback/create.vue */ "./resources/js/src/views/feedback/create.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72932,7 +72932,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/feedback/:id/edit',
       name: 'edit-feedback',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! ./views/feedback/edit.vue */ "./resources/js/src/views/feedback/edit.vue"));
+        return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ./views/feedback/edit.vue */ "./resources/js/src/views/feedback/edit.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72956,7 +72956,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/message',
       name: 'message',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 21).then(__webpack_require__.bind(null, /*! ./views/message/browse.vue */ "./resources/js/src/views/message/browse.vue"));
+        return __webpack_require__.e(/*! import() */ 25).then(__webpack_require__.bind(null, /*! ./views/message/browse.vue */ "./resources/js/src/views/message/browse.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72977,7 +72977,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/settings/role',
       name: 'role',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 24).then(__webpack_require__.bind(null, /*! ./views/settings/Role/Roles.vue */ "./resources/js/src/views/settings/Role/Roles.vue"));
+        return __webpack_require__.e(/*! import() */ 26).then(__webpack_require__.bind(null, /*! ./views/settings/Role/Roles.vue */ "./resources/js/src/views/settings/Role/Roles.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72997,7 +72997,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/settings/role/create',
       name: 'create-role',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 16).then(__webpack_require__.bind(null, /*! ./views/settings/Role/Create.vue */ "./resources/js/src/views/settings/Role/Create.vue"));
+        return __webpack_require__.e(/*! import() */ 20).then(__webpack_require__.bind(null, /*! ./views/settings/Role/Create.vue */ "./resources/js/src/views/settings/Role/Create.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -73020,7 +73020,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/settings/role/:id',
       name: 'view-role',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 25).then(__webpack_require__.bind(null, /*! ./views/settings/Role/View.vue */ "./resources/js/src/views/settings/Role/View.vue"));
+        return __webpack_require__.e(/*! import() */ 27).then(__webpack_require__.bind(null, /*! ./views/settings/Role/View.vue */ "./resources/js/src/views/settings/Role/View.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -73043,7 +73043,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/settings/role/edit/:id',
       name: 'edit-role',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 17).then(__webpack_require__.bind(null, /*! ./views/settings/Role/Edit.vue */ "./resources/js/src/views/settings/Role/Edit.vue"));
+        return __webpack_require__.e(/*! import() */ 21).then(__webpack_require__.bind(null, /*! ./views/settings/Role/Edit.vue */ "./resources/js/src/views/settings/Role/Edit.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -73066,7 +73066,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/profile',
       name: 'profile',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ./views/profile/profile */ "./resources/js/src/views/profile/profile.vue"));
+        return __webpack_require__.e(/*! import() */ 8).then(__webpack_require__.bind(null, /*! ./views/profile/profile */ "./resources/js/src/views/profile/profile.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -73086,7 +73086,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   {
     path: '',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 30).then(__webpack_require__.bind(null, /*! @/layouts/full-page/FullPage.vue */ "./resources/js/src/layouts/full-page/FullPage.vue"));
+      return __webpack_require__.e(/*! import() */ 32).then(__webpack_require__.bind(null, /*! @/layouts/full-page/FullPage.vue */ "./resources/js/src/layouts/full-page/FullPage.vue"));
     },
     children: [// =============================================================================
     // PAGES
@@ -73095,25 +73095,25 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/login',
       name: 'pageLogin',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 20).then(__webpack_require__.bind(null, /*! ./views/pages/Login.vue */ "./resources/js/src/views/pages/Login.vue"));
+        return __webpack_require__.e(/*! import() */ 24).then(__webpack_require__.bind(null, /*! ./views/pages/Login.vue */ "./resources/js/src/views/pages/Login.vue"));
       }
     }, {
       path: '/dashboard/register',
       name: 'pageRegister',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ./views/pages/Register.vue */ "./resources/js/src/views/pages/Register.vue"));
+        return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ./views/pages/Register.vue */ "./resources/js/src/views/pages/Register.vue"));
       }
     }, {
       path: '/dashboard/error-403',
       name: 'pageError403',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 29).then(__webpack_require__.bind(null, /*! ./views/pages/NotAuthorized.vue */ "./resources/js/src/views/pages/NotAuthorized.vue"));
+        return __webpack_require__.e(/*! import() */ 31).then(__webpack_require__.bind(null, /*! ./views/pages/NotAuthorized.vue */ "./resources/js/src/views/pages/NotAuthorized.vue"));
       }
     }, {
       path: '/dashboard/error-404',
       name: 'pageError404',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 28).then(__webpack_require__.bind(null, /*! ./views/pages/Error404.vue */ "./resources/js/src/views/pages/Error404.vue"));
+        return __webpack_require__.e(/*! import() */ 30).then(__webpack_require__.bind(null, /*! ./views/pages/Error404.vue */ "./resources/js/src/views/pages/Error404.vue"));
       }
     }]
   }, // Redirect to 404 page, if no match found
@@ -74180,7 +74180,6 @@ __webpack_require__.r(__webpack_exports__);
         dispatch = _ref6.dispatch;
     return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
       _http_requests_reservation_index__WEBPACK_IMPORTED_MODULE_1__["default"].create(payload).then(function (response) {
-        console.log("D1");
         resolve(response);
       }).catch(function (error) {
         console.log(error.data);
@@ -74908,9 +74907,9 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuesax__WEBPACK_IMPORTED_MODULE_1
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\mayor\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\xampp\htdocs\mayor\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\mayor\resources\assets\css\main.css */"./resources/assets/css/main.css");
+__webpack_require__(/*! /Users/mohamedswilam/code/mayor/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/mohamedswilam/code/mayor/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /Users/mohamedswilam/code/mayor/resources/assets/css/main.css */"./resources/assets/css/main.css");
 
 
 /***/ })

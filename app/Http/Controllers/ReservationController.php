@@ -90,7 +90,6 @@ class ReservationController extends Controller
         if($check_in_validation == 0 && $check_out_validation == 0 && $check_in_after_onther_check_in_validation == 0 && $check_out_before_onther_check_out_validation == 0   ) {
             $request['check_out']=date('Y-m-d H:i:s',strtotime($request->check_out));
             $request['check_in']=date('Y-m-d H:i:s',strtotime($request->check_in));
-            die(json_encode($request->toArray()));
             $reservation = Reservation::create(array_merge($request->toArray(),['client_id' =>$client_id, 'status_id' => 2]));
             return ResponseFacade::createRespond(
                 fractal(
@@ -174,7 +173,6 @@ class ReservationController extends Controller
         }
     }
 
-
     public function update(ReservationRequest $request, $id)
     {
 
@@ -182,7 +180,6 @@ class ReservationController extends Controller
 
         $resevation = Reservation::find($id);
         $data = $request->validated();
-//        die(json_encode($data));
         $startDate = explode(" ", $request->check_in, 2)[0];
         $endDate = explode(" ", $request->check_out, 2)[0];
         $check_in_validation = Reservation::where('property_id', $request->property_id)
@@ -196,7 +193,6 @@ class ReservationController extends Controller
 
         if($check_in_validation == 0 && $check_out_validation == 0  )
         {
-//           die(json_encode($data));
             $resevation->update($data);
             return ResponseFacade::createRespond(
                 fractal(
@@ -208,7 +204,6 @@ class ReservationController extends Controller
         else{
             if ($check_in_validation >0)
             {
-                die("2");
                 return ResponseFacade::createRespond(
                     fractal(
                         Reservation::where('property_id', $request->property_id)
@@ -218,15 +213,14 @@ class ReservationController extends Controller
             }
             elseif($check_out_validation >0)
             {
-                die("3");
                 return ResponseFacade::createRespond(
                 fractal(
                     Reservation::where('property_id', $request->property_id)
                         ->whereBetween('check_out', [$startDate, $endDate])->get(['check_in',"check_out"]),new ReservationTransformer()));
             }
         }
-
     }
+
     public function edit_my_reservations(ReservationRequest $request, $id)
     {
         $this->authorize('edit_my_reservation', Reservation::class);
@@ -299,15 +293,14 @@ class ReservationController extends Controller
 
     public function get_reservation_dates($id)
     {
-
         return ResponseFacade::showRespond(
             fractal(
                 Reservation::where('property_id',$id)->get(['check_in',"check_out"]),
                 new ReservationTransformer()
             )
         );
-
     }
+
     public function destroy($id)
     {
         $this->authorize('destroy', Reservation::class);

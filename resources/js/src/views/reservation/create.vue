@@ -22,7 +22,6 @@
                     <vs-col vs-lg="6" vs-sm="12" vs-xs="12" class="px-2 mb-5">
                         From
                         <datepicker
-
                                 :inline="true"
                                 :highlighted="highlightedFn"
                                 v-validate="'required'"
@@ -41,7 +40,6 @@
                     <vs-col vs-lg="6" vs-sm="12" vs-xs="12" class="px-2 mb-5">
                         To
                         <datepicker
-
                                 :inline="true"
                                 :highlighted="highlightedFn"
                                 v-validate="'required'"
@@ -86,7 +84,7 @@
             return {
                 form: {
                     check_in: '',
-                    check_out: "",
+                    check_out: '',
                     property_id:this.$route.params.id,
                     email:"",
 
@@ -96,11 +94,10 @@
                 role: JSON.parse(localStorage.vuex).auth.AppActiveUser.roles[0].name,
                 highlightedFn: {
                     customPredictor(date) {
-
+                        let curDate = date.setHours(0,0,0,0);
                         for(let i=0; i<reservationDates.length; i++)
                         {
-
-                            if(date >= new Date(reservationDates[i].check_in.split(" ")[0]) && date <= new Date(reservationDates[i].check_out.split(" ")[0]))
+                            if(curDate >= new Date(reservationDates[i].check_in).setHours(0,0,0,0) && curDate <= new Date(reservationDates[i].check_out).setHours(23,59,59,999))
                             {
                                 return true;
                             }
@@ -117,20 +114,23 @@
             }
         },
         methods: {
-
-
-
             //Create Resource
             create()
             {
                 if (!this.validateForm) return;
                 this.$vs.loading({container: `#btn-create`, color: 'primary', scale: 0.45});
                 this.is_requesting=true;
-                this.$store.dispatch('reservation/create', this.form)
+                let form = {
+                    check_in: new Date(new Date(this.form.check_in).toString().split('GMT')[0]+' UTC').toISOString().split('.')[0],
+                    check_out: new Date(new Date(this.form.check_out).toString().split('GMT')[0]+' UTC').toISOString().split('.')[0],
+                    property_id: this.form.property_id,
+                    email: this.form.email,
+                }
+                this.$store.dispatch('reservation/create', form)
                     .then(response => {
                         this.$vs.loading.close(`#btn-create > .con-vs-loading`);
-
                         this.is_requesting=false;
+
                         this.$vs.notify({
                             title: 'Success',
                             text: response.data.message,
@@ -141,7 +141,6 @@
                     })
                     .catch(error => {
                         this.$vs.loading.close(`#btn-create > .con-vs-loading`);
-
                         this.is_requesting=false;
                         this.$vs.notify({
                             title: 'Error',
