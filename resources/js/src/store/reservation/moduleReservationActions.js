@@ -62,8 +62,6 @@ export default {
         return new Promise((resolve, reject) => {
             reservation.create(payload)
                 .then(response => {
-                    console.log("D1");
-
                     resolve(response)
                 })
                 .catch(error => {

@@ -36,7 +36,7 @@ Route::group(['prefix' => 'role', 'middleware' => 'auth:api'], function () {
 Route::middleware('auth:api')->get('my-reservations', 'ReservationController@browse_my_reservations');
 Route::middleware('auth:api')->post('edit-my-reservation/{id}', 'ReservationController@edit_my_reservations');
 Route::middleware('auth:api')->get('delete-my-reservation/{id}  ', 'ReservationController@delete_my_reservation');
-    Route::middleware('auth:api')->get('view-my-reservation/{id}', 'ReservationController@show_my_reservation');
+Route::middleware('auth:api')->get('view-my-reservation/{id}', 'ReservationController@show_my_reservation');
 Route::group(['prefix' => 'reservation', 'middleware' => 'auth:api'], function () {
     Route::get('/getallsatatus', 'ReservationController@getAllStatus');
     Route::post('{id}', 'ReservationController@update');

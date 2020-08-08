@@ -65,9 +65,6 @@
         },
         mounted() {
             this.getReservationData();
-            this.getPropertyData();
-
-
         },
         data() {
             return {
@@ -83,10 +80,8 @@
                 role: JSON.parse(localStorage.vuex).auth.AppActiveUser.roles[0].name,
                 highlightedFn: {
                     customPredictor(date) {
-
                         for(let i=0; i<reservationDates.length; i++)
                         {
-
                             if(date >= new Date(reservationDates[i].check_in.split(" ")[0]) && date <= new Date(reservationDates[i].check_out.split(" ")[0]))
                             {
                                 return true;
@@ -156,7 +151,7 @@
                         this.form.check_in=this.reservation.check_in;
                         this.form.check_out=this.reservation.check_out;
                         this.property_id=this.reservation.properties.id;
-
+                        this.getPropertyData();
                     })
                     .catch(error => {
                         this.$vs.notify({
@@ -168,6 +163,7 @@
                         });
                     });
             },
+
             getPropertyData()
             {
                 console.log("d",this.property_id +"dd")
@@ -176,8 +172,6 @@
                     .then(response => {
                         reservationDates = response.data.data.data;
                         this.reservationDates = response.data.data.data;
-                        console.log("s",this.reservationDates);
-
                     })
                     .catch(error => {
                         this.$vs.notify({
