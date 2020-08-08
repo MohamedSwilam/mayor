@@ -192,6 +192,35 @@ const router = new Router({
                     }
                 },
                 {
+                    path: '/dashboard/my-reservations',
+                    name: 'my-reservations',
+                    component: () => import('./views/reservation/browseMyReservations.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'My Reservations', active: true },
+                        ],
+                        pageTitle: 'My Reservations',
+                        permission: 'browse-my-reservations'
+                    }
+                },
+                {
+                    path: '/dashboard/reservation/:id/create',
+                    name: 'add-reservation',
+                    component: () => import('./views/reservation/create.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'reservation', url: '/dashboard/reservation' },
+                            { title: 'create Reservation', active: true },
+                        ],
+                        pageTitle: 'Add Reservation',
+                        permission: 'create-reservation'
+                    }
+                },
+                {
                     path: '/dashboard/reservation/:id/edit',
                     name: 'edit-reservation',
                     component: () => import('./views/reservation/edit.vue'),
@@ -207,6 +236,36 @@ const router = new Router({
                     }
                 },
                 {
+                    path: '/dashboard/my-reservation/:id/edit',
+                    name: 'edit-my-reservation',
+                    component: () => import('./views/reservation/editMyReservation.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'Reservation', url: '/dashboard/reservation' },
+                            { title: 'Edit Reservation', active: true },
+                        ],
+                        pageTitle: 'Edit My Reservation',
+                        permission: 'edit-my-reservation'
+                    }
+                },
+                {
+                    path: '/dashboard/my-reservation/:id',
+                    name: 'view-reservation',
+                    component: () => import('./views/reservation/viewMyReservation.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'Reservations', url: '/dashboard/reservation' },
+                            { title: 'Reservation Details', active: true },
+                        ],
+                        pageTitle: 'View My Reservation',
+                        permission: 'view-my-reservation'
+                    }
+                },
+                {
                     path: '/dashboard/reservation/:id',
                     name: 'view-reservation',
                     component: () => import('./views/reservation/view.vue'),
@@ -217,7 +276,7 @@ const router = new Router({
                             { title: 'Reservations', url: '/dashboard/reservation' },
                             { title: 'Reservation Details', active: true },
                         ],
-                        pageTitle: 'View Reservation',
+                        pageTitle: 'View  Reservation',
                         permission: 'view-reservation'
                     }
                 },

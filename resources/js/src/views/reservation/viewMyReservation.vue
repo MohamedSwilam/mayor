@@ -16,9 +16,6 @@
                     <b>Check out Date: </b> {{reservation.check_out.split(' ')[0]}}
                 </vs-col>
                 <vs-col vs-w="12" class="mb-2">
-                    <b>Number Of Days: </b> {{(calc_days()+1)}}
-                </vs-col>
-                <vs-col vs-w="12" class="mb-2">
                     <b>Property Title: </b>&nbsp; {{reservation.properties.title}}
                 </vs-col>
                 <vs-col vs-w="12" class="mb-2">
@@ -41,10 +38,7 @@
                     <b>Number of bathrooms: </b>&nbsp;{{reservation.properties.no_of_baths}}
                 </vs-col>
                 <vs-col vs-w="12" class="mb-2">
-                    <b>Price Per Day: </b>&nbsp;{{reservation.properties.price}} EGP
-                </vs-col>
-                <vs-col vs-w="12" class="mb-2">
-                    <b>Total Price: </b>&nbsp;{{reservation.properties.price * (calc_days()+1)}} EGP
+                    <b>Price: </b>&nbsp;{{reservation.properties.price}} EGP
                 </vs-col>
                 <vs-col vs-w="12" class="mb-2">
                     <b>Has Garden? </b> &nbsp; {{reservation.properties.has_garden?'Yes':'No'}}
@@ -71,7 +65,7 @@
             <vs-divider></vs-divider>
             <vs-row>
                 <vs-col vs-w="12" vs-type="flex" vs-align="center" vs-justify="center">
-                    <vs-button :to="`/dashboard/reservation/${$route.params.id}/edit`" color="warning" icon-pack="feather" icon="icon-edit">Edit Reservation</vs-button>
+                    <vs-button :to="`/dashboard/my-reservation/${$route.params.id}/edit`" color="warning" icon-pack="feather" icon="icon-edit">Edit Reservation</vs-button>
                 </vs-col>
             </vs-row>
         </vx-card>
@@ -90,19 +84,10 @@
             }
         },
         methods: {
-            calc_days(){
-                let date1  =new Date(this.reservation.check_in.split(' ')[0]);
-                let date2  =new Date(this.reservation.check_out.split(' ')[0]);
-                let Difference_In_Time = date2.getTime() - date1.getTime();
-                let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
-                return Difference_In_Days;
-
-
-            },
             getReservationData()
             {
                 this.$vs.loading({container: this.$refs.reservation.$refs.content, scale: 0.5});
-                this.$store.dispatch('reservation/view', this.$route.params.id)
+                this.$store.dispatch('reservation/viewMyReservation', this.$route.params.id)
                     .then(response => {
                         this.$vs.loading.close(this.$refs.reservation.$refs.content);
                         this.reservation = response.data.data.data;

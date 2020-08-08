@@ -26,19 +26,22 @@ class ReservationRequest extends FormRequest
         $segments = request()->segments();
         if (sizeof($segments) == 2){
             return [
-                'checkin' => 'required|date',
-                'checkout' => 'required|date',
-                'password' => 'min:8',
+                'check_in' => 'required|date|after:now',
+                'check_out' => 'required|date|after:check_in',
                 'client_id' => 'exists:clients,id',
-                'property_id' => 'exists:properties,id'
+                'property_id' =>'exists:properties,id',
+                'status_id' => 'exists:reservation_statuses,id'
 
             ];
         }
         else if (sizeof($segments) == 3){
             return [
-                'checkin' => 'required|date',
-                'checkout' => 'required|date',
-                'password' => 'min:8'
+                'check_in' => 'date|after:now',
+                'check_out' =>'date|after:now',
+                'status_id' =>'exists:reservation_statuses,id',
+                'client_id' =>'exists:clients,id',
+                'property_id' =>'exists:properties,id',
+
 
             ];
         }
@@ -48,14 +51,6 @@ class ReservationRequest extends FormRequest
      *
      * @return array
      */
-    public function messages()
-    {
-        return [
-            'client_id.exists' => 'client not found!',
-//            'name.required' => 'Name is required!',
-//            'password.required' => 'Password is required!'
-        ];
-    }
 
 
 }

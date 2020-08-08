@@ -4,25 +4,13 @@
         <div class="vx-col w-full mb-base">
             <vx-card ref="create" title='Update Reservation'>
                 <vs-row >
-
-                    <vs-col vs-lg="12" vs-sm="12" vs-xs="12" class="px-2 mb-5 ">
-                        <vs-select
-                                :color="'primary'"
-                                class="selectExample w-full"
-                                label="Status"
-                                v-model="form.status_id"
-                        >
-                            <vs-select-item :key="index" :value="item.id" :text="item.name" v-for="(item,index) in AllStatus" />
-                        </vs-select>
-
-                    </vs-col>
                     <vs-col vs-lg="6" vs-sm="12" vs-xs="12" class="px-2 mb-5">
                         From
 
-                        <datepicker
+
+                    <datepicker
 
                                 :inline="true"
-                                :highlighted="highlightedFn"
                                 v-validate="'required'"
                                 class="w-full"
                                 :danger="errors.has('check_in')"
@@ -41,7 +29,6 @@
                         <datepicker
 
                                 :inline="true"
-                                :highlighted="highlightedFn"
                                 v-validate="'required'"
                                 class="w-full"
                                 :danger="errors.has('check_out')"
@@ -69,40 +56,37 @@
 </template>
 
 <script>
+    import Datepicker from 'vuejs-datepicker';
     var reservationDates=[];
 
-    import Datepicker from 'vuejs-datepicker';
-    import vSelect from 'vue-select'
     export default {
         components: {
-            Datepicker,
-            'v-select': vSelect,
+            Datepicker
         },
         mounted() {
-            this.getReservationData(),
-            this.getAllStatus();
+            this.getReservationData();
             this.getPropertyData();
 
 
         },
         data() {
             return {
+                is_requesting:false,
                 form: {
                     check_in: '',
                     check_out: "",
                     email:"",
-                    status_id:"",
 
                 },
                 reservation: "",
-                reservationDates:[],
-                AllStatus:"",
+                property_id:"",
                 role: JSON.parse(localStorage.vuex).auth.AppActiveUser.roles[0].name,
                 highlightedFn: {
                     customPredictor(date) {
 
                         for(let i=0; i<reservationDates.length; i++)
                         {
+
                             if(date >= new Date(reservationDates[i].check_in.split(" ")[0]) && date <= new Date(reservationDates[i].check_out.split(" ")[0]))
                             {
                                 return true;
@@ -127,7 +111,7 @@
                 if (!this.validateForm) return;
                 this.$vs.loading({container: `#btn-update`, color: 'primary', scale: 0.45});
                 this.is_requesting=true;
-                this.$store.dispatch('reservation/update', {id: this.$route.params.id, data: this.form})
+                this.$store.dispatch('reservation/updateMyReservation', {id: this.$route.params.id, data: this.form})
                     .then(response => {
                         this.$vs.loading.close(`#btn-update > .con-vs-loading`);
 
@@ -166,30 +150,13 @@
 
             getReservationData()
             {
-                this.$store.dispatch('reservation/view', this.$route.params.id)
+                this.$store.dispatch('reservation/viewMyReservation', this.$route.params.id)
                     .then(response => {
                         this.reservation = response.data.data.data;
                         this.form.check_in=this.reservation.check_in;
                         this.form.check_out=this.reservation.check_out;
+                        this.property_id=this.reservation.properties.id;
 
-                        this.form.status_id=this.reservation.reservation_status.id;
-
-                    })
-                    .catch(error => {
-                        this.$vs.notify({
-                            title: 'Error',
-                            text: error.response.data.error,
-                            iconPack: 'feather',
-                            icon: 'icon-alert-circle',
-                            color: 'danger'
-                        });
-                    });
-            },
-            getAllStatus()
-            {
-                this.$store.dispatch('reservation/getAllStatus')
-                    .then(response => {
-                        this.AllStatus = response.data;
                     })
                     .catch(error => {
                         this.$vs.notify({
@@ -203,7 +170,9 @@
             },
             getPropertyData()
             {
-                this.$store.dispatch('reservation/getDates', this.$route.params.id)
+                console.log("d",this.property_id +"dd")
+
+                this.$store.dispatch('reservation/getDates', this.property_id)
                     .then(response => {
                         reservationDates = response.data.data.data;
                         this.reservationDates = response.data.data.data;
@@ -221,8 +190,6 @@
                     });
             }
         },
-
-
     }
 </script>
 

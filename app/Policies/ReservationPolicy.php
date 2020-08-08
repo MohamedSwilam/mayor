@@ -29,6 +29,23 @@ class ReservationPolicy
         return request()->user()->hasPermissionTo('browse-reservation');
     }
 
+    public function browse_my_reservations()
+    {
+        return request()->user()->hasPermissionTo('browse-my-reservations');
+    }
+    public function edit_my_reservation()
+    {
+        return request()->user()->hasPermissionTo('edit-my-reservation');
+    }
+    public function delete_my_reservation()
+    {
+        return request()->user()->hasPermissionTo('delete-my-reservation');
+    }
+    public function show_my_reservation()
+    {
+        return request()->user()->hasPermissionTo('view-my-reservation');
+
+    }
     public function show()
     {
         return request()->user()->hasPermissionTo('view-reservation');

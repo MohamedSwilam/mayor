@@ -37,6 +37,13 @@ export default [
         permission: 'browse-reservation'
     },
     {
+        url: "/dashboard/my-reservations",
+        name: "My Reservation",
+        slug: "My reservation",
+        icon: "CalendarIcon",
+        permission: 'browse-my-reservations'
+    },
+    {
         url: "/dashboard/feedback",
         name: "Feedback",
         slug: "feedback",

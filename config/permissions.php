@@ -81,7 +81,16 @@ return [
             'display_name' => 'Browse Reservation',
         ],
         [
+            'name' => 'browse-my-reservations',
+            'guard_name' => 'api',
+            'display_name' => 'Browse My Reservation',
+        ],
+        [
             'name' => 'view-reservation',
+            'guard_name' => 'api',
+            'display_name' => 'View Reservation',
+        ],[
+            'name' => 'view-my-reservation',
             'guard_name' => 'api',
             'display_name' => 'View Reservation',
         ],
@@ -91,9 +100,19 @@ return [
             'display_name' => 'Edit Reservation',
         ],
         [
+            'name' => 'edit-my-reservation',
+            'guard_name' => 'api',
+            'display_name' => 'Edit My Reservation',
+        ],
+        [
             'name' => 'delete-reservation',
             'guard_name' => 'api',
             'display_name' => 'Delete Reservation',
+        ],
+        [
+            'name' => 'delete-my-reservation',
+            'guard_name' => 'api',
+            'display_name' => 'Delete My Reservation',
         ],
 
     ],
