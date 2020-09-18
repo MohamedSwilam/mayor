@@ -11,6 +11,7 @@
                     <datepicker
 
                                 :inline="true"
+                                :highlighted="highlightedFn"
                                 v-validate="'required'"
                                 class="w-full"
                                 :danger="errors.has('check_in')"
@@ -29,6 +30,7 @@
                         <datepicker
 
                                 :inline="true"
+                                :highlighted="highlightedFn"
                                 v-validate="'required'"
                                 class="w-full"
                                 :danger="errors.has('check_out')"
@@ -56,15 +58,16 @@
 </template>
 
 <script>
-    import Datepicker from 'vuejs-datepicker';
     var reservationDates=[];
 
     export default {
         components: {
-            Datepicker
+            Datepicker,
+
         },
         mounted() {
             this.getReservationData();
+
         },
         data() {
             return {
@@ -77,12 +80,14 @@
                 },
                 reservation: "",
                 property_id:"",
+                reservationDates:[],
                 role: JSON.parse(localStorage.vuex).auth.AppActiveUser.roles[0].name,
                 highlightedFn: {
                     customPredictor(date) {
+                        let curDate = date.setHours(0,0,0,0);
                         for(let i=0; i<reservationDates.length; i++)
                         {
-                            if(date >= new Date(reservationDates[i].check_in.split(" ")[0]) && date <= new Date(reservationDates[i].check_out.split(" ")[0]))
+                            if(curDate >= new Date(reservationDates[i].check_in).setHours(0,0,0,0) && curDate <= new Date(reservationDates[i].check_out).setHours(23,59,59,999))
                             {
                                 return true;
                             }
@@ -90,6 +95,7 @@
                         }
                     }
                 },
+
             }
         },
         computed: {
@@ -106,7 +112,11 @@
                 if (!this.validateForm) return;
                 this.$vs.loading({container: `#btn-update`, color: 'primary', scale: 0.45});
                 this.is_requesting=true;
-                this.$store.dispatch('reservation/updateMyReservation', {id: this.$route.params.id, data: this.form})
+                let form = {
+                    check_in: new Date(new Date(this.form.check_in).toString().split('GMT')[0]+' UTC').toISOString().split('.')[0],
+                    check_out: new Date(new Date(this.form.check_out).toString().split('GMT')[0]+' UTC').toISOString().split('.')[0],
+                }
+                this.$store.dispatch('reservation/updateMyReservation', {id: this.$route.params.id, data: form})
                     .then(response => {
                         this.$vs.loading.close(`#btn-update > .con-vs-loading`);
 
@@ -152,6 +162,7 @@
                         this.form.check_out=this.reservation.check_out;
                         this.property_id=this.reservation.properties.id;
                         this.getPropertyData();
+
                     })
                     .catch(error => {
                         this.$vs.notify({
@@ -166,7 +177,6 @@
 
             getPropertyData()
             {
-                console.log("d",this.property_id +"dd")
 
                 this.$store.dispatch('reservation/getDates', this.property_id)
                     .then(response => {

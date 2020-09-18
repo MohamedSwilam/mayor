@@ -95,7 +95,6 @@ var reservationDates = [];
   },
   mounted: function mounted() {
     this.getReservationData(), this.getAllStatus();
-    this.getPropertyData();
   },
   data: function data() {
     return {
@@ -105,14 +104,17 @@ var reservationDates = [];
         email: "",
         status_id: ""
       },
+      property_id: "",
       reservation: "",
       reservationDates: [],
       AllStatus: "",
       role: JSON.parse(localStorage.vuex).auth.AppActiveUser.roles[0].name,
       highlightedFn: {
         customPredictor: function customPredictor(date) {
+          var curDate = date.setHours(0, 0, 0, 0);
+
           for (var i = 0; i < reservationDates.length; i++) {
-            if (date >= new Date(reservationDates[i].check_in.split(" ")[0]) && date <= new Date(reservationDates[i].check_out.split(" ")[0])) {
+            if (curDate >= new Date(reservationDates[i].check_in).setHours(0, 0, 0, 0) && curDate <= new Date(reservationDates[i].check_out).setHours(23, 59, 59, 999)) {
               return true;
             }
           }
@@ -122,7 +124,7 @@ var reservationDates = [];
   },
   computed: {
     validateForm: function validateForm() {
-      return !this.errors.any() && this.form.check_in !== "" && this.form.check_out !== "";
+      return !this.errors.any() && this.form.check_in !== "" && this.form.check_out !== "" && this.status_id !== "";
     }
   },
   methods: {
@@ -137,9 +139,14 @@ var reservationDates = [];
         scale: 0.45
       });
       this.is_requesting = true;
+      var form = {
+        check_in: new Date(new Date(this.form.check_in).toString().split('GMT')[0] + ' UTC').toISOString().split('.')[0],
+        check_out: new Date(new Date(this.form.check_out).toString().split('GMT')[0] + ' UTC').toISOString().split('.')[0],
+        status_id: this.form.status_id
+      };
       this.$store.dispatch('reservation/update', {
         id: this.$route.params.id,
-        data: this.form
+        data: form
       }).then(function (response) {
         _this.$vs.loading.close("#btn-update > .con-vs-loading");
 
@@ -183,6 +190,10 @@ var reservationDates = [];
         _this2.form.check_in = _this2.reservation.check_in;
         _this2.form.check_out = _this2.reservation.check_out;
         _this2.form.status_id = _this2.reservation.reservation_status.id;
+        console.log("data", _this2.reservation.property_id);
+        _this2.property_id = _this2.reservation.property_id;
+
+        _this2.getPropertyData();
       }).catch(function (error) {
         _this2.$vs.notify({
           title: 'Error',
@@ -211,10 +222,10 @@ var reservationDates = [];
     getPropertyData: function getPropertyData() {
       var _this4 = this;
 
-      this.$store.dispatch('reservation/getDates', this.$route.params.id).then(function (response) {
+      console.log("s", this.property_id);
+      this.$store.dispatch('reservation/getDates', this.property_id).then(function (response) {
         reservationDates = response.data.data.data;
         _this4.reservationDates = response.data.data.data;
-        console.log("s", _this4.reservationDates);
       }).catch(function (error) {
         _this4.$vs.notify({
           title: 'Error',

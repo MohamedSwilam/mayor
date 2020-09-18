@@ -11,7 +11,6 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/core-js/object/keys */ "./node_modules/@babel/runtime/core-js/object/keys.js");
 /* harmony import */ var _babel_runtime_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
 
 //
 //
@@ -70,11 +69,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
+//
+//
 var reservationDates = [];
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    Datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_1__["default"]
+    Datepicker: Datepicker
   },
   mounted: function mounted() {
     this.getReservationData();
@@ -89,11 +89,14 @@ var reservationDates = [];
       },
       reservation: "",
       property_id: "",
+      reservationDates: [],
       role: JSON.parse(localStorage.vuex).auth.AppActiveUser.roles[0].name,
       highlightedFn: {
         customPredictor: function customPredictor(date) {
+          var curDate = date.setHours(0, 0, 0, 0);
+
           for (var i = 0; i < reservationDates.length; i++) {
-            if (date >= new Date(reservationDates[i].check_in.split(" ")[0]) && date <= new Date(reservationDates[i].check_out.split(" ")[0])) {
+            if (curDate >= new Date(reservationDates[i].check_in).setHours(0, 0, 0, 0) && curDate <= new Date(reservationDates[i].check_out).setHours(23, 59, 59, 999)) {
               return true;
             }
           }
@@ -118,9 +121,13 @@ var reservationDates = [];
         scale: 0.45
       });
       this.is_requesting = true;
+      var form = {
+        check_in: new Date(new Date(this.form.check_in).toString().split('GMT')[0] + ' UTC').toISOString().split('.')[0],
+        check_out: new Date(new Date(this.form.check_out).toString().split('GMT')[0] + ' UTC').toISOString().split('.')[0]
+      };
       this.$store.dispatch('reservation/updateMyReservation', {
         id: this.$route.params.id,
-        data: this.form
+        data: form
       }).then(function (response) {
         _this.$vs.loading.close("#btn-update > .con-vs-loading");
 
@@ -179,7 +186,6 @@ var reservationDates = [];
     getPropertyData: function getPropertyData() {
       var _this3 = this;
 
-      console.log("d", this.property_id + "dd");
       this.$store.dispatch('reservation/getDates', this.property_id).then(function (response) {
         reservationDates = response.data.data.data;
         _this3.reservationDates = response.data.data.data;
@@ -294,6 +300,7 @@ var render = function() {
                       staticClass: "w-full",
                       attrs: {
                         inline: true,
+                        highlighted: _vm.highlightedFn,
                         danger: _vm.errors.has("check_in"),
                         "danger-text": _vm.errors.first("check_in"),
                         "val-icon-danger": "clear",
@@ -334,6 +341,7 @@ var render = function() {
                       staticClass: "w-full",
                       attrs: {
                         inline: true,
+                        highlighted: _vm.highlightedFn,
                         danger: _vm.errors.has("check_out"),
                         "danger-text": _vm.errors.first("check_out"),
                         "val-icon-danger": "clear",

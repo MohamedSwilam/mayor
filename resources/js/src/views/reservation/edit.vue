@@ -81,7 +81,7 @@
         mounted() {
             this.getReservationData(),
             this.getAllStatus();
-            this.getPropertyData();
+
 
 
         },
@@ -94,16 +94,17 @@
                     status_id:"",
 
                 },
+                property_id:"",
                 reservation: "",
                 reservationDates:[],
                 AllStatus:"",
                 role: JSON.parse(localStorage.vuex).auth.AppActiveUser.roles[0].name,
                 highlightedFn: {
                     customPredictor(date) {
-
+                        let curDate = date.setHours(0,0,0,0);
                         for(let i=0; i<reservationDates.length; i++)
                         {
-                            if(date >= new Date(reservationDates[i].check_in.split(" ")[0]) && date <= new Date(reservationDates[i].check_out.split(" ")[0]))
+                            if(curDate >= new Date(reservationDates[i].check_in).setHours(0,0,0,0) && curDate <= new Date(reservationDates[i].check_out).setHours(23,59,59,999))
                             {
                                 return true;
                             }
@@ -116,7 +117,8 @@
         computed: {
 
             validateForm() {
-                return !this.errors.any() &&  this.form.check_in !== "" && this.form.check_out !== "";
+                return !this.errors.any() &&  this.form.check_in !== "" && this.form.check_out !== "" && this.status_id!== "";
+
             }
         },
         methods: {
@@ -127,7 +129,13 @@
                 if (!this.validateForm) return;
                 this.$vs.loading({container: `#btn-update`, color: 'primary', scale: 0.45});
                 this.is_requesting=true;
-                this.$store.dispatch('reservation/update', {id: this.$route.params.id, data: this.form})
+                let form = {
+                    check_in: new Date(new Date(this.form.check_in).toString().split('GMT')[0]+' UTC').toISOString().split('.')[0],
+                    check_out: new Date(new Date(this.form.check_out).toString().split('GMT')[0]+' UTC').toISOString().split('.')[0],
+                    status_id:this.form.status_id,
+
+                }
+                this.$store.dispatch('reservation/update', {id: this.$route.params.id, data: form})
                     .then(response => {
                         this.$vs.loading.close(`#btn-update > .con-vs-loading`);
 
@@ -171,8 +179,10 @@
                         this.reservation = response.data.data.data;
                         this.form.check_in=this.reservation.check_in;
                         this.form.check_out=this.reservation.check_out;
-
                         this.form.status_id=this.reservation.reservation_status.id;
+                        console.log("data",this.reservation.property_id);
+                        this.property_id=this.reservation.property_id;
+                        this.getPropertyData();
 
                     })
                     .catch(error => {
@@ -203,11 +213,12 @@
             },
             getPropertyData()
             {
-                this.$store.dispatch('reservation/getDates', this.$route.params.id)
+                console.log("s",this.property_id);
+
+                this.$store.dispatch('reservation/getDates',this.property_id)
                     .then(response => {
                         reservationDates = response.data.data.data;
                         this.reservationDates = response.data.data.data;
-                        console.log("s",this.reservationDates);
 
                     })
                     .catch(error => {
