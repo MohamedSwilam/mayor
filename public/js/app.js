@@ -74843,7 +74843,8 @@ __webpack_require__.r(__webpack_exports__);
 ==========================================================================================*/
 // MAIN COLORS - VUESAX THEME COLORS
 var colors = {
-  primary: '#3b3b3b',
+  //	#cbbaab ,#9d6d4b ,#515d69 ,
+  primary: '#515d69',
   success: '#28C76F',
   danger: '#EA5455',
   warning: '#FF9F43',

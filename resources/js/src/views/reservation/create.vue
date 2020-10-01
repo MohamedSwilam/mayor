@@ -16,7 +16,7 @@
                             val-icon-danger="clear"
                             icon-pack="feather"
                             icon="icon-mail"
-                            label-placeholder="Title"
+                            label-placeholder="User Email"
                             v-model="form.email"
                             name='email' />
                     <vs-col vs-lg="6" vs-sm="12" vs-xs="12" class="px-2 mb-5">
@@ -60,7 +60,7 @@
                 </vs-row>
                 <vs-divider></vs-divider>
                 <vs-row vs-justify="center" vs-align="center">
-                    <vs-button id="btn-create" class="vs-con-loading__container" :disabled="!validateForm" @click="is_requesting?$store.dispatch('viewWaitMessage', $vs):create()" icon-pack="feather" icon="icon-save">Create Reservation </vs-button>
+                    <vs-button id="btn-create" class="vs-con-loading__container" :disabled="!validateForm" @click="is_requesting?$store.dispatch('viewWaitMessage', $vs):create(),redirect()" icon-pack="feather" icon="icon-save">Create Reservation </vs-button>
                 </vs-row>
 
             </vx-card>
@@ -110,11 +110,33 @@
         computed: {
 
             validateForm() {
-                return !this.errors.any() &&  this.form.check_in !== "" && this.form.check_out !== "";
+                if (this.role === 'Super Admin' || this.role === 'Admin')
+                {
+                    return !this.errors.any() &&  this.form.check_in !== "" && this.form.check_out !== ""   && this.form.email !=="" ;
+
+                }
+                else
+                {
+                    return !this.errors.any() &&  this.form.check_in !== "" && this.form.check_out !== "" ;
+                }
             }
         },
         methods: {
             //Create Resource
+
+            redirect()
+            {
+                if(this.role === 'Super Admin' || this.role === 'Admin')
+                {
+                    this.$router.push('/dashboard/reservation');
+                }
+                else{
+                    this.$router.push({ name: 'my-reservations' })
+                }
+
+
+
+            },
             create()
             {
                 if (!this.validateForm) return;

@@ -111,9 +111,10 @@
         </div>
     </section>
     <!--================End Feature Area =================-->
-
+<br>
+<br>
     <!--================Testimonials Area =================-->
-    <section class="testimonials_area p_120">
+    <section class=" ">
         <div class="container">
             <div class="row testimonials_inner">
                 <div class="col-lg-4">
@@ -122,20 +123,23 @@
                         <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed.</p>
                     </div>
                 </div>
+
                 <div class="col-lg-8">
+
                     <div class="testi_slider owl-carousel">
                         @foreach($feedback as $feedback)
                             <div class="item">
                                 <div class="testi_item">
                                     {{--                                "--}}
                                     <img  style="max-width: 150px; max-height: 150px; border-radius: 50%;" src="/storage/feedback/{{$feedback->image}}" alt="">
-                                    <p style="height: 120px;">{{$feedback->feedback}}</p>
+                                    <p style="height: 100px;">{{$feedback->feedback}}</p>
                                     <h4>{{$feedback->name}}</h4>
                                     <h6>{{$feedback->title}}</h6>
                                 </div>
                             </div>
                         @endforeach
                     </div>
+
                 </div>
             </div>
         </div>
