@@ -103,7 +103,7 @@
     <!--================End Properties Area =================-->
 
     <!--================Testimonials Area =================-->
-    <section class="testimonials_area p_120">
+    <section class=" ">
         <div class="container">
             <div class="row testimonials_inner">
                 <div class="col-lg-4">
@@ -121,7 +121,7 @@
                             <div class="testi_item">
 {{--                                "--}}
                                 <img  style="max-width: 150px; max-height: 150px; border-radius: 50%;" src="/storage/feedback/{{$feedback->image}}" alt="">
-                                <p style="height: 120px;">{{$feedback->feedback}}</p>
+                                <p style="height: 100px;">{{$feedback->feedback}}</p>
                                 <h4>{{$feedback->name}}</h4>
                                 <h6>{{$feedback->title}}</h6>
                             </div>
@@ -133,6 +133,8 @@
             </div>
         </div>
     </section>
+    <br>
+    <br>
     <!--================End Testimonials Area =================-->
 
     <!--================Feature Area =================-->

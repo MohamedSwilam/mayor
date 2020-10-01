@@ -118,11 +118,24 @@ var reservationDates = [];
   },
   computed: {
     validateForm: function validateForm() {
-      return !this.errors.any() && this.form.check_in !== "" && this.form.check_out !== "";
+      if (this.role === 'Super Admin' || this.role === 'Admin') {
+        return !this.errors.any() && this.form.check_in !== "" && this.form.check_out !== "" && this.form.email !== "";
+      } else {
+        return !this.errors.any() && this.form.check_in !== "" && this.form.check_out !== "";
+      }
     }
   },
   methods: {
     //Create Resource
+    redirect: function redirect() {
+      if (this.role === 'Super Admin' || this.role === 'Admin') {
+        this.$router.push('/dashboard/reservation');
+      } else {
+        this.$router.push({
+          name: 'my-reservations'
+        });
+      }
+    },
     create: function create() {
       var _this = this;
 
@@ -298,7 +311,7 @@ var render = function() {
                             "val-icon-danger": "clear",
                             "icon-pack": "feather",
                             icon: "icon-mail",
-                            "label-placeholder": "Title",
+                            "label-placeholder": "User Email",
                             name: "email"
                           },
                           model: {
@@ -421,7 +434,8 @@ var render = function() {
                       click: function($event) {
                         _vm.is_requesting
                           ? _vm.$store.dispatch("viewWaitMessage", _vm.$vs)
-                          : _vm.create()
+                          : _vm.create(),
+                          _vm.redirect()
                       }
                     }
                   },
