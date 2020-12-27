@@ -1,4 +1,4 @@
 <template>
-	<h4>You are in home.</h4>
+		<h4 class="alert-heading">Welcome To Reham Refaat Online Reservation</h4>
 
 </template>

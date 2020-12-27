@@ -30,7 +30,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="welcome_text">
-                        <h4>Welcome to SEL Center</h4>
+                        <h4>Welcome to Reham Refaat</h4>
                         <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed.</p>
                         <div class="row">
                             <div class="col-sm-4">
@@ -103,7 +103,7 @@
     <!--================End Properties Area =================-->
 
     <!--================Testimonials Area =================-->
-    <section class=" ">
+    <section class="feedbackcon">
         <div class="container">
             <div class="row testimonials_inner">
                 <div class="col-lg-4">
@@ -141,7 +141,7 @@
     <section class="feature_area p_120">
         <div class="container">
             <div class="main_title">
-                <h2>Why we are the best</h2>
+                <h2>WHY WORKING WITH US</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
             </div>
             <div class="row feature_inner">

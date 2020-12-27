@@ -123,7 +123,7 @@ button:focus {
   font-weight: bold;
   font-family: "Roboto", sans-serif;
   font-size: 36px;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   margin-bottom: 12px;
 }
 
@@ -165,7 +165,8 @@ button:focus {
 .header_area .navbar .nav .nav-item .nav-link {
   font: 500 12px/100px "Roboto", sans-serif;
   text-transform: uppercase;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
+  /*  color: rgb(32,56,75);*/
   padding: 0px;
   display: inline-block;
 }
@@ -175,7 +176,7 @@ button:focus {
 }
 
 .header_area .navbar .nav .nav-item:hover .nav-link, .header_area .navbar .nav .nav-item.active .nav-link {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .header_area .navbar .nav .nav-item.submenu {
@@ -241,7 +242,7 @@ button:focus {
 
 .header_area .navbar .nav .nav-item.submenu ul .nav-item .nav-link {
   line-height: 45px;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   padding: 0px 30px;
   -webkit-transition: all 150ms linear;
   -o-transition: all 150ms linear;
@@ -255,7 +256,7 @@ button:focus {
 }
 
 .header_area .navbar .nav .nav-item.submenu ul .nav-item:hover .nav-link {
-  background: #9d6d4b;
+  background: rgb(158,110,74);
   color: #fff;
 }
 
@@ -279,7 +280,7 @@ button:focus {
   font-size: 12px;
   line-height: 60px;
   display: inline-block;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   margin-left: 214px;
 }
 
@@ -335,7 +336,7 @@ button:focus {
 }
 
 .top_menu .header_social li:hover a {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .top_menu .ac_btn {
@@ -356,16 +357,16 @@ button:focus {
 }
 
 .top_menu .ac_btn:hover {
-  background: #9d6d4b;
+  background: rgb(158,110,74);
   color: #fff;
-  border-color: #9d6d4b;
+  border-color: rgb(158,110,74);
 }
 
 .top_menu .dn_btn {
   line-height: 28px;
-  border: 1px solid #9d6d4b;
+  border: 1px solid rgb(158,110,74);
   display: inline-block;
-  background: #9d6d4b;
+  background: rgb(158,110,74);
   padding: 0px 19px;
   font-size: 12px;
   font-family: "Roboto", sans-serif;
@@ -379,7 +380,7 @@ button:focus {
 .top_menu .dn_btn:hover {
   background: transparent;
   color: #777777;
-  border-color: #9d6d4b;
+  border-color: rgb(158,110,74);
 }
 
 .top_menu .lan_pack {
@@ -432,7 +433,7 @@ button:focus {
 }
 
 .home_banner_area .banner_inner .banner_content {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .home_banner_area .banner_inner .banner_content h5 {
@@ -444,7 +445,7 @@ button:focus {
 }
 
 .home_banner_area .banner_inner .banner_content h3 {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   font-size: 48px;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
@@ -470,7 +471,7 @@ button:focus {
 .advanced_search h3 {
   font-size: 18px;
   font-weight: 500;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   font-family: "Roboto", sans-serif;
   margin-bottom: 25px;
 }
@@ -551,7 +552,7 @@ button:focus {
 }
 
 .advanced_search .search_range .range_item #slider-range .ui-slider-range, .advanced_search .search_range .range_item #slider-range2 .ui-slider-range {
-  background: #9d6d4b;
+  background: rgb(158,110,74);
   border-radius: 0px;
 }
 
@@ -560,7 +561,7 @@ button:focus {
   border: none;
   height: 15px;
   width: 5px;
-  background: #9d6d4b;
+  background: rgb(158,110,74);
   margin: 0px;
   right: 5px;
   top: -5px;
@@ -759,7 +760,7 @@ button:focus {
 }
 
 .banner_area .banner_inner .banner_content h2 {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   font-size: 48px;
   font-family: "Roboto", sans-serif;
   margin-bottom: 0px;
@@ -768,7 +769,7 @@ button:focus {
 
 .banner_area .banner_inner .banner_content .page_link a {
   font-size: 14px;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   font-family: "Roboto", sans-serif;
   margin-right: 32px;
   position: relative;
@@ -795,7 +796,7 @@ button:focus {
 }
 
 .banner_area .banner_inner .banner_content .page_link a:hover {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 /* End Home Banner Area css
@@ -822,7 +823,7 @@ button:focus {
 }
 
 .causes_slider .owl-dots .owl-dot.active {
-  background: #9d6d4b;
+  background: rgb(158,110,74);
 }
 
 .causes_item {
@@ -845,7 +846,7 @@ button:focus {
 .causes_item .causes_img .c_parcent span {
   width: 70%;
   height: 3px;
-  background: #9d6d4b;
+  background: rgb(158,110,74);
   position: absolute;
   left: 0px;
   bottom: 0px;
@@ -856,7 +857,7 @@ button:focus {
   position: absolute;
   right: -10px;
   bottom: 0px;
-  background: #9d6d4b;
+  background: rgb(158,110,74);
   color: #fff;
   padding: 0px 5px;
 }
@@ -866,7 +867,7 @@ button:focus {
 }
 
 .causes_item .causes_text h4 {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   font-weight: 600;
@@ -875,7 +876,7 @@ button:focus {
 }
 
 .causes_item .causes_text h4:hover {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .causes_item .causes_text p {
@@ -888,11 +889,11 @@ button:focus {
 
 .causes_item .causes_bottom a {
   width: 50%;
-  border: 1px solid #9d6d4b;
+  border: 1px solid rgb(158,110,74);
   text-align: center;
   float: left;
   line-height: 50px;
-  background: #9d6d4b;
+  background: rgb(158,110,74);
   color: #fff;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
@@ -903,7 +904,7 @@ button:focus {
   border-color: #eeeeee;
   background: #fff;
   font-size: 14px;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 /* End Causes Area css
@@ -963,11 +964,11 @@ button:focus {
   display: inline-block;
   padding: 1px 18px;
   text-align: center;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .tags .tag_btn:before {
-  background: #9d6d4b;
+  background: rgb(158,110,74);
 }
 
 .tags .tag_btn + .tag_btn {
@@ -1054,7 +1055,7 @@ button:focus {
 
 .blog_info .post_tag a {
   font: 300 14px/21px "Roboto", sans-serif;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .blog_info .post_tag a:hover {
@@ -1062,7 +1063,7 @@ button:focus {
 }
 
 .blog_info .post_tag a.active {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .blog_info .blog_meta li a {
@@ -1074,7 +1075,7 @@ button:focus {
 }
 
 .blog_info .blog_meta li a i {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   font-size: 16px;
   font-weight: 600;
   padding-left: 15px;
@@ -1083,7 +1084,7 @@ button:focus {
 }
 
 .blog_info .blog_meta li a:hover {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .blog_post img {
@@ -1097,7 +1098,7 @@ button:focus {
 .blog_details h2 {
   font-size: 24px;
   line-height: 36px;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   font-weight: 600;
   -webkit-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
@@ -1105,7 +1106,7 @@ button:focus {
 }
 
 .blog_details h2:hover {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .blog_details p {
@@ -1116,7 +1117,7 @@ button:focus {
   font-size: 14px;
   line-height: 36px;
   display: inline-block;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   font-weight: 500;
   padding: 0px 30px;
   background: #fff;
@@ -1131,7 +1132,7 @@ button:focus {
 .blog_right_sidebar .widget_title {
   font-size: 18px;
   line-height: 25px;
-  background: #9d6d4b;
+  background: rgb(158,110,74);
   text-align: center;
   color: #fff;
   padding: 8px 0px;
@@ -1148,7 +1149,7 @@ button:focus {
   padding-left: 20px;
   border-radius: 45px;
   z-index: 0;
-  background: #9d6d4b;
+  background: rgb(158,110,74);
 }
 
 .blog_right_sidebar .search_widget .input-group .form-control.placeholder {
@@ -1196,7 +1197,7 @@ button:focus {
 .blog_right_sidebar .author_widget h4 {
   font-size: 18px;
   line-height: 20px;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   margin-bottom: 5px;
   margin-top: 30px;
 }
@@ -1211,7 +1212,7 @@ button:focus {
 
 .blog_right_sidebar .author_widget .social_icon a {
   font-size: 14px;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
@@ -1222,7 +1223,7 @@ button:focus {
 }
 
 .blog_right_sidebar .author_widget .social_icon a:hover {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .blog_right_sidebar .popular_post_widget .post_item .media-body {
@@ -1237,7 +1238,7 @@ button:focus {
 .blog_right_sidebar .popular_post_widget .post_item .media-body h3 {
   font-size: 14px;
   line-height: 20px;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   margin-bottom: 4px;
   -webkit-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
@@ -1245,7 +1246,7 @@ button:focus {
 }
 
 .blog_right_sidebar .popular_post_widget .post_item .media-body h3:hover {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .blog_right_sidebar .popular_post_widget .post_item .media-body p {
@@ -1281,11 +1282,11 @@ button:focus {
 }
 
 .blog_right_sidebar .post_category_widget .cat-list li:hover {
-  border-color: #9d6d4b;
+  border-color: rgb(158,110,74);
 }
 
 .blog_right_sidebar .post_category_widget .cat-list li:hover a {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .blog_right_sidebar .newsletter_widget {
@@ -1343,7 +1344,7 @@ button:focus {
 }
 
 .blog_right_sidebar .newsletter_widget .bbtns {
-  background: #9d6d4b;
+  background: rgb(158,110,74);
   color: #fff;
   font-size: 12px;
   line-height: 38px;
@@ -1370,12 +1371,12 @@ button:focus {
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   font-size: 12px;
 }
 
 .blog_right_sidebar .tag_cloud_widget ul li a:hover {
-  background: #9d6d4b;
+  background: rgb(158,110,74);
   color: #fff;
 }
 
@@ -1405,7 +1406,7 @@ button:focus {
 }
 
 .blog-pagination .page-item.active .page-link {
-  background-color: #9d6d4b;
+  background-color: rgb(158,110,74);
   border-color: transparent;
   color: #fff;
 }
@@ -1432,7 +1433,7 @@ button:focus {
 .blog-pagination .page-link:hover {
   color: #fff;
   text-decoration: none;
-  background-color: #9d6d4b;
+  background-color: rgb(158,110,74);
   border-color: #eee;
 }
 
@@ -1456,7 +1457,7 @@ button:focus {
 }
 
 .single-post-area .social-links li a:hover {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .single-post-area .blog_details {
@@ -1506,7 +1507,7 @@ button:focus {
 .single-post-area .navigation-area h4 {
   font-size: 18px;
   line-height: 25px;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   font-weight: 600;
 }
 
@@ -1600,7 +1601,7 @@ button:focus {
 .comments-area h4 {
   text-align: center;
   margin-bottom: 50px;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   font-size: 18px;
 }
 
@@ -1611,7 +1612,7 @@ button:focus {
 }
 
 .comments-area a {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .comments-area .comment-list {
@@ -1655,7 +1656,7 @@ button:focus {
 
 .comments-area .btn-reply {
   background-color: #fff;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   border: 1px solid #eee;
   padding: 2px 18px;
   font-size: 12px;
@@ -1667,7 +1668,7 @@ button:focus {
 }
 
 .comments-area .btn-reply:hover {
-  background-color: #9d6d4b;
+  background-color: rgb(158,110,74);
   color: #fff;
 }
 
@@ -1685,7 +1686,7 @@ button:focus {
   margin-bottom: 50px;
   font-size: 18px;
   line-height: 22px;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .comment-form .name {
@@ -1889,7 +1890,7 @@ button:focus {
   top: 0;
   font-size: 20px;
   line-height: 24px;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   font-weight: 600;
 }
 
@@ -1899,11 +1900,11 @@ button:focus {
   color: "Roboto", sans-serif;
   font-weight: bold;
   margin-bottom: 0px;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .contact_info .info_item h6 a {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .contact_info .info_item p {
@@ -1996,7 +1997,7 @@ button:focus {
 .modal-message .modal-dialog .modal-content .modal-header h2 {
   display: block;
   text-align: center;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   padding-bottom: 10px;
   font-family: "Roboto", sans-serif;
 }
@@ -2058,41 +2059,41 @@ button:focus {
 
 .sample-text-area p b {
   font-weight: bold;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .sample-text-area p i {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   font-style: italic;
 }
 
 .sample-text-area p sup {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   font-style: italic;
 }
 
 .sample-text-area p sub {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   font-style: italic;
 }
 
 .sample-text-area p del {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .sample-text-area p u {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 /*============== End Elements Area css ================*/
 /*==============Elements Button Area css ================*/
 .elements_button .title_color {
   margin-bottom: 30px;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .title_color {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .button-group-area {
@@ -2117,7 +2118,7 @@ button:focus {
 
 .button-group-area .link {
   text-decoration: underline;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   background: transparent;
 }
 
@@ -2227,12 +2228,12 @@ button:focus {
 
 .link-border {
   background: transparent;
-  border: 1px solid #9d6d4b;
-  color: #9d6d4b;
+  border: 1px solid rgb(158,110,74);
+  color: rgb(158,110,74);
 }
 
 .link-border:before {
-  background: #9d6d4b;
+  background: rgb(158,110,74);
 }
 
 .radius {
@@ -2487,7 +2488,7 @@ h6 {
 }
 
 .genric-btn.default {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   background: #f9f9ff;
   border: 1px solid transparent;
 }
@@ -2503,7 +2504,7 @@ h6 {
 }
 
 .genric-btn.default-border:hover {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   background: #f9f9ff;
   border: 1px solid transparent;
 }
@@ -2629,33 +2630,33 @@ h6 {
 }
 
 .genric-btn.link {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   background: #f9f9ff;
   text-decoration: underline;
   border: 1px solid transparent;
 }
 
 .genric-btn.link:hover {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   border: 1px solid #f9f9ff;
   background: #fff;
 }
 
 .genric-btn.link-border {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   border: 1px solid #f9f9ff;
   background: #fff;
   text-decoration: underline;
 }
 
 .genric-btn.link-border:hover {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   background: #f9f9ff;
   border: 1px solid transparent;
 }
 
 .genric-btn.disable {
-  color: #9d6d4b, 0.3;
+  color: rgb(158,110,74), 0.3;
   background: #f9f9ff;
   border: 1px solid transparent;
   cursor: not-allowed;
@@ -2704,7 +2705,7 @@ h6 {
 }
 
 .progress-table .table-head .serial, .progress-table .table-head .country, .progress-table .table-head .visit, .progress-table .table-head .percentage {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   line-height: 40px;
   text-transform: uppercase;
   font-weight: 500;
@@ -3178,7 +3179,7 @@ h6 {
 }
 
 .single-defination h4 {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .primary-checkbox input:checked + label {
@@ -3523,7 +3524,7 @@ h6 {
 ============================================================================================ */
 .main_btn {
   display: inline-block;
-  background: #9d6d4b;
+  background: rgb(158,110,74);
   padding: 0px 50px;
   color: #fff;
   font-family: "Roboto", sans-serif;
@@ -3535,7 +3536,7 @@ h6 {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
   text-align: center;
-  border: 1px solid #9d6d4b;
+  border: 1px solid rgb(158,110,74);
   cursor: pointer;
   -webkit-transition: all 300ms linear 0s;
   -o-transition: all 300ms linear 0s;
@@ -3544,12 +3545,12 @@ h6 {
 
 .main_btn:hover {
   background: transparent;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .main_btn2 {
   display: inline-block;
-  background: #9d6d4b;
+  background: rgb(158,110,74);
   padding: 0px 32px;
   color: #fff;
   font-family: "Roboto", sans-serif;
@@ -3561,7 +3562,7 @@ h6 {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
   text-align: center;
-  border: 1px solid #9d6d4b;
+  border: 1px solid rgb(158,110,74);
   cursor: pointer;
   -webkit-transition: all 300ms linear 0s;
   -o-transition: all 300ms linear 0s;
@@ -3570,13 +3571,13 @@ h6 {
 
 .main_btn2:hover {
   background: transparent;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .submit_btn {
   width: auto;
   display: inline-block;
-  background: #9d6d4b;
+  background: rgb(158,110,74);
   padding: 0px 50px;
   color: #fff;
   font-family: "Roboto", sans-serif;
@@ -3588,7 +3589,7 @@ h6 {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
   text-align: center;
-  border: 1px solid #9d6d4b;
+  border: 1px solid rgb(158,110,74);
   cursor: pointer;
   -webkit-transition: all 300ms linear 0s;
   -o-transition: all 300ms linear 0s;
@@ -3597,14 +3598,14 @@ h6 {
 
 .submit_btn:hover {
   background: transparent;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .white_bg_btn {
   display: inline-block;
   background: #f9f9ff;
   padding: 0px 35px;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   font-family: "Roboto", sans-serif;
   font-size: 13px;
   font-weight: 500;
@@ -3622,9 +3623,9 @@ h6 {
 }
 
 .white_bg_btn:hover {
-  background: #9d6d4b;
+  background: rgb(158,110,74);
   color: #fff;
-  border-color: #9d6d4b;
+  border-color: rgb(158,110,74);
 }
 
 /* End Main Button Area css
@@ -3648,7 +3649,7 @@ h6 {
 }
 
 .welcome_text h4 {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   font-family: "Roboto", sans-serif;
   font-size: 36px;
   margin-bottom: 18px;
@@ -3670,14 +3671,14 @@ h6 {
 
 .wel_item i {
   font-size: 24px;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .wel_item h4 {
   font-size: 24px;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   margin-bottom: 5px;
   margin-top: 10px;
 }
@@ -3711,7 +3712,7 @@ h6 {
   font-size: 18px;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   margin-bottom: 15px;
 }
 
@@ -3745,7 +3746,7 @@ h6 {
 }
 
 .properties_item .pp_content .tags a i.fa-times {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .properties_item .pp_content .pp_footer {
@@ -3757,7 +3758,7 @@ h6 {
   font-weight: 500;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   position: relative;
   top: 9px;
 }
@@ -3795,7 +3796,7 @@ h6 {
 /* Feature Area css
 ============================================================================================ */
 .feature_area {
-  background: #f9f9ff;
+  background: #edf0f0;
 }
 
 .feature_inner {
@@ -3816,7 +3817,7 @@ h6 {
   font-size: 18px;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   margin-bottom: 20px;
 }
 
@@ -3832,7 +3833,7 @@ h6 {
 }
 
 .feature_item:hover {
-  background: #9d6d4b;
+  background: rgb(158,110,74);
   color: #fff;
 }
 
@@ -3896,7 +3897,7 @@ h6 {
 }
 
 .testi_slider .owl-dots .owl-dot.active {
-  background: #9d6d4b;
+  background: rgb(158,110,74);
 }
 
 .testi_item {
@@ -3932,7 +3933,7 @@ h6 {
 }
 
 .testi_item h4:hover {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .testi_item h6 {
@@ -4008,7 +4009,7 @@ h6 {
 
 .team_item .team_name h4 {
   margin-bottom: 5px;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 18px;
@@ -4055,7 +4056,7 @@ h6 {
 }
 
 .single-footer-widget ul li a:hover {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .single-footer-widget .instafeed {
@@ -4108,7 +4109,7 @@ h6 {
 }
 
 .single-footer-widget .sub-btn {
-  background: #9d6d4b;
+  background: rgb(158,110,74);
   color: #fff;
   font-weight: 300;
   border-radius: 0;
@@ -4129,7 +4130,7 @@ h6 {
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
-  color: #9d6d4b;
+  color: rgb(158,110,74);
   text-transform: uppercase;
   margin-bottom: 28px;
 }
@@ -4150,7 +4151,7 @@ h6 {
 }
 
 .footer-bottom .footer-text a {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .footer-bottom .footer-social {
@@ -4168,7 +4169,7 @@ h6 {
 }
 
 .footer-bottom .footer-social a:hover {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .f_social_wd p {
@@ -4187,7 +4188,7 @@ h6 {
 }
 
 .f_social_wd .f_social a:hover {
-  color: #9d6d4b;
+  color: rgb(158,110,74);
 }
 
 .f_social_wd .f_social a:last-child {

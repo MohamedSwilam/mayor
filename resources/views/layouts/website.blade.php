@@ -12,6 +12,8 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{{ asset(mix('css/website/bootstrap.css'))}}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset(mix('css/website/font-awesome.min.css'))}}">
         <link rel="stylesheet" href="{{ asset(mix('css/website/owl-carousel.min.css'))}}">
         <link rel="stylesheet" href="{{ asset(mix('css/website/simpleLightbox.css'))}}">
