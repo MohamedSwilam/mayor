@@ -62,6 +62,36 @@
         </div>
     </section>
     <!--================End Welcome Area =================-->
+    <section class="feedbackcon">
+        <div class="container">
+            <div class="row testimonials_inner">
+                <div class="col-lg-4">
+                    <div class="testi_left_text">
+                        <h4>Client’s Feedback</h4>
+                        <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+
+                    <div class="testi_slider owl-carousel">
+                        @foreach($feedback as $feedback)
+                            <div class="item">
+                                <div class="testi_item">
+                                    {{--                                "--}}
+                                    <img  style="max-width: 150px; max-height: 150px; border-radius: 50%;" src="/storage/feedback/{{$feedback->image}}" alt="">
+                                    <p style="height: 100px;">{{$feedback->feedback}}</p>
+                                    <h4>{{$feedback->name}}</h4>
+                                    <h6>{{$feedback->title}}</h6>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!--================Feature Area =================-->
     <section class="feature_area p_120">
@@ -114,63 +144,7 @@
 <br>
 <br>
     <!--================Testimonials Area =================-->
-    <section class=" ">
-        <div class="container">
-            <div class="row testimonials_inner">
-                <div class="col-lg-4">
-                    <div class="testi_left_text">
-                        <h4>Client’s Feedback</h4>
-                        <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed.</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-8">
-
-                    <div class="testi_slider owl-carousel">
-                        @foreach($feedback as $feedback)
-                            <div class="item">
-                                <div class="testi_item">
-                                    {{--                                "--}}
-                                    <img  style="max-width: 150px; max-height: 150px; border-radius: 50%;" src="/storage/feedback/{{$feedback->image}}" alt="">
-                                    <p style="height: 100px;">{{$feedback->feedback}}</p>
-                                    <h4>{{$feedback->name}}</h4>
-                                    <h6>{{$feedback->title}}</h6>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
     <!--================End Testimonials Area =================-->
 
-    <!--================Clients Logo Area =================-->
-    <section class="clients_logo_area p_120">
-        <div class="container">
-            <div class="main_title">
-                <h2>Reliable Customers</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
-            </div>
-            <div class="clients_slider owl-carousel">
-                <div class="item">
-                    <img src="/images/website/clients-logo/c-logo-1.png" alt="">
-                </div>
-                <div class="item">
-                    <img src="/images/website/clients-logo/c-logo-2.png" alt="">
-                </div>
-                <div class="item">
-                    <img src="/images/website/clients-logo/c-logo-3.png" alt="">
-                </div>
-                <div class="item">
-                    <img src="/images/website/clients-logo/c-logo-4.png" alt="">
-                </div>
-                <div class="item">
-                    <img src="/images/website/clients-logo/c-logo-5.png" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--================End Clients Logo Area =================-->
+
 @endsection

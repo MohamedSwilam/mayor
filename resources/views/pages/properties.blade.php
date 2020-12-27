@@ -117,25 +117,25 @@
                 <div class="col-lg-3">
                     <div class="cities_item">
                         <img class="img-fluid" src="/images/website/cities/cities-1.jpg" alt="">
-                        <a class="main_btn2" href="#">Book Now</a>
+
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="cities_item">
                         <img class="img-fluid" src="/images/website/cities/cities-2.jpg" alt="">
-                        <a class="main_btn2" href="#">Book Now</a>
+
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="cities_item">
                         <img class="img-fluid" src="/images/website/cities/cities-3.jpg" alt="">
-                        <a class="main_btn2" href="#">Book Now</a>
+
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="cities_item">
                         <img class="img-fluid" src="/images/website/cities/cities-4.jpg" alt="">
-                        <a class="main_btn2" href="#">Book Now</a>
+
                     </div>
                 </div>
             </div>

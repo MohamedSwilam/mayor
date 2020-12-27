@@ -4030,7 +4030,7 @@ var render = function() {
                 }),
                 _vm._v(" "),
                 _c("span", { staticClass: "vx-logo-text text-primary" }, [
-                  _vm._v("Mayor")
+                  _vm._v("Reham Refaat")
                 ])
               ],
               1
@@ -5382,7 +5382,7 @@ var render = function() {
       _c("v-nav-menu", {
         attrs: {
           navMenuItems: _vm.navMenuItems,
-          title: "Mayor",
+          title: "Reham",
           parent: ".layout--main"
         }
       }),

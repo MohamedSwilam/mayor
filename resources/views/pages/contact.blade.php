@@ -73,7 +73,7 @@
                             </div>
                         </div>
                         <div class="col-md-12 text-right">
-                            <input type="submit" value="submit" class="btn submit_btn">Send Message</input>
+                            <input type="submit" value="Send" class="btn submit_btn"> </input>
                         </div>
                     </form>
                     @if ($errors->any())
