@@ -6,7 +6,8 @@
     <!--================Home Banner Area =================-->
     <section class="banner_area">
         <div class="banner_inner d-flex align-items-center">
-            <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+            <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0"
+                 data-background=""></div>
             <div class="container">
                 <div class="banner_content">
                     <div class="page_link">
@@ -29,7 +30,8 @@
                     <div class="single-post row">
                         <div class="col-lg-12">
                             <div class="feature-img" style="text-align: center;">
-                                <img style="max-height: 300px;" class="img-fluid" src="{{$property->main_details_image}}" alt="">
+                                <img style="max-height: 300px; max-width: 400px;" class="img-fluid"
+                                     src="/storage/property/{{$property->main_details_image}}" alt="">
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12 blog_details">
@@ -43,31 +45,55 @@
                         </div>
                         <div class="col-lg-12 col-md-12 ">
                             <h3 class="title_color">Property Gallery</h3>
-                            <div class="row gallery-item">
-                                @foreach($property->images as $image )
-                                    <div class="col-md-4">
-                                        <a href="/storage/properties/{{$image->source}}" target="_blank" class="img-gal"><div class="single-gallery-image" style="background: url(/storage/properties/{{$image ?? ''->source}});"></div></a>
+
+                            <div>
+                                    <div class="slideshow-container">
+                                    @foreach($property->images as$index => $image )
+
+
+                                        <!-- Full-width images with number and caption text -->
+                                            <div class="mySlides fade">
+                                                <div class="numbertext">{{$index}}/ {{count($property->images)}}</div>
+                                                <img src="/storage/property/{{$image->source}}" >
+                                                <div class="text">$image->source</div>
+                                            </div>
+                                    @endforeach
+                                    <!-- Next and previous buttons -->
+                                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
                                     </div>
-                                @endforeach
+                                    <br>
+
+                                    <!-- The dots/circles -->
+                                    <div style="text-align:center">
+                                        @foreach($property->images as$index => $image )
+                                        <span class="dot" onclick="currentSlide({{$index}})"></span>
+                                        @endforeach
+                                    </div>
+
+
 
                                 @if(count($property->images) == 0)
                                     <div class="col-md-12" style="text-align: center">
                                         <b>No images uploaded for this property!</b>
                                     </div>
                                 @endif
-                            </div>
-                        </div>
-                    </div>
-{{--                    <script>--}}
-{{--                        console.log(localStorage);--}}
-{{--                        if (JSON.parse(localStorage.vuex)) {--}}
 
-{{--                        }--}}
-{{--                    </script>--}}
+                        </div>
+                        </div>
+
+                    </div>
+                    {{--                    <script>--}}
+                    {{--                        console.log(localStorage);--}}
+                    {{--                        if (JSON.parse(localStorage.vuex)) {--}}
+
+                    {{--                        }--}}
+                    {{--                    </script>--}}
                     <div class="reserve-form">
                         <h4>Property Reservation</h4>
 
-                        <a href="\dashboard\reservation\{{$property->id}}\create" class="primary-btn submit_btn">Reserve Now</a>
+                        <a href="\dashboard\reservation\{{$property->id}}\create" class="primary-btn submit_btn">Reserve
+                            Now</a>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -141,7 +167,8 @@
                                 {{$property->address_desc}}
                             </p>
                             <div style="text-align: center;">
-                                <a href="{{$property->location}}" target="_blank" class="primary-btn submit_btn">View On Map</a>
+                                <a href="{{$property->location}}" target="_blank" class="primary-btn submit_btn">View On
+                                    Map</a>
                             </div>
                         </aside>
                     </div>
@@ -150,4 +177,145 @@
         </div>
     </section>
     <!--================Blog Area =================-->
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+            display: none;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+    </style>
 @endsection
+

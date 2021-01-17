@@ -46,6 +46,7 @@ class PropertyRequest extends FormRequest
                 'has_pool' => 'required|boolean',
                 'has_garden' => 'required|boolean',
                 'view_in_home' => 'required|boolean',
+                'imagesDesc'=>'',
             ];
         }
         else if (sizeof($segments) == 3){
@@ -69,6 +70,7 @@ class PropertyRequest extends FormRequest
                 'has_pool' => 'required|boolean',
                 'has_garden' => 'required|boolean',
                 'view_in_home' => 'required|boolean',
+                'imagesDesc'=>'',
             ];
         }
 

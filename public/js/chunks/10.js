@@ -155,6 +155,58 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -177,18 +229,20 @@ __webpack_require__.r(__webpack_exports__);
         lunch_price: 0,
         address_desc: '',
         address: '',
-        location: ''
+        location: '',
+        imagesDesc: []
       },
       uploadedHomeImage: null,
       uploadedDetailImage: null,
       selectedImages: [],
+      selectedImagesDescriptions: [],
       is_requesting: false,
       counterDanger: false
     };
   },
   computed: {
     validateForm: function validateForm() {
-      return !this.errors.any() && this.form.title !== "" && this.form.information !== "" && this.form.main_home_image !== null && this.form.main_details_image !== null && this.form.images.length > 0 && this.form.address_desc !== "" && this.form.address !== "" && this.form.location !== "";
+      return !this.errors.any() && this.form.title !== "" && this.form.information !== "" && this.form.main_home_image !== null && this.form.main_details_image !== null && this.form.images.length > 0 && this.form.address_desc !== "" && this.form.address !== "" && this.form.location !== "" && this.form.images.length === this.form.imagesDesc.length;
     }
   },
   methods: {
@@ -310,6 +364,10 @@ __webpack_require__.r(__webpack_exports__);
           for (var _i = 0; _i < this.form[key].length; _i++) {
             form_data.append(key + '[]', this.form[key][_i]);
           }
+        } else if (key === 'imagesDesc') {
+          for (var _i2 = 0; _i2 < this.form[key].length; _i2++) {
+            form_data.append(key + '[]', this.form[key][_i2]);
+          }
         } else if (key === 'has_pool' || key === 'has_garden' || key === 'view_in_home') {
           form_data.append(key, this.form[key] ? 1 : 0);
         } else {
@@ -386,7 +444,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".centerx li {\n  display: inline-flex;\n}[dir] .centerx li {\n  margin: 10px;\n}\n.image-preview {\n  font-family: \"Helvetica Neue\",Helvetica,Arial,sans-serif;\n  top: 6px;\n  position: relative;\n}\n[dir=ltr] .image-preview {\n  padding-right: 20px;\n}\n[dir=rtl] .image-preview {\n  padding-left: 20px;\n}\n.img-upload {\n  display: none;\n}\n.image-container {\n  width: 100px;\n  height: 100px;\n}\n[dir] .image-container {\n  background-color: white;\n  border: 1px solid #DDD;\n  border-radius: 5px;\n  padding: 5px;\n}\nimg.preview {\n  width: 100px;\n  height: 100px;\n}\n[dir] img.preview {\n  background-color: white;\n  border: 1px solid #DDD;\n  border-radius: 5px;\n  padding: 5px;\n}\n", ""]);
+exports.push([module.i, ".centerx li {\n  display: inline-flex;\n}[dir] .centerx li {\n  margin: 10px;\n}\n.image-preview {\n  font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  top: 6px;\n  position: relative;\n}\n[dir=ltr] .image-preview {\n  padding-right: 20px;\n}\n[dir=rtl] .image-preview {\n  padding-left: 20px;\n}\n.img-upload {\n  display: none;\n}\n.image-container {\n  width: 100px;\n  height: 100px;\n}\n[dir] .image-container {\n  background-color: white;\n  border: 1px solid #DDD;\n  border-radius: 5px;\n  padding: 5px;\n}\nimg.preview {\n  width: 100px;\n  height: 100px;\n}\n[dir] img.preview {\n  background-color: white;\n  border: 1px solid #DDD;\n  border-radius: 5px;\n  padding: 5px;\n}\n", ""]);
 
 // exports
 
@@ -547,7 +605,7 @@ var render = function() {
                             "document.getElementById('main-home-img').click()"
                         }
                       },
-                      [_vm._v("Upload Main Home Photo")]
+                      [_vm._v("Upload Main Home Photo\n                    ")]
                     )
                   ],
                   1
@@ -578,7 +636,7 @@ var render = function() {
                             "document.getElementById('main-detail-img').click()"
                         }
                       },
-                      [_vm._v("Upload Main Detail Photo")]
+                      [_vm._v("Upload Main Detail Photo\n                    ")]
                     )
                   ],
                   1
@@ -619,7 +677,11 @@ var render = function() {
                                     "document.getElementById('property-images').click()"
                                 }
                               },
-                              [_vm._v("Upload Property Images")]
+                              [
+                                _vm._v(
+                                  "Upload Property\n                                Images\n                            "
+                                )
+                              ]
                             ),
                             _vm._v(" "),
                             _c("input", {
@@ -639,19 +701,50 @@ var render = function() {
                           "vs-col",
                           { attrs: { "vs-w": "12" } },
                           [
-                            _vm.selectedImages.length > 0
-                              ? _vm._l(_vm.selectedImages, function(image) {
-                                  return _c("img", {
-                                    staticClass: "preview px-2 m-1",
-                                    staticStyle: { display: "inline-flex" },
-                                    attrs: { alt: "uploaded photo", src: image }
-                                  })
-                                })
-                              : [
-                                  _c("h5", [
-                                    _c("b", [_vm._v("No Images Uploaded!")])
-                                  ])
-                                ]
+                            _vm._l(_vm.selectedImages, function(image, indexx) {
+                              return _vm.selectedImages.length > 0
+                                ? [
+                                    _c("img", {
+                                      staticClass: "preview px-2 m-1",
+                                      staticStyle: { display: "inline-flex" },
+                                      attrs: {
+                                        alt: "uploaded photo",
+                                        src: image
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("vs-textarea", {
+                                      directives: [
+                                        {
+                                          name: "validate",
+                                          rawName: "v-validate",
+                                          value: "required",
+                                          expression: "'required'"
+                                        }
+                                      ],
+                                      attrs: {
+                                        label: "Image description",
+                                        name: "information"
+                                      },
+                                      model: {
+                                        value: _vm.form.imagesDesc[indexx],
+                                        callback: function($$v) {
+                                          _vm.$set(
+                                            _vm.form.imagesDesc,
+                                            indexx,
+                                            $$v
+                                          )
+                                        },
+                                        expression: "form.imagesDesc[indexx]"
+                                      }
+                                    })
+                                  ]
+                                : [
+                                    _c("h5", [
+                                      _c("b", [_vm._v("No Images Uploaded!")])
+                                    ])
+                                  ]
+                            })
                           ],
                           2
                         )
@@ -1276,7 +1369,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("Save & View Details")]
+                  [_vm._v("Save & View Details\n                ")]
                 ),
                 _vm._v(" "),
                 _c(
@@ -1296,7 +1389,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("Save & Create Another")]
+                  [_vm._v("Save & Create Another\n                ")]
                 )
               ],
               1

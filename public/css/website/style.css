@@ -69,13 +69,13 @@ a:hover, a:focus {
 body {
   line-height: 24px;
   font-size: 14px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: normal;
   color: #777777;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
 }
 
@@ -121,18 +121,18 @@ button:focus {
 
 .main_title h2 {
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 36px;
-  color: rgb(84,92,105);
+  color: rgb(158,110,74);
   margin-bottom: 12px;
 }
 
 .main_title p {
   font-size: 14px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: normal;
   line-height: 24px;
-  color: rgb(158,110,74);;
+  color: #777777;
   margin-bottom: 0px;
 }
 
@@ -165,7 +165,7 @@ button:focus {
 .header_area .navbar .nav .nav-item .nav-link {
   font: 500 12px/100px "Roboto", sans-serif;
   text-transform: uppercase;
-  color: rgb(84,92,105);
+  color: rgb(158,110,74);
   /*  color: rgb(32,56,75);*/
   padding: 0px;
   display: inline-block;
@@ -346,7 +346,7 @@ button:focus {
   background: #f9f9ff;
   padding: 0px 19px;
   font-size: 12px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   color: #777777;
   -webkit-transition: all 300ms linear 0s;
@@ -369,7 +369,7 @@ button:focus {
   background: rgb(158,110,74);
   padding: 0px 19px;
   font-size: 12px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   color: #fff;
   -webkit-transition: all 300ms linear 0s;
@@ -389,7 +389,7 @@ button:focus {
   border-radius: 0px;
   line-height: 28px;
   font-size: 12px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   padding-left: 19px;
   padding-right: 36px;
@@ -427,9 +427,9 @@ button:focus {
 }
 
 .home_banner_area .banner_inner {
-  position: center;
-  min-height: 600px ;
-  background: url(/images/website/banner/capture.png) no-repeat scroll center center;
+  position: relative;
+  min-height: 754px;
+  background: url(/images/website/banner/home-banner.jpg) no-repeat scroll center center;
 }
 
 .home_banner_area .banner_inner .banner_content {
@@ -438,7 +438,7 @@ button:focus {
 
 .home_banner_area .banner_inner .banner_content h5 {
   font-size: 14px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   letter-spacing: 1.4px;
   text-transform: uppercase;
   margin-bottom: 0px;
@@ -448,7 +448,7 @@ button:focus {
   color: rgb(158,110,74);
   font-size: 48px;
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin-bottom: 30px;
   margin-top: 7px;
 }
@@ -472,7 +472,7 @@ button:focus {
   font-size: 18px;
   font-weight: 500;
   color: rgb(158,110,74);
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin-bottom: 25px;
 }
 
@@ -510,7 +510,7 @@ button:focus {
 
 .advanced_search .search_select .s_select .current {
   font-size: 13px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #aaaaaa;
   font-weight: 300;
 }
@@ -522,7 +522,7 @@ button:focus {
 
 .advanced_search .search_select .s_select .list li {
   font-size: 13px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #aaaaaa;
   font-weight: 300;
 }
@@ -537,7 +537,7 @@ button:focus {
 
 .advanced_search .search_range .range_item h5 {
   font-size: 13px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #777777;
   margin-bottom: 10px;
@@ -573,7 +573,7 @@ button:focus {
 
 .advanced_search .search_range .range_item .d_text {
   font-size: 11px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #aaaaaa;
   padding-right: 16px;
@@ -582,7 +582,7 @@ button:focus {
 
 .advanced_search .search_range .range_item .d_text2 {
   font-size: 11px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #aaaaaa;
   padding-right: 8px;
@@ -594,35 +594,35 @@ button:focus {
   display: inline-block;
   overflow: hidden;
   font-size: 11px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #aaaaaa;
 }
 
 .advanced_search .search_range .range_item .amount.placeholder {
   font-size: 11px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #aaaaaa;
 }
 
 .advanced_search .search_range .range_item .amount:-moz-placeholder {
   font-size: 11px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #aaaaaa;
 }
 
 .advanced_search .search_range .range_item .amount::-moz-placeholder {
   font-size: 11px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #aaaaaa;
 }
 
 .advanced_search .search_range .range_item .amount::-webkit-input-placeholder {
   font-size: 11px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #aaaaaa;
 }
@@ -633,35 +633,35 @@ button:focus {
   display: inline-block;
   overflow: hidden;
   font-size: 11px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #aaaaaa;
 }
 
 .advanced_search .search_range .range_item .amount2.placeholder {
   font-size: 11px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #aaaaaa;
 }
 
 .advanced_search .search_range .range_item .amount2:-moz-placeholder {
   font-size: 11px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #aaaaaa;
 }
 
 .advanced_search .search_range .range_item .amount2::-moz-placeholder {
   font-size: 11px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #aaaaaa;
 }
 
 .advanced_search .search_range .range_item .amount2::-webkit-input-placeholder {
   font-size: 11px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #aaaaaa;
 }
@@ -712,7 +712,7 @@ button:focus {
 .blog_banner .banner_inner .blog_b_text h2 {
   font-size: 60px;
   font-weight: 500;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 66px;
   margin-bottom: 15px;
 }
@@ -762,7 +762,7 @@ button:focus {
 .banner_area .banner_inner .banner_content h2 {
   color: rgb(158,110,74);
   font-size: 48px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin-bottom: 0px;
   font-weight: 500;
 }
@@ -770,7 +770,7 @@ button:focus {
 .banner_area .banner_inner .banner_content .page_link a {
   font-size: 14px;
   color: rgb(158,110,74);
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin-right: 32px;
   position: relative;
   text-transform: uppercase;
@@ -868,7 +868,7 @@ button:focus {
 
 .causes_item .causes_text h4 {
   color: rgb(158,110,74);
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 15px;
@@ -895,7 +895,7 @@ button:focus {
   line-height: 50px;
   background: rgb(158,110,74);
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 500;
 }
@@ -1805,35 +1805,35 @@ button:focus {
   box-shadow: none;
   padding: 0px 15px;
   font-size: 13px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #999999;
 }
 
 .reservation_form .form-group input.placeholder {
   font-size: 13px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #999999;
 }
 
 .reservation_form .form-group input:-moz-placeholder {
   font-size: 13px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #999999;
 }
 
 .reservation_form .form-group input::-moz-placeholder {
   font-size: 13px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #999999;
 }
 
 .reservation_form .form-group input::-webkit-input-placeholder {
   font-size: 13px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #999999;
 }
@@ -1849,7 +1849,7 @@ button:focus {
 
 .reservation_form .form-group .res_select .current {
   font-size: 13px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #999999;
 }
@@ -1890,7 +1890,7 @@ button:focus {
   top: 0;
   font-size: 20px;
   line-height: 24px;
-  color: rgb(84,92,105);
+  color: rgb(158,110,74);
   font-weight: 600;
 }
 
@@ -1900,11 +1900,11 @@ button:focus {
   color: "Roboto", sans-serif;
   font-weight: bold;
   margin-bottom: 0px;
-  color: rgb(84,92,105);
+  color: rgb(158,110,74);
 }
 
 .contact_info .info_item h6 a {
-  color:rgb(84,92,105);
+  color: rgb(158,110,74);
 }
 
 .contact_info .info_item p {
@@ -1922,7 +1922,7 @@ button:focus {
   line-height: 26px;
   color: #999;
   border: 1px solid #eeeeee;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   border-radius: 0px;
   padding-left: 20px;
 }
@@ -1999,7 +1999,7 @@ button:focus {
   text-align: center;
   color: rgb(158,110,74);
   padding-bottom: 10px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .modal-message .modal-dialog .modal-content .modal-header p {
@@ -3522,15 +3522,12 @@ h6 {
 /*----------------------------------------------------*/
 /* Main Button Area css
 ============================================================================================ */
-.feedbackcon{
-  background:rgb(199,186,173);
-}
 .main_btn {
   display: inline-block;
-  background: rgb(84,92,105);
+  background: rgb(158,110,74);
   padding: 0px 50px;
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 13px;
   font-weight: 500;
   line-height: 48px;
@@ -3539,7 +3536,7 @@ h6 {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
   text-align: center;
-  border: 1px solid rgb(84,92,105);
+  border: 1px solid rgb(158,110,74);
   cursor: pointer;
   -webkit-transition: all 300ms linear 0s;
   -o-transition: all 300ms linear 0s;
@@ -3556,7 +3553,7 @@ h6 {
   background: rgb(158,110,74);
   padding: 0px 32px;
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 13px;
   font-weight: 500;
   line-height: 38px;
@@ -3580,10 +3577,10 @@ h6 {
 .submit_btn {
   width: auto;
   display: inline-block;
-  background: rgb(84,92,105);
+  background: rgb(158,110,74);
   padding: 0px 50px;
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 13px;
   font-weight: 500;
   line-height: 50px;
@@ -3592,7 +3589,7 @@ h6 {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
   text-align: center;
-  border: 1px solid rgb(84,92,105);
+  border: 1px solid rgb(158,110,74);
   cursor: pointer;
   -webkit-transition: all 300ms linear 0s;
   -o-transition: all 300ms linear 0s;
@@ -3601,7 +3598,7 @@ h6 {
 
 .submit_btn:hover {
   background: transparent;
-  color: rgb(84,92,105);
+  color: rgb(158,110,74);
 }
 
 .white_bg_btn {
@@ -3609,7 +3606,7 @@ h6 {
   background: #f9f9ff;
   padding: 0px 35px;
   color: rgb(158,110,74);
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 13px;
   font-weight: 500;
   line-height: 34px;
@@ -3652,8 +3649,8 @@ h6 {
 }
 
 .welcome_text h4 {
-  color: rgb(84,92,105) ;
-  font-family: 'Montserrat', sans-serif;
+  color: rgb(158,110,74);
+  font-family: "Roboto", sans-serif;
   font-size: 36px;
   margin-bottom: 18px;
 }
@@ -3661,7 +3658,7 @@ h6 {
 .welcome_text p {
   max-width: 495px;
   line-height: 24px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: normal;
   margin-bottom: 40px;
@@ -3679,7 +3676,7 @@ h6 {
 
 .wel_item h4 {
   font-size: 24px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 600;
   color: rgb(158,110,74);
   margin-bottom: 5px;
@@ -3688,7 +3685,7 @@ h6 {
 
 .wel_item p {
   font-size: 14px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #777777;
   margin-bottom: 0px;
 }
@@ -3713,9 +3710,9 @@ h6 {
 
 .properties_item .pp_content h4 {
   font-size: 18px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
-  color: rgb(84,92,105);
+  color: rgb(158,110,74);
   margin-bottom: 15px;
 }
 
@@ -3736,7 +3733,7 @@ h6 {
   background: #f9f9ff;
   font-size: 14px;
   color: #777777;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   border-radius: 5px;
 }
 
@@ -3759,7 +3756,7 @@ h6 {
 .properties_item .pp_content .pp_footer h5 {
   display: inline-block;
   font-weight: 500;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
   color: rgb(158,110,74);
   position: relative;
@@ -3799,8 +3796,7 @@ h6 {
 /* Feature Area css
 ============================================================================================ */
 .feature_area {
-  margin-top: -50px;
-  background: rgb(199,186,173);
+  background: #edf0f0;
 }
 
 .feature_inner {
@@ -3819,9 +3815,9 @@ h6 {
 
 .feature_item h4 {
   font-size: 18px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
-  color: rgb(84,92,105);
+  color: rgb(158,110,74);
   margin-bottom: 20px;
 }
 
@@ -3837,11 +3833,12 @@ h6 {
 }
 
 .feature_item:hover {
-  background: rgb(237,240,240);
+  background: rgb(158,110,74);
+  color: #fff;
 }
 
 .feature_item:hover h4 {
-  color: rgb(84,92,105);
+  color: #fff;
 }
 
 /* End Feature Area css
@@ -3860,12 +3857,12 @@ h6 {
 
 .testimonials_inner .testi_left_text {
   max-width: 335px;
-  margin-top: 35px;
+  margin-top: 100px;
 }
 
 .testimonials_inner .testi_left_text h4 {
   font-size: 36px;
-  color: rgb(84,92,105);
+  color: #fff;
   font-weight: 500;
   padding-right: 20px;
   margin-bottom: 20px;
@@ -3890,7 +3887,7 @@ h6 {
 .testi_slider .owl-dots .owl-dot {
   height: 14px;
   width: 14px;
-  background: rgb(84,92,105);
+  background: #eeeeee;
   display: block;
   margin-bottom: 10px;
 }
@@ -3900,7 +3897,7 @@ h6 {
 }
 
 .testi_slider .owl-dots .owl-dot.active {
-  background: white;
+  background: rgb(158,110,74);
 }
 
 .testi_item {
@@ -3909,8 +3906,6 @@ h6 {
   padding: 45px 30px;
   border-radius: 10px;
   border: 1px solid #544e50;
-  margin-top: 35px;
-  margin-bottom: 35px;
 }
 
 .testi_item img {
@@ -3921,15 +3916,15 @@ h6 {
 
 .testi_item p {
   line-height: 24px;
-  color: rgb(84,92,105);
-  font-family: 'Montserrat', sans-serif;
+  color: #999;
+  font-family: "Roboto", sans-serif;
   margin-bottom: 25px;
 }
 
 .testi_item h4 {
   font-size: 18px;
-  color: rgb(84,92,105);
-  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
   font-weight: 600;
   margin-bottom: 5px;
   -webkit-transition: all 300ms linear 0s;
@@ -3938,12 +3933,13 @@ h6 {
 }
 
 .testi_item h4:hover {
+  color: rgb(158,110,74);
 }
 
 .testi_item h6 {
   line-height: 24px;
-  color: rgb(158,110,74);
-  font-family: 'Montserrat', sans-serif;
+  color: #999999;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
 }
 
@@ -4014,14 +4010,14 @@ h6 {
 .team_item .team_name h4 {
   margin-bottom: 5px;
   color: rgb(158,110,74);
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 18px;
 }
 
 .team_item .team_name p {
   font-size: 14px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #777777;
   margin-bottom: 0px;
 }
@@ -4041,7 +4037,6 @@ h6 {
 /*============== footer-area css ===============*/
 .footer-area {
   background: #fff;
-  padding-bottom: 10px;
 }
 
 .single-footer-widget p {
@@ -4132,13 +4127,12 @@ h6 {
 }
 
 .footer_title {
-  font-size: 25px;
+  font-size: 16px;
   line-height: 24px;
   font-weight: 600;
   color: rgb(158,110,74);
   text-transform: uppercase;
   margin-bottom: 28px;
-  font-weight: 200;
 }
 
 .border_line {

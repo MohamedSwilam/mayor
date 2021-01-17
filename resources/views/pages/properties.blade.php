@@ -32,10 +32,11 @@
                     <div class="col-lg-4" style="margin-bottom: 20px;">
                         <div class="properties_item">
                             <div class="pp_img" style="text-align: center;">
-                                <img class="img-fluid" style="max-height: 200px;" src="/storage/property/{{$property->main_home_image}}" alt="">
+                                <img style="padding: 30px;" class="img-fluid" style="max-height: 200px;" src="/storage/property/{{$property->main_home_image}}" alt="">
                             </div>
                             <div class="pp_content">
-                                <a href="/properties/{{$property->id}}"><h4>{{$property->title}}</h4></a>
+                                <a href="/properties/{{$property->id}}" ><h4>{{$property->title}}</h4></a>
+                                <p>{{$property->description}}</p>
                                 <div class="tags">
                                     <a>{{$property->no_of_floors}} Floor(s)</a>
                                     <a>{{$property->no_of_rooms}} Room(s)</a>
