@@ -58,6 +58,13 @@ export default [
         permission: 'browse-message'
     },
     {
+        url: "/dashboard/service",
+        name: "Service",
+        slug: "service",
+        icon: "ServerIcon",
+        permission: 'browse-service'
+    },
+    {
         name: "Settings",
         icon: "SettingsIcon",
         submenu: [

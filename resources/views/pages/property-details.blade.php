@@ -11,9 +11,9 @@
             <div class="container">
                 <div class="banner_content">
                     <div class="page_link">
-                        <a href="index.html">Home</a>
-                        <a href="blog.html">Properties</a>
-                        <a href="single-blog.html">Property Details</a>
+                        <a href="/">Home</a>
+                        <a href="/properties">Properties</a>
+                        <a href="#">Property Details</a>
                     </div>
                     <h2>Property Details</h2>
                 </div>
@@ -30,7 +30,7 @@
                     <div class="single-post row">
                         <div class="col-lg-12">
                             <div class="feature-img" style="text-align: center;">
-                                <img style="max-height: 300px; max-width: 400px;" class="img-fluid"
+                                <img style="max-height: 300px; width: 100%" class="img-fluid"
                                      src="/storage/property/{{$property->main_details_image}}" alt="">
                             </div>
                         </div>
@@ -45,51 +45,37 @@
                         </div>
                         <div class="col-lg-12 col-md-12 ">
                             <h3 class="title_color">Property Gallery</h3>
-
-                            <div>
-                                    <div class="slideshow-container">
-                                    @foreach($property->images as$index => $image )
-
-
-                                        <!-- Full-width images with number and caption text -->
-                                            <div class="mySlides fade">
-                                                <div class="numbertext">{{$index}}/ {{count($property->images)}}</div>
-                                                <img src="/storage/property/{{$image->source}}" >
-                                                <div class="text">$image->source</div>
-                                            </div>
-                                    @endforeach
-                                    <!-- Next and previous buttons -->
-                                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                                    </div>
-                                    <br>
-
-                                    <!-- The dots/circles -->
-                                    <div style="text-align:center">
-                                        @foreach($property->images as$index => $image )
-                                        <span class="dot" onclick="currentSlide({{$index}})"></span>
-                                        @endforeach
-                                    </div>
-
-
-
+                            <div class="row gallery-item">
                                 @if(count($property->images) == 0)
                                     <div class="col-md-12" style="text-align: center">
                                         <b>No images uploaded for this property!</b>
                                     </div>
+                                @else
+                                    <div class="col-lg-12 col-md-12 " style="margin: auto; padding: 22px ">
+                                        <i class="slider-i ">
+                                            @foreach($property->images as $counter=> $image )
+                                                @if($counter == 0)
+                                                    <input class="col-lg-12 col-md-12 " checked type="radio" name="s"
+                                                           style="background-image: url('/storage/property/{{$image->source}}');"
+                                                           title="{{($image ?? '')->description}}">
+                                                @else
+                                                    <input class="col-lg-12 col-md-12 " type="radio" name="s"
+                                                           style="background-image: url('/storage/property/{{$image->source}}');"
+                                                           title="{{$image->description}}">
+                                                @endif
+                                            @endforeach
+
+                                        </i>
+                                    </div>
                                 @endif
 
-                        </div>
-                        </div>
 
+                            </div>
+                        </div>
                     </div>
-                    {{--                    <script>--}}
-                    {{--                        console.log(localStorage);--}}
-                    {{--                        if (JSON.parse(localStorage.vuex)) {--}}
 
-                    {{--                        }--}}
-                    {{--                    </script>--}}
-                    <div class="reserve-form">
+
+                    <div class="reserve-form" >
                         <h4>Property Reservation</h4>
 
                         <a href="\dashboard\reservation\{{$property->id}}\create" class="primary-btn submit_btn">Reserve
@@ -176,146 +162,106 @@
             </div>
         </div>
     </section>
+
     <!--================Blog Area =================-->
-    <script>
-        var slideIndex = 1;
-        showSlides(slideIndex);
-
-        // Next/previous controls
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        // Thumbnail image controls
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {
-                slideIndex = 1
-            }
-            if (n < 1) {
-                slideIndex = slides.length
-            }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-        }
-    </script>
     <style>
-        * {
-            box-sizing: border-box
-        }
 
-        /* Slideshow container */
-        .slideshow-container {
-            max-width: 1000px;
+        .slider-i {
             position: relative;
-            margin: auto;
+            display: block;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 5px;
         }
 
-        /* Hide the images by default */
-        .mySlides {
-            display: none;
-        }
-
-        /* Next & previous buttons */
-        .prev, .next {
-            cursor: pointer;
+        .slider-i:before, .slider-i:after {
+            content: '<';
             position: absolute;
             top: 50%;
-            width: auto;
-            margin-top: -22px;
-            padding: 16px;
+            left: 1rem;
+            z-index: 2;
+            width: 2rem;
+            height: 2rem;
+            background: #5f3f3f;
             color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
         }
 
-        /* Position the "next button" to the right */
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
+        .slider-i:after {
+            content: '>';
+            left: auto;
+            right: 1rem;
         }
 
-        /* On hover, add a black background color with a little bit see-through */
-        .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        /* Caption text */
-        .text {
-            color: #f2f2f2;
-            font-size: 15px;
-            padding: 8px 12px;
-            position: absolute;
-            bottom: 8px;
+        /* I haven't found a way for IE and Edge to let me style inputs that way */
+        .slider-i input {
+            appearance: none;
+            -ms-appearance: none;
+            -webkit-appearance: none;
+            display: block;
             width: 100%;
-            text-align: center;
-        }
-
-        /* Number text (1/3 etc) */
-        .numbertext {
-            color: #f2f2f2;
-            font-size: 12px;
-            padding: 8px 12px;
+            height: 100%;
             position: absolute;
             top: 0;
+            left: 0;
+            border-radius: 5px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            transform: translateX(100%);
+            transition: transform ease-in-out 400ms;
+            z-index: 1;
         }
 
-        /* The dots/bullets/indicators */
-        .dot {
-            cursor: pointer;
-            height: 15px;
-            width: 15px;
-            margin: 0 2px;
-            background-color: #bbb;
+        .slider-i input:focus {
+            outline: none;
+        }
+
+        .slider-i input:after {
+            content: attr(title);
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            padding: .5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .slider-i input:not(checked):before {
+            content: '';
+            position: absolute;
+            width: 2rem;
+            height: 2rem;
             border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
+            top: 50%;
+            left: calc(-100% + 1rem);
         }
 
-        .active, .dot:hover {
-            background-color: #717171;
+        .slider-i input:checked:before {
+            display: none;
+            left: 1rem;
         }
 
-        /* Fading animation */
-        .fade {
-            -webkit-animation-name: fade;
-            -webkit-animation-duration: 1.5s;
-            animation-name: fade;
-            animation-duration: 1.5s;
+        .slider-i input:checked {
+            transform: translateX(0);
+            pointer-event: none;
+            z-index: 0;
+            box-shadow: -5px 10px 20px -15px rgba(0, 0, 0, 1);
         }
 
-        @-webkit-keyframes fade {
-            from {
-                opacity: .4
-            }
-            to {
-                opacity: 1
-            }
+        input:checked + input:before {
+            left: -3rem;
         }
 
-        @keyframes fade {
-            from {
-                opacity: .4
-            }
-            to {
-                opacity: 1
-            }
+        input:checked + input ~ input:before {
+            display: none;
         }
     </style>
 @endsection
-

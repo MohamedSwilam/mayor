@@ -7,6 +7,7 @@ namespace App\Http\Controllers\Web;
 use App\Feedback;
 use App\Http\Controllers\Controller;
 use App\Property;
+use App\service;
 use Illuminate\Http\Request;
 use App\Message;
 
@@ -15,9 +16,11 @@ class PagesController extends Controller
     public function home(){
         $properties = Property::where('view_in_home','1')->get();
         $feedback = Feedback::all();
+        $services = service::all();
         return view('pages.home', [
             'properties' => $properties,
-            'feedback' => $feedback
+            'feedback' => $feedback,
+            'services' => $services,
         ]);
     }
 
@@ -26,6 +29,21 @@ class PagesController extends Controller
 
         return view('pages.properties', [
             'properties' => $properties,
+        ]);
+    }
+    public function services() {
+        $services = service::all();
+
+        return view('pages.services', [
+            'services' => $services,
+        ]);
+    }
+    public function servicesandProperties() {
+        $services = service::all();
+        $property = Property::all();
+        return view('pages.services', [
+            'services' => $services,
+            'property' => $property,
         ]);
     }
 

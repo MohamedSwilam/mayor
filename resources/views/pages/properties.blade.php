@@ -27,12 +27,12 @@
                 <h2>Our Top Rated Properties</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
             </div>
-            <div class="row properties_inner">
+            <div class="row properties_inner" >
                 @foreach($properties as $property)
-                    <div class="col-lg-4" style="margin-bottom: 20px;">
+                    <div class="col-lg-4" style="margin-bottom: 20px; max-height:inherit">
                         <div class="properties_item">
                             <div class="pp_img" style="text-align: center;">
-                                <img style="padding: 30px;" class="img-fluid" style="max-height: 200px;" src="/storage/property/{{$property->main_home_image}}" alt="">
+                                <img style="padding: 30px; height: 300px; max-width: 300px" class="img-fluid"  src="/storage/property/{{$property->main_home_image}}" alt="">
                             </div>
                             <div class="pp_content">
                                 <a href="/properties/{{$property->id}}" ><h4>{{$property->title}}</h4></a>

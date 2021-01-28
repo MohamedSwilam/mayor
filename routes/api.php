@@ -61,6 +61,13 @@ Route::group(['prefix' => 'feedback', 'middleware' => 'auth:api'], function () {
     Route::resource('', 'FeedbackController');
 });
 
+Route::group(['prefix' => 'service', 'middleware' => 'auth:api'], function () {
+    Route::post('{id}', 'ServiceController@update');
+    Route::get('{id}', 'ServiceController@show');
+    Route::delete('{id}', 'ServiceController@destroy');
+    Route::resource('', 'ServiceController');
+});
+
 Route::group(['prefix' => 'client', 'middleware' => 'auth:api'], function () {
     Route::post('{id}', 'ClientController@update');
     Route::get('{id}', 'ClientController@show');

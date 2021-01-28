@@ -72,10 +72,10 @@
             <div class="row properties_inner">
 
                 @foreach($properties as $property)
-                    <div class="col-lg-4" style="margin-bottom: 20px;">
+                    <div class="col-lg-4" style=" margin-bottom: 20px; max-height:inherit">
                         <div class="properties_item">
                             <div class="pp_img" style="text-align: center;">
-                                <img class="img-fluid" style="max-height: 200px;" src="/storage/property/{{$property->main_home_image}}" alt="">
+                                <img style="padding: 30px; height: 300px; max-width: 300px" class="img-fluid"  src="/storage/property/{{$property->main_home_image}}" alt="">
                             </div>
                             <div class="pp_content">
                                 <a href="/properties/{{$property->id}}"><h4>{{$property->title}}</h4></a>
@@ -137,55 +137,26 @@
     <br>
     <br>
     <!--================End Testimonials Area =================-->
-
-    <!--================Feature Area =================-->
     <section class="feature_area p_120">
         <div class="container">
             <div class="main_title">
-                <h2>WHY WORKING WITH US</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                <h2>What we Do</h2>
+                <p>we have this services</p>
             </div>
             <div class="row feature_inner">
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
-                        <h4><i class="lnr lnr-user"></i>Expert Technicians</h4>
-                        <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+
+                @foreach($services as $service)
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="feature_item">
+                            <h4>{{$service->service}}</h4>
+                            <p>{{$service->description}}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
-                        <h4><i class="lnr lnr-license"></i>Professional Service</h4>
-                        <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
-                        <h4><i class="lnr lnr-phone"></i>Great Support</h4>
-                        <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
-                        <h4><i class="lnr lnr-rocket"></i>Technical Skills</h4>
-                        <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
-                        <h4><i class="lnr lnr-diamond"></i>Highly Recomended</h4>
-                        <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
-                        <h4><i class="lnr lnr-bubble"></i>Positive Reviews</h4>
-                        <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
-                    </div>
-                </div>
+                @endforeach
+
+
             </div>
         </div>
     </section>
-    <!--================End Feature Area =================-->
-
 
 @endsection

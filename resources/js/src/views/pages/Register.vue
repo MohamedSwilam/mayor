@@ -16,7 +16,8 @@ Author URL: http://www.themeforest.net/user/pixinvent
           <div class="vx-row no-gutter justify-center items-center">
 
             <div class="vx-col hidden lg:block lg:w-1/2">
-              <img src="@assets/images/logo/logo.jpg" alt="login" class="mx-auto">
+<!--                images/website/logo.png-->
+              <img src="/images/website/logo.png" alt="reg" class="vs-card--media   ">
             </div>
 
             <div class="vx-col sm:w-full md:w-full lg:w-1/2 d-theme-dark-bg">
@@ -184,7 +185,7 @@ Author URL: http://www.themeforest.net/user/pixinvent
                       <vs-col vs-w="12" class="mb-2">
                           <vs-input
                               data-vv-validate-on="blur"
-                              v-validate="'required|min:6|max:16|confirmed:password'"
+                              v-validate="'required|min:6|max:16'"
                               :danger="errors.has('confirm_password')"
                               :danger-text="errors.first('confirm_password')"
                               val-icon-danger="clear"
@@ -235,7 +236,7 @@ export default {
     computed: {
         validateForm() {
             return !this.errors.any() && this.form.email !== '' && this.form.password !== '' && this.form.confirm_password !== ''
-                    && this.form.confirm_password === this.form.password && this.form.first_name !== ''&& this.form.last_name!== '' &&
+                    &&this.form.password  === this.form.confirm_password    && this.form.first_name !== ''&& this.form.last_name!== '' &&
                     this.form.ssn !== '' && this.form.image !== '' && this.form.mobile !== '' && this.form.address !== '' && this.form.nationality !== '';
         }
     },

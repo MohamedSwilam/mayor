@@ -69,7 +69,7 @@ return [
         ]
     ],
 
-    'Reservation' =>[
+    'Reservation' => [
         [
             'name' => 'create-reservation',
             'guard_name' => 'api',
@@ -89,7 +89,7 @@ return [
             'name' => 'view-reservation',
             'guard_name' => 'api',
             'display_name' => 'View Reservation',
-        ],[
+        ], [
             'name' => 'view-my-reservation',
             'guard_name' => 'api',
             'display_name' => 'View Reservation',
@@ -117,7 +117,7 @@ return [
 
     ],
 
-    'Property' =>[
+    'Property' => [
         [
             'name' => 'create-property',
             'guard_name' => 'api',
@@ -143,9 +143,9 @@ return [
             'guard_name' => 'api',
             'display_name' => 'Delete Property',
         ],
-   ],
+    ],
 
-    'Client' =>[
+    'Client' => [
         [
             'name' => 'create-client',
             'guard_name' => 'api',
@@ -172,7 +172,7 @@ return [
             'display_name' => 'Delete Client',
         ],
     ],
-    'Feedback' =>[
+    'Feedback' => [
         [
             'name' => 'create-feedback',
             'guard_name' => 'api',
@@ -199,7 +199,7 @@ return [
             'display_name' => 'Delete Feedback',
         ],
     ],
-    'Message' =>[
+    'Message' => [
         [
             'name' => 'create-message',
             'guard_name' => 'api',
@@ -226,4 +226,32 @@ return [
             'display_name' => 'Delete Message',
         ],
     ],
+    'services' => [
+        [
+            'name' => 'create-service',
+            'guard_name' => 'api',
+            'display_name' => 'Create Service',
+        ],
+        [
+            'name' => 'browse-service',
+            'guard_name' => 'api',
+            'display_name' => 'Browse Service',
+        ],
+        [
+            'name' => 'view-service',
+            'guard_name' => 'api',
+            'display_name' => 'View Service',
+        ],
+        [
+            'name' => 'edit-service',
+            'guard_name' => 'api',
+            'display_name' => 'Edit Service',
+        ],
+        [
+            'name' => 'delete-service',
+            'guard_name' => 'api',
+            'display_name' => 'Delete Service',
+        ],
+    ],
+
 ];

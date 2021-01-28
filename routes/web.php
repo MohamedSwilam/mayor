@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'Web\PagesController@home')->name('home');
 
 Route::get('/properties', 'Web\PagesController@properties')->name('properties');
+Route::get('/services', 'Web\PagesController@services')->name('services');
 Route::get('/properties/{id}', 'Web\PagesController@property')->name('properties-details');
 Route::view('/contact-us', 'pages.contact')->name('contact');
 Route::post('/create-message', 'Web\PagesController@contact_us');

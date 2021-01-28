@@ -7,7 +7,7 @@
                     <div class="vx-row no-gutter justify-center items-center">
 
                         <div class="vx-col hidden lg:block lg:w-1/2">
-                            <img src="@assets/images/pages/login.png" alt="login" class="mx-auto">
+                            <img src="/images/website/logo.png" alt="reg" class="vs-card--media   ">
                         </div>
 
                         <div class="vx-col sm:w-full md:w-full lg:w-1/2 d-theme-dark-bg">

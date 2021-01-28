@@ -344,6 +344,50 @@ const router = new Router({
                         permission: 'browse-message'
                     }
                 },
+                {
+                    path: '/dashboard/service',
+                    name: 'service',
+                    component: () => import('./views/service/browse.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'Service', active: true },
+                        ],
+                        pageTitle: 'Service',
+                        permission: 'browse-service'
+                    }
+                },
+                {
+                    path: '/dashboard/service/create',
+                    name: 'add-feedback',
+                    component: () => import('./views/service/create.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'service', url: '/dashboard/service' },
+                            { title: 'Add service', active: true },
+                        ],
+                        pageTitle: 'Add service',
+                        permission: 'create-service'
+                    }
+                },
+                {
+                    path: '/dashboard/service/:id/edit',
+                    name: 'edit-feedback',
+                    component: () => import('./views/service/edit.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'service', url: '/dashboard/service' },
+                            { title: 'Edit service', active: true },
+                        ],
+                        pageTitle: 'Edit Feedback',
+                        permission: 'edit-feedback'
+                    }
+                },
                 // =============================================================================
                 // Settings Routes
                 // =============================================================================

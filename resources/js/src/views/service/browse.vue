@@ -1,63 +1,49 @@
 <template>
-    <div v-if="can('browse-user')">
+    <div v-if="can('browse-service')">
         <!-- USER PROFILE CARD 2 - MINIMAL -->
-        <vx-card ref="browse" title="Users List" collapse-action refreshContentAction @refresh="getUsersData">
+        <vx-card ref="browse" title="Service List" collapse-action refreshContentAction @refresh="getservicessData">
 
             <vs-table search :data="users" class="mb-5">
                 <template slot="header">
-                    <vs-button v-if="can('create-user')" size="small" to="/dashboard/user/create" icon-pack="feather" icon="icon-user-plus" type="filled">Add User</vs-button>
+                    <vs-button v-if="can('create-service')" size="small" to="/dashboard/service/create" icon-pack="feather" icon="icon-service-plus" type="filled">Add Service</vs-button>
                 </template>
                 <template slot="thead">
                     <vs-th sort-key="id">ID</vs-th>
                     <vs-th sort-key="first_name">Name</vs-th>
-                    <vs-th>Email</vs-th>
-                    <vs-th>Role</vs-th>
-                    <vs-th sort-key="is_male">Gender</vs-th>
+                    <vs-th>Description</vs-th>
                     <vs-th sort-key="created_at">Created At</vs-th>
                     <vs-th>Action</vs-th>
                 </template>
                 <template slot-scope="{data}">
-                    <vs-tr :key="index" v-for="(user, index) in users">
-                        <vs-td :data="user.id">
-                            {{ user.id }}
+                    <vs-tr :key="index" v-for="(service, index) in users">
+                        <vs-td :data="service.id">
+                            {{ service.id }}
                         </vs-td>
 
-                        <vs-td :data="user.first_name">
-                            {{ user.first_name }} {{ user.last_name }}
+                        <vs-td :data="service.service">
+                            {{ service.service }}
+                        </vs-td>
+                        <vs-td :data="service.description">
+                            {{ service.description }}
                         </vs-td>
 
-                        <vs-td>
-                            {{ user.accounts.length>0?user.accounts[0].email:'-' }}
-                        </vs-td>
 
-                        <vs-td>
-                            {{user.roles.length>0?user.roles[0].name:'-'}}
-                        </vs-td>
-
-                        <vs-td>
-                            {{user.is_male?'Male':'Female'}}
-                        </vs-td>
-
-                        <vs-td :data="user.created_at">
-                            {{ user.created_at | date(true)}} - {{ user.created_at | time}}
+                        <vs-td :data="service.created_at">
+                            {{ service.created_at | date(true)}} - {{ service.created_at | time}}
                         </vs-td>
 
                         <vs-td>
                             <vs-row>
                                 <div class="flex mb-4">
-                                    <div class="w-1/3" v-if="can('view-user')">
-                                        <vx-tooltip color="primary" :text="'View User'">
-                                            <vs-button :to="`/dashboard/user/${user.id}`" radius color="primary" type="border" icon-pack="feather" icon="icon-eye"></vs-button>
+                                    <div class="w-1/3" v-if="can('view-service')">
+                                        <vx-tooltip color="primary" :text="'View service'">
+                                            <vs-button :to="`/dashboard/service/${service.id}`" radius color="primary" type="border" icon-pack="feather" icon="icon-eye"></vs-button>
                                         </vx-tooltip>
                                     </div>
-                                    <div class="w-1/3 ml-5" v-if="can('edit-user')">
-                                        <vx-tooltip color="warning" :text="'Edit User'">
-                                            <vs-button :to="`/dashboard/user/${user.id}/edit`" radius color="warning" type="border" icon-pack="feather" icon="icon-edit"></vs-button>
-                                        </vx-tooltip>
-                                    </div>
-                                    <div class="w-1/3 ml-5" v-if="can('delete-user')">
-                                        <vx-tooltip color="danger" :text="'Delete User'">
-                                            <vs-button :id="`btn-delete-${user.id}`" class="vs-con-loading__container" radius color="danger" type="border" icon-pack="feather" icon="icon-trash" @click="is_requesting?$store.dispatch('viewWaitMessage', $vs):confirmDeleteUser(user)"></vs-button>
+
+                                    <div class="w-1/3 ml-5" v-if="can('delete-service')">
+                                        <vx-tooltip color="danger" :text="'Delete service'">
+                                            <vs-button :id="`btn-delete-${service.id}`" class="vs-con-loading__container" radius color="danger" type="border" icon-pack="feather" icon="icon-trash" @click="is_requesting?$store.dispatch('viewWaitMessage', $vs):confirmDelete(service)"></vs-button>
                                         </vx-tooltip>
                                     </div>
                                 </div>
@@ -90,7 +76,7 @@
         methods: {
             getservicessData(InitialTime){
                 this.$vs.loading({container: this.$refs.browse.$refs.content, scale: 0.5});
-                this.$store.dispatch('user/getData', '')
+                this.$store.dispatch('service/getData', '')
                     .then(response => {
                         this.$vs.loading.close(this.$refs.browse.$refs.content);
                         this.resultTime = Date.now() - InitialTime;
@@ -109,27 +95,28 @@
                     });
             },
 
-            confirmDeleteUser(type)
+            confirmDelete(record)
             {
                 this.$vs.dialog({
                     type: 'confirm',
                     color: 'danger',
                     title: `Are you sure!`,
                     text: 'This data can not be retrieved again.',
-                    accept: this.deleteUser,
-                    parameters: [type]
+                    accept: this.deleteRecord,
+                    parameters: [record]
                 });
             },
 
-            deleteUser(params)
+            //Delete The Selected Record.
+            deleteRecord(params)
             {
                 this.is_requesting=true;
                 this.$vs.loading({container: `#btn-delete-${params[0].id}`, color: 'danger', scale: 0.45});
-                this.$store.dispatch('user/delete', params[0].id)
+                this.$store.dispatch('service/delete', params[0].id)
                     .then(response => {
                         this.is_requesting = false;
                         this.$vs.loading.close(`#btn-delete-${params[0].id} > .con-vs-loading`);
-                        this.users = this.users.filter(type => {return type.id !== params[0].id});
+                        this.feedback = this.feedback.filter(feedback => {return feedback.id !== params[0].id});
                         this.$vs.notify({
                             title: 'Success',
                             text: response.data.message,
