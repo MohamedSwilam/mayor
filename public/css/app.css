@@ -59,11 +59,10 @@ html {
   width: 100%;
   line-height: 1.5;
   letter-spacing: 0.01rem;
-
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
   font-weight: 400;
   overflow-x: hidden;
   max-width: 100%;
@@ -823,7 +822,8 @@ u {
   Author URL: http://www.mayor.com/
 ==========================================================================================*/
 code {
-  font-family: 'Montserrat', sans-serif;}
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+}
 [dir] code {
   background: #eee;
   padding: 0.1rem 0.3rem;
@@ -3579,7 +3579,7 @@ i.wizard-icon {
 }
 
 .vs-button {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
   font-size: 1rem;
 }
 [dir] .vs-button.vs-button-gradient:hover {
@@ -4073,7 +4073,7 @@ i.wizard-icon {
 .vs-textarea {
   font-size: 1rem;
   color: inherit;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
   line-height: 1.6;
 }
 

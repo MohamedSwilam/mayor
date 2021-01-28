@@ -16,6 +16,7 @@
                         <li class="nav-item {{Request::is('/')?'active':''}}"><a class="nav-link" href="{{route('home')}}">Home</a></li>
                         <li class="nav-item {{Request::is('about')?'active':''}}"><a class="nav-link" href="{{route('about')}}">About</a></li>
                         <li class="nav-item {{Request::is('properties')||Request::is('properties/*')?'active':''}}"><a class="nav-link" href="{{route('properties')}}">Properties</a></li>
+                        <li class="nav-item {{Request::is('services')||Request::is('services/*')?'active':''}}"><a class="nav-link" href="{{route('services')}}">Services</a></li>
                         <li class="nav-item {{Request::is('contact-us')?'active':''}}"><a class="nav-link" href="{{route('contact')}}">Contact</a></li>
                     </ul>
                 </div>

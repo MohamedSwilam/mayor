@@ -14,13 +14,9 @@
         <p>
           <span>COPYRIGHT &copy;</span>
           <span>{{ new Date().getFullYear() }} </span>
-          <a href="https://mayor.test" target="_blank" rel="nofollow">Mayor</a>
+          <a href="https://mayor-eg.com" target="_blank" rel="nofollow">REHAM REFAAT</a>
           <span class="hidden sm:inline-block">, All rights Reserved</span>
         </p>
-        <span class="md:flex hidden items-center">
-            <span>Hand-crafted & Made with</span>
-            <feather-icon icon="HeartIcon" svgClasses="stroke-current text-danger w-6 h-6" class="ml-2" />
-        </span>
     </footer>
 </template>
 

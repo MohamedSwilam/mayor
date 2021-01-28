@@ -33,15 +33,18 @@ class PropertyController extends Controller
         $data = $request->validated();
         $data['main_home_image'] = download_file('main_home_image', config('paths.property.create'));
         $data['main_details_image'] = download_file('main_details_image', config('paths.property.create'));
-
         $property = Property::create($data);
 //        die($data['images']);
-        foreach ($data['images'] as $image){
+        $i=0;
+        $imagesDes =array($request['imagesDesc']);
+        foreach ($data['images'] as $index =>  $image ){
+
             $data = array();
             $data['source'] = downloadImage($image, config('paths.property.create'));
-            $data['description'] = 'No Description';
+            $data['description'] =$imagesDes[0][$index] ;
             $data['property_id'] = $property->id;
             Image::create($data);
+            $i++;
         }
 
         return ResponseFacade::createRespond(

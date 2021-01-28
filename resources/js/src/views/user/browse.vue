@@ -77,7 +77,7 @@
     export default {
         name: "User",
         mounted() {
-            this.getUsersData(Date.now());
+            this.getservicessData(Date.now());
         },
         data: function (){
             return {
@@ -88,7 +88,7 @@
             }
         },
         methods: {
-            getUsersData(InitialTime){
+            getservicessData(InitialTime){
                 this.$vs.loading({container: this.$refs.browse.$refs.content, scale: 0.5});
                 this.$store.dispatch('user/getData', '')
                     .then(response => {
