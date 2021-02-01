@@ -254,4 +254,32 @@ return [
         ],
     ],
 
+    'propertyType' => [
+        [
+            'name' => 'create-propertyType',
+            'guard_name' => 'api',
+            'display_name' => 'Create Property Type',
+        ],
+        [
+            'name' => 'browse-propertyType',
+            'guard_name' => 'api',
+            'display_name' => 'Browse Property Type',
+        ],
+        [
+            'name' => 'view-propertyType',
+            'guard_name' => 'api',
+            'display_name' => 'View Property Type',
+        ],
+        [
+            'name' => 'edit-propertyType',
+            'guard_name' => 'api',
+            'display_name' => 'Edit Property Type',
+        ],
+        [
+            'name' => 'delete-propertyType',
+            'guard_name' => 'api',
+            'display_name' => 'Delete Property Type',
+        ],
+    ],
+
 ];

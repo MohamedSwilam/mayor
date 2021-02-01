@@ -66,10 +66,15 @@ class PagesController extends Controller
          $data= $this->validate($request,[
              'name' => 'required|string',
              'message' => 'required|string',
-             'phone' => 'required|string',
+             'phone' => 'required|numeric',
              'email' => 'required|email',
+             'service_id' =>''
          ]);
          $message = Message::create($data);
+
+
          return view("pages.thanks" , ['data'=> $data]);
      }
+
+
 }

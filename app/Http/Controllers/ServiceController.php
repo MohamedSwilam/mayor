@@ -29,7 +29,7 @@ class ServiceController extends Controller
         $this->authorize('store', service::class);
         $data = $request->validated();
 
-        $data['icon'] = "no icon";
+        $data['icon'] =  download_file('icon', config('paths.feedback.create'));
 
         $service = service::create($data);
 

@@ -5,7 +5,7 @@ namespace App\Policies;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class PropertyPolicy
+class propertyTypePolicy
 {
     use HandlesAuthorization;
 
@@ -14,28 +14,31 @@ class PropertyPolicy
         //
     }
 
+
     public function store()
     {
-        return request()->user()->hasPermissionTo('create-property');
+        return request()->user()->hasPermissionTo('create-propertyType');
     }
 
     public function index()
     {
-        return request()->user()->hasPermissionTo('browse-property');
+        return request()->user()->hasPermissionTo('browse-propertyType');
     }
 
     public function show()
     {
-        return request()->user()->hasPermissionTo('view-property');
+        return request()->user()->hasPermissionTo('view-propertyType');
     }
 
     public function update()
     {
-        return request()->user()->hasPermissionTo('edit-property');
+        return request()->user()->hasPermissionTo('edit-propertyType');
     }
 
     public function destroy()
     {
-        return request()->user()->hasPermissionTo('delete-property');
+        return request()->user()->hasPermissionTo('delete-propertyType');
     }
+
+
 }

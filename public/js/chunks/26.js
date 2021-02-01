@@ -268,138 +268,147 @@ var render = function() {
                     fn: function(ref) {
                       var data = ref.data
                       return _vm._l(data, function(record, index) {
-                        return _c(
-                          "vs-tr",
-                          { key: index },
-                          [
-                            _c("vs-td", [
-                              _vm._v(
-                                "\n                                " +
-                                  _vm._s(index + 1) +
-                                  "\n                            "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("vs-td", { attrs: { data: record.name } }, [
-                              _vm._v(
-                                "\n                                " +
-                                  _vm._s(record.name) +
-                                  "\n                            "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("vs-td", { attrs: { data: record.email } }, [
-                              _vm._v(
-                                "\n                                " +
-                                  _vm._s(record.email) +
-                                  "\n                            "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("vs-td", { attrs: { data: record.phone } }, [
-                              _vm._v(
-                                "\n                                " +
-                                  _vm._s(record.phone) +
-                                  "\n                            "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "vs-td",
-                              { attrs: { data: record.created_at } },
+                        return record.service == null
+                          ? _c(
+                              "vs-tr",
+                              { key: index },
                               [
-                                _vm._v(
-                                  "\n                                " +
-                                    _vm._s(
-                                      _vm._f("date")(record.created_at, true)
-                                    ) +
-                                    " - " +
-                                    _vm._s(_vm._f("time")(record.created_at)) +
-                                    "\n                            "
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "vs-td",
-                              [
-                                _c("vs-row", [
-                                  _c(
-                                    "div",
-                                    { staticClass: "flex mb-4" },
-                                    [
+                                _c("vs-td", [
+                                  _vm._v(
+                                    "\n                                " +
+                                      _vm._s(index + 1) +
+                                      "\n                            "
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("vs-td", { attrs: { data: record.name } }, [
+                                  _vm._v(
+                                    "\n                                " +
+                                      _vm._s(record.name) +
+                                      "\n                            "
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("vs-td", { attrs: { data: record.email } }, [
+                                  _vm._v(
+                                    "\n                                " +
+                                      _vm._s(record.email) +
+                                      "\n                            "
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("vs-td", { attrs: { data: record.phone } }, [
+                                  _vm._v(
+                                    "\n                                " +
+                                      _vm._s(record.phone) +
+                                      "\n                            "
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "vs-td",
+                                  { attrs: { data: record.created_at } },
+                                  [
+                                    _vm._v(
+                                      "\n                                " +
+                                        _vm._s(
+                                          _vm._f("date")(
+                                            record.created_at,
+                                            true
+                                          )
+                                        ) +
+                                        " - " +
+                                        _vm._s(
+                                          _vm._f("time")(record.created_at)
+                                        ) +
+                                        "\n                            "
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "vs-td",
+                                  [
+                                    _c("vs-row", [
                                       _c(
-                                        "vx-tooltip",
-                                        {
-                                          staticClass: "mr-5",
-                                          attrs: {
-                                            color: "primary",
-                                            text: "View Record"
-                                          }
-                                        },
+                                        "div",
+                                        { staticClass: "flex mb-4" },
                                         [
-                                          _c("vs-button", {
-                                            attrs: {
-                                              radius: "",
-                                              color: "primary",
-                                              type: "border",
-                                              "icon-pack": "feather",
-                                              icon: "icon-eye"
-                                            },
-                                            on: {
-                                              click: function($event) {
-                                                return _vm.view(record)
+                                          _c(
+                                            "vx-tooltip",
+                                            {
+                                              staticClass: "mr-5",
+                                              attrs: {
+                                                color: "primary",
+                                                text: "View Record"
                                               }
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "vx-tooltip",
-                                        {
-                                          attrs: {
-                                            color: "danger",
-                                            text: "Delete Record"
-                                          }
-                                        },
-                                        [
-                                          _c("vs-button", {
-                                            staticClass:
-                                              "vs-con-loading__container",
-                                            attrs: {
-                                              id: "btn-delete-" + record.id,
-                                              radius: "",
-                                              color: "danger",
-                                              type: "border",
-                                              "icon-pack": "feather",
-                                              icon: "icon-trash"
                                             },
-                                            on: {
-                                              click: function($event) {
-                                                _vm.is_requesting
-                                                  ? _vm.$store.dispatch(
-                                                      "viewWaitMessage",
-                                                      _vm.$vs
-                                                    )
-                                                  : _vm.confirmDelete(record)
+                                            [
+                                              _c("vs-button", {
+                                                attrs: {
+                                                  radius: "",
+                                                  color: "primary",
+                                                  type: "border",
+                                                  "icon-pack": "feather",
+                                                  icon: "icon-eye"
+                                                },
+                                                on: {
+                                                  click: function($event) {
+                                                    return _vm.view(record)
+                                                  }
+                                                }
+                                              })
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "vx-tooltip",
+                                            {
+                                              attrs: {
+                                                color: "danger",
+                                                text: "Delete Record"
                                               }
-                                            }
-                                          })
+                                            },
+                                            [
+                                              _c("vs-button", {
+                                                staticClass:
+                                                  "vs-con-loading__container",
+                                                attrs: {
+                                                  id: "btn-delete-" + record.id,
+                                                  radius: "",
+                                                  color: "danger",
+                                                  type: "border",
+                                                  "icon-pack": "feather",
+                                                  icon: "icon-trash"
+                                                },
+                                                on: {
+                                                  click: function($event) {
+                                                    _vm.is_requesting
+                                                      ? _vm.$store.dispatch(
+                                                          "viewWaitMessage",
+                                                          _vm.$vs
+                                                        )
+                                                      : _vm.confirmDelete(
+                                                          record
+                                                        )
+                                                  }
+                                                }
+                                              })
+                                            ],
+                                            1
+                                          )
                                         ],
                                         1
                                       )
-                                    ],
-                                    1
-                                  )
-                                ])
+                                    ])
+                                  ],
+                                  1
+                                )
                               ],
                               1
                             )
-                          ],
-                          1
-                        )
+                          : _vm._e()
                       })
                     }
                   }

@@ -207,12 +207,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  mounted: function mounted() {
+    this.gettypes();
+  },
   data: function data() {
     return {
       form: {
         title: '',
         information: '',
+        property_type_id: '',
         description: '',
         sqm: 0,
         main_home_image: null,
@@ -232,6 +243,7 @@ __webpack_require__.r(__webpack_exports__);
         location: '',
         imagesDesc: []
       },
+      roles: [],
       uploadedHomeImage: null,
       uploadedDetailImage: null,
       selectedImages: [],
@@ -246,28 +258,33 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    previewHomeImage: function previewHomeImage(event) {
+    gettypes: function gettypes() {
       var _this = this;
 
-      // Reference to the DOM input element
-      var input = event.target; // Ensure that you have a file before attempting to read it
+      this.$vs.loading({
+        container: this.$refs.create.$refs.content,
+        scale: 0.5
+      });
+      this.$store.dispatch('property/browsetype', '').then(function (response) {
+        _this.$vs.loading.close(_this.$refs.create.$refs.content);
 
-      if (input.files && input.files[0]) {
-        // create a new FileReader to read this image and convert to base64 format
-        var reader = new FileReader(); // Define a callback function to run, when FileReader finishes its job
+        _this.roles = response.data.data.data;
+        _this.form.property_type_id = _this.roles[0].property_type;
+      }).catch(function (error) {
+        console.log(error);
 
-        reader.onload = function (e) {
-          // Note: arrow function used here, so that "this.imageData" refers to the imageData of Vue component
-          // Read image as base64 and set to imageData
-          _this.uploadedHomeImage = e.target.result;
-          _this.form.main_home_image = input.files;
-        }; // Start the reader job - read file as a data url (base64 format)
+        _this.$vs.loading.close(_this.$refs.create.$refs.content);
 
-
-        reader.readAsDataURL(input.files[0]);
-      }
+        _this.$vs.notify({
+          title: 'Error',
+          text: error.response.data.error,
+          iconPack: 'feather',
+          icon: 'icon-alert-circle',
+          color: 'danger'
+        });
+      });
     },
-    previewDetailImage: function previewDetailImage(event) {
+    previewHomeImage: function previewHomeImage(event) {
       var _this2 = this;
 
       // Reference to the DOM input element
@@ -280,8 +297,29 @@ __webpack_require__.r(__webpack_exports__);
         reader.onload = function (e) {
           // Note: arrow function used here, so that "this.imageData" refers to the imageData of Vue component
           // Read image as base64 and set to imageData
-          _this2.uploadedDetailImage = e.target.result;
-          _this2.form.main_details_image = input.files;
+          _this2.uploadedHomeImage = e.target.result;
+          _this2.form.main_home_image = input.files;
+        }; // Start the reader job - read file as a data url (base64 format)
+
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    },
+    previewDetailImage: function previewDetailImage(event) {
+      var _this3 = this;
+
+      // Reference to the DOM input element
+      var input = event.target; // Ensure that you have a file before attempting to read it
+
+      if (input.files && input.files[0]) {
+        // create a new FileReader to read this image and convert to base64 format
+        var reader = new FileReader(); // Define a callback function to run, when FileReader finishes its job
+
+        reader.onload = function (e) {
+          // Note: arrow function used here, so that "this.imageData" refers to the imageData of Vue component
+          // Read image as base64 and set to imageData
+          _this3.uploadedDetailImage = e.target.result;
+          _this3.form.main_details_image = input.files;
         }; // Start the reader job - read file as a data url (base64 format)
 
 
@@ -289,7 +327,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     uploadPropertyImages: function uploadPropertyImages(event) {
-      var _this3 = this;
+      var _this4 = this;
 
       // let selectedFiles = e.target.files;
       // if (!selectedFiles.length) {
@@ -320,9 +358,9 @@ __webpack_require__.r(__webpack_exports__);
             // Read image as base64 and set to imageData
             // this.uploadedDetailImage = e.target.result;
             // this.form.main_details_image = input.files;
-            _this3.form.images.push(selectedFiles[i]);
+            _this4.form.images.push(selectedFiles[i]);
 
-            _this3.selectedImages.push(e.target.result);
+            _this4.selectedImages.push(e.target.result);
           }; // Start the reader job - read file as a data url (base64 format)
           // this.form.images.push(selectedFiles[i]);
 
@@ -342,7 +380,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     //Create Resource
     create: function create(clicked_button_id) {
-      var _this4 = this;
+      var _this5 = this;
 
       if (!this.validateForm) return;
       this.is_requesting = true;
@@ -376,11 +414,11 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       this.$store.dispatch('property/create', form_data).then(function (response) {
-        _this4.is_requesting = false;
+        _this5.is_requesting = false;
 
-        _this4.$vs.loading.close("#".concat(clicked_button_id, " > .con-vs-loading"));
+        _this5.$vs.loading.close("#".concat(clicked_button_id, " > .con-vs-loading"));
 
-        _this4.$vs.notify({
+        _this5.$vs.notify({
           title: 'Success',
           text: response.data.message,
           iconPack: 'feather',
@@ -389,17 +427,17 @@ __webpack_require__.r(__webpack_exports__);
         });
 
         if (clicked_button_id === 'btn-create-1') {
-          _this4.$router.push("/dashboard/property/".concat(response.data.data.data.id));
+          _this5.$router.push("/dashboard/property/".concat(response.data.data.data.id));
         } else {
-          _this4.reset_form();
+          _this5.reset_form();
         }
       }).catch(function (error) {
         console.log(error);
-        _this4.is_requesting = false;
+        _this5.is_requesting = false;
 
-        _this4.$vs.loading.close("#btn-create > .con-vs-loading");
+        _this5.$vs.loading.close("#btn-create > .con-vs-loading");
 
-        _this4.$vs.notify({
+        _this5.$vs.notify({
           title: 'Error',
           text: error.response.data.errors[_babel_runtime_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(error.response.data.errors)[0]][0],
           iconPack: 'feather',
@@ -411,6 +449,7 @@ __webpack_require__.r(__webpack_exports__);
     reset_form: function reset_form() {
       this.form = {
         name: '',
+        property_type: '',
         title: '',
         information: '',
         image: null,
@@ -756,6 +795,44 @@ var render = function() {
                   ],
                   1
                 ),
+                _vm._v(" "),
+                _c("div", { staticClass: "vx-row" }, [
+                  _c(
+                    "div",
+                    { staticClass: "vx-col w-full mb-6" },
+                    [
+                      _c(
+                        "vs-select",
+                        {
+                          staticClass: "w-full",
+                          attrs: {
+                            label: "Property Type",
+                            autocomplete: "",
+                            "label-placeholder": "Property Type",
+                            "icon-pack": "feather",
+                            icon: "icon-chevron-down",
+                            color: "primary"
+                          },
+                          model: {
+                            value: _vm.form.property_type_id,
+                            callback: function($$v) {
+                              _vm.$set(_vm.form, "property_type_id", $$v)
+                            },
+                            expression: "form.property_type_id"
+                          }
+                        },
+                        _vm._l(_vm.roles, function(item, index) {
+                          return _c("vs-select-item", {
+                            key: index,
+                            attrs: { value: item.id, text: item.property_type }
+                          })
+                        }),
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ]),
                 _vm._v(" "),
                 _c(
                   "vs-col",

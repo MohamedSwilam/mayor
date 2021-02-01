@@ -6818,6 +6818,12 @@ __webpack_require__.r(__webpack_exports__);
   icon: "HomeIcon",
   permission: 'browse-property'
 }, {
+  url: "/dashboard/propertyType",
+  name: "propertyType",
+  slug: "propertyType",
+  icon: "HomeIcon",
+  permission: 'browse-propertyType'
+}, {
   url: "/dashboard/reservation",
   name: "Reservation",
   slug: "reservation",
@@ -6840,7 +6846,13 @@ __webpack_require__.r(__webpack_exports__);
   name: "Messages",
   slug: "message",
   icon: "MessageSquareIcon",
-  permission: 'browse-message'
+  permission: 'browse-message',
+  submenu: [{
+    url: '/dashboard/message/service',
+    name: "Service Requests",
+    slug: "Service Requests",
+    permission: "browse-message"
+  }]
 }, {
   url: "/dashboard/service",
   name: "Service",

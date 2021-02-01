@@ -15,6 +15,7 @@ $factory->define(Property::class, function (Faker $faker) {
         'information' => $faker->paragraph(3),
         'description' => $faker->paragraph(3),
         'location'=>"https://goo.gl/maps/D67dKEvPJYYwmyA16",
+        'property_type_id'=>"1",
         'address'=>$faker->address,
         'address_desc'=>$faker->paragraph(2),
         'main_home_image'=>"default.png",

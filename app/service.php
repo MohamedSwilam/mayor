@@ -10,4 +10,8 @@ class service extends Model
         'service', 'description', 'icon'
     ];
 
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
 }

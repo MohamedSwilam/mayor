@@ -60,6 +60,12 @@ Route::group(['prefix' => 'feedback', 'middleware' => 'auth:api'], function () {
     Route::delete('{id}', 'FeedbackController@destroy');
     Route::resource('', 'FeedbackController');
 });
+Route::group(['prefix' => 'propertyType', 'middleware' => 'auth:api'], function () {
+    Route::post('{id}', 'propertyTypeController@update');
+    Route::get('{id}', 'propertyTypeController@show');
+    Route::delete('{id}', 'propertyTypeController@destroy');
+    Route::resource('', 'propertyTypeController');
+});
 
 Route::group(['prefix' => 'service', 'middleware' => 'auth:api'], function () {
     Route::post('{id}', 'ServiceController@update');

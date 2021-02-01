@@ -329,11 +329,27 @@ const router = new Router({
                 },
                 // =============================================================================
                 // Messages Routes
+
+
                 // =============================================================================
                 {
                     path: '/dashboard/message',
                     name: 'message',
                     component: () => import('./views/message/browse.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'Message', active: true },
+                        ],
+                        pageTitle: 'Message',
+                        permission: 'browse-message'
+                    }
+                },
+                {
+                    path: '/dashboard/message/service',
+                    name: 'message',
+                    component: () => import('./views/message/browse-service-message.vue'),
                     beforeEnter: guard,
                     meta: {
                         breadcrumb: [
@@ -467,6 +483,50 @@ const router = new Router({
                         pageTitle: "Profile"
                     }
                 },
+                {
+                    path: '/dashboard/propertyType',
+                    name: 'propertyType',
+                    component: () => import('./views/propertyType/browse.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'PropertyType', active: true },
+                        ],
+                        pageTitle: 'propertyType',
+                        permission: 'browse-propertyType'
+                    }
+                },
+                {
+                    path: '/dashboard/propertyType/create',
+                    name: 'add-propertyType',
+                    component: () => import('./views/propertyType/create.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'PropertyType', url: '/dashboard/propertyType' },
+                            { title: 'Add propertyType', active: true },
+                        ],
+                        pageTitle: 'Add propertyType',
+                        permission: 'create-propertyType'
+                    }
+                },
+                {
+                    path: '/dashboard/propertyType/:id/edit',
+                    name: 'edit-propertyType',
+                    component: () => import('./views/propertyType/edit.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard' },
+                            { title: 'PropertyType', url: '/dashboard/propertyType' },
+                            { title: 'Edit propertyType', active: true },
+                        ],
+                        pageTitle: 'Edit propertyType',
+                        permission: 'edit-propertyType'
+                    }
+                },
 
             ],
         },
@@ -500,6 +560,9 @@ const router = new Router({
                     name: 'pageError404',
                     component: () => import('./views/pages/Error404.vue')
                 },
+                //____________________________________
+
+
             ]
         },
         // Redirect to 404 page, if no match found

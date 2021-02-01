@@ -17,7 +17,6 @@
         <link rel="stylesheet" href="{{ asset(mix('css/website/font-awesome.min.css'))}}">
         <link rel="stylesheet" href="{{ asset(mix('css/website/owl-carousel.min.css'))}}">
         <link rel="stylesheet" href="{{ asset(mix('css/website/simpleLightbox.css'))}}">
-{{--        <link rel="stylesheet" href="{{ asset(mix('css/website/css/nice-select.css'))}}">--}}
         <link rel="stylesheet" href="{{ asset(mix('css/website/animate.css'))}}">
         <link rel="stylesheet" href="{{ asset(mix('css/website/jquery-ui.css'))}}">
         <!-- main css -->
@@ -56,7 +55,6 @@
         <script src="{{ asset(mix('js/website/bootstrap.min.js'))}}"></script>
         <script src="{{ asset(mix('js/website/stellar.js'))}}"></script>
         <script src="{{ asset(mix('js/website/simpleLightbox.min.js'))}}"></script>
-        <script src="{{ asset(mix('js/website/jquery.nice-select.min.js'))}}"></script>
         <script src="{{ asset(mix('js/website/imagesloaded.pkgd.min.js'))}}"></script>
         <script src="{{ asset(mix('js/website/isotope-min.js'))}}"></script>
         <script src="{{ asset(mix('js/website/owl.carousel.min.js'))}}"></script>

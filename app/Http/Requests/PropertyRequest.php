@@ -28,6 +28,7 @@ class PropertyRequest extends FormRequest
         if (sizeof($segments) == 2){
             return [
                 'title' => 'required|string',
+                'property_type_id' => 'required|string',
                 'information' => 'required|string',
                 'description' => 'required|string',
                 'location' => 'required|url',
@@ -52,6 +53,7 @@ class PropertyRequest extends FormRequest
         else if (sizeof($segments) == 3){
             return [
                 'title' => 'required|string',
+                'property_type_id' => 'required|string',
                 'information' => 'required|string',
                 'description' => 'required|string',
                 'location' => 'required|url',

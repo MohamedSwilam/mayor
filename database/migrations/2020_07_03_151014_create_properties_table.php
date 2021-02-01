@@ -33,6 +33,8 @@ class CreatePropertiesTable extends Migration
             $table->boolean("has_pool");
             $table->boolean("has_garden");
             $table->boolean("view_in_home");
+            $table->unsignedBigInteger('property_type_id');
+            $table->foreign('property_type_id')->references('id')->on('property_types')->onDelete('cascade');
 
             $table->timestamps();
         });

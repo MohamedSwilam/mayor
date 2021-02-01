@@ -33,6 +33,7 @@ class PropertyController extends Controller
         $data = $request->validated();
         $data['main_home_image'] = download_file('main_home_image', config('paths.property.create'));
         $data['main_details_image'] = download_file('main_details_image', config('paths.property.create'));
+//        die(json_encode($data));
         $property = Property::create($data);
 //        die($data['images']);
         $i=0;
@@ -49,7 +50,7 @@ class PropertyController extends Controller
 
         return ResponseFacade::createRespond(
             fractal(
-                Property::where('id', $property->id)->with(['images'])->first(),
+                Property::where('id', $property->id)->with(['images','propertyType'])->first(),
                 new PropertyTransformer()
             )
         );
@@ -61,7 +62,7 @@ class PropertyController extends Controller
         $this->authorize('show', Property::class);
         return ResponseFacade::showRespond(
             fractal(
-                Property::where('id', $id)->with([ 'images'])->first(),
+                Property::where('id', $id)->with([ 'images' ,'propertyType'])->first(),
                 new PropertyTransformer()
             )
         );
