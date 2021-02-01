@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class serviceRequest extends FormRequest
+class propertyTypeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,21 +24,17 @@ class serviceRequest extends FormRequest
     public function rules()
     {
         $segments = request()->segments();
+
         if (sizeof($segments) == 2){
             return [
-                'service' => 'required|string',
-                'description' => 'required|string',
-                'icon' => 'required',
+                'property_type' => 'required|string',
 
             ];
         }
         else if (sizeof($segments) == 3){
             return [
-                'service' => 'required|string',
-                'description' => 'required|string',
-                'icon' => 'required',
+                'property_type' => 'required|string',
             ];
         }
     }
-
 }

@@ -13,17 +13,6 @@ export default {
                 })
         })
     },
-    browsetype({ commit, dispatch }, payload) {
-        return new Promise((resolve, reject) => {
-            property.browseType(payload)
-                .then(response => {
-                    resolve(response)
-                })
-                .catch(error => {
-                    dispatch('handleError', {reject: reject, error: error}, {root: true});
-                })
-        })
-    },
 
     view({ commit, dispatch }, id) {
         return new Promise((resolve, reject) => {
@@ -48,17 +37,6 @@ export default {
                 })
         })
     },
-    createtype({ commit, dispatch }, payload) {
-        return new Promise((resolve, reject) => {
-            property.createtype(payload)
-                .then(response => {
-                    resolve(response)
-                })
-                .catch(error => {
-                    dispatch('handleError', {reject: reject, error: error}, {root: true});
-                })
-        })
-    },
 
     update({ commit, dispatch }, payload) {
         return new Promise((resolve, reject) => {
@@ -75,17 +53,6 @@ export default {
     delete({ commit, dispatch }, id) {
         return new Promise((resolve, reject) => {
             property.delete(id)
-                .then(response => {
-                    resolve(response)
-                })
-                .catch(error => {
-                    dispatch('handleError', {reject: reject, error: error}, {root: true});
-                })
-        })
-    },
-    deletetype({ commit, dispatch }, id) {
-        return new Promise((resolve, reject) => {
-            property.deletetype(id)
                 .then(response => {
                     resolve(response)
                 })

@@ -31,7 +31,9 @@
                 <div class="col-lg-6">
                     <div class="welcome_text">
                         <h4>Welcome to Reham Refaat</h4>
-                        <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed.</p>
+                        <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct
+                            standards especially in the workplace. That’s why it’s crucial that, as women, our behavior
+                            on the job is beyond reproach. inappropriate behavior is often laughed.</p>
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="wel_item">
@@ -72,10 +74,11 @@
             <div class="row properties_inner">
 
                 @foreach($properties as $property)
-                    <div class="col-lg-4" style=" margin-bottom: 20px; max-height:inherit">
+                    <div class="col-lg-4" style=" margin-bottom: 20px; ">
                         <div class="properties_item">
                             <div class="pp_img" style="text-align: center;">
-                                <img style="padding: 30px; height: 300px; max-width: 300px" class="img-fluid"  src="/storage/property/{{$property->main_home_image}}" alt="">
+                                <img style="height: auto; border-top-left-radius: 15px; border-top-right-radius: 15px; width: -webkit-fill-available;"
+                                     class="img-fluid" src="/storage/property/{{$property->main_home_image}}" alt="">
                             </div>
                             <div class="pp_content">
                                 <a href="/properties/{{$property->id}}"><h4>{{$property->title}}</h4></a>
@@ -85,12 +88,14 @@
                                     <a>{{$property->no_of_rooms}} Room(s)</a>
                                     <a>{{$property->no_of_baths}} Bathroom(s)</a>
                                     <a>{{$property->sqm}} sqm</a>
-                                    <a><i class=" fa @if($property->has_pool == 1 )fa-check @else fa-times @endif" aria-hidden="true"></i>Pool</a>
-                                    <a><i class=" fa @if($property->has_garden == 1 )fa-check @else fa-times @endif" aria-hidden="true"></i>Graden</a>
+                                    <a><i class=" fa @if($property->has_pool == 1 )fa-check @else fa-times @endif"
+                                          aria-hidden="true"></i>Pool</a>
+                                    <a><i class=" fa @if($property->has_garden == 1 )fa-check @else fa-times @endif"
+                                          aria-hidden="true"></i>Graden</a>
                                 </div>
                                 <div class="pp_footer">
                                     <h5>{{$property->price}} EGP</h5>
-                                    <a href="/properties/{{$property->id}}"class="main_btn" >For Rent</a>
+                                    <a href="/properties/{{$property->id}}" class="main_btn">For Rent</a>
                                 </div>
                             </div>
                         </div>
@@ -102,6 +107,35 @@
         </div>
     </section>
     <!--================End Properties Area =================-->
+    <section class="feature_area p_120">
+        <div class="container">
+            <div class="main_title">
+                <h2>What we Do</h2>
+                <p>we have this services</p>
+            </div>
+            <section class="blog_categorie_area">
+                <div class="container">
+                    <div class="row">
+                        @foreach($services as $service)
+                            <div class="col-lg-4">
+                                <div class="categories_post">
+                                    {{--                            <img src="/storage/feedback/67b748722515dac2848d9c9b6ee7b19e.jpeg" alt="post">--}}
+                                    <img src="/storage/feedback/{{$service->icon}}" alt="post">
+                                    <div class="categories_details">
+                                        <div class="categories_text">
+                                            <a href="/services"><h5>{{$service->service}}</h5></a>
+                                            <div class="border_line"></div>
+                                            <p>{{$service->description}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
 
     <!--================Testimonials Area =================-->
     <section class="feedbackcon">
@@ -110,7 +144,9 @@
                 <div class="col-lg-4">
                     <div class="testi_left_text">
                         <h4>Client’s Feedback</h4>
-                        <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed.</p>
+                        <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct
+                            standards especially in the workplace. That’s why it’s crucial that, as women, our behavior
+                            on the job is beyond reproach. inappropriate behavior is often laughed.</p>
                     </div>
                 </div>
 
@@ -118,15 +154,16 @@
 
                     <div class="testi_slider owl-carousel">
                         @foreach($feedback as $feedback)
-                        <div class="item">
-                            <div class="testi_item">
-{{--                                "--}}
-                                <img  style="max-width: 150px; max-height: 150px; border-radius: 50%;" src="/storage/feedback/{{$feedback->image}}" alt="">
-                                <p style="height: 100px;">{{$feedback->feedback}}</p>
-                                <h4>{{$feedback->name}}</h4>
-                                <h6>{{$feedback->title}}</h6>
+                            <div class="item">
+                                <div class="testi_item">
+                                    {{--                                "--}}
+                                    <img style="max-width: 150px; max-height: 150px; border-radius: 50%;"
+                                         src="/storage/feedback/{{$feedback->image}}" alt="">
+                                    <p style="height: 100px;">{{$feedback->feedback}}</p>
+                                    <h4>{{$feedback->name}}</h4>
+                                    <h6>{{$feedback->title}}</h6>
+                                </div>
                             </div>
-                        </div>
                         @endforeach
                     </div>
 
@@ -137,26 +174,6 @@
     <br>
     <br>
     <!--================End Testimonials Area =================-->
-    <section class="feature_area p_120">
-        <div class="container">
-            <div class="main_title">
-                <h2>What we Do</h2>
-                <p>we have this services</p>
-            </div>
-            <div class="row feature_inner">
 
-                @foreach($services as $service)
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="feature_item">
-                            <h4>{{$service->service}}</h4>
-                            <p>{{$service->description}}</p>
-                        </div>
-                    </div>
-                @endforeach
-
-
-            </div>
-        </div>
-    </section>
 
 @endsection

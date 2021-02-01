@@ -72083,17 +72083,27 @@ __webpack_require__.r(__webpack_exports__);
     //filters=?paginate=5&sortAsc=id&page=2
     return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("property".concat(filters));
   },
+  browseType: function browseType(filters) {
+    //filters=?paginate=5&sortAsc=id&page=2
+    return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("propertyType".concat(filters));
+  },
   view: function view(id) {
     return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("property/".concat(id));
   },
   create: function create(data) {
     return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].post("property", data);
   },
+  createtype: function createtype(data) {
+    return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].post("propertyType", data);
+  },
   update: function update(id, data) {
     return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].post("property/".concat(id), data);
   },
   delete: function _delete(id) {
     return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].delete("property/".concat(id));
+  },
+  deletetype: function deletetype(id) {
+    return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].delete("propertyType/".concat(id));
   }
 });
 
@@ -73031,6 +73041,24 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         permission: 'browse-message'
       }
     }, {
+      path: '/dashboard/message/service',
+      name: 'message',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ 40).then(__webpack_require__.bind(null, /*! ./views/message/browse-service-message.vue */ "./resources/js/src/views/message/browse-service-message.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard'
+        }, {
+          title: 'Message',
+          active: true
+        }],
+        pageTitle: 'Message',
+        permission: 'browse-message'
+      }
+    }, {
       path: '/dashboard/service',
       name: 'service',
       component: function component() {
@@ -73198,6 +73226,66 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
           active: true
         }],
         pageTitle: "Profile"
+      }
+    }, {
+      path: '/dashboard/propertyType',
+      name: 'propertyType',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ 37).then(__webpack_require__.bind(null, /*! ./views/propertyType/browse.vue */ "./resources/js/src/views/propertyType/browse.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard'
+        }, {
+          title: 'PropertyType',
+          active: true
+        }],
+        pageTitle: 'propertyType',
+        permission: 'browse-propertyType'
+      }
+    }, {
+      path: '/dashboard/propertyType/create',
+      name: 'add-propertyType',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ 38).then(__webpack_require__.bind(null, /*! ./views/propertyType/create.vue */ "./resources/js/src/views/propertyType/create.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard'
+        }, {
+          title: 'PropertyType',
+          url: '/dashboard/propertyType'
+        }, {
+          title: 'Add propertyType',
+          active: true
+        }],
+        pageTitle: 'Add propertyType',
+        permission: 'create-propertyType'
+      }
+    }, {
+      path: '/dashboard/propertyType/:id/edit',
+      name: 'edit-propertyType',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ 39).then(__webpack_require__.bind(null, /*! ./views/propertyType/edit.vue */ "./resources/js/src/views/propertyType/edit.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard'
+        }, {
+          title: 'PropertyType',
+          url: '/dashboard/propertyType'
+        }, {
+          title: 'Edit propertyType',
+          active: true
+        }],
+        pageTitle: 'Edit propertyType',
+        permission: 'edit-propertyType'
       }
     }]
   }, // =============================================================================
@@ -74066,9 +74154,25 @@ __webpack_require__.r(__webpack_exports__);
       });
     });
   },
-  view: function view(_ref2, id) {
+  browsetype: function browsetype(_ref2, payload) {
     var commit = _ref2.commit,
         dispatch = _ref2.dispatch;
+    return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
+      _http_requests_property_index__WEBPACK_IMPORTED_MODULE_1__["default"].browseType(payload).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  view: function view(_ref3, id) {
+    var commit = _ref3.commit,
+        dispatch = _ref3.dispatch;
     return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
       _http_requests_property_index__WEBPACK_IMPORTED_MODULE_1__["default"].view(id).then(function (response) {
         resolve(response);
@@ -74082,9 +74186,9 @@ __webpack_require__.r(__webpack_exports__);
       });
     });
   },
-  create: function create(_ref3, payload) {
-    var commit = _ref3.commit,
-        dispatch = _ref3.dispatch;
+  create: function create(_ref4, payload) {
+    var commit = _ref4.commit,
+        dispatch = _ref4.dispatch;
     return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
       _http_requests_property_index__WEBPACK_IMPORTED_MODULE_1__["default"].create(payload).then(function (response) {
         resolve(response);
@@ -74098,9 +74202,25 @@ __webpack_require__.r(__webpack_exports__);
       });
     });
   },
-  update: function update(_ref4, payload) {
-    var commit = _ref4.commit,
-        dispatch = _ref4.dispatch;
+  createtype: function createtype(_ref5, payload) {
+    var commit = _ref5.commit,
+        dispatch = _ref5.dispatch;
+    return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
+      _http_requests_property_index__WEBPACK_IMPORTED_MODULE_1__["default"].createtype(payload).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  update: function update(_ref6, payload) {
+    var commit = _ref6.commit,
+        dispatch = _ref6.dispatch;
     return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
       _http_requests_property_index__WEBPACK_IMPORTED_MODULE_1__["default"].update(payload.id, payload.data).then(function (response) {
         resolve(response);
@@ -74114,11 +74234,27 @@ __webpack_require__.r(__webpack_exports__);
       });
     });
   },
-  delete: function _delete(_ref5, id) {
-    var commit = _ref5.commit,
-        dispatch = _ref5.dispatch;
+  delete: function _delete(_ref7, id) {
+    var commit = _ref7.commit,
+        dispatch = _ref7.dispatch;
     return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
       _http_requests_property_index__WEBPACK_IMPORTED_MODULE_1__["default"].delete(id).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  deletetype: function deletetype(_ref8, id) {
+    var commit = _ref8.commit,
+        dispatch = _ref8.dispatch;
+    return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
+      _http_requests_property_index__WEBPACK_IMPORTED_MODULE_1__["default"].deletetype(id).then(function (response) {
         resolve(response);
       }).catch(function (error) {
         dispatch('handleError', {

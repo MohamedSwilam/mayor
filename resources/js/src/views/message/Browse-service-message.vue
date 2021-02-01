@@ -16,6 +16,7 @@
                 <vs-table search :data="messages">
                     <template slot="thead">
                         <vs-th>#</vs-th>
+                        <vs-th sort-key="name">Service Name</vs-th>
                         <vs-th sort-key="name">Name</vs-th>
                         <vs-th sort-key="email">Email</vs-th>
                         <vs-th sort-key="Phone">Phone</vs-th>
@@ -23,14 +24,18 @@
                         <vs-th>Action</vs-th>
                     </template>
                     <template slot-scope="{data}">
-                        <vs-tr v-if="record.service == null":key="index" v-for="(record, index) in data">
+                        <vs-tr v-if="record.service != null" :key="index" v-for="(record, index) in data">
                             <vs-td>
                                 {{ index+1 }}
                             </vs-td>
 
+                            <vs-td :data="record.service   ">
+                                {{ record.service}}
+                            </vs-td>
                             <vs-td :data="record.name">
                                 {{ record.name}}
                             </vs-td>
+
 
                             <vs-td :data="record.email">
                                 {{ record.email}}

@@ -11,6 +11,6 @@ $factory->define(Message::class, function (Faker $faker) {
         'name' => $faker->name,
         'email' => $faker->email,
         'message' => $faker->paragraph(2),
-        'phone' => $faker->phoneNumber
+        'phone' => $faker->phoneNumber,
     ];
 });

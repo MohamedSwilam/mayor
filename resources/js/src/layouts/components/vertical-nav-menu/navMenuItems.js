@@ -28,6 +28,12 @@ export default [
         slug: "property",
         icon: "HomeIcon",
         permission: 'browse-property'
+    }, {
+        url: "/dashboard/propertyType",
+        name: "propertyType",
+        slug: "propertyType",
+        icon: "HomeIcon",
+        permission: 'browse-propertyType'
     },
     {
         url: "/dashboard/reservation",
@@ -55,7 +61,15 @@ export default [
         name: "Messages",
         slug: "message",
         icon: "MessageSquareIcon",
-        permission: 'browse-message'
+        permission: 'browse-message',
+        submenu: [
+            {
+                url: '/dashboard/message/service',
+                name: "Service Requests",
+                slug: "Service Requests",
+                permission: "browse-message"
+            },
+        ]
     },
     {
         url: "/dashboard/service",

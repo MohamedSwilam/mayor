@@ -61,6 +61,13 @@
 
                         <br>
                     </vs-col>
+                    <div class="vx-row">
+                        <div class="vx-col w-full mb-6">
+                            <vs-select label="Property Type" autocomplete label-placeholder="Property Type" icon-pack="feather" icon="icon-chevron-down"  color="primary" class="w-full" v-model="form.property_type_id">
+                                <vs-select-item :key="index" :value="item.id" :text="item.property_type" v-for="(item, index) in roles" />
+                            </vs-select>
+                        </div>
+                    </div>
                     <vs-col vs-lg="12" vs-sm="12" vs-xs="12" class="px-2 mb-5">
                         <vs-input
                                 v-validate="'required'"
@@ -196,11 +203,15 @@
 <script>
 
     export default {
+        mounted() {
+            this.gettypes();
+        },
         data() {
             return {
                 form: {
                     title: '',
                     information: '',
+                    property_type_id:'',
                     description: '',
                     sqm: 0,
                     main_home_image: null,
@@ -220,7 +231,7 @@
                     location: '',
                     imagesDesc: [],
                 },
-
+                roles: [],
                 uploadedHomeImage: null,
                 uploadedDetailImage: null,
                 selectedImages: [],
@@ -237,6 +248,27 @@
             }
         },
         methods: {
+            gettypes()
+            {
+                this.$vs.loading({container: this.$refs.create.$refs.content, scale: 0.5});
+                this.$store.dispatch('property/browsetype', '')
+                    .then(response => {
+                        this.$vs.loading.close(this.$refs.create.$refs.content);
+                        this.roles = response.data.data.data;
+                        this.form.property_type_id = this.roles[0].property_type;
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        this.$vs.loading.close(this.$refs.create.$refs.content);
+                        this.$vs.notify({
+                            title: 'Error',
+                            text: error.response.data.error,
+                            iconPack: 'feather',
+                            icon: 'icon-alert-circle',
+                            color: 'danger'
+                        });
+                    });
+            },
 
             previewHomeImage(event) {
                 // Reference to the DOM input element
@@ -391,6 +423,7 @@
             reset_form() {
                 this.form = {
                     name: '',
+                    property_type:'',
                     title: '',
                     information: '',
                     image: null,

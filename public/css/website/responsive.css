@@ -47,7 +47,7 @@
         margin-bottom: 23px;
     }
 	.header_area .navbar {
-		background: rgb(199, 186, 173)
+		background: #fff;
 	}
     .navbar-toggler[aria-expanded="false"] span:nth-child(2) {
 		opacity: 1;
@@ -69,7 +69,7 @@
 		display: block;
 		width: 25px;
 		height: 3px;
-		background: rgb(158, 110, 74);;
+		background: #ea2c58;
 		margin: auto;
 		margin-bottom: 4px;
 		transition: all 400ms linear;
