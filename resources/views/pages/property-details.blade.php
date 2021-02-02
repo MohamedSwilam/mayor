@@ -75,7 +75,7 @@
                     </div>
 
 
-                    <div class="reserve-form" >
+                    <div class="reserve-form">
                         <h4>Property Reservation</h4>
 
                         <a href="\dashboard\reservation\{{$property->id}}\create" class="primary-btn submit_btn">Reserve
@@ -163,6 +163,31 @@
         </div>
     </section>
 
+    <div class="container">
+        <h2>Recommended Properties</h2>
+        <br>
+        <br>
+        <div class="row">
+            @for($i=0;$i<3;$i++)
+                @foreach($recomnds as $recomnded)
+                    <div class="col-lg-4">
+                        <div class="categories_post">
+                            {{--                            <img src="/storage/feedback/67b748722515dac2848d9c9b6ee7b19e.jpeg" alt="post">--}}
+                            <img src="/storage/property/{{$recomnded->main_details_image}}" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a href="/properties/{{$recomnded->id}}/{{$recomnded->property_type_id}}">
+                                        <h5>{{$recomnded->title}}</h5></a>
+                                    <div class="border_line"></div>
+                                    <p>{{$recomnded->description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            @endfor
+        </div>
+    </div>
     <!--================Blog Area =================-->
     <style>
 

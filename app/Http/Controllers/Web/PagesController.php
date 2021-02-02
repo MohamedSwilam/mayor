@@ -13,8 +13,9 @@ use App\Message;
 
 class PagesController extends Controller
 {
-    public function home(){
-        $properties = Property::where('view_in_home','1')->get();
+    public function home()
+    {
+        $properties = Property::where('view_in_home', '1')->get();
         $feedback = Feedback::all();
         $services = service::all();
         return view('pages.home', [
@@ -24,21 +25,39 @@ class PagesController extends Controller
         ]);
     }
 
-    public function properties() {
+    public function properties()
+    {
         $properties = Property::all();
 
         return view('pages.properties', [
             'properties' => $properties,
         ]);
     }
-    public function services() {
+
+    public function propertyDetails($id,$type)
+    {
+        $properties = Property::find($id);
+        $recomnded = Property::where('property_type_id','=', $type)->limit(4)->get();
+
+
+
+        return view('pages.property-details', [
+            'property' => $properties,
+            'recomnds' => $recomnded,
+        ]);
+    }
+
+    public function services()
+    {
         $services = service::all();
 
         return view('pages.services', [
             'services' => $services,
         ]);
     }
-    public function servicesandProperties() {
+
+    public function servicesandProperties()
+    {
         $services = service::all();
         $property = Property::all();
         return view('pages.services', [
@@ -47,7 +66,8 @@ class PagesController extends Controller
         ]);
     }
 
-    public function property($id) {
+    public function property($id)
+    {
         $property = Property::find($id);
 
         return view('pages.property-details', [
@@ -55,26 +75,28 @@ class PagesController extends Controller
         ]);
     }
 
-    public function about(){
+    public function about()
+    {
         $feedback = Feedback::all();
         return view('pages.about', [
             'feedback' => $feedback
         ]);
     }
 
-     public function contact_us(Request $request){
-         $data= $this->validate($request,[
-             'name' => 'required|string',
-             'message' => 'required|string',
-             'phone' => 'required|numeric',
-             'email' => 'required|email',
-             'service_id' =>''
-         ]);
-         $message = Message::create($data);
+    public function contact_us(Request $request)
+    {
+        $data = $this->validate($request, [
+            'name' => 'required|string',
+            'message' => 'required|string',
+            'phone' => 'required|numeric',
+            'email' => 'required|email',
+            'service_id' => ''
+        ]);
+        $message = Message::create($data);
 
 
-         return view("pages.thanks" , ['data'=> $data]);
-     }
+        return view("pages.thanks", ['data' => $data]);
+    }
 
 
 }
