@@ -989,7 +989,10 @@ button:focus {
 }
 
 .categories_post img {
-    max-width: 100%;
+    width: 450px;
+    height: 350px;
+    max-width: 350px;
+    max-height: 350px;
 }
 
 .categories_post .categories_details {
@@ -1028,6 +1031,9 @@ button:focus {
     font-size: 14px;
     line-height: 26px;
     margin-bottom: 0px;
+    word-break: break-word;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .categories_post .categories_details .border_line {

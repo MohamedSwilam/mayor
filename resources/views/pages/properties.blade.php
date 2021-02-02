@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="pp_footer">
                                     <h5>{{$property->price}} EGP</h5>
-                                    <a href="/properties/{{$property->id}}"class="main_btn" >For Rent</a>
+                                    <a href="/properties/{{$property->id}}/{{$property->property_type_id}}"class="main_btn" >For Rent</a>
                                 </div>
                             </div>
                         </div>
@@ -57,91 +57,5 @@
         </div>
     </section>
     <!--================End Properties Area =================-->
-
-    <!--================Feature Area =================-->
-    <section class="feature_area p_120">
-        <div class="container">
-            <div class="main_title">
-                <h2>Why we are the best</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
-            </div>
-            <div class="row feature_inner">
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
-                        <h4><i class="lnr lnr-user"></i>Expert Technicians</h4>
-                        <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
-                        <h4><i class="lnr lnr-license"></i>Professional Service</h4>
-                        <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
-                        <h4><i class="lnr lnr-phone"></i>Great Support</h4>
-                        <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
-                        <h4><i class="lnr lnr-rocket"></i>Technical Skills</h4>
-                        <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
-                        <h4><i class="lnr lnr-diamond"></i>Highly Recomended</h4>
-                        <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
-                        <h4><i class="lnr lnr-bubble"></i>Positive Reviews</h4>
-                        <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--================End Feature Area =================-->
-
-    <!--================Cities Area =================-->
-    <section class="cities_area p_120">
-        <div class="container">
-            <div class="main_title">
-                <h2>Demandable Cities</h2>
-                <p>We all live in an age that belongs to the young at heart. Life that is becoming extremely fast, day to day,</p>
-            </div>
-            <div class="row cities_inner">
-                <div class="col-lg-3">
-                    <div class="cities_item">
-                        <img class="img-fluid" src="/images/website/cities/cities-1.jpg" alt="">
-
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="cities_item">
-                        <img class="img-fluid" src="/images/website/cities/cities-2.jpg" alt="">
-
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="cities_item">
-                        <img class="img-fluid" src="/images/website/cities/cities-3.jpg" alt="">
-
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="cities_item">
-                        <img class="img-fluid" src="/images/website/cities/cities-4.jpg" alt="">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--================End Cities Area =================-->
 
 @endsection
