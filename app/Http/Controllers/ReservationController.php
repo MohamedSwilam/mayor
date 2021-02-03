@@ -76,17 +76,25 @@ class ReservationController extends Controller
         $check_out_before_onther_check_out_validation = Reservation::where('property_id', $request->property_id)
             ->where('check_in',"<=", $endDate)->where('check_out',">=", $endDate)->count();
 
-//        die($check_in_validation_2 ."___".$check_out_validation_2);
 
         if(count($client_id)==0)
         {
             $request['email'];
             $client= Account::where('email', $request['email'])->with(['user','user.client'])->get();
-            $client_id= $client[0]['user']['client']['id'];
+            if (!count($client)==0)
+            {
+                $client_id= $client[0]['user']['client']['id'];
+
+            }
+            else{
+                die("there are no user with Email"." ".$request['email'] );
+            }
         }
+
         else{
             $client_id=$client_id[0];
         }
+
         if($check_in_validation == 0 && $check_out_validation == 0 && $check_in_after_onther_check_in_validation == 0 && $check_out_before_onther_check_out_validation == 0   ) {
             $request['check_out']=date('Y-m-d H:i:s',strtotime($request->check_out));
             $request['check_in']=date('Y-m-d H:i:s',strtotime($request->check_in));
@@ -98,6 +106,7 @@ class ReservationController extends Controller
                 )
             );
         }
+
         else{
             if ($check_in_validation >0)
             {

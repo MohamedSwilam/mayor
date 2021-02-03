@@ -6,7 +6,7 @@
                 <vs-alert color="warning" title="Warning" active="true">
                     The highlighted dates are already reserved.
                 </vs-alert>
-                <vs-row v-if="reservationDates.length > 0" >
+                <vs-row v-if="reservationDates.length >= 0" >
                     <vs-input
                             v-validate="'required'"
                             v-if="role === 'Super Admin' || role === 'Admin'"

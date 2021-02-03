@@ -235,9 +235,7 @@ export default {
     },
     computed: {
         validateForm() {
-            return !this.errors.any() && this.form.email !== '' && this.form.password !== '' && this.form.confirm_password !== ''
-                    &&this.form.password  === this.form.confirm_password    && this.form.first_name !== ''&& this.form.last_name!== '' &&
-                    this.form.ssn !== '' && this.form.image !== '' && this.form.mobile !== '' && this.form.address !== '' && this.form.nationality !== '';
+            return !this.errors.any();
         }
     },
     methods: {

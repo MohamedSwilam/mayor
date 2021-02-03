@@ -980,13 +980,18 @@ var render = function() {
                       ],
                       staticClass: "w-full",
                       attrs: {
-                        danger: _vm.errors.has("location"),
-                        "danger-text": _vm.errors.first("location"),
+                        danger: _vm.errors.has(
+                          "https://goo.gl/maps/D67dKEvPJYYwmyA16"
+                        ),
+                        "danger-text": _vm.errors.first(
+                          "https://goo.gl/maps/D67dKEvPJYYwmyA16"
+                        ),
                         "val-icon-danger": "clear",
                         "icon-pack": "feather",
                         icon: "icon-map-pin",
-                        "label-placeholder": "Location link",
-                        name: "title"
+                        "label-placeholder":
+                          "Location link must be like https://goo.gl/maps/D67dKEvPJYYwmyA16",
+                        name: "location"
                       },
                       model: {
                         value: _vm.form.location,

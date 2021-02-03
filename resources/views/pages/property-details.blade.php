@@ -188,6 +188,7 @@
             @endfor
         </div>
     </div>
+
     <!--================Blog Area =================-->
     <style>
 
@@ -289,4 +290,6 @@
             display: none;
         }
     </style>
+
+
 @endsection
