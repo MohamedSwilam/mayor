@@ -290,7 +290,7 @@ var render = function() {
               ]
             ),
             _vm._v(" "),
-            _vm.reservationDates.length > 0
+            _vm.reservationDates.length >= 0
               ? _c(
                   "vs-row",
                   [

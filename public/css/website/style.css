@@ -989,10 +989,7 @@ button:focus {
 }
 
 .categories_post img {
-    width: 450px;
-    height: 350px;
-    max-width: 350px;
-    max-height: 350px;
+    max-width: 100%;
 }
 
 .categories_post .categories_details {
@@ -1031,9 +1028,6 @@ button:focus {
     font-size: 14px;
     line-height: 26px;
     margin-bottom: 0px;
-    word-break: break-word;
-    margin-left: 20px;
-    margin-right: 20px;
 }
 
 .categories_post .categories_details .border_line {
@@ -1044,7 +1038,7 @@ button:focus {
 }
 
 .categories_post:hover .categories_details {
-    background: rgba(158, 110, 74, 0.85);
+    background: rgba(234, 44, 88, 0.85);
 }
 
 /*============ blog_left_sidebar css ==============*/
@@ -3712,9 +3706,7 @@ h6 {
     -webkit-box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    height: 100%;
-    display: grid;
-    align-items: flex-end;}
+}
 
 .properties_item .pp_content {
     padding: 30px;

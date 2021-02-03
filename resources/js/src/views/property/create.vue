@@ -97,14 +97,14 @@
                         <vs-input
                                 v-validate="'required'"
                                 class="w-full"
-                                :danger="errors.has('location')"
-                                :danger-text="errors.first('location')"
+                                :danger="errors.has('https://goo.gl/maps/D67dKEvPJYYwmyA16')"
+                                :danger-text="errors.first('https://goo.gl/maps/D67dKEvPJYYwmyA16')"
                                 val-icon-danger="clear"
                                 icon-pack="feather"
                                 icon="icon-map-pin"
-                                label-placeholder="Location link"
+                                label-placeholder="Location link must be like https://goo.gl/maps/D67dKEvPJYYwmyA16"
                                 v-model="form.location"
-                                name='title'/>
+                                name='location'/>
                     </vs-col>
                     <vs-col vs-lg="6" vs-sm="12" vs-xs="12" class="px-2 mb-5">
                         <vs-input
