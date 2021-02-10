@@ -153,6 +153,79 @@
                             <span slot="off">NO</span>
                         </vs-switch>
                     </vs-col>
+                    <vs-col vs-lg="4" vs-sm="4" vs-xs="4" class="px-2 mb-5">
+                        <b>TV ? </b>
+                        <vs-switch style="display: inline-flex;vertical-align: middle;margin-left: 10px;"
+                                   icon-pack="feather" vs-icon-on="icon-check-circle" vs-icon-off="icon-slash"
+                                   v-model="form.has_tv">
+                            <span slot="on">YES</span>
+                            <span slot="off">NO</span>
+                        </vs-switch>
+                    </vs-col>
+                    <vs-col vs-lg="4" vs-sm="4" vs-xs="4" class="px-2 mb-5">
+                        <b>Wifi Internet? </b>
+                        <vs-switch style="display: inline-flex;vertical-align: middle;margin-left: 10px;"
+                                   icon-pack="feather" vs-icon-on="icon-check-circle" vs-icon-off="icon-slash"
+                                   v-model="form.has_wifi_internet">
+                            <span slot="on">YES</span>
+                            <span slot="off">NO</span>
+                        </vs-switch>
+                    </vs-col>
+                    <vs-col vs-lg="4" vs-sm="4" vs-xs="4" class="px-2 mb-5">
+                        <b>DVD Player? </b>
+                        <vs-switch style="display: inline-flex;vertical-align: middle;margin-left: 10px;"
+                                   icon-pack="feather" vs-icon-on="icon-check-circle" vs-icon-off="icon-slash"
+                                   v-model="form.has_dvd">
+                            <span slot="on">YES</span>
+                            <span slot="off">NO</span>
+                        </vs-switch>
+                    </vs-col>
+                    <vs-col vs-lg="4" vs-sm="4" vs-xs="4" class="px-2 mb-5">
+                        <b>Air Conditioning ? </b>
+                        <vs-switch style="display: inline-flex;vertical-align: middle;margin-left: 10px;"
+                                   icon-pack="feather" vs-icon-on="icon-check-circle" vs-icon-off="icon-slash"
+                                   v-model="form.has_air_condition">
+                            <span slot="on">YES</span>
+                            <span slot="off">NO</span>
+                        </vs-switch>
+                    </vs-col>
+                    <vs-col vs-lg="4" vs-sm="4" vs-xs="4" class="px-2 mb-5">
+                        <b>Car Parking? </b>
+                        <vs-switch style="display: inline-flex;vertical-align: middle;margin-left: 10px;"
+                                   icon-pack="feather" vs-icon-on="icon-check-circle" vs-icon-off="icon-slash"
+                                   v-model="form.has_car_parking">
+                            <span slot="on">YES</span>
+                            <span slot="off">NO</span>
+                        </vs-switch>
+                    </vs-col>
+                    <vs-col vs-lg="4" vs-sm="4" vs-xs="4" class="px-2 mb-5">
+                        <b>fully equipped kitchen  </b>
+                        <vs-switch style="display: inline-flex;vertical-align: middle;margin-left: 10px;"
+                                   icon-pack="feather" vs-icon-on="icon-check-circle" vs-icon-off="icon-slash"
+                                   v-model="form.has_full_kitchen">
+                            <span slot="on">YES</span>
+                            <span slot="off">NO</span>
+                        </vs-switch>
+                    </vs-col>
+                    <vs-col vs-lg="4" vs-sm="4" vs-xs="4" class="px-2 mb-5">
+                        <b>Music Player ? </b>
+                        <vs-switch style="display: inline-flex;vertical-align: middle;margin-left: 10px;"
+                                   icon-pack="feather" vs-icon-on="icon-check-circle" vs-icon-off="icon-slash"
+                                   v-model="form.has_music_player">
+                            <span slot="on">YES</span>
+                            <span slot="off">NO</span>
+                        </vs-switch>
+                    </vs-col>
+                    <vs-col vs-lg="4" vs-sm="4" vs-xs="4" class="px-2 mb-5">
+                        <b>Washing Machine? </b>
+                        <vs-switch style="display: inline-flex;vertical-align: middle;margin-left: 10px;"
+                                   icon-pack="feather" vs-icon-on="icon-check-circle" vs-icon-off="icon-slash"
+                                   v-model="form.has_washing_machine">
+                            <span slot="on">YES</span>
+                            <span slot="off">NO</span>
+                        </vs-switch>
+                    </vs-col>
+
                     <vs-divider></vs-divider>
                     <vs-col vs-lg="3" vs-sm="6" vs-xs="12" class="px-2" vs-type="flex" vs-align="center"
                             vs-justify="center">
@@ -219,6 +292,14 @@
                     images: [],
                     has_pool: false,
                     has_garden: false,
+                    has_tv: false,
+                    has_dvd: false,
+                    has_music_player: false,
+                    has_washing_machine: false,
+                    has_wifi_internet: false,
+                    has_car_parking: false,
+                    has_full_kitchen: false,
+                    has_air_condition: false,
                     view_in_home: false,
                     no_of_rooms: 1,
                     no_of_baths: 1,
@@ -244,7 +325,8 @@
         computed: {
             validateForm() {
 
-                return !this.errors.any() && this.form.title !== "" && this.form.information !== "" && this.form.main_home_image !== null && this.form.main_details_image !== null && this.form.images.length > 0 && this.form.address_desc !== "" && this.form.address !== "" && this.form.location !== "" && this.form.images.length === this.form.imagesDesc.length
+                return !this.errors.any() && this.form.title !== "" && this.form.information !== "" && this.form.main_home_image !== null && this.form.main_details_image !== null && this.form.images.length > 0 && this.form.address_desc !== ""
+                    && this.form.address !== "" && this.form.location !== "" && this.form.images.length === this.form.imagesDesc.length
             }
         },
         methods: {
@@ -381,8 +463,9 @@
                         for (let i = 0; i < this.form[key].length; i++) {
                             form_data.append(key + '[]', this.form[key][i]);
                         }
-
-                    }else if (key === 'has_pool' || key === 'has_garden' || key === 'view_in_home') {
+// has_tv:
+                    }else if (key === 'has_pool' || key === 'has_garden' || key === 'view_in_home' || key === 'has_dvd' || key === 'has_music_player' || key === 'has_washing_machine'
+                        || key === 'has_wifi_internet'|| key === 'has_car_parking'|| key === 'has_full_kitchen'|| key === 'has_air_condition'|| key === 'view_in_home' ) {
                         form_data.append(key, this.form[key] ? 1 : 0);
                     } else  {
                         form_data.append(key, this.form[key]);
@@ -437,7 +520,16 @@
                     dinner_price: 0,
                     lunch_price: 0,
                     address_desc: '',
-                    address: ''
+                    address: '',
+                    has_tv: false,
+                    has_dvd: false,
+                    has_music_player: false,
+                    has_washing_machine: false,
+                    has_wifi_internet: false,
+                    has_car_parking: false,
+                    has_full_kitchen: false,
+                    has_air_condition: false,
+                    view_in_home: false,
                 }
             },
 
