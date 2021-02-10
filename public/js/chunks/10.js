@@ -214,6 +214,79 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     this.gettypes();
@@ -231,6 +304,14 @@ __webpack_require__.r(__webpack_exports__);
         images: [],
         has_pool: false,
         has_garden: false,
+        has_tv: false,
+        has_dvd: false,
+        has_music_player: false,
+        has_washing_machine: false,
+        has_wifi_internet: false,
+        has_car_parking: false,
+        has_full_kitchen: false,
+        has_air_condition: false,
         view_in_home: false,
         no_of_rooms: 1,
         no_of_baths: 1,
@@ -405,8 +486,9 @@ __webpack_require__.r(__webpack_exports__);
         } else if (key === 'imagesDesc') {
           for (var _i2 = 0; _i2 < this.form[key].length; _i2++) {
             form_data.append(key + '[]', this.form[key][_i2]);
-          }
-        } else if (key === 'has_pool' || key === 'has_garden' || key === 'view_in_home') {
+          } // has_tv:
+
+        } else if (key === 'has_pool' || key === 'has_garden' || key === 'view_in_home' || key === 'has_dvd' || key === 'has_music_player' || key === 'has_washing_machine' || key === 'has_wifi_internet' || key === 'has_car_parking' || key === 'has_full_kitchen' || key === 'has_air_condition' || key === 'view_in_home') {
           form_data.append(key, this.form[key] ? 1 : 0);
         } else {
           form_data.append(key, this.form[key]);
@@ -463,7 +545,16 @@ __webpack_require__.r(__webpack_exports__);
         dinner_price: 0,
         lunch_price: 0,
         address_desc: '',
-        address: ''
+        address: '',
+        has_tv: false,
+        has_dvd: false,
+        has_music_player: false,
+        has_washing_machine: false,
+        has_wifi_internet: false,
+        has_car_parking: false,
+        has_full_kitchen: false,
+        has_air_condition: false,
+        view_in_home: false
       };
     }
   }
@@ -1206,6 +1297,358 @@ var render = function() {
                             _vm.$set(_vm.form, "view_in_home", $$v)
                           },
                           expression: "form.view_in_home"
+                        }
+                      },
+                      [
+                        _c("span", { attrs: { slot: "on" }, slot: "on" }, [
+                          _vm._v("YES")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { attrs: { slot: "off" }, slot: "off" }, [
+                          _vm._v("NO")
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "vs-col",
+                  {
+                    staticClass: "px-2 mb-5",
+                    attrs: { "vs-lg": "4", "vs-sm": "4", "vs-xs": "4" }
+                  },
+                  [
+                    _c("b", [_vm._v("TV ? ")]),
+                    _vm._v(" "),
+                    _c(
+                      "vs-switch",
+                      {
+                        staticStyle: {
+                          display: "inline-flex",
+                          "vertical-align": "middle",
+                          "margin-left": "10px"
+                        },
+                        attrs: {
+                          "icon-pack": "feather",
+                          "vs-icon-on": "icon-check-circle",
+                          "vs-icon-off": "icon-slash"
+                        },
+                        model: {
+                          value: _vm.form.has_tv,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "has_tv", $$v)
+                          },
+                          expression: "form.has_tv"
+                        }
+                      },
+                      [
+                        _c("span", { attrs: { slot: "on" }, slot: "on" }, [
+                          _vm._v("YES")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { attrs: { slot: "off" }, slot: "off" }, [
+                          _vm._v("NO")
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "vs-col",
+                  {
+                    staticClass: "px-2 mb-5",
+                    attrs: { "vs-lg": "4", "vs-sm": "4", "vs-xs": "4" }
+                  },
+                  [
+                    _c("b", [_vm._v("Wifi Internet? ")]),
+                    _vm._v(" "),
+                    _c(
+                      "vs-switch",
+                      {
+                        staticStyle: {
+                          display: "inline-flex",
+                          "vertical-align": "middle",
+                          "margin-left": "10px"
+                        },
+                        attrs: {
+                          "icon-pack": "feather",
+                          "vs-icon-on": "icon-check-circle",
+                          "vs-icon-off": "icon-slash"
+                        },
+                        model: {
+                          value: _vm.form.has_wifi_internet,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "has_wifi_internet", $$v)
+                          },
+                          expression: "form.has_wifi_internet"
+                        }
+                      },
+                      [
+                        _c("span", { attrs: { slot: "on" }, slot: "on" }, [
+                          _vm._v("YES")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { attrs: { slot: "off" }, slot: "off" }, [
+                          _vm._v("NO")
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "vs-col",
+                  {
+                    staticClass: "px-2 mb-5",
+                    attrs: { "vs-lg": "4", "vs-sm": "4", "vs-xs": "4" }
+                  },
+                  [
+                    _c("b", [_vm._v("DVD Player? ")]),
+                    _vm._v(" "),
+                    _c(
+                      "vs-switch",
+                      {
+                        staticStyle: {
+                          display: "inline-flex",
+                          "vertical-align": "middle",
+                          "margin-left": "10px"
+                        },
+                        attrs: {
+                          "icon-pack": "feather",
+                          "vs-icon-on": "icon-check-circle",
+                          "vs-icon-off": "icon-slash"
+                        },
+                        model: {
+                          value: _vm.form.has_dvd,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "has_dvd", $$v)
+                          },
+                          expression: "form.has_dvd"
+                        }
+                      },
+                      [
+                        _c("span", { attrs: { slot: "on" }, slot: "on" }, [
+                          _vm._v("YES")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { attrs: { slot: "off" }, slot: "off" }, [
+                          _vm._v("NO")
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "vs-col",
+                  {
+                    staticClass: "px-2 mb-5",
+                    attrs: { "vs-lg": "4", "vs-sm": "4", "vs-xs": "4" }
+                  },
+                  [
+                    _c("b", [_vm._v("Air Conditioning ? ")]),
+                    _vm._v(" "),
+                    _c(
+                      "vs-switch",
+                      {
+                        staticStyle: {
+                          display: "inline-flex",
+                          "vertical-align": "middle",
+                          "margin-left": "10px"
+                        },
+                        attrs: {
+                          "icon-pack": "feather",
+                          "vs-icon-on": "icon-check-circle",
+                          "vs-icon-off": "icon-slash"
+                        },
+                        model: {
+                          value: _vm.form.has_air_condition,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "has_air_condition", $$v)
+                          },
+                          expression: "form.has_air_condition"
+                        }
+                      },
+                      [
+                        _c("span", { attrs: { slot: "on" }, slot: "on" }, [
+                          _vm._v("YES")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { attrs: { slot: "off" }, slot: "off" }, [
+                          _vm._v("NO")
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "vs-col",
+                  {
+                    staticClass: "px-2 mb-5",
+                    attrs: { "vs-lg": "4", "vs-sm": "4", "vs-xs": "4" }
+                  },
+                  [
+                    _c("b", [_vm._v("Car Parking? ")]),
+                    _vm._v(" "),
+                    _c(
+                      "vs-switch",
+                      {
+                        staticStyle: {
+                          display: "inline-flex",
+                          "vertical-align": "middle",
+                          "margin-left": "10px"
+                        },
+                        attrs: {
+                          "icon-pack": "feather",
+                          "vs-icon-on": "icon-check-circle",
+                          "vs-icon-off": "icon-slash"
+                        },
+                        model: {
+                          value: _vm.form.has_car_parking,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "has_car_parking", $$v)
+                          },
+                          expression: "form.has_car_parking"
+                        }
+                      },
+                      [
+                        _c("span", { attrs: { slot: "on" }, slot: "on" }, [
+                          _vm._v("YES")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { attrs: { slot: "off" }, slot: "off" }, [
+                          _vm._v("NO")
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "vs-col",
+                  {
+                    staticClass: "px-2 mb-5",
+                    attrs: { "vs-lg": "4", "vs-sm": "4", "vs-xs": "4" }
+                  },
+                  [
+                    _c("b", [_vm._v("fully equipped kitchen  ")]),
+                    _vm._v(" "),
+                    _c(
+                      "vs-switch",
+                      {
+                        staticStyle: {
+                          display: "inline-flex",
+                          "vertical-align": "middle",
+                          "margin-left": "10px"
+                        },
+                        attrs: {
+                          "icon-pack": "feather",
+                          "vs-icon-on": "icon-check-circle",
+                          "vs-icon-off": "icon-slash"
+                        },
+                        model: {
+                          value: _vm.form.has_full_kitchen,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "has_full_kitchen", $$v)
+                          },
+                          expression: "form.has_full_kitchen"
+                        }
+                      },
+                      [
+                        _c("span", { attrs: { slot: "on" }, slot: "on" }, [
+                          _vm._v("YES")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { attrs: { slot: "off" }, slot: "off" }, [
+                          _vm._v("NO")
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "vs-col",
+                  {
+                    staticClass: "px-2 mb-5",
+                    attrs: { "vs-lg": "4", "vs-sm": "4", "vs-xs": "4" }
+                  },
+                  [
+                    _c("b", [_vm._v("Music Player ? ")]),
+                    _vm._v(" "),
+                    _c(
+                      "vs-switch",
+                      {
+                        staticStyle: {
+                          display: "inline-flex",
+                          "vertical-align": "middle",
+                          "margin-left": "10px"
+                        },
+                        attrs: {
+                          "icon-pack": "feather",
+                          "vs-icon-on": "icon-check-circle",
+                          "vs-icon-off": "icon-slash"
+                        },
+                        model: {
+                          value: _vm.form.has_music_player,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "has_music_player", $$v)
+                          },
+                          expression: "form.has_music_player"
+                        }
+                      },
+                      [
+                        _c("span", { attrs: { slot: "on" }, slot: "on" }, [
+                          _vm._v("YES")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { attrs: { slot: "off" }, slot: "off" }, [
+                          _vm._v("NO")
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "vs-col",
+                  {
+                    staticClass: "px-2 mb-5",
+                    attrs: { "vs-lg": "4", "vs-sm": "4", "vs-xs": "4" }
+                  },
+                  [
+                    _c("b", [_vm._v("Washing Machine? ")]),
+                    _vm._v(" "),
+                    _c(
+                      "vs-switch",
+                      {
+                        staticStyle: {
+                          display: "inline-flex",
+                          "vertical-align": "middle",
+                          "margin-left": "10px"
+                        },
+                        attrs: {
+                          "icon-pack": "feather",
+                          "vs-icon-on": "icon-check-circle",
+                          "vs-icon-off": "icon-slash"
+                        },
+                        model: {
+                          value: _vm.form.has_washing_machine,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "has_washing_machine", $$v)
+                          },
+                          expression: "form.has_washing_machine"
                         }
                       },
                       [

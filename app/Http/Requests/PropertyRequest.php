@@ -47,7 +47,17 @@ class PropertyRequest extends FormRequest
                 'has_pool' => 'required|boolean',
                 'has_garden' => 'required|boolean',
                 'view_in_home' => 'required|boolean',
+                'has_dvd' => 'required|boolean',
+                'has_tv' => 'required|boolean',
+                'has_music_player' => 'required|boolean',
+                'has_washing_machine' => 'required|boolean',
+                'has_wifi_internet' => 'required|boolean',
+                'has_car_parking' => 'required|boolean',
+                'has_full_kitchen' => 'required|boolean',
+                'has_air_condition' => 'required|boolean',
                 'imagesDesc'=>'',
+
+
             ];
         }
         else if (sizeof($segments) == 3){

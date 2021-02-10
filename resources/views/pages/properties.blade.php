@@ -31,8 +31,8 @@
                 @foreach($properties as $property)
                     <div class="col-lg-4" style="margin-bottom: 20px; max-height:inherit">
                         <div class="properties_item">
-                            <div class="pp_img" style="text-align: center;">
-                                <img style="padding: 30px; height: 300px; max-width: 300px" class="img-fluid"  src="/storage/property/{{$property->main_home_image}}" alt="">
+                            <div class="pp_img" >
+                                <img  style="max-height: 250px; width: 100%; border-top-right-radius: 15px;border-top-left-radius: 15px" class="img-fluid"  src="/storage/property/{{$property->main_home_image}}" alt="">
                             </div>
                             <div class="pp_content">
                                 <a href="/properties/{{$property->id}}" ><h4>{{$property->title}}</h4></a>

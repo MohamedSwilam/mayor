@@ -33,6 +33,15 @@ class CreatePropertiesTable extends Migration
             $table->boolean("has_pool");
             $table->boolean("has_garden");
             $table->boolean("view_in_home");
+            $table->boolean("has_tv");
+            $table->boolean("has_dvd");
+            $table->boolean("has_music_player");
+            $table->boolean("has_washing_machine");
+            $table->boolean("has_wifi_internet");
+            $table->boolean("has_car_parking");
+            $table->boolean("has_full_kitchen");
+            $table->boolean("has_air_condition");
+
             $table->unsignedBigInteger('property_type_id');
             $table->foreign('property_type_id')->references('id')->on('property_types')->onDelete('cascade');
 
