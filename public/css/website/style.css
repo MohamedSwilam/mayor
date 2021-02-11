@@ -986,10 +986,14 @@ button:focus {
     position: relative;
     text-align: center;
     cursor: pointer;
+    width: 300px;
+    height: 250px;
 }
 
 .categories_post img {
     max-width: 100%;
+    width: 300px;
+    height: 250px;
 }
 
 .categories_post .categories_details {
@@ -1020,7 +1024,7 @@ button:focus {
     line-height: 26px;
     text-transform: uppercase;
     color: #fff;
-    position: relative;
+    position: relative;git
 }
 
 .categories_post .categories_details p {
@@ -1028,6 +1032,7 @@ button:focus {
     font-size: 14px;
     line-height: 26px;
     margin-bottom: 0px;
+    word-break: break-word;
 }
 
 .categories_post .categories_details .border_line {

@@ -337,7 +337,6 @@
                     .then(response => {
                         this.$vs.loading.close(this.$refs.create.$refs.content);
                         this.roles = response.data.data.data;
-                        this.form.property_type_id = this.roles[0].property_type;
                     })
                     .catch(error => {
                         console.log(error);
@@ -465,7 +464,7 @@
                         }
 // has_tv:
                     }else if (key === 'has_pool' || key === 'has_garden' || key === 'view_in_home' || key === 'has_dvd' || key === 'has_music_player' || key === 'has_washing_machine'
-                        || key === 'has_wifi_internet'|| key === 'has_car_parking'|| key === 'has_full_kitchen'|| key === 'has_air_condition'|| key === 'view_in_home' ) {
+                        || key === 'has_wifi_internet'||  key === 'has_tv'|| key === 'has_car_parking'|| key === 'has_full_kitchen'|| key === 'has_air_condition'|| key === 'view_in_home' ) {
                         form_data.append(key, this.form[key] ? 1 : 0);
                     } else  {
                         form_data.append(key, this.form[key]);

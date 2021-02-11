@@ -46,6 +46,30 @@
                     <b>Has Pool? </b> &nbsp; {{property.has_pool?'Yes':'No'}}
                 </vs-col>
                 <vs-col vs-w="12" class="mb-2">
+                    <b>Has Tv? </b> &nbsp; {{property.has_tv?'Yes':'No'}}
+                </vs-col>
+                <vs-col vs-w="12" class="mb-2">
+                    <b>Has Dvd? </b> &nbsp; {{property.has_dvd?'Yes':'No'}}
+                </vs-col>
+                <vs-col vs-w="12" class="mb-2">
+                    <b>Has Music Player? </b> &nbsp; {{property.has_music_player?'Yes':'No'}}
+                </vs-col>
+                <vs-col vs-w="12" class="mb-2">
+                    <b>Has Washing Machine? </b> &nbsp; {{property.has_washing_machine?'Yes':'No'}}
+                </vs-col>
+                <vs-col vs-w="12" class="mb-2">
+                    <b>Has Wifi? </b> &nbsp; {{property.has_wifi_internet?'Yes':'No'}}
+                </vs-col>
+                <vs-col vs-w="12" class="mb-2">
+                    <b>Has Car Parking? </b> &nbsp; {{property.has_car_parking?'Yes':'No'}}
+                </vs-col>
+                <vs-col vs-w="12" class="mb-2">
+                    <b>Has Full Kitchen? </b> &nbsp; {{property.has_full_kitchen?'Yes':'No'}}
+                </vs-col>
+                <vs-col vs-w="12" class="mb-2">
+                    <b>Has Air Condition? </b> &nbsp; {{property.has_air_condition?'Yes':'No'}}
+                </vs-col>
+                <vs-col vs-w="12" class="mb-2">
                     <b>Display in Home Page? </b> &nbsp; {{property.view_in_home?'Yes':'No'}}
                 </vs-col>
                 <vs-col vs-w="12" class="mb-5">
