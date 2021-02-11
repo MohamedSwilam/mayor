@@ -41,7 +41,6 @@ class CreatePropertiesTable extends Migration
             $table->boolean("has_car_parking");
             $table->boolean("has_full_kitchen");
             $table->boolean("has_air_condition");
-
             $table->unsignedBigInteger('property_type_id');
             $table->foreign('property_type_id')->references('id')->on('property_types')->onDelete('cascade');
 

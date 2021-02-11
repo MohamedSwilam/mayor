@@ -24,10 +24,6 @@
     <!--================Feature Area =================-->
     <section class="feature_area p_120">
         <div class="container">
-            <div class="main_title">
-                <h2>What we Do</h2>
-                <p>we have this services</p>
-            </div>
             <div class="container">
                 <div class="main_title">
                     <h2>What we Do</h2>
@@ -39,7 +35,7 @@
                                 <div class="col-lg-4">
                                     <div class="categories_post">
                                         {{--                            <img src="/storage/feedback/67b748722515dac2848d9c9b6ee7b19e.jpeg" alt="post">--}}
-                                        <img src="/storage/feedback/{{$service->icon}}" alt="post">
+                                        <img class="serviceImg" src="/storage/feedback/{{$service->icon}}" alt="post">
                                         <div class="categories_details">
                                             <div class="categories_text">
                                                 <a href="/services"><h5>{{$service->service}}</h5></a>
