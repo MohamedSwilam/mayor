@@ -12,12 +12,18 @@ export default {
     view(id) {
         return axios.get(`property/${id}`)
     },
+    viewHomePageData(id) {
+        return axios.get(`homepage/${id}`)
+    },
 
     create(data) {
         return axios.post(`property`, data)
     },
     createtype(data) {
         return axios.post(`propertyType`, data)
+    },
+    homePageConfig(data) {
+        return axios.post(`homepage/1`, data)
     },
 
     update(id, data) {
