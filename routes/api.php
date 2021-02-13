@@ -67,6 +67,13 @@ Route::group(['prefix' => 'propertyType', 'middleware' => 'auth:api'], function 
     Route::resource('', 'propertyTypeController');
 });
 
+Route::group(['prefix' => 'homepage', 'middleware' => 'auth:api'], function () {
+    Route::post('{id}', 'WebsiteConfigController@update');
+    Route::get('{id}', 'WebsiteConfigController@show');
+    Route::delete('{id}', 'WebsiteConfigController@destroy');
+    Route::resource('', 'WebsiteConfigController');
+});
+
 Route::group(['prefix' => 'service', 'middleware' => 'auth:api'], function () {
     Route::post('{id}', 'ServiceController@update');
     Route::get('{id}', 'ServiceController@show');

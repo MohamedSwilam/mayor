@@ -8,6 +8,8 @@ use App\Feedback;
 use App\Http\Controllers\Controller;
 use App\Property;
 use App\service;
+use App\WebsiteConfig;
+use App\WebsiteConfigimages;
 use Illuminate\Http\Request;
 use App\Message;
 
@@ -18,10 +20,15 @@ class PagesController extends Controller
         $properties = Property::where('view_in_home', '1')->get();
         $feedback = Feedback::all();
         $services = service::all();
+        $homedata = WebsiteConfig::where('id', '1')->get();
+        $homedataimages = WebsiteConfigimages::where('Website_config_id', '1')->get();
         return view('pages.home', [
+            'homeData' => $homedata,
+            'homeDataImages' => $homedataimages,
             'properties' => $properties,
             'feedback' => $feedback,
             'services' => $services,
+
         ]);
     }
 

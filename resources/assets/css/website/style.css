@@ -430,7 +430,6 @@ button:focus {
 .home_banner_area .banner_inner {
     position: relative;
     min-height: 754px;
-    background: url(/images/website/banner/home-banner.jpg) no-repeat scroll center center;
 }
 
 .home_banner_area .banner_inner .banner_content {
@@ -3649,6 +3648,10 @@ h6 {
 
 .welcome_inner .welcome_img img {
     margin-top: 0px;
+    width:450px ;
+    height:450px ;
+    max-height: 450px;
+    max-width: 450px;
 }
 
 .welcome_text h4 {

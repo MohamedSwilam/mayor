@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ReservationSeeder::class);
         $this->call(FeedbackSeeder::class);
         $this->call(MessageSeeder::class);
+        $this->call(WebsiteConfigSeeder::class);
     }
 }

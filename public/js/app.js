@@ -72090,11 +72090,17 @@ __webpack_require__.r(__webpack_exports__);
   view: function view(id) {
     return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("property/".concat(id));
   },
+  viewHomePageData: function viewHomePageData(id) {
+    return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("homepage/".concat(id));
+  },
   create: function create(data) {
     return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].post("property", data);
   },
   createtype: function createtype(data) {
     return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].post("propertyType", data);
+  },
+  homePageConfig: function homePageConfig(data) {
+    return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].post("homepage/1", data);
   },
   update: function update(id, data) {
     return _axios__WEBPACK_IMPORTED_MODULE_0__["default"].post("property/".concat(id), data);
@@ -74186,9 +74192,25 @@ __webpack_require__.r(__webpack_exports__);
       });
     });
   },
-  create: function create(_ref4, payload) {
+  getHomePageData: function getHomePageData(_ref4, id) {
     var commit = _ref4.commit,
         dispatch = _ref4.dispatch;
+    return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
+      _http_requests_property_index__WEBPACK_IMPORTED_MODULE_1__["default"].viewHomePageData(id).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  create: function create(_ref5, payload) {
+    var commit = _ref5.commit,
+        dispatch = _ref5.dispatch;
     return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
       _http_requests_property_index__WEBPACK_IMPORTED_MODULE_1__["default"].create(payload).then(function (response) {
         resolve(response);
@@ -74202,9 +74224,9 @@ __webpack_require__.r(__webpack_exports__);
       });
     });
   },
-  createtype: function createtype(_ref5, payload) {
-    var commit = _ref5.commit,
-        dispatch = _ref5.dispatch;
+  createtype: function createtype(_ref6, payload) {
+    var commit = _ref6.commit,
+        dispatch = _ref6.dispatch;
     return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
       _http_requests_property_index__WEBPACK_IMPORTED_MODULE_1__["default"].createtype(payload).then(function (response) {
         resolve(response);
@@ -74218,9 +74240,25 @@ __webpack_require__.r(__webpack_exports__);
       });
     });
   },
-  update: function update(_ref6, payload) {
-    var commit = _ref6.commit,
-        dispatch = _ref6.dispatch;
+  createHomePage: function createHomePage(_ref7, payload) {
+    var commit = _ref7.commit,
+        dispatch = _ref7.dispatch;
+    return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
+      _http_requests_property_index__WEBPACK_IMPORTED_MODULE_1__["default"].homePageConfig(payload).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  update: function update(_ref8, payload) {
+    var commit = _ref8.commit,
+        dispatch = _ref8.dispatch;
     return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
       _http_requests_property_index__WEBPACK_IMPORTED_MODULE_1__["default"].update(payload.id, payload.data).then(function (response) {
         resolve(response);
@@ -74234,9 +74272,9 @@ __webpack_require__.r(__webpack_exports__);
       });
     });
   },
-  delete: function _delete(_ref7, id) {
-    var commit = _ref7.commit,
-        dispatch = _ref7.dispatch;
+  delete: function _delete(_ref9, id) {
+    var commit = _ref9.commit,
+        dispatch = _ref9.dispatch;
     return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
       _http_requests_property_index__WEBPACK_IMPORTED_MODULE_1__["default"].delete(id).then(function (response) {
         resolve(response);
@@ -74250,9 +74288,9 @@ __webpack_require__.r(__webpack_exports__);
       });
     });
   },
-  deletetype: function deletetype(_ref8, id) {
-    var commit = _ref8.commit,
-        dispatch = _ref8.dispatch;
+  deletetype: function deletetype(_ref10, id) {
+    var commit = _ref10.commit,
+        dispatch = _ref10.dispatch;
     return new _babel_runtime_core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
       _http_requests_property_index__WEBPACK_IMPORTED_MODULE_1__["default"].deletetype(id).then(function (response) {
         resolve(response);

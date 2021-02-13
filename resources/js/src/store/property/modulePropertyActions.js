@@ -37,6 +37,18 @@ export default {
         })
     },
 
+    getHomePageData({ commit, dispatch }, id) {
+        return new Promise((resolve, reject) => {
+            property.viewHomePageData(id)
+                .then(response => {
+                    resolve(response)
+                })
+                .catch(error => {
+                    dispatch('handleError', {reject: reject, error: error}, {root: true});
+                })
+        })
+    },
+
     create({ commit, dispatch }, payload) {
         return new Promise((resolve, reject) => {
             property.create(payload)
@@ -51,6 +63,17 @@ export default {
     createtype({ commit, dispatch }, payload) {
         return new Promise((resolve, reject) => {
             property.createtype(payload)
+                .then(response => {
+                    resolve(response)
+                })
+                .catch(error => {
+                    dispatch('handleError', {reject: reject, error: error}, {root: true});
+                })
+        })
+    },
+    createHomePage({ commit, dispatch }, payload) {
+        return new Promise((resolve, reject) => {
+            property.homePageConfig(payload)
                 .then(response => {
                     resolve(response)
                 })
