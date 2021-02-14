@@ -7,26 +7,29 @@
 
     <!--================Home Banner Area =================-->
     <section class="home_banner_area">
-        <div class="banner_inner d-flex align-items-center">
-                <div class="slideshow-container">
-                        @foreach($homeDataImages as $counter=> $image )
-                            <div class="mySlides ">
-                                <div class="numbertext">{{$counter+1}} / {{count($homeDataImages)}}</div>
-                                <div class="text">{{($image ?? '')->description}}</div>
-                                <img src="{{$image->source}}" style="max-height: 730px; width: fit-content">
-                            </div>
-                        @endforeach
+        <div class="slideshow-container">
+            @foreach($homeDataImages as $counter=> $image )
 
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <div class="mySlides ">
+
+                    <div class="numbertext">{{$counter+1}} / {{count($homeDataImages)}}</div>
+
+                    <dev class="text">{{($image ?? '')->description}}</dev>
+
+                        <img class="slider-img" src="{{$image->source}}">
 
                 </div>
-{{--                <div class="banner_content">--}}
-{{--                    <h5>The joy of home owning</h5>--}}
-{{--                    <h3>Find Your New Home</h3>--}}
-{{--                    <a class="main_btn" href="#">Learn More</a>--}}
-{{--                </div>--}}
+            @endforeach
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
         </div>
+        {{--                <div class="banner_content">--}}
+        {{--                    <h5>The joy of home owning</h5>--}}
+        {{--                    <h3>Find Your New Home</h3>--}}
+        {{--                    <a class="main_btn" href="#">Learn More</a>--}}
+        {{--                </div>--}}
     </section>
     <!--================End Home Banner Area =================-->
     <!--================Welcome Area =================-->
@@ -212,6 +215,7 @@
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" active1", "");
             }
+            slides[slideIndex - 1].style.width = "inherit"
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += "active1";
         }
@@ -276,6 +280,13 @@
             outline: none;
         }
 
+        .slider-img {
+            height: 730px;
+            max-height: 730px;
+            width: 100%;
+            object-fit: fill;
+        }
+
         .slider-i input:after {
             content: attr(title);
             position: absolute;
@@ -330,20 +341,18 @@
         }
 
         .mySlides {
+            width: inherit;
             display: none
+
         }
 
-        img {
-            vertical-align: middle;
-            border-radius: 15px;
-        }
 
         /* Slideshow container */
         .slideshow-container {
             width: fit-content;
             position: relative;
-            margin: auto;
-
+            margin: 10px;
+            width: inherit;
         }
 
         /* Next & previous buttons */
@@ -375,13 +384,13 @@
 
         /* Caption text */
         .text {
-            color: #f2f2f2;
-            font-size: 15px;
+            color: rgb(158, 110, 74);
+            font-size: 30px;
             padding: 8px 12px;
             position: absolute;
-            bottom: 8px;
+            bottom: 100px;
+            left: 50px;
             width: 100%;
-            text-align: center;
         }
 
         /* Number text (1/3 etc) */
