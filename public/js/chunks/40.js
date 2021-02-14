@@ -258,11 +258,6 @@ __webpack_require__.r(__webpack_exports__);
 
       if (!this.validateForm) return;
       this.is_requesting = true;
-      this.$vs.loading({
-        container: "#".concat(clicked_button_id),
-        color: 'primary',
-        scale: 0.45
-      });
       var form_data = new FormData();
 
       for (var key in this.form) {
