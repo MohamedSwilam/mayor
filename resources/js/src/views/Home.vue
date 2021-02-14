@@ -236,7 +236,6 @@
 
                 if (!this.validateForm) return;
                 this.is_requesting = true;
-                this.$vs.loading({container: `#${clicked_button_id}`, color: 'primary', scale: 0.45});
                 let form_data = new FormData();
                 for (let key in this.form) {
                     if ((key === 'welcome_image') && this.form.hasOwnProperty(key)) {
