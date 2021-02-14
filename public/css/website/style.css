@@ -985,6 +985,8 @@ button:focus {
     position: relative;
     text-align: center;
     cursor: pointer;
+    padding: 10px;
+
 }
 
 .categories_post img {
@@ -1018,7 +1020,7 @@ button:focus {
     font-size: 18px;
     line-height: 26px;
     text-transform: uppercase;
-    color: #fff;
+    color: rgb(158, 110, 74);
     position: relative;
 }
 
