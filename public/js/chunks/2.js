@@ -6846,13 +6846,12 @@ __webpack_require__.r(__webpack_exports__);
   name: "Messages",
   slug: "message",
   icon: "MessageSquareIcon",
-  permission: 'browse-message',
-  submenu: [{
-    url: '/dashboard/message/service',
-    name: "Service Requests",
-    slug: "Service Requests",
-    permission: "browse-message"
-  }]
+  permission: 'browse-message'
+}, {
+  url: '/dashboard/message/service',
+  name: "Service Requests",
+  slug: "Service Requests",
+  permission: "browse-message"
 }, {
   url: "/dashboard/service",
   name: "Service",
