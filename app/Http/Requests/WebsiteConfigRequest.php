@@ -38,13 +38,13 @@ class WebsiteConfigRequest extends FormRequest
         }
         else if (sizeof($segments) == 3){
             return [
-                'welcome_title' => 'required|string',
-                'welcome_p' => 'required|string',
-                'total_donation' => 'required|string',
-                'total_properties' => 'required|string',
-                'total_volunteers' => 'required|string',
+                'welcome_title' => 'string',
+                'welcome_p' => 'string',
+                'total_donation' => 'string',
+                'total_properties' => 'string',
+                'total_volunteers' => 'string',
                 'images' => '',
-                'welcome_image' => 'required|max:2048|mimes:jpeg,png',
+                'welcome_image' => 'max:2048|mimes:jpeg,png',
             ];
         }
     }

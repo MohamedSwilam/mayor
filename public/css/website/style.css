@@ -692,7 +692,6 @@ button:focus {
 }
 
 .blog_banner .banner_inner .overlay {
-    background: url(/images/website/banner/banner-2.jpg) no-repeat scroll center center;
     opacity: .5;
     height: 125%;
     position: absolute;
@@ -748,7 +747,6 @@ button:focus {
 }
 
 .banner_area .banner_inner .overlay {
-    background: url(/images/website/banner/banner.jpg) no-repeat scroll center center;
     position: absolute;
     left: 0;
     right: 0;
@@ -3877,7 +3875,7 @@ h6 {
 
 .testimonials_inner .testi_left_text h4 {
     font-size: 36px;
-    color: #fff;
+    color: rgb(158, 110, 74);
     font-weight: 500;
     padding-right: 20px;
     margin-bottom: 20px;

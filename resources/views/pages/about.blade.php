@@ -25,33 +25,32 @@
         <div class="container">
             <div class="row welcome_inner">
                 <div class="col-lg-6">
-                    <div class="welcome_img">
-                        <img class="img-fluid" src="/images/website/welcome-1.jpg" alt="">
-                    </div>
+
+                    <img class="img-fluid" src="{{$homeData[0]->welcome_image}}" alt="">
                 </div>
                 <div class="col-lg-6">
                     <div class="welcome_text">
-                        <h4>Welcome to SEL Center</h4>
-                        <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed.</p>
+                        <h4>{{$homeData[0]->welcome_title}}  </h4>
+                        <p>{{$homeData[0]->welcome_p}}</p>
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="wel_item">
-                                    <i class="lnr lnr-database"></i>
-                                    <h4>$2.5M</h4>
+                                    <i class="lnr lnr-layers"></i>
+                                    <h4>{{$homeData[0]->total_donation}}</h4>
                                     <p>Total Donation</p>
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="wel_item">
-                                    <i class="lnr lnr-book"></i>
-                                    <h4>1465</h4>
+                                    <i class="lnr lnr-apartment"></i>
+                                    <h4>{{$homeData[0]->total_properties}}</h4>
                                     <p>Total Projects</p>
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="wel_item">
                                     <i class="lnr lnr-users"></i>
-                                    <h4>3965</h4>
+                                    <h4>{{$homeData[0]->total_volunteers}}</h4>
                                     <p>Total Volunteers</p>
                                 </div>
                             </div>
