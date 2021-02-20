@@ -62,14 +62,13 @@ export default [
         slug: "message",
         icon: "MessageSquareIcon",
         permission: 'browse-message',
-        submenu: [
-            {
-                url: '/dashboard/message/service',
-                name: "Service Requests",
-                slug: "Service Requests",
-                permission: "browse-message"
-            },
-        ]
+
+    },
+    {
+        url: '/dashboard/message/service',
+        name: "Service Requests",
+        slug: "Service Requests",
+        permission: "browse-message"
     },
     {
         url: "/dashboard/service",

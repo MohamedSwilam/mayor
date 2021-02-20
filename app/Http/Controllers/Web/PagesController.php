@@ -100,7 +100,7 @@ class PagesController extends Controller
             'message' => 'required|string',
             'phone' => 'required|numeric',
             'email' => 'required|email',
-            'service_id' => ''
+            'service' => ''
         ]);
         $message = Message::create($data);
 
