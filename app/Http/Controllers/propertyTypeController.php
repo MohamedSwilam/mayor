@@ -12,7 +12,7 @@ use App\Transformers\FeedbackTransfromer;
 use App\Transformers\propertyTypeTransformer;
 use Illuminate\Http\Request;
 
-class PropertyTypeController extends Controller
+class propertyTypeController extends Controller
 {
     public function index()
     {

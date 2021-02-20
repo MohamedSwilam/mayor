@@ -85,8 +85,11 @@ class PagesController extends Controller
     public function about()
     {
         $feedback = Feedback::all();
+        $homedata = WebsiteConfig::where('id', '1')->get();
+
         return view('pages.about', [
-            'feedback' => $feedback
+            'feedback' => $feedback,
+            'homeData' => $homedata,
         ]);
     }
 

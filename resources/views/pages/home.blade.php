@@ -6,40 +6,50 @@
 
 
     <!--================Home Banner Area =================-->
-    <section class="home_banner_area">
-        <div class="slideshow-container">
-            @foreach($homeDataImages as $counter=> $image )
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                @foreach($homeDataImages as $counter=> $image )
+                    @if($counter == 0 )
+                        <li data-target="#carouselExampleIndicators" data-slide-to="{{$counter}}" class="active"></li>
+                    @else
+                        <li data-target="#carouselExampleIndicators" data-slide-to=""{{$counter}}"></li>
+                    @endif
+                @endforeach
+            </ol>
+            <div class="carousel-inner">
+                @foreach($homeDataImages as $counter=> $image )
+                    @if($counter == 0 )
+                        <div class="carousel-item active">
+                            @else
+                                <div class="carousel-item">
+                                    @endif
+                                    <img class="figure-img img-fluid w-100 " src="{{$image->source}}">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h3>{{($image ?? '')->description}}</h3>
+                                    </div>
+                                </div>
+                                @endforeach
 
-                <div class="mySlides ">
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                           data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                           data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+            </div>
 
-                    <div class="numbertext">{{$counter+1}} / {{count($homeDataImages)}}</div>
 
-                    <dev class="text">{{($image ?? '')->description}}</dev>
-
-                        <img class="slider-img" src="{{$image->source}}">
-
-                </div>
-            @endforeach
-
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-        </div>
-        {{--                <div class="banner_content">--}}
-        {{--                    <h5>The joy of home owning</h5>--}}
-        {{--                    <h3>Find Your New Home</h3>--}}
-        {{--                    <a class="main_btn" href="#">Learn More</a>--}}
-        {{--                </div>--}}
-    </section>
-    <!--================End Home Banner Area =================-->
-    <!--================Welcome Area =================-->
     <section class="welcome_area p_120">
         <div class="container">
             <div class="row welcome_inner">
                 <div class="col-lg-6">
-                    <div class="welcome_img">
+
                         <img class="img-fluid" src="{{$homeData[0]->welcome_image}}" alt="">
-                    </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="welcome_text">
@@ -127,21 +137,15 @@
             <section class="blog_categorie_area">
                 <div class="container">
                     <div class="row">
-                        @foreach($services as $service)
-                            <div class="col-lg-4">
-                                <div class="categories_post">
-                                    {{--                            <img src="/storage/feedback/67b748722515dac2848d9c9b6ee7b19e.jpeg" alt="post">--}}
-                                    <img src="/storage/feedback/{{$service->icon}}" alt="post">
-                                    <div class="categories_details">
-                                        <div class="categories_text">
-                                            <a href="/services"><h5>{{$service->service}}</h5></a>
-                                            <div class="border_line"></div>
-                                            <p>{{$service->description}}</p>
-                                        </div>
+                            @foreach($services as $service)
+                                <div class="card" style="width: 18rem; margin: 20px;">
+                                    <img src="/storage/feedback/{{$service->icon}}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h3><a style="color: rgb(158, 110, 74);">{{$service->service}} </a></h3>
+                                        <p class="card-text">{{$service->description}}</p>
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
                     </div>
                 </div>
             </section>
